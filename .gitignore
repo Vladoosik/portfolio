@@ -4,6 +4,7 @@
 /node_modules
 /.parcel-cache
 /.pnp
+/.idea
 .pnp.js
 
 # testing
