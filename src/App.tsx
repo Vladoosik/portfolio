@@ -1,16 +1,15 @@
-import React from 'react';
-import './App.css';
-import styles from './style.module.css';
+// modules
+import React from "react";
+// styles
+import "./App.css";
+// screens
+import { Home } from "./screens";
 
 function App() {
-    return (
-    <div className="App">
-      <header className="App-header">
-        <div className={styles.container}>
-          mama mia
-        </div>
-      </header>
-    </div>
+  return (
+    <>
+      <Home />
+    </>
   );
 }
 
