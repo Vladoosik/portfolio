@@ -1,8 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6aa7ab1-ac0e-4a6b-8250-4b34b331f08e" name="Changes" comment="hotfix git">
+    <list default="true" id="f6aa7ab1-ac0e-4a6b-8250-4b34b331f08e" name="Changes" comment="second commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.2d3ace14.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.2d3ace14.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.61d3354a.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.61d3354a.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.61d3354a.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.61d3354a.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/animatedLogo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animatedLogo/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/doubleWave.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/doubleWave.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/line.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/line.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/semiCircle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/semiCircle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/tringle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/tringle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/wave.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/wave.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/arrowIcon/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/arrowIcon/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/cssIcon/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/cssIcon/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/gitHub/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/gitHub/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/gitLab/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/gitLab/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/gmail/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/gmail/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jsIcon/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jsIcon/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/linkedIn/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/linkedIn/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/logo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/logo/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/okay/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/okay/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/reactIcon/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/reactIcon/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/telegram/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/telegram/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/tsIcon/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/tsIcon/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,25 +59,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/project/portfolio/my-app&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;E:\\project\\portfolio\\my-app\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/apple/Desktop/portfolio",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/apple/Desktop/portfolio/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "/Users/apple/Desktop/portfolio/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\project\portfolio\my-app" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/header" />
+      <recent name="$PROJECT_DIR$/src/components" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -60,16 +97,8 @@
       <option name="presentableId" value="Default" />
       <updated>1701425100843</updated>
       <workItem from="1701425102395" duration="5637000" />
-      <workItem from="1701430802789" duration="1015000" />
+      <workItem from="1701441114025" duration="8634000" />
     </task>
-    <task id="LOCAL-00001" summary="hotfix git">
-      <created>1701431040452</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1701431040452</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -88,7 +117,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="second commit" />
-    <MESSAGE value="hotfix git" />
-    <option name="LAST_COMMIT_MESSAGE" value="hotfix git" />
+    <option name="LAST_COMMIT_MESSAGE" value="second commit" />
   </component>
 </project>

@@ -1,0 +1,79 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.linkContainer{
+    display: flex;
+    align-items: center;
+}
+
+.headerBtn{
+    margin: 0 30px;
+    position: relative;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: #B0B2C3;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+.headerBtn::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: -100%;
+    width: 0;
+    height: 3px;
+    border-radius: 2px;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.headerBtn:hover {
+    color: white;
+}
+
+@keyframes slideRight {
+    0% {
+        width: 0;
+        left: 0;
+        background: linear-gradient(to left, #2a5788, #357ABD);
+    }
+    100% {
+        width: 100%;
+        left: 0;
+        background: linear-gradient(to left, #2a5788, #357ABD);
+    }
+}
+
+.headerBtn:hover:before {
+    width: 100%;
+    left: 0;
+    animation: slideRight 0.2s linear forwards;
+}
+
+.headerBtn:not(:hover):before {
+    animation: slideRightReverse 0.2s linear forwards;
+}
+
+
+@keyframes slideRightReverse {
+    0% {
+        width: 100%;
+        left: 0;
+        background: linear-gradient(to left, #2a5788, #357ABD);
+    }
+    10% {
+        width: 90%;
+        left: 10%;
+        background-color: #f25757;
+    }
+    100% {
+        width: 0;
+        background-color: #f25757;
+        left: 100%;
+    }
+}
+

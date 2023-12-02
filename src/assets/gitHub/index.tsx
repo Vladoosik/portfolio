@@ -1,7 +1,7 @@
 // modules
-import React, {FC} from 'react';
+import React, {FC} from "react";
 // types
-import {SvgTypes} from "@/types/SvgTypes";
+import {SvgTypes} from "../../types/SvgType";
 
 const GitHub: FC<SvgTypes> = (props) => {
     const {width, height, className} = props;
