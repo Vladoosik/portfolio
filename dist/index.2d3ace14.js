@@ -27828,6 +27828,7 @@ const Home = ()=>{
         x: 0,
         y: 0
     });
+    const [modalActive, setModalActive] = (0, _react.useState)(false);
     (0, _react.useEffect)(()=>{
         window.addEventListener("mousemove", (event)=>{
             const { clientX, clientY } = event;
@@ -27848,281 +27849,161 @@ const Home = ()=>{
     }, [
         cursorPosition
     ]);
-    const iconPosition = (top, left, transX)=>{
-        return {
-            position: "absolute",
-            top,
-            left,
-            transform: `translateX(${transX})`
-        };
-    };
-    const arrayIcons = [
-        {
-            id: 1,
-            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Wave), {
-                color: "#CF4981"
-            }, void 0, false, {
-                fileName: "src/screens/home/index.tsx",
-                lineNumber: 56,
-                columnNumber: 19
-            }, undefined),
-            style: iconPosition("25%", "90%", "50%"),
-            invertedMove: false
-        },
-        {
-            id: 2,
-            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.DoubleWave), {
-                color: "#CF4981"
-            }, void 0, false, {
-                fileName: "src/screens/home/index.tsx",
-                lineNumber: 62,
-                columnNumber: 19
-            }, undefined),
-            style: iconPosition("50%", "20%", "50%"),
-            invertedMove: true
-        },
-        {
-            id: 3,
-            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Line), {
-                color: "#CF4981"
-            }, void 0, false, {
-                fileName: "src/screens/home/index.tsx",
-                lineNumber: 66,
-                columnNumber: 23
-            }, undefined),
-            style: iconPosition("12%", "50%", "50%"),
-            invertedMove: false
-        },
-        {
-            id: 4,
-            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Triangle), {
-                color: "#0f6898"
-            }, void 0, false, {
-                fileName: "src/screens/home/index.tsx",
-                lineNumber: 67,
-                columnNumber: 23
-            }, undefined),
-            style: iconPosition("80%", "10%", "10%"),
-            invertedMove: true
-        },
-        {
-            id: 5,
-            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Wave), {
-                color: "yellow"
-            }, void 0, false, {
-                fileName: "src/screens/home/index.tsx",
-                lineNumber: 70,
-                columnNumber: 19
-            }, undefined),
-            color: "#CF4981",
-            style: iconPosition("70%", "40%", "50%"),
-            invertedMove: false
-        },
-        {
-            id: 6,
-            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Triangle), {
-                color: "#3a9a5c"
-            }, void 0, false, {
-                fileName: "src/screens/home/index.tsx",
-                lineNumber: 75,
-                columnNumber: 23
-            }, undefined),
-            style: iconPosition("10%", "10%", "10%"),
-            invertedMove: false
-        },
-        {
-            id: 7,
-            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Triangle), {
-                color: "#49cfb0"
-            }, void 0, false, {
-                fileName: "src/screens/home/index.tsx",
-                lineNumber: 76,
-                columnNumber: 23
-            }, undefined),
-            style: iconPosition("10%", "80%", "50%"),
-            invertedMove: true
-        },
-        {
-            id: 8,
-            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.SemiCircle), {}, void 0, false, {
-                fileName: "src/screens/home/index.tsx",
-                lineNumber: 77,
-                columnNumber: 23
-            }, undefined),
-            style: iconPosition("90%", "50%", "50%"),
-            invertedMove: false
-        },
-        {
-            id: 9,
-            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Triangle), {
-                color: "#49cfb0"
-            }, void 0, false, {
-                fileName: "src/screens/home/index.tsx",
-                lineNumber: 78,
-                columnNumber: 23
-            }, undefined),
-            style: iconPosition("70%", "90%", "50%"),
-            invertedMove: true
-        },
-        {
-            id: 121,
-            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Line), {}, void 0, false, {
-                fileName: "src/screens/home/index.tsx",
-                lineNumber: 79,
-                columnNumber: 25
-            }, undefined),
-            style: iconPosition("12%", "25%", "60%"),
-            invertedMove: false
-        }
-    ];
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: (0, _stylesModuleCssDefault.default).container,
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Header), {}, void 0, false, {
-                fileName: "src/screens/home/index.tsx",
-                lineNumber: 84,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: (0, _stylesModuleCssDefault.default).contentContainer,
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: (0, _stylesModuleCssDefault.default).nameContainer,
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                style: {
-                                    zIndex: 2
-                                },
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                                        className: (0, _stylesModuleCssDefault.default).name,
-                                        children: "Vlad Khrushchev"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/home/index.tsx",
-                                        lineNumber: 88,
-                                        columnNumber: 25
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                        className: (0, _stylesModuleCssDefault.default).description,
-                                        children: "Interactive Frontend-Developer"
-                                    }, void 0, false, {
-                                        fileName: "src/screens/home/index.tsx",
-                                        lineNumber: 89,
-                                        columnNumber: 25
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: (0, _stylesModuleCssDefault.default).buttonContainer,
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Button), {
-                                            text: "About Me"
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: (0, _stylesModuleCssDefault.default).container,
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Header), {}, void 0, false, {
+                    fileName: "src/screens/home/index.tsx",
+                    lineNumber: 34,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: (0, _stylesModuleCssDefault.default).contentContainer,
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: (0, _stylesModuleCssDefault.default).nameContainer,
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    style: {
+                                        zIndex: 2
+                                    },
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                                            className: (0, _stylesModuleCssDefault.default).name,
+                                            children: "Vlad Khrushchev"
                                         }, void 0, false, {
                                             fileName: "src/screens/home/index.tsx",
-                                            lineNumber: 91,
+                                            lineNumber: 38,
+                                            columnNumber: 29
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                            className: (0, _stylesModuleCssDefault.default).description,
+                                            children: "Interactive Frontend-Developer"
+                                        }, void 0, false, {
+                                            fileName: "src/screens/home/index.tsx",
+                                            lineNumber: 39,
+                                            columnNumber: 29
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            className: (0, _stylesModuleCssDefault.default).buttonContainer,
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Button), {
+                                                text: "About Me",
+                                                onClick: ()=>setModalActive(true)
+                                            }, void 0, false, {
+                                                fileName: "src/screens/home/index.tsx",
+                                                lineNumber: 41,
+                                                columnNumber: 33
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "src/screens/home/index.tsx",
+                                            lineNumber: 40,
                                             columnNumber: 29
                                         }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "src/screens/home/index.tsx",
-                                        lineNumber: 90,
-                                        columnNumber: 25
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/screens/home/index.tsx",
-                                lineNumber: 87,
-                                columnNumber: 21
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: (0, _stylesModuleCssDefault.default).logoContainer,
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.AnimatedLogo), {}, void 0, false, {
+                                    ]
+                                }, void 0, true, {
                                     fileName: "src/screens/home/index.tsx",
-                                    lineNumber: 95,
+                                    lineNumber: 37,
+                                    columnNumber: 25
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: (0, _stylesModuleCssDefault.default).logoContainer,
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.AnimatedLogo), {}, void 0, false, {
+                                        fileName: "src/screens/home/index.tsx",
+                                        lineNumber: 45,
+                                        columnNumber: 29
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "src/screens/home/index.tsx",
+                                    lineNumber: 44,
                                     columnNumber: 25
                                 }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/screens/home/index.tsx",
-                                lineNumber: 94,
-                                columnNumber: 21
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/screens/home/index.tsx",
-                        lineNumber: 86,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: (0, _stylesModuleCssDefault.default).iconContainer,
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.LinkedIn), {
-                                className: (0, _stylesModuleCssDefault.default).icon
-                            }, void 0, false, {
-                                fileName: "src/screens/home/index.tsx",
-                                lineNumber: 99,
-                                columnNumber: 21
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.GitHub), {
-                                className: (0, _stylesModuleCssDefault.default).icon
-                            }, void 0, false, {
-                                fileName: "src/screens/home/index.tsx",
-                                lineNumber: 100,
-                                columnNumber: 21
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.GitLab), {
-                                className: (0, _stylesModuleCssDefault.default).icon
-                            }, void 0, false, {
-                                fileName: "src/screens/home/index.tsx",
-                                lineNumber: 101,
-                                columnNumber: 21
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Telegram), {
-                                className: (0, _stylesModuleCssDefault.default).icon
-                            }, void 0, false, {
-                                fileName: "src/screens/home/index.tsx",
-                                lineNumber: 102,
-                                columnNumber: 21
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Gmail), {
-                                className: (0, _stylesModuleCssDefault.default).icon
-                            }, void 0, false, {
-                                fileName: "src/screens/home/index.tsx",
-                                lineNumber: 103,
-                                columnNumber: 21
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/screens/home/index.tsx",
-                        lineNumber: 98,
-                        columnNumber: 17
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/screens/home/index.tsx",
-                lineNumber: 85,
-                columnNumber: 13
-            }, undefined),
-            arrayIcons.map((item)=>{
-                const horizontalDuration = item.invertedMove ? -cursorPosition.x : cursorPosition.x;
-                const verticalDuration = item.invertedMove ? -cursorPosition.y : cursorPosition.y;
-                return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: (0, _stylesModuleCssDefault.default).iconAnimation,
-                    // @ts-ignore
-                    style: {
-                        ...item.style,
-                        transform: `translate(-50%, -50%) translate(${horizontalDuration * 0.08}px, ${verticalDuration * 0.08}px)`
-                    },
-                    children: item.icon
-                }, item.id, false, {
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/screens/home/index.tsx",
+                            lineNumber: 36,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: (0, _stylesModuleCssDefault.default).iconContainer,
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.LinkedIn), {
+                                    className: (0, _stylesModuleCssDefault.default).icon
+                                }, void 0, false, {
+                                    fileName: "src/screens/home/index.tsx",
+                                    lineNumber: 49,
+                                    columnNumber: 25
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.GitHub), {
+                                    className: (0, _stylesModuleCssDefault.default).icon
+                                }, void 0, false, {
+                                    fileName: "src/screens/home/index.tsx",
+                                    lineNumber: 50,
+                                    columnNumber: 25
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.GitLab), {
+                                    className: (0, _stylesModuleCssDefault.default).icon
+                                }, void 0, false, {
+                                    fileName: "src/screens/home/index.tsx",
+                                    lineNumber: 51,
+                                    columnNumber: 25
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Telegram), {
+                                    className: (0, _stylesModuleCssDefault.default).icon
+                                }, void 0, false, {
+                                    fileName: "src/screens/home/index.tsx",
+                                    lineNumber: 52,
+                                    columnNumber: 25
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Gmail), {
+                                    className: (0, _stylesModuleCssDefault.default).icon
+                                }, void 0, false, {
+                                    fileName: "src/screens/home/index.tsx",
+                                    lineNumber: 53,
+                                    columnNumber: 25
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/screens/home/index.tsx",
+                            lineNumber: 48,
+                            columnNumber: 21
+                        }, undefined)
+                    ]
+                }, void 0, true, {
                     fileName: "src/screens/home/index.tsx",
-                    lineNumber: 110,
-                    columnNumber: 21
-                }, undefined);
-            })
-        ]
-    }, void 0, true, {
-        fileName: "src/screens/home/index.tsx",
-        lineNumber: 83,
-        columnNumber: 9
-    }, undefined);
+                    lineNumber: 35,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.AnimatedIcons), {
+                        cursorPosition: cursorPosition
+                    }, void 0, false, {
+                        fileName: "src/screens/home/index.tsx",
+                        lineNumber: 57,
+                        columnNumber: 21
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/screens/home/index.tsx",
+                    lineNumber: 56,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Modal), {
+                    active: modalActive,
+                    setActive: setModalActive
+                }, void 0, false, {
+                    fileName: "src/screens/home/index.tsx",
+                    lineNumber: 59,
+                    columnNumber: 17
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/screens/home/index.tsx",
+            lineNumber: 33,
+            columnNumber: 13
+        }, undefined)
+    }, void 0, false);
 };
-_s(Home, "1PQ59QlUeSi9Elng+PajcFNxCUw=");
+_s(Home, "ZlDldORbNMuGdlJWkYQbh7+alOU=");
 _c = Home;
 exports.default = Home;
 var _c;
@@ -28139,7 +28020,6 @@ module.exports["container"] = `P30aKa_container`;
 module.exports["contentContainer"] = `P30aKa_contentContainer`;
 module.exports["description"] = `P30aKa_description`;
 module.exports["icon"] = `P30aKa_icon`;
-module.exports["iconAnimation"] = `P30aKa_iconAnimation`;
 module.exports["iconContainer"] = `P30aKa_iconContainer`;
 module.exports["logoContainer"] = `P30aKa_logoContainer`;
 module.exports["name"] = `P30aKa_name`;
@@ -28150,12 +28030,18 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Header", ()=>(0, _indexDefault.default));
 parcelHelpers.export(exports, "Button", ()=>(0, _indexDefault1.default));
+parcelHelpers.export(exports, "AnimatedIcons", ()=>(0, _indexDefault2.default));
+parcelHelpers.export(exports, "Modal", ()=>(0, _indexDefault3.default));
 var _index = require("./header/index");
 var _indexDefault = parcelHelpers.interopDefault(_index);
 var _index1 = require("./button/index");
 var _indexDefault1 = parcelHelpers.interopDefault(_index1);
+var _index2 = require("./animatedIcons/index");
+var _indexDefault2 = parcelHelpers.interopDefault(_index2);
+var _index3 = require("./modal/index");
+var _indexDefault3 = parcelHelpers.interopDefault(_index3);
 
-},{"./header/index":"kCs45","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./button/index":"2DdQn"}],"kCs45":[function(require,module,exports) {
+},{"./header/index":"kCs45","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./button/index":"2DdQn","./animatedIcons/index":"kxTfh","./modal/index":"lHFhD"}],"kCs45":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0e26 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41847,6 +41733,230 @@ module.exports["button"] = `Pyg6BW_button`;
 module.exports["buttonArrow"] = `Pyg6BW_buttonArrow`;
 module.exports["buttonMask"] = `Pyg6BW_buttonMask`;
 
-},{}]},["9p54t","1xC6H","4aBH6"], "4aBH6", "parcelRequire2bed")
+},{}],"kxTfh":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d1ba = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d1ba.prelude(module);
+
+try {
+// modules
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+// styles
+var _stylesModuleCss = require("./styles.module.css");
+var _stylesModuleCssDefault = parcelHelpers.interopDefault(_stylesModuleCss);
+// assets
+var _assets = require("../../assets");
+const AnimatedIcons = (props)=>{
+    const { cursorPosition } = props;
+    const iconPosition = (top, left, transX)=>{
+        return {
+            position: "absolute",
+            top,
+            left,
+            transform: `translateX(${transX})`
+        };
+    };
+    const arrayIcons = [
+        {
+            id: 1,
+            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Wave), {
+                color: "#CF4981"
+            }, void 0, false, {
+                fileName: "src/components/animatedIcons/index.tsx",
+                lineNumber: 25,
+                columnNumber: 19
+            }, undefined),
+            style: iconPosition("25%", "90%", "50%"),
+            invertedMove: false
+        },
+        {
+            id: 2,
+            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.DoubleWave), {
+                color: "#CF4981"
+            }, void 0, false, {
+                fileName: "src/components/animatedIcons/index.tsx",
+                lineNumber: 31,
+                columnNumber: 19
+            }, undefined),
+            style: iconPosition("50%", "70%", "50%"),
+            invertedMove: true
+        },
+        {
+            id: 3,
+            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Line), {
+                color: "#CF4981"
+            }, void 0, false, {
+                fileName: "src/components/animatedIcons/index.tsx",
+                lineNumber: 35,
+                columnNumber: 23
+            }, undefined),
+            style: iconPosition("12%", "50%", "50%"),
+            invertedMove: false
+        },
+        {
+            id: 4,
+            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Triangle), {
+                color: "#0f6898"
+            }, void 0, false, {
+                fileName: "src/components/animatedIcons/index.tsx",
+                lineNumber: 36,
+                columnNumber: 23
+            }, undefined),
+            style: iconPosition("80%", "10%", "10%"),
+            invertedMove: true
+        },
+        {
+            id: 5,
+            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Wave), {
+                color: "yellow"
+            }, void 0, false, {
+                fileName: "src/components/animatedIcons/index.tsx",
+                lineNumber: 39,
+                columnNumber: 19
+            }, undefined),
+            color: "#CF4981",
+            style: iconPosition("70%", "40%", "50%"),
+            invertedMove: false
+        },
+        {
+            id: 6,
+            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Triangle), {
+                color: "#3a9a5c"
+            }, void 0, false, {
+                fileName: "src/components/animatedIcons/index.tsx",
+                lineNumber: 44,
+                columnNumber: 23
+            }, undefined),
+            style: iconPosition("10%", "10%", "10%"),
+            invertedMove: false
+        },
+        {
+            id: 7,
+            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Triangle), {
+                color: "#49cfb0"
+            }, void 0, false, {
+                fileName: "src/components/animatedIcons/index.tsx",
+                lineNumber: 45,
+                columnNumber: 23
+            }, undefined),
+            style: iconPosition("10%", "80%", "50%"),
+            invertedMove: true
+        },
+        {
+            id: 8,
+            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.SemiCircle), {}, void 0, false, {
+                fileName: "src/components/animatedIcons/index.tsx",
+                lineNumber: 46,
+                columnNumber: 23
+            }, undefined),
+            style: iconPosition("50%", "20%", "50%"),
+            invertedMove: false
+        },
+        {
+            id: 9,
+            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Triangle), {
+                color: "#49cfb0"
+            }, void 0, false, {
+                fileName: "src/components/animatedIcons/index.tsx",
+                lineNumber: 47,
+                columnNumber: 23
+            }, undefined),
+            style: iconPosition("70%", "90%", "50%"),
+            invertedMove: true
+        },
+        {
+            id: 121,
+            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Line), {}, void 0, false, {
+                fileName: "src/components/animatedIcons/index.tsx",
+                lineNumber: 48,
+                columnNumber: 25
+            }, undefined),
+            style: iconPosition("12%", "25%", "60%"),
+            invertedMove: false
+        }
+    ];
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: arrayIcons.map((item)=>{
+            const horizontalDuration = item.invertedMove ? -cursorPosition.x : cursorPosition.x;
+            const verticalDuration = item.invertedMove ? -cursorPosition.y : cursorPosition.y;
+            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: (0, _stylesModuleCssDefault.default).iconAnimation,
+                // @ts-ignore
+                style: {
+                    ...item.style,
+                    transform: `translate(-50%, -50%) translate(${horizontalDuration * 0.08}px, ${verticalDuration * 0.08}px)`
+                },
+                children: item.icon
+            }, item.id, false, {
+                fileName: "src/components/animatedIcons/index.tsx",
+                lineNumber: 56,
+                columnNumber: 21
+            }, undefined);
+        })
+    }, void 0, false);
+};
+_c = AnimatedIcons;
+exports.default = AnimatedIcons;
+var _c;
+$RefreshReg$(_c, "AnimatedIcons");
+
+  $parcel$ReactRefreshHelpers$d1ba.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./styles.module.css":"kOgeR","../../assets":"lDowU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kOgeR":[function(require,module,exports) {
+module.exports["iconAnimation"] = `dY6-Ra_iconAnimation`;
+
+},{}],"lHFhD":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8b6e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8b6e.prelude(module);
+
+try {
+// modules
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _stylesCss = require("./styles.css");
+const Modal = (props)=>{
+    const { active, setActive } = props;
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: active ? "modal active" : "modal",
+        onClick: ()=>setActive(false),
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: active ? "modalContent active" : "modalContent",
+            onClick: (e)=>e.stopPropagation(),
+            children: "some content"
+        }, void 0, false, {
+            fileName: "src/components/modal/index.tsx",
+            lineNumber: 14,
+            columnNumber: 13
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/modal/index.tsx",
+        lineNumber: 13,
+        columnNumber: 9
+    }, undefined);
+};
+_c = Modal;
+exports.default = Modal;
+var _c;
+$RefreshReg$(_c, "Modal");
+
+  $parcel$ReactRefreshHelpers$8b6e.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./styles.css":"fw91Z","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fw91Z":[function() {},{}]},["9p54t","1xC6H","4aBH6"], "4aBH6", "parcelRequire2bed")
 
 //# sourceMappingURL=index.2d3ace14.js.map

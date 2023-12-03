@@ -69,10 +69,6 @@ code {
   font-weight: bolder;
 }
 
-.P30aKa_iconAnimation {
-  transition: transform .1s;
-}
-
 .P30aKa_description {
   text-align: left;
   color: #fff;
@@ -102,7 +98,7 @@ code {
 
 .P30aKa_iconContainer {
   flex-direction: column;
-  gap: 25px;
+  gap: 35px;
   display: flex;
   position: absolute;
   right: 15px;
@@ -252,6 +248,37 @@ code {
   font-size: 1.05em;
   font-weight: 500;
   position: relative;
+}
+
+.dY6-Ra_iconAnimation {
+  transition: transform .1s;
+}
+
+.modal {
+  opacity: 0;
+  background: #0000004d;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  transition: all .5s;
+  display: flex;
+  position: fixed;
+}
+
+.modal.active {
+  opacity: 1;
+}
+
+.modalContent {
+  opacity: 0;
+  background-color: red;
+  padding: 20px 30px;
+  transition: all .5s;
+}
+
+.modalContent.active {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=index.61d3354a.css.map */

@@ -1,0 +1,28 @@
+.modal {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+    transition: 0.5s;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.modal.active {
+    opacity: 1;
+}
+
+.modalContent {
+    opacity: 0;
+    padding: 20px 30px;
+    transition: 0.5s;
+    background-color: red;
+}
+
+.modalContent.active {
+    opacity: 1;
+}
+
