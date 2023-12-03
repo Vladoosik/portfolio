@@ -1,0 +1,58 @@
+.button {
+    position: relative;
+    padding: 11px 28px;
+    background: linear-gradient(270deg, #f06449, #ef3636);
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.buttonMask:before, .buttonMask:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translateX(-110%);
+    width: 100%;
+    z-index: 2;
+}
+
+.buttonMask:before {
+    background: linear-gradient(270deg, #235aa6, #101b3b);
+    transition: transform .6s cubic-bezier(.694, .048, .335, 1) .05s;
+}
+
+.buttonMask:after, .buttonMask:before {
+    will-change: transform;
+}
+
+.button:hover .buttonMask:before, .buttonMask:after {
+    transform: translateX(110%);
+}
+
+.buttonArrow:hover .buttonMask:before, .buttonMask:after {
+    transform: translateX(110%);
+}
+
+.button:hover ~ .buttonArrow {
+    transform: translateX(130px);
+}
+
+.buttonArrow {
+    position: absolute;
+    top: 5px;
+    transform: translateX(120px);
+    z-index: 31;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btnText {
+    position: relative;
+    margin: 0;
+    color: white;
+    font-size: 1.05em;
+    font-weight: 500;
+    z-index: 10;
+}

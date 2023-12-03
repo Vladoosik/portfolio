@@ -4,34 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6aa7ab1-ac0e-4a6b-8250-4b34b331f08e" name="Changes" comment="second commit">
+    <list default="true" id="f6aa7ab1-ac0e-4a6b-8250-4b34b331f08e" name="Changes" comment="add assets">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.2d3ace14.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.2d3ace14.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.61d3354a.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.61d3354a.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.61d3354a.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.61d3354a.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/animatedLogo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animatedLogo/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/doubleWave.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/doubleWave.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/line.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/line.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/semiCircle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/semiCircle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/tringle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/tringle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/wave.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/wave.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/arrowIcon/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/arrowIcon/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/cssIcon/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/cssIcon/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gitHub/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/gitHub/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gitLab/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/gitLab/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/gmail/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/gmail/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/jsIcon/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jsIcon/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/linkedIn/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/linkedIn/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/logo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/logo/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/okay/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/okay/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/reactIcon/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/reactIcon/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/telegram/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/telegram/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/tsIcon/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/tsIcon/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/styles.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/home/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/home/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/home/styles.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,11 +31,22 @@
       </list>
     </option>
   </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/assets" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
   </component>
   <component name="ProjectId" id="2Yw85lKJIuiKfVdtTeW34vp6qor" />
   <component name="ProjectLevelVcsManager">
@@ -67,15 +64,15 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/apple/Desktop/portfolio",
+    "last_opened_file_path": "E:/project/portfolio/my-app/node_modules/prettier",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/apple/Desktop/portfolio/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "/Users/apple/Desktop/portfolio/node_modules/typescript/lib",
+    "prettierjs.PrettierConfiguration.Package": "E:\\project\\portfolio\\my-app\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "ts.external.directory.path": "E:\\project\\portfolio\\my-app\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -118,5 +115,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="second commit" />
     <option name="LAST_COMMIT_MESSAGE" value="second commit" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
