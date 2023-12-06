@@ -51,12 +51,15 @@ code {
 
 .P30aKa_container {
   background-color: #1c1d25;
-  height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
+  display: flex;
 }
 
 .P30aKa_contentContainer {
   align-items: center;
-  height: 80%;
+  height: 80vh;
   display: flex;
 }
 
@@ -97,6 +100,7 @@ code {
 }
 
 .P30aKa_iconContainer {
+  z-index: 2;
   flex-direction: column;
   gap: 35px;
   display: flex;
@@ -256,6 +260,7 @@ code {
 
 .modal {
   opacity: 0;
+  z-index: -1;
   background: #0000004d;
   justify-content: center;
   align-items: center;
@@ -268,16 +273,285 @@ code {
 
 .modal.active {
   opacity: 1;
+  z-index: 100;
 }
 
 .modalContent {
   opacity: 0;
-  background-color: red;
-  padding: 20px 30px;
+  width: 1170px;
+  height: 80vh;
+  min-height: 600px;
+  max-height: 750px;
   transition: all .5s;
+  display: flex;
 }
 
 .modalContent.active {
+  opacity: 1;
+}
+
+.halfAbout {
+  opacity: 0;
+  background-color: #fff;
+  width: 50%;
+  height: 100%;
+  transition: all .5s;
+  transform: translateY(-130px);
+}
+
+.halfContact {
+  opacity: 0;
+  background-color: #1c1d25;
+  width: 50%;
+  height: 100%;
+  transition: all .5s;
+  transform: translateY(130px);
+}
+
+.halfAbout.active, .halfContact.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.aboutContent, .contactContainer {
+  margin-top: 120px;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.aboutMe {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  font-size: 1.5em;
+}
+
+.aboutDescription {
+  color: #1c1d25;
+  font-family: League Spartan, Helvetica, Arial, serif;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.mainAboutText {
+  text-align: justify;
+  font-size: 1em;
+  line-height: 23px;
+}
+
+.mainAboutText strong {
+  color: #f06449;
+}
+
+.aboutIconContainer {
+  justify-content: space-between;
+  margin-top: 30px;
+  display: flex;
+}
+
+.linkContainer {
+  justify-content: center;
+  margin-top: 50px;
+  display: flex;
+}
+
+.downloadLink {
+  color: #1c1d25;
+  align-items: center;
+  font-size: .8em;
+  text-decoration: none;
+  display: flex;
+}
+
+.downloadIcon {
+  margin-left: 15px;
+}
+
+.reactIcon path, .jsIcon path:first-child, .tsIcon path:first-child {
+  fill: #1c1d25;
+  transition: all .35s;
+}
+
+.reactIcon:hover path {
+  fill: #2d6fb4;
+}
+
+.jsIcon:hover path:first-child {
+  fill: #c7a600;
+}
+
+.tsIcon:hover path:first-child {
+  fill: #1976d2;
+}
+
+.cssIcon path {
+  transition: all .35s;
+}
+
+.cssIcon:hover path {
+  fill: #cb8500;
+}
+
+.contactTitle {
+  color: #fff;
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.contactText {
+  color: #fff;
+  font-family: League Spartan, Helvetica, Arial, serif;
+  font-size: 1em;
+  font-style: italic;
+}
+
+.inputContainer {
+  flex-direction: column;
+  display: flex;
+}
+
+.inputLabel {
+  color: #dadada;
+  font-size: .7em;
+  font-weight: 600;
+}
+
+.inputLabel:after {
+  content: " *";
+}
+
+.inputContent {
+  position: relative;
+}
+
+.input, .textArea {
+  color: silver;
+  background-color: #0000;
+  border: none;
+  border-bottom: 2px solid silver;
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px 5px;
+  font-size: .9em;
+}
+
+.textArea {
+  resize: none;
+  min-height: 100px;
+}
+
+.inputCover, .textAreaCover {
+  background-color: #26408b;
+  width: 0;
+  height: 2px;
+  transition: all .4s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.textAreaCover {
+  bottom: 3px;
+}
+
+.input:active, .input:focus, .textArea:focus {
+  outline-offset: 0;
+  outline: 0;
+}
+
+.input:hover ~ .inputCover, .input:focus ~ .inputCover, .textArea:hover ~ .textAreaCover, .textArea:focus ~ .textAreaCover {
+  width: 103%;
+}
+
+.input:hover ~ .inputCover:after, .textArea:hover ~ .textAreaCover:after {
+  animation: .4s sliderAnimation;
+}
+
+.inputCover:after, .textAreaCover:after {
+  content: "";
+  background-color: #f06449;
+  width: 0;
+  height: 2px;
+  position: absolute;
+  right: 0;
+}
+
+@keyframes sliderAnimation {
+  0% {
+    width: 0;
+  }
+
+  25% {
+    width: 50px;
+  }
+
+  60% {
+    width: 150px;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+.buttonContainer {
+  justify-self: flex-start;
+  margin-top: 30px;
+  display: flex;
+}
+
+.close-container {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  margin: 100px auto auto;
+  position: relative;
+}
+
+.leftright {
+  background-color: #fff;
+  border-radius: 2px;
+  width: 25px;
+  height: 2px;
+  margin-top: 24px;
+  transition: all .3s ease-in;
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+.rightleft {
+  background-color: #fff;
+  border-radius: 2px;
+  width: 25px;
+  height: 2px;
+  margin-top: 24px;
+  transition: all .3s ease-in;
+  position: absolute;
+  transform: rotate(-45deg);
+}
+
+.closeBtnContainer {
+  position: absolute;
+  top: 0;
+  right: 40px;
+}
+
+.close {
+  margin: 60px 0 0 5px;
+  position: absolute;
+}
+
+.close-container:hover .leftright {
+  background-color: #f25c66;
+  transform: rotate(-45deg);
+}
+
+.close-container:hover .rightleft {
+  background-color: #f25c66;
+  transform: rotate(45deg);
+}
+
+.close-container:hover label {
   opacity: 1;
 }
 

@@ -21,3 +21,4 @@ export { default as Logo } from "./logo/index";
 export { default as AnimatedLogo } from "./animatedLogo/index";
 export { default as ArrowIcon } from "./arrowIcon/index";
 export { default as Okay } from "./okay/index";
+export { default as Download } from "./download/index";

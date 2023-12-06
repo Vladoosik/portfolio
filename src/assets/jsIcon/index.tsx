@@ -25,7 +25,7 @@ const JsIcon: FC<SvgTypes> = (props) => {
 export default JsIcon;
 
 JsIcon.defaultProps = {
-  width: 48,
-  height: 48,
+  width: 64,
+  height: 64,
   color: "#ffd600",
 };

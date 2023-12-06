@@ -5,24 +5,305 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
-
     transition: 0.5s;
     opacity: 0;
+    z-index: -1;
     background: rgba(0, 0, 0, 0.3);
 }
 
 .modal.active {
     opacity: 1;
+    z-index: 100;
 }
 
 .modalContent {
     opacity: 0;
-    padding: 20px 30px;
     transition: 0.5s;
-    background-color: red;
+    width: 1170px;
+    min-height: 600px;
+    height: 80vh;
+    max-height: 750px;
+    display: flex;
 }
 
 .modalContent.active {
     opacity: 1;
 }
 
+.halfAbout {
+    height: 100%;
+    width: 50%;
+    background-color: white;
+    opacity: 0;
+    transition: 0.5s;
+    transform: translateY(-130px);
+}
+
+.halfContact {
+    height: 100%;
+    width: 50%;
+    background-color: #1C1D25;
+    opacity: 0;
+    transition: 0.5s;
+    transform: translateY(130px);
+}
+
+.halfAbout.active, .halfContact.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.aboutContent, .contactContainer {
+    margin-top: 120px;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+.aboutMe {
+    margin: 0;
+    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+}
+
+.aboutDescription {
+    color: #1C1D25;
+    font-size: 1em;
+    font-weight: 600;
+    font-style: italic;
+    font-family: League Spartan, Helvetica, Arial, serif;
+}
+
+.mainAboutText {
+    font-size: 1em;
+    text-align: justify;
+    line-height: 23px;
+}
+
+.mainAboutText strong {
+    color: #f06449;
+}
+
+.aboutIconContainer {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.linkContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.downloadLink {
+    display: flex;
+    align-items: center;
+    font-size: 0.8em;
+    color: #1C1D25;
+    text-decoration: none;
+}
+
+.downloadIcon {
+    margin-left: 15px;
+}
+
+.reactIcon path {
+    fill: #1C1D25;
+    transition: 0.35s;
+}
+
+.jsIcon path:first-child, .tsIcon path:first-child {
+    fill: #1C1D25;
+    transition: 0.35s;
+}
+
+.reactIcon:hover path {
+    fill: #2d6fb4;
+}
+
+.jsIcon:hover path:first-child {
+    fill: #c7a600;
+}
+
+.tsIcon:hover path:first-child {
+    fill: #1976d2;
+}
+
+.cssIcon path {
+    transition: 0.35s;
+}
+
+.cssIcon:hover path {
+    fill: #cb8500;
+}
+
+
+.contactTitle {
+    margin: 0;
+    font-size: 1.5em;
+    color: white;
+}
+
+.contactText {
+    color: white;
+    font-style: italic;
+    font-size: 1em;
+    font-family: League Spartan, Helvetica, Arial, serif;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputLabel {
+    font-size: 0.7em;
+    color: #dadada;
+    font-weight: 600;
+}
+
+.inputLabel:after {
+    content: ' *';
+}
+
+.inputContent {
+    position: relative;
+    /*width: 100%;*/
+}
+
+.input, .textArea {
+    margin-top: 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px silver solid;
+    padding: 8px 5px;
+    font-size: 0.9em;
+    color: silver;
+    width: 100%;
+}
+
+.textArea {
+    min-height: 100px;
+    resize: none;
+}
+
+.inputCover, .textAreaCover {
+    position: absolute;
+    width: 0;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: #26408b;
+    transition: 0.4s;
+}
+
+.textAreaCover {
+    bottom: 3px;
+}
+
+.input:active, .input:focus, .textArea:focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+.input:hover ~ .inputCover, .input:focus ~ .inputCover {
+    width: 103%;
+}
+
+.textArea:hover ~ .textAreaCover, .textArea:focus ~ .textAreaCover {
+    width: 103%;
+}
+
+.input:hover ~ .inputCover:after {
+    animation: 0.4s sliderAnimation;
+}
+
+.textArea:hover ~ .textAreaCover:after {
+    animation: 0.4s sliderAnimation;
+}
+
+.inputCover:after, .textAreaCover:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: #f06449;
+
+}
+
+@keyframes sliderAnimation {
+    0% {
+        width: 0;
+    }
+    25% {
+        width: 50px
+    }
+    60% {
+        width: 150px;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+.buttonContainer {
+    margin-top: 30px;
+    display: flex;
+    justify-self: flex-start;
+}
+
+.close-container {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: 100px auto auto;
+    cursor: pointer;
+}
+
+.leftright {
+    height: 2px;
+    width: 25px;
+    position: absolute;
+    margin-top: 24px;
+    background-color: white;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    transition: all .3s ease-in;
+}
+
+.rightleft {
+    height: 2px;
+    width: 25px;
+    position: absolute;
+    margin-top: 24px;
+    background-color: white;
+    border-radius: 2px;
+    transform: rotate(-45deg);
+    transition: all .3s ease-in;
+}
+
+.closeBtnContainer {
+    position: absolute;
+    right: 40px;
+    top: 0;
+}
+
+.close {
+    margin: 60px 0 0 5px;
+    position: absolute;
+}
+
+.close-container:hover .leftright {
+    transform: rotate(-45deg);
+    background-color: #F25C66;
+}
+
+.close-container:hover .rightleft {
+    transform: rotate(45deg);
+    background-color: #F25C66;
+}
+
+.close-container:hover label {
+    opacity: 1;
+}

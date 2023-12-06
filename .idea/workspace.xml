@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6aa7ab1-ac0e-4a6b-8250-4b34b331f08e" name="Changes" comment="add animation in home and make animated button">
+    <list default="true" id="f6aa7ab1-ac0e-4a6b-8250-4b34b331f08e" name="Changes" comment="add header">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.2d3ace14.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.2d3ace14.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.61d3354a.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.61d3354a.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.61d3354a.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.61d3354a.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jsIcon/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jsIcon/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modal/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modal/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/home/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/home/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/home/styles.module.css" afterDir="false" />
     </list>
@@ -60,16 +63,16 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/project/portfolio/my-app/node_modules/prettier",
+    "last_opened_file_path": "/Users/apple/Desktop/portfolio",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "E:\\project\\portfolio\\my-app\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "actions.on.save",
-    "ts.external.directory.path": "E:\\project\\portfolio\\my-app\\node_modules\\typescript\\lib",
+    "prettierjs.PrettierConfiguration.Package": "/Users/apple/Desktop/portfolio/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "/Users/apple/Desktop/portfolio/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -78,6 +81,7 @@
       <recent name="E:\project\portfolio\my-app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/cv" />
       <recent name="$PROJECT_DIR$/src/components/header" />
       <recent name="$PROJECT_DIR$/src/components" />
     </key>
@@ -92,6 +96,7 @@
       <updated>1701425100843</updated>
       <workItem from="1701425102395" duration="5637000" />
       <workItem from="1701441114025" duration="8634000" />
+      <workItem from="1701854659258" duration="16463000" />
     </task>
     <task id="LOCAL-00001" summary="add animation in home and make animated button">
       <created>1701612959306</created>
