@@ -60,6 +60,7 @@ code {
 .P30aKa_contentContainer {
   align-items: center;
   height: 80vh;
+  margin-left: 50px;
   display: flex;
 }
 
@@ -82,7 +83,7 @@ code {
 .P30aKa_nameContainer {
   flex-direction: column;
   align-items: center;
-  width: 80vw;
+  width: 85vw;
   display: flex;
 }
 
@@ -96,7 +97,7 @@ code {
   object-fit: cover;
   position: absolute;
   top: 25%;
-  left: 40%;
+  left: 42%;
 }
 
 .P30aKa_iconContainer {
@@ -116,6 +117,15 @@ code {
 .P30aKa_icon:hover path {
   fill: #fff;
   transition: all .4s;
+}
+
+.P30aKa_worksContainer {
+  color: #fff;
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  position: absolute;
+  bottom: 0;
 }
 
 .Qh3Vja_container {
@@ -553,6 +563,129 @@ code {
 
 .close-container:hover label {
   opacity: 1;
+}
+
+.RPbNkG_workCard {
+  cursor: pointer;
+  border-radius: 2px;
+  width: 930px;
+  height: 480px;
+  margin: 50px 0;
+  transition: all .3s;
+  position: relative;
+  box-shadow: 0 2px 46px 13px #00000052;
+}
+
+.RPbNkG_image {
+  object-fit: cover;
+  filter: brightness(50%);
+  width: 100%;
+  height: 100%;
+}
+
+.RPbNkG_workCard:before {
+  content: "";
+  z-index: 2;
+  background-color: #283d91d9;
+  width: 0;
+  height: 100%;
+  transition: all .4s;
+  position: absolute;
+  left: 0;
+}
+
+.RPbNkG_workCard:hover {
+  box-shadow: 0 2px 70px 9px #00000087;
+}
+
+.RPbNkG_workCard:hover:before {
+  width: 100%;
+}
+
+.RPbNkG_textLeft, .RPbNkG_textRight {
+  z-index: 3;
+  color: #fff;
+  transition: all .4s .4s;
+  position: absolute;
+  top: 45%;
+  transform: scale(1);
+}
+
+.RPbNkG_textLeft {
+  left: 60px;
+}
+
+.RPbNkG_textRight {
+  flex-direction: column;
+  align-items: flex-end;
+  display: flex;
+  right: 60px;
+}
+
+.RPbNkG_btnContainer {
+  display: flex;
+}
+
+.RPbNkG_cardTitle {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 2.8em;
+  font-weight: 600;
+}
+
+.RPbNkG_cardText {
+  margin: 5px 0 20px;
+  font-family: Times New Roman, serif;
+  font-size: 1.2em;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.RPbNkG_workCard:hover .RPbNkG_textLeft, .RPbNkG_workCard:hover .RPbNkG_textRight {
+  transform: scale(1.1);
+}
+
+.RPbNkG_cardNumber {
+  margin: 0;
+  color: #fff;
+  z-index: 3;
+  opacity: 0;
+  margin-block: 0;
+  font-size: 11em;
+  font-weight: 800;
+  transition: opacity .3s .5s, transform .45s cubic-bezier(.694, .048, .335, 1) .5s, -webkit-transform .45s cubic-bezier(.694, .048, .335, 1) .5s;
+  position: absolute;
+  top: -80px;
+  transform: translateY(15px);
+}
+
+.RPbNkG_workCard:hover .RPbNkG_cardNumber {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nF2IMG_workTitle {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #937b70;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nF2IMG_workText {
+  text-align: center;
+  color: #4a4a4a;
+  margin-bottom: 70px;
+}
+
+.nF2IMG_cardContainer {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
 }
 
 /*# sourceMappingURL=index.61d3354a.css.map */
