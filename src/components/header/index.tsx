@@ -4,7 +4,7 @@ import {Link} from "react-scroll";
 // assets
 import {Logo} from "../../assets";
 // constants
-import {headerLinks, HeaderLinksProps} from "../../constants/headerLinks";
+import {headerLinks, HeaderLinksProps} from "../../constants/headerLink/headerLinks";
 // styles
 import styles from "./styles.module.css";
 

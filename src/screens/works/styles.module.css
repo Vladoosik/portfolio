@@ -1,0 +1,23 @@
+.workTitle {
+    text-align: center;
+    font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    color: #937b70;
+    font-weight: 600;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.workText {
+    text-align: center;
+    margin-bottom: 70px;
+    color: #4a4a4a;
+}
+
+.cardContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

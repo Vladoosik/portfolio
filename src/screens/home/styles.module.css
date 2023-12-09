@@ -10,6 +10,7 @@
     height: 80vh;
     display: flex;
     align-items: center;
+    margin-left: 50px;
 }
 
 .name {
@@ -29,7 +30,7 @@
 }
 
 .nameContainer {
-    width: 80vw;
+    width: 85vw;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -43,7 +44,7 @@
 
 .logoContainer {
     top: 25%;
-    left: 40%;
+    left: 42%;
     object-fit: cover;
     position: absolute;
 }
@@ -65,4 +66,13 @@
 .icon:hover path {
     fill: white;
     transition: 0.4s;
+}
+
+.worksContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    color: white;
 }
