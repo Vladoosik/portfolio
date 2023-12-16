@@ -4,20 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6aa7ab1-ac0e-4a6b-8250-4b34b331f08e" name="Changes" comment="add header">
+    <list default="true" id="f6aa7ab1-ac0e-4a6b-8250-4b34b331f08e" name="Changes" comment="make modal">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.2d3ace14.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.2d3ace14.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.61d3354a.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.61d3354a.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.61d3354a.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.61d3354a.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modal/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/headerLinks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/headerLink/headerLinks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/home/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/home/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/home/styles.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/animatedLogo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animatedLogo/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/doubleWave.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/doubleWave.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/line.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/line.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/semiCircle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/semiCircle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/tringle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/tringle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/wave.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/wave.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/arrowIcon/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/arrowIcon/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/cssIcon/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/cssIcon/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/download/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/download/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/gitLab/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/gitLab/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/gmail/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/gmail/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jsIcon/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jsIcon/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/linkedIn/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/linkedIn/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/logo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/logo/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/okay/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/okay/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/reactIcon/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/reactIcon/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/telegram/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/telegram/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/tsIcon/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/tsIcon/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/animatedIcons/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/animatedIcons/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/workCards/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/workCards/styles.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/headerLink/headerLinks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/headerLink/headerLinks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/petProjects/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/petProjects/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/postValue/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/postValue/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/works/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/works/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/SvgType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/SvgType.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +62,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/assets" />
+        <entry key="$PROJECT_DIR$" value="feature/modal" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -72,9 +96,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "E:\\project\\portfolio\\my-app\\node_modules\\prettier",
+    "prettierjs.PrettierConfiguration.Package": "/Users/apple/Desktop/portfolio/node_modules/prettier",
     "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "E:\\project\\portfolio\\my-app\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "/Users/apple/Desktop/portfolio/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -103,6 +127,7 @@
       <workItem from="1701854659258" duration="16463000" />
       <workItem from="1702050175506" duration="8116000" />
       <workItem from="1702125524215" duration="7303000" />
+      <workItem from="1702736636558" duration="2304000" />
     </task>
     <task id="LOCAL-00001" summary="add animation in home and make animated button">
       <created>1701612959306</created>

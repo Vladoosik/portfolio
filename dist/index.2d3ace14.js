@@ -2956,12 +2956,12 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactDefault.default).
     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _appDefault.default), {}, void 0, false, {
         fileName: "src/index.tsx",
         lineNumber: 11,
-        columnNumber: 5
+        columnNumber: 9
     }, undefined)
 }, void 0, false, {
     fileName: "src/index.tsx",
     lineNumber: 10,
-    columnNumber: 3
+    columnNumber: 5
 }, undefined));
 
   $parcel$ReactRefreshHelpers$2a8f.postlude(module);
@@ -2969,609 +2969,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactDefault.default).
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./index.css":"irmnC","./App":"7F5Te","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"km3Ru":[function(require,module,exports) {
-"use strict";
-var Refresh = require("7422ead32dcc1e6b");
-function debounce(func, delay) {
-    {
-        let timeout = undefined;
-        let lastTime = 0;
-        return function(args) {
-            // Call immediately if last call was more than the delay ago.
-            // Otherwise, set a timeout. This means the first call is fast
-            // (for the common case of a single update), and subsequent updates
-            // are batched.
-            let now = Date.now();
-            if (now - lastTime > delay) {
-                lastTime = now;
-                func.call(null, args);
-            } else {
-                clearTimeout(timeout);
-                timeout = setTimeout(function() {
-                    timeout = undefined;
-                    lastTime = Date.now();
-                    func.call(null, args);
-                }, delay);
-            }
-        };
-    }
-}
-var enqueueUpdate = debounce(function() {
-    Refresh.performReactRefresh();
-}, 30);
-// Everthing below is either adapted or copied from
-// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
-// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
-module.exports.prelude = function(module1) {
-    window.$RefreshReg$ = function(type, id) {
-        Refresh.register(type, module1.id + " " + id);
-    };
-    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
-};
-module.exports.postlude = function(module1) {
-    if (isReactRefreshBoundary(module1.exports)) {
-        registerExportsForReactRefresh(module1);
-        if (module1.hot) {
-            module1.hot.dispose(function(data) {
-                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
-                data.prevExports = module1.exports;
-            });
-            module1.hot.accept(function(getParents) {
-                var prevExports = module1.hot.data.prevExports;
-                var nextExports = module1.exports;
-                // Since we just executed the code for it, it's possible
-                // that the new exports make it ineligible for being a boundary.
-                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports);
-                // It can also become ineligible if its exports are incompatible
-                // with the previous exports.
-                // For example, if you add/remove/change exports, we'll want
-                // to re-execute the importing modules, and force those components
-                // to re-render. Similarly, if you convert a class component
-                // to a function, we want to invalidate the boundary.
-                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
-                if (isNoLongerABoundary || didInvalidate) {
-                    // We'll be conservative. The only case in which we won't do a full
-                    // reload is if all parent modules are also refresh boundaries.
-                    // In that case we'll add them to the current queue.
-                    var parents = getParents();
-                    if (parents.length === 0) {
-                        // Looks like we bubbled to the root. Can't recover from that.
-                        window.location.reload();
-                        return;
-                    }
-                    return parents;
-                }
-                enqueueUpdate();
-            });
-        }
-    }
-};
-function isReactRefreshBoundary(exports) {
-    if (Refresh.isLikelyComponentType(exports)) return true;
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    return false;
-    var hasExports = false;
-    var areAllExportsComponents = true;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        hasExports = true;
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
-        return false;
-        var exportValue = exports[key];
-        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
-    }
-    return hasExports && areAllExportsComponents;
-}
-function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
-    var prevSignature = getRefreshBoundarySignature(prevExports);
-    var nextSignature = getRefreshBoundarySignature(nextExports);
-    if (prevSignature.length !== nextSignature.length) return true;
-    for(var i = 0; i < nextSignature.length; i++){
-        if (prevSignature[i] !== nextSignature[i]) return true;
-    }
-    return false;
-}
-// When this signature changes, it's unsafe to stop at this refresh boundary.
-function getRefreshBoundarySignature(exports) {
-    var signature = [];
-    signature.push(Refresh.getFamilyByType(exports));
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return signature;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        signature.push(key);
-        signature.push(Refresh.getFamilyByType(exportValue));
-    }
-    return signature;
-}
-function registerExportsForReactRefresh(module1) {
-    var exports = module1.exports, id = module1.id;
-    Refresh.register(exports, id + " %exports%");
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        var typeID = id + " %exports% " + key;
-        Refresh.register(exportValue, typeID);
-    }
-}
-
-},{"7422ead32dcc1e6b":"jEdJI"}],"jEdJI":[function(require,module,exports) {
-"use strict";
-module.exports = require("9e039173d01172ab");
-
-},{"9e039173d01172ab":"uTjV2"}],"uTjV2":[function(require,module,exports) {
-/** @license React v0.9.0
- * react-refresh-runtime.development.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ "use strict";
-(function() {
-    "use strict";
-    // ATTENTION
-    // When adding new symbols to this file,
-    // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
-    // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
-    // nor polyfill, then a plain number is used for performance.
-    var REACT_ELEMENT_TYPE = 0xeac7;
-    var REACT_PORTAL_TYPE = 0xeaca;
-    var REACT_FRAGMENT_TYPE = 0xeacb;
-    var REACT_STRICT_MODE_TYPE = 0xeacc;
-    var REACT_PROFILER_TYPE = 0xead2;
-    var REACT_PROVIDER_TYPE = 0xeacd;
-    var REACT_CONTEXT_TYPE = 0xeace;
-    var REACT_FORWARD_REF_TYPE = 0xead0;
-    var REACT_SUSPENSE_TYPE = 0xead1;
-    var REACT_SUSPENSE_LIST_TYPE = 0xead8;
-    var REACT_MEMO_TYPE = 0xead3;
-    var REACT_LAZY_TYPE = 0xead4;
-    var REACT_BLOCK_TYPE = 0xead9;
-    var REACT_SERVER_BLOCK_TYPE = 0xeada;
-    var REACT_FUNDAMENTAL_TYPE = 0xead5;
-    var REACT_SCOPE_TYPE = 0xead7;
-    var REACT_OPAQUE_ID_TYPE = 0xeae0;
-    var REACT_DEBUG_TRACING_MODE_TYPE = 0xeae1;
-    var REACT_OFFSCREEN_TYPE = 0xeae2;
-    var REACT_LEGACY_HIDDEN_TYPE = 0xeae3;
-    if (typeof Symbol === "function" && Symbol.for) {
-        var symbolFor = Symbol.for;
-        REACT_ELEMENT_TYPE = symbolFor("react.element");
-        REACT_PORTAL_TYPE = symbolFor("react.portal");
-        REACT_FRAGMENT_TYPE = symbolFor("react.fragment");
-        REACT_STRICT_MODE_TYPE = symbolFor("react.strict_mode");
-        REACT_PROFILER_TYPE = symbolFor("react.profiler");
-        REACT_PROVIDER_TYPE = symbolFor("react.provider");
-        REACT_CONTEXT_TYPE = symbolFor("react.context");
-        REACT_FORWARD_REF_TYPE = symbolFor("react.forward_ref");
-        REACT_SUSPENSE_TYPE = symbolFor("react.suspense");
-        REACT_SUSPENSE_LIST_TYPE = symbolFor("react.suspense_list");
-        REACT_MEMO_TYPE = symbolFor("react.memo");
-        REACT_LAZY_TYPE = symbolFor("react.lazy");
-        REACT_BLOCK_TYPE = symbolFor("react.block");
-        REACT_SERVER_BLOCK_TYPE = symbolFor("react.server.block");
-        REACT_FUNDAMENTAL_TYPE = symbolFor("react.fundamental");
-        REACT_SCOPE_TYPE = symbolFor("react.scope");
-        REACT_OPAQUE_ID_TYPE = symbolFor("react.opaque.id");
-        REACT_DEBUG_TRACING_MODE_TYPE = symbolFor("react.debug_trace_mode");
-        REACT_OFFSCREEN_TYPE = symbolFor("react.offscreen");
-        REACT_LEGACY_HIDDEN_TYPE = symbolFor("react.legacy_hidden");
-    }
-    var PossiblyWeakMap = typeof WeakMap === "function" ? WeakMap : Map; // We never remove these associations.
-    // It's OK to reference families, but use WeakMap/Set for types.
-    var allFamiliesByID = new Map();
-    var allFamiliesByType = new PossiblyWeakMap();
-    var allSignaturesByType = new PossiblyWeakMap(); // This WeakMap is read by React, so we only put families
-    // that have actually been edited here. This keeps checks fast.
-    // $FlowIssue
-    var updatedFamiliesByType = new PossiblyWeakMap(); // This is cleared on every performReactRefresh() call.
-    // It is an array of [Family, NextType] tuples.
-    var pendingUpdates = []; // This is injected by the renderer via DevTools global hook.
-    var helpersByRendererID = new Map();
-    var helpersByRoot = new Map(); // We keep track of mounted roots so we can schedule updates.
-    var mountedRoots = new Set(); // If a root captures an error, we remember it so we can retry on edit.
-    var failedRoots = new Set(); // In environments that support WeakMap, we also remember the last element for every root.
-    // It needs to be weak because we do this even for roots that failed to mount.
-    // If there is no WeakMap, we won't attempt to do retrying.
-    // $FlowIssue
-    var rootElements = typeof WeakMap === "function" ? new WeakMap() : null;
-    var isPerformingRefresh = false;
-    function computeFullKey(signature) {
-        if (signature.fullKey !== null) return signature.fullKey;
-        var fullKey = signature.ownKey;
-        var hooks;
-        try {
-            hooks = signature.getCustomHooks();
-        } catch (err) {
-            // This can happen in an edge case, e.g. if expression like Foo.useSomething
-            // depends on Foo which is lazily initialized during rendering.
-            // In that case just assume we'll have to remount.
-            signature.forceReset = true;
-            signature.fullKey = fullKey;
-            return fullKey;
-        }
-        for(var i = 0; i < hooks.length; i++){
-            var hook = hooks[i];
-            if (typeof hook !== "function") {
-                // Something's wrong. Assume we need to remount.
-                signature.forceReset = true;
-                signature.fullKey = fullKey;
-                return fullKey;
-            }
-            var nestedHookSignature = allSignaturesByType.get(hook);
-            if (nestedHookSignature === undefined) continue;
-            var nestedHookKey = computeFullKey(nestedHookSignature);
-            if (nestedHookSignature.forceReset) signature.forceReset = true;
-            fullKey += "\n---\n" + nestedHookKey;
-        }
-        signature.fullKey = fullKey;
-        return fullKey;
-    }
-    function haveEqualSignatures(prevType, nextType) {
-        var prevSignature = allSignaturesByType.get(prevType);
-        var nextSignature = allSignaturesByType.get(nextType);
-        if (prevSignature === undefined && nextSignature === undefined) return true;
-        if (prevSignature === undefined || nextSignature === undefined) return false;
-        if (computeFullKey(prevSignature) !== computeFullKey(nextSignature)) return false;
-        if (nextSignature.forceReset) return false;
-        return true;
-    }
-    function isReactClass(type) {
-        return type.prototype && type.prototype.isReactComponent;
-    }
-    function canPreserveStateBetween(prevType, nextType) {
-        if (isReactClass(prevType) || isReactClass(nextType)) return false;
-        if (haveEqualSignatures(prevType, nextType)) return true;
-        return false;
-    }
-    function resolveFamily(type) {
-        // Only check updated types to keep lookups fast.
-        return updatedFamiliesByType.get(type);
-    } // If we didn't care about IE11, we could use new Map/Set(iterable).
-    function cloneMap(map) {
-        var clone = new Map();
-        map.forEach(function(value, key) {
-            clone.set(key, value);
-        });
-        return clone;
-    }
-    function cloneSet(set) {
-        var clone = new Set();
-        set.forEach(function(value) {
-            clone.add(value);
-        });
-        return clone;
-    }
-    function performReactRefresh() {
-        if (pendingUpdates.length === 0) return null;
-        if (isPerformingRefresh) return null;
-        isPerformingRefresh = true;
-        try {
-            var staleFamilies = new Set();
-            var updatedFamilies = new Set();
-            var updates = pendingUpdates;
-            pendingUpdates = [];
-            updates.forEach(function(_ref) {
-                var family = _ref[0], nextType = _ref[1];
-                // Now that we got a real edit, we can create associations
-                // that will be read by the React reconciler.
-                var prevType = family.current;
-                updatedFamiliesByType.set(prevType, family);
-                updatedFamiliesByType.set(nextType, family);
-                family.current = nextType; // Determine whether this should be a re-render or a re-mount.
-                if (canPreserveStateBetween(prevType, nextType)) updatedFamilies.add(family);
-                else staleFamilies.add(family);
-            }); // TODO: rename these fields to something more meaningful.
-            var update = {
-                updatedFamilies: updatedFamilies,
-                // Families that will re-render preserving state
-                staleFamilies: staleFamilies // Families that will be remounted
-            };
-            helpersByRendererID.forEach(function(helpers) {
-                // Even if there are no roots, set the handler on first update.
-                // This ensures that if *new* roots are mounted, they'll use the resolve handler.
-                helpers.setRefreshHandler(resolveFamily);
-            });
-            var didError = false;
-            var firstError = null; // We snapshot maps and sets that are mutated during commits.
-            // If we don't do this, there is a risk they will be mutated while
-            // we iterate over them. For example, trying to recover a failed root
-            // may cause another root to be added to the failed list -- an infinite loop.
-            var failedRootsSnapshot = cloneSet(failedRoots);
-            var mountedRootsSnapshot = cloneSet(mountedRoots);
-            var helpersByRootSnapshot = cloneMap(helpersByRoot);
-            failedRootsSnapshot.forEach(function(root) {
-                var helpers = helpersByRootSnapshot.get(root);
-                if (helpers === undefined) throw new Error("Could not find helpers for a root. This is a bug in React Refresh.");
-                failedRoots.has(root);
-                if (rootElements === null) return;
-                if (!rootElements.has(root)) return;
-                var element = rootElements.get(root);
-                try {
-                    helpers.scheduleRoot(root, element);
-                } catch (err) {
-                    if (!didError) {
-                        didError = true;
-                        firstError = err;
-                    } // Keep trying other roots.
-                }
-            });
-            mountedRootsSnapshot.forEach(function(root) {
-                var helpers = helpersByRootSnapshot.get(root);
-                if (helpers === undefined) throw new Error("Could not find helpers for a root. This is a bug in React Refresh.");
-                mountedRoots.has(root);
-                try {
-                    helpers.scheduleRefresh(root, update);
-                } catch (err) {
-                    if (!didError) {
-                        didError = true;
-                        firstError = err;
-                    } // Keep trying other roots.
-                }
-            });
-            if (didError) throw firstError;
-            return update;
-        } finally{
-            isPerformingRefresh = false;
-        }
-    }
-    function register(type, id) {
-        if (type === null) return;
-        if (typeof type !== "function" && typeof type !== "object") return;
-         // This can happen in an edge case, e.g. if we register
-        // return value of a HOC but it returns a cached component.
-        // Ignore anything but the first registration for each type.
-        if (allFamiliesByType.has(type)) return;
-         // Create family or remember to update it.
-        // None of this bookkeeping affects reconciliation
-        // until the first performReactRefresh() call above.
-        var family = allFamiliesByID.get(id);
-        if (family === undefined) {
-            family = {
-                current: type
-            };
-            allFamiliesByID.set(id, family);
-        } else pendingUpdates.push([
-            family,
-            type
-        ]);
-        allFamiliesByType.set(type, family); // Visit inner types because we might not have registered them.
-        if (typeof type === "object" && type !== null) switch(type.$$typeof){
-            case REACT_FORWARD_REF_TYPE:
-                register(type.render, id + "$render");
-                break;
-            case REACT_MEMO_TYPE:
-                register(type.type, id + "$type");
-                break;
-        }
-    }
-    function setSignature(type, key) {
-        var forceReset = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-        var getCustomHooks = arguments.length > 3 ? arguments[3] : undefined;
-        allSignaturesByType.set(type, {
-            forceReset: forceReset,
-            ownKey: key,
-            fullKey: null,
-            getCustomHooks: getCustomHooks || function() {
-                return [];
-            }
-        });
-    } // This is lazily called during first render for a type.
-    // It captures Hook list at that time so inline requires don't break comparisons.
-    function collectCustomHooksForSignature(type) {
-        var signature = allSignaturesByType.get(type);
-        if (signature !== undefined) computeFullKey(signature);
-    }
-    function getFamilyByID(id) {
-        return allFamiliesByID.get(id);
-    }
-    function getFamilyByType(type) {
-        return allFamiliesByType.get(type);
-    }
-    function findAffectedHostInstances(families) {
-        var affectedInstances = new Set();
-        mountedRoots.forEach(function(root) {
-            var helpers = helpersByRoot.get(root);
-            if (helpers === undefined) throw new Error("Could not find helpers for a root. This is a bug in React Refresh.");
-            var instancesForRoot = helpers.findHostInstancesForRefresh(root, families);
-            instancesForRoot.forEach(function(inst) {
-                affectedInstances.add(inst);
-            });
-        });
-        return affectedInstances;
-    }
-    function injectIntoGlobalHook(globalObject) {
-        // For React Native, the global hook will be set up by require('react-devtools-core').
-        // That code will run before us. So we need to monkeypatch functions on existing hook.
-        // For React Web, the global hook will be set up by the extension.
-        // This will also run before us.
-        var hook = globalObject.__REACT_DEVTOOLS_GLOBAL_HOOK__;
-        if (hook === undefined) {
-            // However, if there is no DevTools extension, we'll need to set up the global hook ourselves.
-            // Note that in this case it's important that renderer code runs *after* this method call.
-            // Otherwise, the renderer will think that there is no global hook, and won't do the injection.
-            var nextID = 0;
-            globalObject.__REACT_DEVTOOLS_GLOBAL_HOOK__ = hook = {
-                renderers: new Map(),
-                supportsFiber: true,
-                inject: function(injected) {
-                    return nextID++;
-                },
-                onScheduleFiberRoot: function(id, root, children) {},
-                onCommitFiberRoot: function(id, root, maybePriorityLevel, didError) {},
-                onCommitFiberUnmount: function() {}
-            };
-        } // Here, we just want to get a reference to scheduleRefresh.
-        var oldInject = hook.inject;
-        hook.inject = function(injected) {
-            var id = oldInject.apply(this, arguments);
-            if (typeof injected.scheduleRefresh === "function" && typeof injected.setRefreshHandler === "function") // This version supports React Refresh.
-            helpersByRendererID.set(id, injected);
-            return id;
-        }; // Do the same for any already injected roots.
-        // This is useful if ReactDOM has already been initialized.
-        // https://github.com/facebook/react/issues/17626
-        hook.renderers.forEach(function(injected, id) {
-            if (typeof injected.scheduleRefresh === "function" && typeof injected.setRefreshHandler === "function") // This version supports React Refresh.
-            helpersByRendererID.set(id, injected);
-        }); // We also want to track currently mounted roots.
-        var oldOnCommitFiberRoot = hook.onCommitFiberRoot;
-        var oldOnScheduleFiberRoot = hook.onScheduleFiberRoot || function() {};
-        hook.onScheduleFiberRoot = function(id, root, children) {
-            if (!isPerformingRefresh) {
-                // If it was intentionally scheduled, don't attempt to restore.
-                // This includes intentionally scheduled unmounts.
-                failedRoots.delete(root);
-                if (rootElements !== null) rootElements.set(root, children);
-            }
-            return oldOnScheduleFiberRoot.apply(this, arguments);
-        };
-        hook.onCommitFiberRoot = function(id, root, maybePriorityLevel, didError) {
-            var helpers = helpersByRendererID.get(id);
-            if (helpers === undefined) return;
-            helpersByRoot.set(root, helpers);
-            var current = root.current;
-            var alternate = current.alternate; // We need to determine whether this root has just (un)mounted.
-            // This logic is copy-pasted from similar logic in the DevTools backend.
-            // If this breaks with some refactoring, you'll want to update DevTools too.
-            if (alternate !== null) {
-                var wasMounted = alternate.memoizedState != null && alternate.memoizedState.element != null;
-                var isMounted = current.memoizedState != null && current.memoizedState.element != null;
-                if (!wasMounted && isMounted) {
-                    // Mount a new root.
-                    mountedRoots.add(root);
-                    failedRoots.delete(root);
-                } else if (wasMounted && isMounted) ;
-                else if (wasMounted && !isMounted) {
-                    // Unmount an existing root.
-                    mountedRoots.delete(root);
-                    if (didError) // We'll remount it on future edits.
-                    failedRoots.add(root);
-                    else helpersByRoot.delete(root);
-                } else if (!wasMounted && !isMounted) {
-                    if (didError) // We'll remount it on future edits.
-                    failedRoots.add(root);
-                }
-            } else // Mount a new root.
-            mountedRoots.add(root);
-            return oldOnCommitFiberRoot.apply(this, arguments);
-        };
-    }
-    function hasUnrecoverableErrors() {
-        // TODO: delete this after removing dependency in RN.
-        return false;
-    } // Exposed for testing.
-    function _getMountedRootCount() {
-        return mountedRoots.size;
-    } // This is a wrapper over more primitive functions for setting signature.
-    // Signatures let us decide whether the Hook order has changed on refresh.
-    //
-    // This function is intended to be used as a transform target, e.g.:
-    // var _s = createSignatureFunctionForTransform()
-    //
-    // function Hello() {
-    //   const [foo, setFoo] = useState(0);
-    //   const value = useCustomHook();
-    //   _s(); /* Second call triggers collecting the custom Hook list.
-    //          * This doesn't happen during the module evaluation because we
-    //          * don't want to change the module order with inline requires.
-    //          * Next calls are noops. */
-    //   return <h1>Hi</h1>;
-    // }
-    //
-    // /* First call specifies the signature: */
-    // _s(
-    //   Hello,
-    //   'useState{[foo, setFoo]}(0)',
-    //   () => [useCustomHook], /* Lazy to avoid triggering inline requires */
-    // );
-    function createSignatureFunctionForTransform() {
-        // We'll fill in the signature in two steps.
-        // First, we'll know the signature itself. This happens outside the component.
-        // Then, we'll know the references to custom Hooks. This happens inside the component.
-        // After that, the returned function will be a fast path no-op.
-        var status = "needsSignature";
-        var savedType;
-        var hasCustomHooks;
-        return function(type, key, forceReset, getCustomHooks) {
-            switch(status){
-                case "needsSignature":
-                    if (type !== undefined) {
-                        // If we received an argument, this is the initial registration call.
-                        savedType = type;
-                        hasCustomHooks = typeof getCustomHooks === "function";
-                        setSignature(type, key, forceReset, getCustomHooks); // The next call we expect is from inside a function, to fill in the custom Hooks.
-                        status = "needsCustomHooks";
-                    }
-                    break;
-                case "needsCustomHooks":
-                    if (hasCustomHooks) collectCustomHooksForSignature(savedType);
-                    status = "resolved";
-                    break;
-            }
-            return type;
-        };
-    }
-    function isLikelyComponentType(type) {
-        switch(typeof type){
-            case "function":
-                // First, deal with classes.
-                if (type.prototype != null) {
-                    if (type.prototype.isReactComponent) // React class.
-                    return true;
-                    var ownNames = Object.getOwnPropertyNames(type.prototype);
-                    if (ownNames.length > 1 || ownNames[0] !== "constructor") // This looks like a class.
-                    return false;
-                     // eslint-disable-next-line no-proto
-                    if (type.prototype.__proto__ !== Object.prototype) // It has a superclass.
-                    return false;
-                     // Pass through.
-                // This looks like a regular function with empty prototype.
-                } // For plain functions and arrows, use name as a heuristic.
-                var name = type.name || type.displayName;
-                return typeof name === "string" && /^[A-Z]/.test(name);
-            case "object":
-                if (type != null) switch(type.$$typeof){
-                    case REACT_FORWARD_REF_TYPE:
-                    case REACT_MEMO_TYPE:
-                        // Definitely React components.
-                        return true;
-                    default:
-                        return false;
-                }
-                return false;
-            default:
-                return false;
-        }
-    }
-    exports._getMountedRootCount = _getMountedRootCount;
-    exports.collectCustomHooksForSignature = collectCustomHooksForSignature;
-    exports.createSignatureFunctionForTransform = createSignatureFunctionForTransform;
-    exports.findAffectedHostInstances = findAffectedHostInstances;
-    exports.getFamilyByID = getFamilyByID;
-    exports.getFamilyByType = getFamilyByType;
-    exports.hasUnrecoverableErrors = hasUnrecoverableErrors;
-    exports.injectIntoGlobalHook = injectIntoGlobalHook;
-    exports.isLikelyComponentType = isLikelyComponentType;
-    exports.performReactRefresh = performReactRefresh;
-    exports.register = register;
-    exports.setSignature = setSignature;
-})();
-
-},{}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./index.css":"irmnC","./App":"7F5Te","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27777,24 +27175,12 @@ var _appCss = require("./App.css");
 var _screens = require("./screens");
 function App() {
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _screens.Home), {}, void 0, false, {
-                fileName: "src/App.tsx",
-                lineNumber: 11,
-                columnNumber: 13
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _screens.Works), {}, void 0, false, {
-                fileName: "src/App.tsx",
-                lineNumber: 12,
-                columnNumber: 13
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _screens.PetProjects), {}, void 0, false, {
-                fileName: "src/App.tsx",
-                lineNumber: 13,
-                columnNumber: 13
-            }, this)
-        ]
-    }, void 0, true);
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _screens.Home), {}, void 0, false, {
+            fileName: "src/App.tsx",
+            lineNumber: 11,
+            columnNumber: 7
+        }, this)
+    }, void 0, false);
 }
 _c = App;
 exports.default = App;
@@ -27806,20 +27192,646 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./App.css":"6n0o6","./screens":"1eLhD","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6n0o6":[function() {},{}],"1eLhD":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./App.css":"6n0o6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./screens":"1eLhD"}],"6n0o6":[function() {},{}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || Object.prototype.hasOwnProperty.call(dest, key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"km3Ru":[function(require,module,exports) {
+"use strict";
+var Refresh = require("7422ead32dcc1e6b");
+function debounce(func, delay) {
+    {
+        let timeout = undefined;
+        let lastTime = 0;
+        return function(args) {
+            // Call immediately if last call was more than the delay ago.
+            // Otherwise, set a timeout. This means the first call is fast
+            // (for the common case of a single update), and subsequent updates
+            // are batched.
+            let now = Date.now();
+            if (now - lastTime > delay) {
+                lastTime = now;
+                func.call(null, args);
+            } else {
+                clearTimeout(timeout);
+                timeout = setTimeout(function() {
+                    timeout = undefined;
+                    lastTime = Date.now();
+                    func.call(null, args);
+                }, delay);
+            }
+        };
+    }
+}
+var enqueueUpdate = debounce(function() {
+    Refresh.performReactRefresh();
+}, 30);
+// Everthing below is either adapted or copied from
+// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
+// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
+module.exports.prelude = function(module1) {
+    window.$RefreshReg$ = function(type, id) {
+        Refresh.register(type, module1.id + " " + id);
+    };
+    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
+};
+module.exports.postlude = function(module1) {
+    if (isReactRefreshBoundary(module1.exports)) {
+        registerExportsForReactRefresh(module1);
+        if (module1.hot) {
+            module1.hot.dispose(function(data) {
+                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
+                data.prevExports = module1.exports;
+            });
+            module1.hot.accept(function(getParents) {
+                var prevExports = module1.hot.data.prevExports;
+                var nextExports = module1.exports;
+                // Since we just executed the code for it, it's possible
+                // that the new exports make it ineligible for being a boundary.
+                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports);
+                // It can also become ineligible if its exports are incompatible
+                // with the previous exports.
+                // For example, if you add/remove/change exports, we'll want
+                // to re-execute the importing modules, and force those components
+                // to re-render. Similarly, if you convert a class component
+                // to a function, we want to invalidate the boundary.
+                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
+                if (isNoLongerABoundary || didInvalidate) {
+                    // We'll be conservative. The only case in which we won't do a full
+                    // reload is if all parent modules are also refresh boundaries.
+                    // In that case we'll add them to the current queue.
+                    var parents = getParents();
+                    if (parents.length === 0) {
+                        // Looks like we bubbled to the root. Can't recover from that.
+                        window.location.reload();
+                        return;
+                    }
+                    return parents;
+                }
+                enqueueUpdate();
+            });
+        }
+    }
+};
+function isReactRefreshBoundary(exports) {
+    if (Refresh.isLikelyComponentType(exports)) return true;
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    return false;
+    var hasExports = false;
+    var areAllExportsComponents = true;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        hasExports = true;
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
+        return false;
+        var exportValue = exports[key];
+        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
+    }
+    return hasExports && areAllExportsComponents;
+}
+function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
+    var prevSignature = getRefreshBoundarySignature(prevExports);
+    var nextSignature = getRefreshBoundarySignature(nextExports);
+    if (prevSignature.length !== nextSignature.length) return true;
+    for(var i = 0; i < nextSignature.length; i++){
+        if (prevSignature[i] !== nextSignature[i]) return true;
+    }
+    return false;
+}
+// When this signature changes, it's unsafe to stop at this refresh boundary.
+function getRefreshBoundarySignature(exports) {
+    var signature = [];
+    signature.push(Refresh.getFamilyByType(exports));
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return signature;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        signature.push(key);
+        signature.push(Refresh.getFamilyByType(exportValue));
+    }
+    return signature;
+}
+function registerExportsForReactRefresh(module1) {
+    var exports = module1.exports, id = module1.id;
+    Refresh.register(exports, id + " %exports%");
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        var typeID = id + " %exports% " + key;
+        Refresh.register(exportValue, typeID);
+    }
+}
+
+},{"7422ead32dcc1e6b":"jEdJI"}],"jEdJI":[function(require,module,exports) {
+"use strict";
+module.exports = require("9e039173d01172ab");
+
+},{"9e039173d01172ab":"uTjV2"}],"uTjV2":[function(require,module,exports) {
+/** @license React v0.9.0
+ * react-refresh-runtime.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+(function() {
+    "use strict";
+    // ATTENTION
+    // When adding new symbols to this file,
+    // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
+    // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+    // nor polyfill, then a plain number is used for performance.
+    var REACT_ELEMENT_TYPE = 0xeac7;
+    var REACT_PORTAL_TYPE = 0xeaca;
+    var REACT_FRAGMENT_TYPE = 0xeacb;
+    var REACT_STRICT_MODE_TYPE = 0xeacc;
+    var REACT_PROFILER_TYPE = 0xead2;
+    var REACT_PROVIDER_TYPE = 0xeacd;
+    var REACT_CONTEXT_TYPE = 0xeace;
+    var REACT_FORWARD_REF_TYPE = 0xead0;
+    var REACT_SUSPENSE_TYPE = 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = 0xead8;
+    var REACT_MEMO_TYPE = 0xead3;
+    var REACT_LAZY_TYPE = 0xead4;
+    var REACT_BLOCK_TYPE = 0xead9;
+    var REACT_SERVER_BLOCK_TYPE = 0xeada;
+    var REACT_FUNDAMENTAL_TYPE = 0xead5;
+    var REACT_SCOPE_TYPE = 0xead7;
+    var REACT_OPAQUE_ID_TYPE = 0xeae0;
+    var REACT_DEBUG_TRACING_MODE_TYPE = 0xeae1;
+    var REACT_OFFSCREEN_TYPE = 0xeae2;
+    var REACT_LEGACY_HIDDEN_TYPE = 0xeae3;
+    if (typeof Symbol === "function" && Symbol.for) {
+        var symbolFor = Symbol.for;
+        REACT_ELEMENT_TYPE = symbolFor("react.element");
+        REACT_PORTAL_TYPE = symbolFor("react.portal");
+        REACT_FRAGMENT_TYPE = symbolFor("react.fragment");
+        REACT_STRICT_MODE_TYPE = symbolFor("react.strict_mode");
+        REACT_PROFILER_TYPE = symbolFor("react.profiler");
+        REACT_PROVIDER_TYPE = symbolFor("react.provider");
+        REACT_CONTEXT_TYPE = symbolFor("react.context");
+        REACT_FORWARD_REF_TYPE = symbolFor("react.forward_ref");
+        REACT_SUSPENSE_TYPE = symbolFor("react.suspense");
+        REACT_SUSPENSE_LIST_TYPE = symbolFor("react.suspense_list");
+        REACT_MEMO_TYPE = symbolFor("react.memo");
+        REACT_LAZY_TYPE = symbolFor("react.lazy");
+        REACT_BLOCK_TYPE = symbolFor("react.block");
+        REACT_SERVER_BLOCK_TYPE = symbolFor("react.server.block");
+        REACT_FUNDAMENTAL_TYPE = symbolFor("react.fundamental");
+        REACT_SCOPE_TYPE = symbolFor("react.scope");
+        REACT_OPAQUE_ID_TYPE = symbolFor("react.opaque.id");
+        REACT_DEBUG_TRACING_MODE_TYPE = symbolFor("react.debug_trace_mode");
+        REACT_OFFSCREEN_TYPE = symbolFor("react.offscreen");
+        REACT_LEGACY_HIDDEN_TYPE = symbolFor("react.legacy_hidden");
+    }
+    var PossiblyWeakMap = typeof WeakMap === "function" ? WeakMap : Map; // We never remove these associations.
+    // It's OK to reference families, but use WeakMap/Set for types.
+    var allFamiliesByID = new Map();
+    var allFamiliesByType = new PossiblyWeakMap();
+    var allSignaturesByType = new PossiblyWeakMap(); // This WeakMap is read by React, so we only put families
+    // that have actually been edited here. This keeps checks fast.
+    // $FlowIssue
+    var updatedFamiliesByType = new PossiblyWeakMap(); // This is cleared on every performReactRefresh() call.
+    // It is an array of [Family, NextType] tuples.
+    var pendingUpdates = []; // This is injected by the renderer via DevTools global hook.
+    var helpersByRendererID = new Map();
+    var helpersByRoot = new Map(); // We keep track of mounted roots so we can schedule updates.
+    var mountedRoots = new Set(); // If a root captures an error, we remember it so we can retry on edit.
+    var failedRoots = new Set(); // In environments that support WeakMap, we also remember the last element for every root.
+    // It needs to be weak because we do this even for roots that failed to mount.
+    // If there is no WeakMap, we won't attempt to do retrying.
+    // $FlowIssue
+    var rootElements = typeof WeakMap === "function" ? new WeakMap() : null;
+    var isPerformingRefresh = false;
+    function computeFullKey(signature) {
+        if (signature.fullKey !== null) return signature.fullKey;
+        var fullKey = signature.ownKey;
+        var hooks;
+        try {
+            hooks = signature.getCustomHooks();
+        } catch (err) {
+            // This can happen in an edge case, e.g. if expression like Foo.useSomething
+            // depends on Foo which is lazily initialized during rendering.
+            // In that case just assume we'll have to remount.
+            signature.forceReset = true;
+            signature.fullKey = fullKey;
+            return fullKey;
+        }
+        for(var i = 0; i < hooks.length; i++){
+            var hook = hooks[i];
+            if (typeof hook !== "function") {
+                // Something's wrong. Assume we need to remount.
+                signature.forceReset = true;
+                signature.fullKey = fullKey;
+                return fullKey;
+            }
+            var nestedHookSignature = allSignaturesByType.get(hook);
+            if (nestedHookSignature === undefined) continue;
+            var nestedHookKey = computeFullKey(nestedHookSignature);
+            if (nestedHookSignature.forceReset) signature.forceReset = true;
+            fullKey += "\n---\n" + nestedHookKey;
+        }
+        signature.fullKey = fullKey;
+        return fullKey;
+    }
+    function haveEqualSignatures(prevType, nextType) {
+        var prevSignature = allSignaturesByType.get(prevType);
+        var nextSignature = allSignaturesByType.get(nextType);
+        if (prevSignature === undefined && nextSignature === undefined) return true;
+        if (prevSignature === undefined || nextSignature === undefined) return false;
+        if (computeFullKey(prevSignature) !== computeFullKey(nextSignature)) return false;
+        if (nextSignature.forceReset) return false;
+        return true;
+    }
+    function isReactClass(type) {
+        return type.prototype && type.prototype.isReactComponent;
+    }
+    function canPreserveStateBetween(prevType, nextType) {
+        if (isReactClass(prevType) || isReactClass(nextType)) return false;
+        if (haveEqualSignatures(prevType, nextType)) return true;
+        return false;
+    }
+    function resolveFamily(type) {
+        // Only check updated types to keep lookups fast.
+        return updatedFamiliesByType.get(type);
+    } // If we didn't care about IE11, we could use new Map/Set(iterable).
+    function cloneMap(map) {
+        var clone = new Map();
+        map.forEach(function(value, key) {
+            clone.set(key, value);
+        });
+        return clone;
+    }
+    function cloneSet(set) {
+        var clone = new Set();
+        set.forEach(function(value) {
+            clone.add(value);
+        });
+        return clone;
+    }
+    function performReactRefresh() {
+        if (pendingUpdates.length === 0) return null;
+        if (isPerformingRefresh) return null;
+        isPerformingRefresh = true;
+        try {
+            var staleFamilies = new Set();
+            var updatedFamilies = new Set();
+            var updates = pendingUpdates;
+            pendingUpdates = [];
+            updates.forEach(function(_ref) {
+                var family = _ref[0], nextType = _ref[1];
+                // Now that we got a real edit, we can create associations
+                // that will be read by the React reconciler.
+                var prevType = family.current;
+                updatedFamiliesByType.set(prevType, family);
+                updatedFamiliesByType.set(nextType, family);
+                family.current = nextType; // Determine whether this should be a re-render or a re-mount.
+                if (canPreserveStateBetween(prevType, nextType)) updatedFamilies.add(family);
+                else staleFamilies.add(family);
+            }); // TODO: rename these fields to something more meaningful.
+            var update = {
+                updatedFamilies: updatedFamilies,
+                // Families that will re-render preserving state
+                staleFamilies: staleFamilies // Families that will be remounted
+            };
+            helpersByRendererID.forEach(function(helpers) {
+                // Even if there are no roots, set the handler on first update.
+                // This ensures that if *new* roots are mounted, they'll use the resolve handler.
+                helpers.setRefreshHandler(resolveFamily);
+            });
+            var didError = false;
+            var firstError = null; // We snapshot maps and sets that are mutated during commits.
+            // If we don't do this, there is a risk they will be mutated while
+            // we iterate over them. For example, trying to recover a failed root
+            // may cause another root to be added to the failed list -- an infinite loop.
+            var failedRootsSnapshot = cloneSet(failedRoots);
+            var mountedRootsSnapshot = cloneSet(mountedRoots);
+            var helpersByRootSnapshot = cloneMap(helpersByRoot);
+            failedRootsSnapshot.forEach(function(root) {
+                var helpers = helpersByRootSnapshot.get(root);
+                if (helpers === undefined) throw new Error("Could not find helpers for a root. This is a bug in React Refresh.");
+                failedRoots.has(root);
+                if (rootElements === null) return;
+                if (!rootElements.has(root)) return;
+                var element = rootElements.get(root);
+                try {
+                    helpers.scheduleRoot(root, element);
+                } catch (err) {
+                    if (!didError) {
+                        didError = true;
+                        firstError = err;
+                    } // Keep trying other roots.
+                }
+            });
+            mountedRootsSnapshot.forEach(function(root) {
+                var helpers = helpersByRootSnapshot.get(root);
+                if (helpers === undefined) throw new Error("Could not find helpers for a root. This is a bug in React Refresh.");
+                mountedRoots.has(root);
+                try {
+                    helpers.scheduleRefresh(root, update);
+                } catch (err) {
+                    if (!didError) {
+                        didError = true;
+                        firstError = err;
+                    } // Keep trying other roots.
+                }
+            });
+            if (didError) throw firstError;
+            return update;
+        } finally{
+            isPerformingRefresh = false;
+        }
+    }
+    function register(type, id) {
+        if (type === null) return;
+        if (typeof type !== "function" && typeof type !== "object") return;
+         // This can happen in an edge case, e.g. if we register
+        // return value of a HOC but it returns a cached component.
+        // Ignore anything but the first registration for each type.
+        if (allFamiliesByType.has(type)) return;
+         // Create family or remember to update it.
+        // None of this bookkeeping affects reconciliation
+        // until the first performReactRefresh() call above.
+        var family = allFamiliesByID.get(id);
+        if (family === undefined) {
+            family = {
+                current: type
+            };
+            allFamiliesByID.set(id, family);
+        } else pendingUpdates.push([
+            family,
+            type
+        ]);
+        allFamiliesByType.set(type, family); // Visit inner types because we might not have registered them.
+        if (typeof type === "object" && type !== null) switch(type.$$typeof){
+            case REACT_FORWARD_REF_TYPE:
+                register(type.render, id + "$render");
+                break;
+            case REACT_MEMO_TYPE:
+                register(type.type, id + "$type");
+                break;
+        }
+    }
+    function setSignature(type, key) {
+        var forceReset = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+        var getCustomHooks = arguments.length > 3 ? arguments[3] : undefined;
+        allSignaturesByType.set(type, {
+            forceReset: forceReset,
+            ownKey: key,
+            fullKey: null,
+            getCustomHooks: getCustomHooks || function() {
+                return [];
+            }
+        });
+    } // This is lazily called during first render for a type.
+    // It captures Hook list at that time so inline requires don't break comparisons.
+    function collectCustomHooksForSignature(type) {
+        var signature = allSignaturesByType.get(type);
+        if (signature !== undefined) computeFullKey(signature);
+    }
+    function getFamilyByID(id) {
+        return allFamiliesByID.get(id);
+    }
+    function getFamilyByType(type) {
+        return allFamiliesByType.get(type);
+    }
+    function findAffectedHostInstances(families) {
+        var affectedInstances = new Set();
+        mountedRoots.forEach(function(root) {
+            var helpers = helpersByRoot.get(root);
+            if (helpers === undefined) throw new Error("Could not find helpers for a root. This is a bug in React Refresh.");
+            var instancesForRoot = helpers.findHostInstancesForRefresh(root, families);
+            instancesForRoot.forEach(function(inst) {
+                affectedInstances.add(inst);
+            });
+        });
+        return affectedInstances;
+    }
+    function injectIntoGlobalHook(globalObject) {
+        // For React Native, the global hook will be set up by require('react-devtools-core').
+        // That code will run before us. So we need to monkeypatch functions on existing hook.
+        // For React Web, the global hook will be set up by the extension.
+        // This will also run before us.
+        var hook = globalObject.__REACT_DEVTOOLS_GLOBAL_HOOK__;
+        if (hook === undefined) {
+            // However, if there is no DevTools extension, we'll need to set up the global hook ourselves.
+            // Note that in this case it's important that renderer code runs *after* this method call.
+            // Otherwise, the renderer will think that there is no global hook, and won't do the injection.
+            var nextID = 0;
+            globalObject.__REACT_DEVTOOLS_GLOBAL_HOOK__ = hook = {
+                renderers: new Map(),
+                supportsFiber: true,
+                inject: function(injected) {
+                    return nextID++;
+                },
+                onScheduleFiberRoot: function(id, root, children) {},
+                onCommitFiberRoot: function(id, root, maybePriorityLevel, didError) {},
+                onCommitFiberUnmount: function() {}
+            };
+        } // Here, we just want to get a reference to scheduleRefresh.
+        var oldInject = hook.inject;
+        hook.inject = function(injected) {
+            var id = oldInject.apply(this, arguments);
+            if (typeof injected.scheduleRefresh === "function" && typeof injected.setRefreshHandler === "function") // This version supports React Refresh.
+            helpersByRendererID.set(id, injected);
+            return id;
+        }; // Do the same for any already injected roots.
+        // This is useful if ReactDOM has already been initialized.
+        // https://github.com/facebook/react/issues/17626
+        hook.renderers.forEach(function(injected, id) {
+            if (typeof injected.scheduleRefresh === "function" && typeof injected.setRefreshHandler === "function") // This version supports React Refresh.
+            helpersByRendererID.set(id, injected);
+        }); // We also want to track currently mounted roots.
+        var oldOnCommitFiberRoot = hook.onCommitFiberRoot;
+        var oldOnScheduleFiberRoot = hook.onScheduleFiberRoot || function() {};
+        hook.onScheduleFiberRoot = function(id, root, children) {
+            if (!isPerformingRefresh) {
+                // If it was intentionally scheduled, don't attempt to restore.
+                // This includes intentionally scheduled unmounts.
+                failedRoots.delete(root);
+                if (rootElements !== null) rootElements.set(root, children);
+            }
+            return oldOnScheduleFiberRoot.apply(this, arguments);
+        };
+        hook.onCommitFiberRoot = function(id, root, maybePriorityLevel, didError) {
+            var helpers = helpersByRendererID.get(id);
+            if (helpers === undefined) return;
+            helpersByRoot.set(root, helpers);
+            var current = root.current;
+            var alternate = current.alternate; // We need to determine whether this root has just (un)mounted.
+            // This logic is copy-pasted from similar logic in the DevTools backend.
+            // If this breaks with some refactoring, you'll want to update DevTools too.
+            if (alternate !== null) {
+                var wasMounted = alternate.memoizedState != null && alternate.memoizedState.element != null;
+                var isMounted = current.memoizedState != null && current.memoizedState.element != null;
+                if (!wasMounted && isMounted) {
+                    // Mount a new root.
+                    mountedRoots.add(root);
+                    failedRoots.delete(root);
+                } else if (wasMounted && isMounted) ;
+                else if (wasMounted && !isMounted) {
+                    // Unmount an existing root.
+                    mountedRoots.delete(root);
+                    if (didError) // We'll remount it on future edits.
+                    failedRoots.add(root);
+                    else helpersByRoot.delete(root);
+                } else if (!wasMounted && !isMounted) {
+                    if (didError) // We'll remount it on future edits.
+                    failedRoots.add(root);
+                }
+            } else // Mount a new root.
+            mountedRoots.add(root);
+            return oldOnCommitFiberRoot.apply(this, arguments);
+        };
+    }
+    function hasUnrecoverableErrors() {
+        // TODO: delete this after removing dependency in RN.
+        return false;
+    } // Exposed for testing.
+    function _getMountedRootCount() {
+        return mountedRoots.size;
+    } // This is a wrapper over more primitive functions for setting signature.
+    // Signatures let us decide whether the Hook order has changed on refresh.
+    //
+    // This function is intended to be used as a transform target, e.g.:
+    // var _s = createSignatureFunctionForTransform()
+    //
+    // function Hello() {
+    //   const [foo, setFoo] = useState(0);
+    //   const value = useCustomHook();
+    //   _s(); /* Second call triggers collecting the custom Hook list.
+    //          * This doesn't happen during the module evaluation because we
+    //          * don't want to change the module order with inline requires.
+    //          * Next calls are noops. */
+    //   return <h1>Hi</h1>;
+    // }
+    //
+    // /* First call specifies the signature: */
+    // _s(
+    //   Hello,
+    //   'useState{[foo, setFoo]}(0)',
+    //   () => [useCustomHook], /* Lazy to avoid triggering inline requires */
+    // );
+    function createSignatureFunctionForTransform() {
+        // We'll fill in the signature in two steps.
+        // First, we'll know the signature itself. This happens outside the component.
+        // Then, we'll know the references to custom Hooks. This happens inside the component.
+        // After that, the returned function will be a fast path no-op.
+        var status = "needsSignature";
+        var savedType;
+        var hasCustomHooks;
+        return function(type, key, forceReset, getCustomHooks) {
+            switch(status){
+                case "needsSignature":
+                    if (type !== undefined) {
+                        // If we received an argument, this is the initial registration call.
+                        savedType = type;
+                        hasCustomHooks = typeof getCustomHooks === "function";
+                        setSignature(type, key, forceReset, getCustomHooks); // The next call we expect is from inside a function, to fill in the custom Hooks.
+                        status = "needsCustomHooks";
+                    }
+                    break;
+                case "needsCustomHooks":
+                    if (hasCustomHooks) collectCustomHooksForSignature(savedType);
+                    status = "resolved";
+                    break;
+            }
+            return type;
+        };
+    }
+    function isLikelyComponentType(type) {
+        switch(typeof type){
+            case "function":
+                // First, deal with classes.
+                if (type.prototype != null) {
+                    if (type.prototype.isReactComponent) // React class.
+                    return true;
+                    var ownNames = Object.getOwnPropertyNames(type.prototype);
+                    if (ownNames.length > 1 || ownNames[0] !== "constructor") // This looks like a class.
+                    return false;
+                     // eslint-disable-next-line no-proto
+                    if (type.prototype.__proto__ !== Object.prototype) // It has a superclass.
+                    return false;
+                     // Pass through.
+                // This looks like a regular function with empty prototype.
+                } // For plain functions and arrows, use name as a heuristic.
+                var name = type.name || type.displayName;
+                return typeof name === "string" && /^[A-Z]/.test(name);
+            case "object":
+                if (type != null) switch(type.$$typeof){
+                    case REACT_FORWARD_REF_TYPE:
+                    case REACT_MEMO_TYPE:
+                        // Definitely React components.
+                        return true;
+                    default:
+                        return false;
+                }
+                return false;
+            default:
+                return false;
+        }
+    }
+    exports._getMountedRootCount = _getMountedRootCount;
+    exports.collectCustomHooksForSignature = collectCustomHooksForSignature;
+    exports.createSignatureFunctionForTransform = createSignatureFunctionForTransform;
+    exports.findAffectedHostInstances = findAffectedHostInstances;
+    exports.getFamilyByID = getFamilyByID;
+    exports.getFamilyByType = getFamilyByType;
+    exports.hasUnrecoverableErrors = hasUnrecoverableErrors;
+    exports.injectIntoGlobalHook = injectIntoGlobalHook;
+    exports.isLikelyComponentType = isLikelyComponentType;
+    exports.performReactRefresh = performReactRefresh;
+    exports.register = register;
+    exports.setSignature = setSignature;
+})();
+
+},{}],"1eLhD":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Home", ()=>(0, _indexDefault.default));
-parcelHelpers.export(exports, "Works", ()=>(0, _indexDefault1.default));
-parcelHelpers.export(exports, "PetProjects", ()=>(0, _indexDefault2.default));
 var _index = require("./home/index");
 var _indexDefault = parcelHelpers.interopDefault(_index);
-var _index1 = require("./works/index");
-var _indexDefault1 = parcelHelpers.interopDefault(_index1);
-var _index2 = require("./petProject/index");
-var _indexDefault2 = parcelHelpers.interopDefault(_index2);
 
-},{"./home/index":"lzefa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./works/index":"afggb","./petProject/index":"58uqm"}],"lzefa":[function(require,module,exports) {
+},{"./home/index":"lzefa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lzefa":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$747e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27873,8 +27885,8 @@ const Home = ()=>{
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Header), {}, void 0, false, {
                     fileName: "src/screens/home/index.tsx",
-                    lineNumber: 35,
-                    columnNumber: 17
+                    lineNumber: 42,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: (0, _stylesModuleCssDefault.default).contentContainer,
@@ -27892,16 +27904,16 @@ const Home = ()=>{
                                             children: "Vlad Khrushchev"
                                         }, void 0, false, {
                                             fileName: "src/screens/home/index.tsx",
-                                            lineNumber: 39,
-                                            columnNumber: 29
+                                            lineNumber: 46,
+                                            columnNumber: 15
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                             className: (0, _stylesModuleCssDefault.default).description,
                                             children: "Interactive Frontend-Developer"
                                         }, void 0, false, {
                                             fileName: "src/screens/home/index.tsx",
-                                            lineNumber: 40,
-                                            columnNumber: 29
+                                            lineNumber: 47,
+                                            columnNumber: 15
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                             className: (0, _stylesModuleCssDefault.default).buttonContainer,
@@ -27910,37 +27922,37 @@ const Home = ()=>{
                                                 onClick: ()=>setModalActive(true)
                                             }, void 0, false, {
                                                 fileName: "src/screens/home/index.tsx",
-                                                lineNumber: 44,
-                                                columnNumber: 33
+                                                lineNumber: 51,
+                                                columnNumber: 17
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/screens/home/index.tsx",
-                                            lineNumber: 43,
-                                            columnNumber: 29
+                                            lineNumber: 50,
+                                            columnNumber: 15
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/screens/home/index.tsx",
-                                    lineNumber: 38,
-                                    columnNumber: 25
+                                    lineNumber: 45,
+                                    columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                     className: (0, _stylesModuleCssDefault.default).logoContainer,
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.AnimatedLogo), {}, void 0, false, {
                                         fileName: "src/screens/home/index.tsx",
-                                        lineNumber: 51,
-                                        columnNumber: 29
+                                        lineNumber: 58,
+                                        columnNumber: 15
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/screens/home/index.tsx",
-                                    lineNumber: 50,
-                                    columnNumber: 25
+                                    lineNumber: 57,
+                                    columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/screens/home/index.tsx",
-                            lineNumber: 37,
-                            columnNumber: 21
+                            lineNumber: 44,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             className: (0, _stylesModuleCssDefault.default).iconContainer,
@@ -27949,93 +27961,79 @@ const Home = ()=>{
                                     className: (0, _stylesModuleCssDefault.default).icon
                                 }, void 0, false, {
                                     fileName: "src/screens/home/index.tsx",
-                                    lineNumber: 55,
-                                    columnNumber: 25
+                                    lineNumber: 62,
+                                    columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.GitHub), {
                                     className: (0, _stylesModuleCssDefault.default).icon
                                 }, void 0, false, {
                                     fileName: "src/screens/home/index.tsx",
-                                    lineNumber: 56,
-                                    columnNumber: 25
+                                    lineNumber: 63,
+                                    columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.GitLab), {
                                     className: (0, _stylesModuleCssDefault.default).icon
                                 }, void 0, false, {
                                     fileName: "src/screens/home/index.tsx",
-                                    lineNumber: 57,
-                                    columnNumber: 25
+                                    lineNumber: 64,
+                                    columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Telegram), {
                                     className: (0, _stylesModuleCssDefault.default).icon
                                 }, void 0, false, {
                                     fileName: "src/screens/home/index.tsx",
-                                    lineNumber: 58,
-                                    columnNumber: 25
+                                    lineNumber: 65,
+                                    columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Gmail), {
                                     className: (0, _stylesModuleCssDefault.default).icon
                                 }, void 0, false, {
                                     fileName: "src/screens/home/index.tsx",
-                                    lineNumber: 59,
-                                    columnNumber: 25
+                                    lineNumber: 66,
+                                    columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/screens/home/index.tsx",
-                            lineNumber: 54,
-                            columnNumber: 21
+                            lineNumber: 61,
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/screens/home/index.tsx",
-                    lineNumber: 36,
-                    columnNumber: 17
+                    lineNumber: 43,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.AnimatedIcons), {
                         cursorPosition: cursorPosition
                     }, void 0, false, {
                         fileName: "src/screens/home/index.tsx",
-                        lineNumber: 63,
-                        columnNumber: 21
+                        lineNumber: 70,
+                        columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/screens/home/index.tsx",
-                    lineNumber: 62,
-                    columnNumber: 17
+                    lineNumber: 69,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Modal), {
                     active: modalActive,
                     setActive: setModalActive
                 }, void 0, false, {
                     fileName: "src/screens/home/index.tsx",
-                    lineNumber: 65,
-                    columnNumber: 17
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: (0, _stylesModuleCssDefault.default).worksContainer,
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        children: "Works"
-                    }, void 0, false, {
-                        fileName: "src/screens/home/index.tsx",
-                        lineNumber: 67,
-                        columnNumber: 21
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/screens/home/index.tsx",
-                    lineNumber: 66,
-                    columnNumber: 17
+                    lineNumber: 72,
+                    columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/screens/home/index.tsx",
-            lineNumber: 34,
-            columnNumber: 13
+            lineNumber: 41,
+            columnNumber: 7
         }, undefined)
     }, void 0, false);
 };
-_s(Home, "IZ2bNKeZJCpMkJ1rvAlWjYCd+G4=");
+_s(Home, "RWLC+fzBuGptTjs8BHD2rXVTkCM=");
 _c = Home;
 exports.default = Home;
 var _c;
@@ -28046,7 +28044,7 @@ $RefreshReg$(_c, "Home");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./styles.module.css":"BRJ4G","../../components":"dHnah","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../assets":"lDowU"}],"BRJ4G":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./styles.module.css":"BRJ4G","../../components":"dHnah","../../assets":"lDowU"}],"BRJ4G":[function(require,module,exports) {
 module.exports["buttonContainer"] = `P30aKa_buttonContainer`;
 module.exports["container"] = `P30aKa_container`;
 module.exports["contentContainer"] = `P30aKa_contentContainer`;
@@ -28056,7 +28054,6 @@ module.exports["iconContainer"] = `P30aKa_iconContainer`;
 module.exports["logoContainer"] = `P30aKa_logoContainer`;
 module.exports["name"] = `P30aKa_name`;
 module.exports["nameContainer"] = `P30aKa_nameContainer`;
-module.exports["worksContainer"] = `P30aKa_worksContainer`;
 
 },{}],"dHnah":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -28065,7 +28062,6 @@ parcelHelpers.export(exports, "Header", ()=>(0, _indexDefault.default));
 parcelHelpers.export(exports, "Button", ()=>(0, _indexDefault1.default));
 parcelHelpers.export(exports, "AnimatedIcons", ()=>(0, _indexDefault2.default));
 parcelHelpers.export(exports, "Modal", ()=>(0, _indexDefault3.default));
-parcelHelpers.export(exports, "WorkCards", ()=>(0, _indexDefault4.default));
 var _index = require("./header/index");
 var _indexDefault = parcelHelpers.interopDefault(_index);
 var _index1 = require("./button/index");
@@ -28074,10 +28070,8 @@ var _index2 = require("./animatedIcons/index");
 var _indexDefault2 = parcelHelpers.interopDefault(_index2);
 var _index3 = require("./modal/index");
 var _indexDefault3 = parcelHelpers.interopDefault(_index3);
-var _index4 = require("./workCards/index");
-var _indexDefault4 = parcelHelpers.interopDefault(_index4);
 
-},{"./header/index":"kCs45","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./button/index":"2DdQn","./animatedIcons/index":"kxTfh","./modal/index":"lHFhD","./workCards/index":"6LS3K"}],"kCs45":[function(require,module,exports) {
+},{"./header/index":"kCs45","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./button/index":"2DdQn","./animatedIcons/index":"kxTfh","./modal/index":"lHFhD"}],"kCs45":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0e26 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -28094,7 +28088,7 @@ var _reactScroll = require("react-scroll");
 // assets
 var _assets = require("../../assets");
 // constants
-var _headerLinks = require("../../constants/headerLink/headerLinks");
+var _headerLinks = require("../../constants/headerLinks");
 // styles
 var _stylesModuleCss = require("./styles.module.css");
 var _stylesModuleCssDefault = parcelHelpers.interopDefault(_stylesModuleCss);
@@ -28152,7 +28146,7 @@ $RefreshReg$(_c, "Header");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-scroll":"2D4g1","../../assets":"lDowU","./styles.module.css":"fXavQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../constants/headerLink/headerLinks":"chhsn"}],"2D4g1":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-scroll":"2D4g1","../../assets":"lDowU","../../constants/headerLinks":"f9cl0","./styles.module.css":"fXavQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2D4g1":[function(require,module,exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -30900,12 +30894,12 @@ const LinkedIn = (props)=>{
         }, void 0, false, {
             fileName: "src/assets/linkedIn/index.tsx",
             lineNumber: 18,
-            columnNumber: 7
+            columnNumber: 13
         }, undefined)
     }, void 0, false, {
         fileName: "src/assets/linkedIn/index.tsx",
         lineNumber: 9,
-        columnNumber: 5
+        columnNumber: 9
     }, undefined);
 };
 _c = LinkedIn;
@@ -30923,37 +30917,7 @@ $RefreshReg$(_c, "LinkedIn");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || Object.prototype.hasOwnProperty.call(dest, key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"72ohi":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"72ohi":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$70f3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -31061,12 +31025,12 @@ const GitLab = (props)=>{
         }, void 0, false, {
             fileName: "src/assets/gitLab/index.tsx",
             lineNumber: 16,
-            columnNumber: 7
+            columnNumber: 13
         }, undefined)
     }, void 0, false, {
         fileName: "src/assets/gitLab/index.tsx",
         lineNumber: 9,
-        columnNumber: 5
+        columnNumber: 9
     }, undefined);
 };
 _c = GitLab;
@@ -31114,12 +31078,12 @@ const Telegram = (props)=>{
         }, void 0, false, {
             fileName: "src/assets/telegram/index.tsx",
             lineNumber: 19,
-            columnNumber: 7
+            columnNumber: 13
         }, undefined)
     }, void 0, false, {
         fileName: "src/assets/telegram/index.tsx",
         lineNumber: 9,
-        columnNumber: 5
+        columnNumber: 9
     }, undefined);
 };
 _c = Telegram;
@@ -31167,12 +31131,12 @@ const Gmail = (props)=>{
         }, void 0, false, {
             fileName: "src/assets/gmail/index.tsx",
             lineNumber: 19,
-            columnNumber: 7
+            columnNumber: 13
         }, undefined)
     }, void 0, false, {
         fileName: "src/assets/gmail/index.tsx",
         lineNumber: 9,
-        columnNumber: 5
+        columnNumber: 9
     }, undefined);
 };
 _c = Gmail;
@@ -31218,7 +31182,7 @@ const JsIcon = (props)=>{
             }, void 0, false, {
                 fileName: "src/assets/jsIcon/index.tsx",
                 lineNumber: 16,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
                 fill: "white",
@@ -31226,13 +31190,13 @@ const JsIcon = (props)=>{
             }, void 0, false, {
                 fileName: "src/assets/jsIcon/index.tsx",
                 lineNumber: 17,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/assets/jsIcon/index.tsx",
         lineNumber: 9,
-        columnNumber: 5
+        columnNumber: 9
     }, undefined);
 };
 _c = JsIcon;
@@ -31278,7 +31242,7 @@ const TsIcon = (props)=>{
             }, void 0, false, {
                 fileName: "src/assets/tsIcon/index.tsx",
                 lineNumber: 16,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
                 fill: "#fff",
@@ -31286,7 +31250,7 @@ const TsIcon = (props)=>{
             }, void 0, false, {
                 fileName: "src/assets/tsIcon/index.tsx",
                 lineNumber: 17,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
                 fill: "#fff",
@@ -31294,13 +31258,13 @@ const TsIcon = (props)=>{
             }, void 0, false, {
                 fileName: "src/assets/tsIcon/index.tsx",
                 lineNumber: 21,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/assets/tsIcon/index.tsx",
         lineNumber: 9,
-        columnNumber: 5
+        columnNumber: 9
     }, undefined);
 };
 _c = TsIcon;
@@ -31346,7 +31310,7 @@ const ReactIcon = (props)=>{
             }, void 0, false, {
                 fileName: "src/assets/reactIcon/index.tsx",
                 lineNumber: 17,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
                 fill: color,
@@ -31354,7 +31318,7 @@ const ReactIcon = (props)=>{
             }, void 0, false, {
                 fileName: "src/assets/reactIcon/index.tsx",
                 lineNumber: 21,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
                 fill: color,
@@ -31362,7 +31326,7 @@ const ReactIcon = (props)=>{
             }, void 0, false, {
                 fileName: "src/assets/reactIcon/index.tsx",
                 lineNumber: 25,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
                 fill: color,
@@ -31370,13 +31334,13 @@ const ReactIcon = (props)=>{
             }, void 0, false, {
                 fileName: "src/assets/reactIcon/index.tsx",
                 lineNumber: 29,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/assets/reactIcon/index.tsx",
         lineNumber: 10,
-        columnNumber: 5
+        columnNumber: 9
     }, undefined);
 };
 _c = ReactIcon;
@@ -31421,12 +31385,12 @@ const CssIcon = (props)=>{
         }, void 0, false, {
             fileName: "src/assets/cssIcon/index.tsx",
             lineNumber: 17,
-            columnNumber: 7
+            columnNumber: 13
         }, undefined)
     }, void 0, false, {
         fileName: "src/assets/cssIcon/index.tsx",
         lineNumber: 10,
-        columnNumber: 5
+        columnNumber: 9
     }, undefined);
 };
 _c = CssIcon;
@@ -31479,17 +31443,17 @@ const DoubleWave = (props)=>{
                     }, void 0, false, {
                         fileName: "src/assets/animationIcons/doubleWave.tsx",
                         lineNumber: 19,
-                        columnNumber: 11
+                        columnNumber: 21
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/assets/animationIcons/doubleWave.tsx",
                     lineNumber: 18,
-                    columnNumber: 9
+                    columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/assets/animationIcons/doubleWave.tsx",
                 lineNumber: 17,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("defs", {
                 children: [
@@ -31502,12 +31466,12 @@ const DoubleWave = (props)=>{
                         }, void 0, false, {
                             fileName: "src/assets/animationIcons/doubleWave.tsx",
                             lineNumber: 29,
-                            columnNumber: 11
+                            columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/assets/animationIcons/doubleWave.tsx",
                         lineNumber: 28,
-                        columnNumber: 9
+                        columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("clipPath", {
                         id: "clip1_8_30",
@@ -31518,24 +31482,24 @@ const DoubleWave = (props)=>{
                         }, void 0, false, {
                             fileName: "src/assets/animationIcons/doubleWave.tsx",
                             lineNumber: 36,
-                            columnNumber: 11
+                            columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/assets/animationIcons/doubleWave.tsx",
                         lineNumber: 35,
-                        columnNumber: 9
+                        columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/assets/animationIcons/doubleWave.tsx",
                 lineNumber: 27,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/assets/animationIcons/doubleWave.tsx",
         lineNumber: 9,
-        columnNumber: 5
+        columnNumber: 9
     }, undefined);
 };
 _c = DoubleWave;
@@ -31586,17 +31550,17 @@ const Wave = (props)=>{
                     }, void 0, false, {
                         fileName: "src/assets/animationIcons/wave.tsx",
                         lineNumber: 19,
-                        columnNumber: 11
+                        columnNumber: 21
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/assets/animationIcons/wave.tsx",
                     lineNumber: 18,
-                    columnNumber: 9
+                    columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/assets/animationIcons/wave.tsx",
                 lineNumber: 17,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("defs", {
                 children: [
@@ -31609,12 +31573,12 @@ const Wave = (props)=>{
                         }, void 0, false, {
                             fileName: "src/assets/animationIcons/wave.tsx",
                             lineNumber: 29,
-                            columnNumber: 11
+                            columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/assets/animationIcons/wave.tsx",
                         lineNumber: 28,
-                        columnNumber: 9
+                        columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("clipPath", {
                         id: "clip1_8_42",
@@ -31625,24 +31589,24 @@ const Wave = (props)=>{
                         }, void 0, false, {
                             fileName: "src/assets/animationIcons/wave.tsx",
                             lineNumber: 36,
-                            columnNumber: 11
+                            columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/assets/animationIcons/wave.tsx",
                         lineNumber: 35,
-                        columnNumber: 9
+                        columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/assets/animationIcons/wave.tsx",
                 lineNumber: 27,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/assets/animationIcons/wave.tsx",
         lineNumber: 9,
-        columnNumber: 5
+        columnNumber: 9
     }, undefined);
 };
 _c = Wave;
@@ -31695,22 +31659,22 @@ const Triangle = (props)=>{
                         }, void 0, false, {
                             fileName: "src/assets/animationIcons/tringle.tsx",
                             lineNumber: 20,
-                            columnNumber: 13
+                            columnNumber: 25
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/assets/animationIcons/tringle.tsx",
                         lineNumber: 19,
-                        columnNumber: 11
+                        columnNumber: 21
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/assets/animationIcons/tringle.tsx",
                     lineNumber: 18,
-                    columnNumber: 9
+                    columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/assets/animationIcons/tringle.tsx",
                 lineNumber: 17,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("defs", {
                 children: [
@@ -31723,12 +31687,12 @@ const Triangle = (props)=>{
                         }, void 0, false, {
                             fileName: "src/assets/animationIcons/tringle.tsx",
                             lineNumber: 31,
-                            columnNumber: 11
+                            columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/assets/animationIcons/tringle.tsx",
                         lineNumber: 30,
-                        columnNumber: 9
+                        columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("clipPath", {
                         id: "clip1_8_9",
@@ -31739,12 +31703,12 @@ const Triangle = (props)=>{
                         }, void 0, false, {
                             fileName: "src/assets/animationIcons/tringle.tsx",
                             lineNumber: 38,
-                            columnNumber: 11
+                            columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/assets/animationIcons/tringle.tsx",
                         lineNumber: 37,
-                        columnNumber: 9
+                        columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("clipPath", {
                         id: "clip2_8_9",
@@ -31755,24 +31719,24 @@ const Triangle = (props)=>{
                         }, void 0, false, {
                             fileName: "src/assets/animationIcons/tringle.tsx",
                             lineNumber: 45,
-                            columnNumber: 11
+                            columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/assets/animationIcons/tringle.tsx",
                         lineNumber: 44,
-                        columnNumber: 9
+                        columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/assets/animationIcons/tringle.tsx",
                 lineNumber: 29,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/assets/animationIcons/tringle.tsx",
         lineNumber: 9,
-        columnNumber: 5
+        columnNumber: 9
     }, undefined);
 };
 _c = Triangle;
@@ -31823,17 +31787,17 @@ const Line = (props)=>{
                     }, void 0, false, {
                         fileName: "src/assets/animationIcons/line.tsx",
                         lineNumber: 19,
-                        columnNumber: 11
+                        columnNumber: 21
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/assets/animationIcons/line.tsx",
                     lineNumber: 18,
-                    columnNumber: 9
+                    columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/assets/animationIcons/line.tsx",
                 lineNumber: 17,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("defs", {
                 children: [
@@ -31846,12 +31810,12 @@ const Line = (props)=>{
                         }, void 0, false, {
                             fileName: "src/assets/animationIcons/line.tsx",
                             lineNumber: 29,
-                            columnNumber: 11
+                            columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/assets/animationIcons/line.tsx",
                         lineNumber: 28,
-                        columnNumber: 9
+                        columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("clipPath", {
                         id: "clip1_8_39",
@@ -31862,24 +31826,24 @@ const Line = (props)=>{
                         }, void 0, false, {
                             fileName: "src/assets/animationIcons/line.tsx",
                             lineNumber: 36,
-                            columnNumber: 11
+                            columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/assets/animationIcons/line.tsx",
                         lineNumber: 35,
-                        columnNumber: 9
+                        columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/assets/animationIcons/line.tsx",
                 lineNumber: 27,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/assets/animationIcons/line.tsx",
         lineNumber: 9,
-        columnNumber: 5
+        columnNumber: 9
     }, undefined);
 };
 _c = Line;
@@ -31928,12 +31892,12 @@ const SemiCircle = (props)=>{
                 }, void 0, false, {
                     fileName: "src/assets/animationIcons/semiCircle.tsx",
                     lineNumber: 18,
-                    columnNumber: 9
+                    columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/assets/animationIcons/semiCircle.tsx",
                 lineNumber: 17,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("defs", {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("clipPath", {
@@ -31945,23 +31909,23 @@ const SemiCircle = (props)=>{
                     }, void 0, false, {
                         fileName: "src/assets/animationIcons/semiCircle.tsx",
                         lineNumber: 27,
-                        columnNumber: 11
+                        columnNumber: 21
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/assets/animationIcons/semiCircle.tsx",
                     lineNumber: 26,
-                    columnNumber: 9
+                    columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/assets/animationIcons/semiCircle.tsx",
                 lineNumber: 25,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/assets/animationIcons/semiCircle.tsx",
         lineNumber: 9,
-        columnNumber: 5
+        columnNumber: 9
     }, undefined);
 };
 _c = SemiCircle;
@@ -32007,7 +31971,7 @@ const Logo = (props)=>{
             }, void 0, false, {
                 fileName: "src/assets/logo/index.tsx",
                 lineNumber: 17,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
                 fill: color,
@@ -32016,13 +31980,13 @@ const Logo = (props)=>{
             }, void 0, false, {
                 fileName: "src/assets/logo/index.tsx",
                 lineNumber: 22,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/assets/logo/index.tsx",
         lineNumber: 9,
-        columnNumber: 5
+        columnNumber: 9
     }, undefined);
 };
 _c = Logo;
@@ -32099,7 +32063,7 @@ const AnimatedLogo = ()=>{
             }, void 0, false, {
                 fileName: "src/assets/animatedLogo/index.tsx",
                 lineNumber: 36,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _framerMotion.motion).path, {
                 fill: fill,
@@ -32111,13 +32075,13 @@ const AnimatedLogo = ()=>{
             }, void 0, false, {
                 fileName: "src/assets/animatedLogo/index.tsx",
                 lineNumber: 45,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/assets/animatedLogo/index.tsx",
         lineNumber: 27,
-        columnNumber: 5
+        columnNumber: 9
     }, undefined);
 };
 _s(AnimatedLogo, "i2ZZuVqTbTWMfoJ4cnaA3DEe54g=");
@@ -41512,12 +41476,12 @@ const ArrowIcon = (props)=>{
                 }, void 0, false, {
                     fileName: "src/assets/arrowIcon/index.tsx",
                     lineNumber: 18,
-                    columnNumber: 9
+                    columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/assets/arrowIcon/index.tsx",
                 lineNumber: 17,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("defs", {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("clipPath", {
@@ -41529,23 +41493,23 @@ const ArrowIcon = (props)=>{
                     }, void 0, false, {
                         fileName: "src/assets/arrowIcon/index.tsx",
                         lineNumber: 25,
-                        columnNumber: 11
+                        columnNumber: 21
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/assets/arrowIcon/index.tsx",
                     lineNumber: 24,
-                    columnNumber: 9
+                    columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/assets/arrowIcon/index.tsx",
                 lineNumber: 23,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/assets/arrowIcon/index.tsx",
         lineNumber: 9,
-        columnNumber: 5
+        columnNumber: 9
     }, undefined);
 };
 _c = ArrowIcon;
@@ -41620,7 +41584,7 @@ const Okay = (props)=>{
             }, void 0, false, {
                 fileName: "src/assets/okay/index.tsx",
                 lineNumber: 34,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _framerMotion.motion).path, {
                 initial: {
@@ -41643,13 +41607,13 @@ const Okay = (props)=>{
             }, void 0, false, {
                 fileName: "src/assets/okay/index.tsx",
                 lineNumber: 46,
-                columnNumber: 7
+                columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/assets/okay/index.tsx",
         lineNumber: 26,
-        columnNumber: 5
+        columnNumber: 9
     }, undefined);
 };
 _c = Okay;
@@ -41689,12 +41653,12 @@ const Download = (props)=>{
         }, void 0, false, {
             fileName: "src/assets/download/index.tsx",
             lineNumber: 16,
-            columnNumber: 7
+            columnNumber: 13
         }, undefined)
     }, void 0, false, {
         fileName: "src/assets/download/index.tsx",
         lineNumber: 9,
-        columnNumber: 5
+        columnNumber: 9
     }, undefined);
 };
 _c = Download;
@@ -41712,16 +41676,7 @@ $RefreshReg$(_c, "Download");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fXavQ":[function(require,module,exports) {
-module.exports["container"] = `Qh3Vja_container`;
-module.exports["headerBtn"] = `Qh3Vja_headerBtn`;
-module.exports["linkContainer"] = `Qh3Vja_linkContainer`;
-module.exports["slideRight"] = `Qh3Vja_slideRight`;
-module.exports["slideRight"];
-module.exports["slideRightReverse"] = `Qh3Vja_slideRightReverse`;
-module.exports["slideRightReverse"];
-
-},{}],"chhsn":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"f9cl0":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "headerLinks", ()=>headerLinks);
@@ -41743,7 +41698,16 @@ const headerLinks = [
     }
 ];
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2DdQn":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fXavQ":[function(require,module,exports) {
+module.exports["container"] = `Qh3Vja_container`;
+module.exports["headerBtn"] = `Qh3Vja_headerBtn`;
+module.exports["linkContainer"] = `Qh3Vja_linkContainer`;
+module.exports["slideRight"] = `Qh3Vja_slideRight`;
+module.exports["slideRight"];
+module.exports["slideRightReverse"] = `Qh3Vja_slideRightReverse`;
+module.exports["slideRightReverse"];
+
+},{}],"2DdQn":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$091b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41816,7 +41780,7 @@ $RefreshReg$(_c, "Button");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./styles.module.css":"82Fdv","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../assets":"lDowU"}],"82Fdv":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./styles.module.css":"82Fdv","../../assets":"lDowU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"82Fdv":[function(require,module,exports) {
 module.exports["btnText"] = `Pyg6BW_btnText`;
 module.exports["button"] = `Pyg6BW_button`;
 module.exports["buttonArrow"] = `Pyg6BW_buttonArrow`;
@@ -41840,155 +41804,167 @@ var _stylesModuleCss = require("./styles.module.css");
 var _stylesModuleCssDefault = parcelHelpers.interopDefault(_stylesModuleCss);
 // assets
 var _assets = require("../../assets");
+// utils
+var _iconPosition = require("../../utils/iconPosition");
+var _s = $RefreshSig$();
+const arrayIcons = [
+    {
+        id: 1,
+        icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Wave), {
+            color: "#CF4981"
+        }, void 0, false, {
+            fileName: "src/components/animatedIcons/index.tsx",
+            lineNumber: 15,
+            columnNumber: 11
+        }, undefined),
+        style: (0, _iconPosition.iconPosition)("25%", "90%", "50%"),
+        invertedMove: false
+    },
+    {
+        id: 2,
+        icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.DoubleWave), {
+            color: "#CF4981"
+        }, void 0, false, {
+            fileName: "src/components/animatedIcons/index.tsx",
+            lineNumber: 21,
+            columnNumber: 11
+        }, undefined),
+        style: (0, _iconPosition.iconPosition)("50%", "70%", "50%"),
+        invertedMove: true
+    },
+    {
+        id: 3,
+        icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Line), {
+            color: "#CF4981"
+        }, void 0, false, {
+            fileName: "src/components/animatedIcons/index.tsx",
+            lineNumber: 27,
+            columnNumber: 11
+        }, undefined),
+        style: (0, _iconPosition.iconPosition)("12%", "50%", "50%"),
+        invertedMove: false
+    },
+    {
+        id: 4,
+        icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Triangle), {
+            color: "#0f6898"
+        }, void 0, false, {
+            fileName: "src/components/animatedIcons/index.tsx",
+            lineNumber: 33,
+            columnNumber: 11
+        }, undefined),
+        style: (0, _iconPosition.iconPosition)("80%", "10%", "10%"),
+        invertedMove: true
+    },
+    {
+        id: 5,
+        icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Wave), {
+            color: "yellow"
+        }, void 0, false, {
+            fileName: "src/components/animatedIcons/index.tsx",
+            lineNumber: 39,
+            columnNumber: 11
+        }, undefined),
+        color: "#CF4981",
+        invertedMove: false
+    },
+    {
+        id: 6,
+        icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Triangle), {
+            color: "#3a9a5c"
+        }, void 0, false, {
+            fileName: "src/components/animatedIcons/index.tsx",
+            lineNumber: 46,
+            columnNumber: 11
+        }, undefined),
+        style: (0, _iconPosition.iconPosition)("10%", "10%", "10%"),
+        invertedMove: false
+    },
+    {
+        id: 7,
+        icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Triangle), {
+            color: "#49cfb0"
+        }, void 0, false, {
+            fileName: "src/components/animatedIcons/index.tsx",
+            lineNumber: 52,
+            columnNumber: 11
+        }, undefined),
+        style: (0, _iconPosition.iconPosition)("10%", "80%", "50%"),
+        invertedMove: true
+    },
+    {
+        id: 8,
+        icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.SemiCircle), {}, void 0, false, {
+            fileName: "src/components/animatedIcons/index.tsx",
+            lineNumber: 58,
+            columnNumber: 11
+        }, undefined),
+        style: (0, _iconPosition.iconPosition)("50%", "20%", "50%"),
+        invertedMove: false
+    },
+    {
+        id: 9,
+        icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Triangle), {
+            color: "#49cfb0"
+        }, void 0, false, {
+            fileName: "src/components/animatedIcons/index.tsx",
+            lineNumber: 64,
+            columnNumber: 11
+        }, undefined),
+        style: (0, _iconPosition.iconPosition)("70%", "90%", "50%"),
+        invertedMove: true
+    },
+    {
+        id: 121,
+        icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Line), {}, void 0, false, {
+            fileName: "src/components/animatedIcons/index.tsx",
+            lineNumber: 70,
+            columnNumber: 11
+        }, undefined),
+        style: (0, _iconPosition.iconPosition)("12%", "25%", "60%"),
+        invertedMove: false
+    }
+];
 const AnimatedIcons = (props)=>{
+    _s();
     const { cursorPosition } = props;
-    const iconPosition = (top, left, transX)=>{
-        return {
-            position: "absolute",
-            top,
-            left,
-            transform: `translateX(${transX})`
-        };
-    };
-    const arrayIcons = [
-        {
-            id: 1,
-            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Wave), {
-                color: "#CF4981"
-            }, void 0, false, {
-                fileName: "src/components/animatedIcons/index.tsx",
-                lineNumber: 25,
-                columnNumber: 19
-            }, undefined),
-            style: iconPosition("25%", "90%", "50%"),
-            invertedMove: false
-        },
-        {
-            id: 2,
-            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.DoubleWave), {
-                color: "#CF4981"
-            }, void 0, false, {
-                fileName: "src/components/animatedIcons/index.tsx",
-                lineNumber: 31,
-                columnNumber: 19
-            }, undefined),
-            style: iconPosition("50%", "70%", "50%"),
-            invertedMove: true
-        },
-        {
-            id: 3,
-            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Line), {
-                color: "#CF4981"
-            }, void 0, false, {
-                fileName: "src/components/animatedIcons/index.tsx",
-                lineNumber: 35,
-                columnNumber: 23
-            }, undefined),
-            style: iconPosition("12%", "50%", "50%"),
-            invertedMove: false
-        },
-        {
-            id: 4,
-            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Triangle), {
-                color: "#0f6898"
-            }, void 0, false, {
-                fileName: "src/components/animatedIcons/index.tsx",
-                lineNumber: 36,
-                columnNumber: 23
-            }, undefined),
-            style: iconPosition("80%", "10%", "10%"),
-            invertedMove: true
-        },
-        {
-            id: 5,
-            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Wave), {
-                color: "yellow"
-            }, void 0, false, {
-                fileName: "src/components/animatedIcons/index.tsx",
-                lineNumber: 39,
-                columnNumber: 19
-            }, undefined),
-            color: "#CF4981",
-            style: iconPosition("70%", "40%", "50%"),
-            invertedMove: false
-        },
-        {
-            id: 6,
-            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Triangle), {
-                color: "#3a9a5c"
-            }, void 0, false, {
-                fileName: "src/components/animatedIcons/index.tsx",
-                lineNumber: 44,
-                columnNumber: 23
-            }, undefined),
-            style: iconPosition("10%", "10%", "10%"),
-            invertedMove: false
-        },
-        {
-            id: 7,
-            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Triangle), {
-                color: "#49cfb0"
-            }, void 0, false, {
-                fileName: "src/components/animatedIcons/index.tsx",
-                lineNumber: 45,
-                columnNumber: 23
-            }, undefined),
-            style: iconPosition("10%", "80%", "50%"),
-            invertedMove: true
-        },
-        {
-            id: 8,
-            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.SemiCircle), {}, void 0, false, {
-                fileName: "src/components/animatedIcons/index.tsx",
-                lineNumber: 46,
-                columnNumber: 23
-            }, undefined),
-            style: iconPosition("50%", "20%", "50%"),
-            invertedMove: false
-        },
-        {
-            id: 9,
-            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Triangle), {
-                color: "#49cfb0"
-            }, void 0, false, {
-                fileName: "src/components/animatedIcons/index.tsx",
-                lineNumber: 47,
-                columnNumber: 23
-            }, undefined),
-            style: iconPosition("70%", "90%", "50%"),
-            invertedMove: true
-        },
-        {
-            id: 121,
-            icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Line), {}, void 0, false, {
-                fileName: "src/components/animatedIcons/index.tsx",
-                lineNumber: 48,
-                columnNumber: 25
-            }, undefined),
-            style: iconPosition("12%", "25%", "60%"),
-            invertedMove: false
-        }
-    ];
+    const iconRefs = (0, _react.useRef)([]);
+    (0, _react.useEffect)(()=>{
+        iconRefs.current = iconRefs.current.slice(0, arrayIcons.length);
+    }, []);
+    const updateIconsPosition = (0, _react.useCallback)(()=>{
+        iconRefs.current.forEach((iconRef, index)=>{
+            if (iconRef) {
+                const horizontalDuration = arrayIcons[index].invertedMove ? -cursorPosition.x : cursorPosition.x;
+                const verticalDuration = arrayIcons[index].invertedMove ? -cursorPosition.y : cursorPosition.y;
+                iconRef.style.transform = `translate(-50%, -50%) translate(${horizontalDuration * 0.08}px, ${verticalDuration * 0.08}px)`;
+            }
+        });
+        requestAnimationFrame(updateIconsPosition);
+    }, [
+        cursorPosition
+    ]);
+    (0, _react.useEffect)(()=>{
+        requestAnimationFrame(updateIconsPosition);
+    }, [
+        updateIconsPosition
+    ]);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: arrayIcons.map((item)=>{
-            const horizontalDuration = item.invertedMove ? -cursorPosition.x : cursorPosition.x;
-            const verticalDuration = item.invertedMove ? -cursorPosition.y : cursorPosition.y;
-            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: arrayIcons.map((item, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: (0, _stylesModuleCssDefault.default).iconAnimation,
-                // @ts-ignore
+                ref: (el)=>iconRefs.current[index] = el,
                 style: {
-                    ...item.style,
-                    transform: `translate(-50%, -50%) translate(${horizontalDuration * 0.08}px, ${verticalDuration * 0.08}px)`
+                    ...item.style
                 },
                 children: item.icon
             }, item.id, false, {
                 fileName: "src/components/animatedIcons/index.tsx",
-                lineNumber: 56,
-                columnNumber: 21
-            }, undefined);
-        })
+                lineNumber: 109,
+                columnNumber: 9
+            }, undefined))
     }, void 0, false);
 };
+_s(AnimatedIcons, "CkOJF6kweImBn5HpSNmGhJ3u128=");
 _c = AnimatedIcons;
 exports.default = AnimatedIcons;
 var _c;
@@ -41999,10 +41975,23 @@ $RefreshReg$(_c, "AnimatedIcons");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./styles.module.css":"kOgeR","../../assets":"lDowU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kOgeR":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./styles.module.css":"kOgeR","../../assets":"lDowU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../utils/iconPosition":"fNuAU"}],"kOgeR":[function(require,module,exports) {
 module.exports["iconAnimation"] = `dY6-Ra_iconAnimation`;
 
-},{}],"lHFhD":[function(require,module,exports) {
+},{}],"fNuAU":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "iconPosition", ()=>iconPosition);
+const iconPosition = (top, left, transX)=>{
+    return {
+        position: "absolute",
+        top,
+        left,
+        transform: `translateX(${transX})`
+    };
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lHFhD":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8b6e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42042,7 +42031,7 @@ const Modal = (props)=>{
                             }, void 0, false, {
                                 fileName: "src/components/modal/index.tsx",
                                 lineNumber: 28,
-                                columnNumber: 25
+                                columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                 className: "aboutDescription",
@@ -42050,7 +42039,7 @@ const Modal = (props)=>{
                             }, void 0, false, {
                                 fileName: "src/components/modal/index.tsx",
                                 lineNumber: 29,
-                                columnNumber: 25
+                                columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                 className: "mainAboutText",
@@ -42062,7 +42051,7 @@ const Modal = (props)=>{
                                     }, void 0, false, {
                                         fileName: "src/components/modal/index.tsx",
                                         lineNumber: 34,
-                                        columnNumber: 29
+                                        columnNumber: 15
                                     }, undefined),
                                     " I love coding and learning new technologies. I am also always open to",
                                     " ",
@@ -42071,13 +42060,13 @@ const Modal = (props)=>{
                                     }, void 0, false, {
                                         fileName: "src/components/modal/index.tsx",
                                         lineNumber: 36,
-                                        columnNumber: 29
+                                        columnNumber: 15
                                     }, undefined),
                                     ".",
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                         fileName: "src/components/modal/index.tsx",
                                         lineNumber: 37,
-                                        columnNumber: 29
+                                        columnNumber: 15
                                     }, undefined),
                                     "Since I have been developing applications in",
                                     " ",
@@ -42086,7 +42075,7 @@ const Modal = (props)=>{
                                     }, void 0, false, {
                                         fileName: "src/components/modal/index.tsx",
                                         lineNumber: 39,
-                                        columnNumber: 29
+                                        columnNumber: 15
                                     }, undefined),
                                     " for a long time, I give priority to the development of ",
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
@@ -42094,13 +42083,13 @@ const Modal = (props)=>{
                                     }, void 0, false, {
                                         fileName: "src/components/modal/index.tsx",
                                         lineNumber: 40,
-                                        columnNumber: 48
+                                        columnNumber: 34
                                     }, undefined),
                                     ", but if you have great suggestions for react, then why not :) ",
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                         fileName: "src/components/modal/index.tsx",
                                         lineNumber: 41,
-                                        columnNumber: 83
+                                        columnNumber: 69
                                     }, undefined),
                                     "In my free time from coding, I work out at the",
                                     " ",
@@ -42109,7 +42098,7 @@ const Modal = (props)=>{
                                     }, void 0, false, {
                                         fileName: "src/components/modal/index.tsx",
                                         lineNumber: 43,
-                                        columnNumber: 29
+                                        columnNumber: 15
                                     }, undefined),
                                     ", learn to play the ",
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
@@ -42117,7 +42106,7 @@ const Modal = (props)=>{
                                     }, void 0, false, {
                                         fileName: "src/components/modal/index.tsx",
                                         lineNumber: 43,
-                                        columnNumber: 69
+                                        columnNumber: 55
                                     }, undefined),
                                     " ",
                                     "and sometimes play ",
@@ -42126,13 +42115,13 @@ const Modal = (props)=>{
                                     }, void 0, false, {
                                         fileName: "src/components/modal/index.tsx",
                                         lineNumber: 44,
-                                        columnNumber: 48
+                                        columnNumber: 34
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/modal/index.tsx",
                                 lineNumber: 32,
-                                columnNumber: 25
+                                columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 className: "aboutIconContainer",
@@ -42142,45 +42131,71 @@ const Modal = (props)=>{
                                     }, void 0, false, {
                                         fileName: "src/components/modal/index.tsx",
                                         lineNumber: 47,
-                                        columnNumber: 29
+                                        columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.JsIcon), {
                                         className: "jsIcon"
                                     }, void 0, false, {
                                         fileName: "src/components/modal/index.tsx",
                                         lineNumber: 48,
-                                        columnNumber: 29
+                                        columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.CssIcon), {
                                         className: "cssIcon"
                                     }, void 0, false, {
                                         fileName: "src/components/modal/index.tsx",
                                         lineNumber: 49,
-                                        columnNumber: 29
+                                        columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.TsIcon), {
                                         className: "tsIcon"
                                     }, void 0, false, {
                                         fileName: "src/components/modal/index.tsx",
                                         lineNumber: 50,
-                                        columnNumber: 29
+                                        columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/modal/index.tsx",
                                 lineNumber: 46,
-                                columnNumber: 25
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "linkContainer",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: "../../assets/cv/CV.pdf",
+                                    download: "CV Vlad Khrushchev",
+                                    className: "downloadLink",
+                                    children: [
+                                        "Download My Cv",
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Download), {
+                                            className: "downloadIcon"
+                                        }, void 0, false, {
+                                            fileName: "src/components/modal/index.tsx",
+                                            lineNumber: 59,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/modal/index.tsx",
+                                    lineNumber: 53,
+                                    columnNumber: 15
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/components/modal/index.tsx",
+                                lineNumber: 52,
+                                columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/modal/index.tsx",
                         lineNumber: 27,
-                        columnNumber: 21
+                        columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/modal/index.tsx",
                     lineNumber: 26,
-                    columnNumber: 17
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: active ? "halfContact active" : "halfContact",
@@ -42198,25 +42213,25 @@ const Modal = (props)=>{
                                         }, void 0, false, {
                                             fileName: "src/components/modal/index.tsx",
                                             lineNumber: 68,
-                                            columnNumber: 33
+                                            columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                             className: "rightleft"
                                         }, void 0, false, {
                                             fileName: "src/components/modal/index.tsx",
                                             lineNumber: 69,
-                                            columnNumber: 33
+                                            columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/modal/index.tsx",
                                     lineNumber: 67,
-                                    columnNumber: 29
+                                    columnNumber: 15
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/modal/index.tsx",
                                 lineNumber: 66,
-                                columnNumber: 25
+                                columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 children: [
@@ -42226,7 +42241,7 @@ const Modal = (props)=>{
                                     }, void 0, false, {
                                         fileName: "src/components/modal/index.tsx",
                                         lineNumber: 73,
-                                        columnNumber: 29
+                                        columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                         className: "contactText",
@@ -42234,13 +42249,13 @@ const Modal = (props)=>{
                                     }, void 0, false, {
                                         fileName: "src/components/modal/index.tsx",
                                         lineNumber: 74,
-                                        columnNumber: 29
+                                        columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/modal/index.tsx",
                                 lineNumber: 72,
-                                columnNumber: 25
+                                columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 className: "inputContainer",
@@ -42251,7 +42266,7 @@ const Modal = (props)=>{
                                     }, void 0, false, {
                                         fileName: "src/components/modal/index.tsx",
                                         lineNumber: 79,
-                                        columnNumber: 29
+                                        columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                         className: "inputContent",
@@ -42262,26 +42277,26 @@ const Modal = (props)=>{
                                             }, void 0, false, {
                                                 fileName: "src/components/modal/index.tsx",
                                                 lineNumber: 81,
-                                                columnNumber: 33
+                                                columnNumber: 17
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                                 className: "inputCover"
                                             }, void 0, false, {
                                                 fileName: "src/components/modal/index.tsx",
                                                 lineNumber: 82,
-                                                columnNumber: 33
+                                                columnNumber: 17
                                             }, undefined)
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/components/modal/index.tsx",
                                         lineNumber: 80,
-                                        columnNumber: 29
+                                        columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/modal/index.tsx",
                                 lineNumber: 78,
-                                columnNumber: 25
+                                columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 style: {
@@ -42296,7 +42311,7 @@ const Modal = (props)=>{
                                         }, void 0, false, {
                                             fileName: "src/components/modal/index.tsx",
                                             lineNumber: 87,
-                                            columnNumber: 33
+                                            columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                             className: "inputContent",
@@ -42307,31 +42322,31 @@ const Modal = (props)=>{
                                                 }, void 0, false, {
                                                     fileName: "src/components/modal/index.tsx",
                                                     lineNumber: 89,
-                                                    columnNumber: 37
+                                                    columnNumber: 19
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                                     className: "inputCover"
                                                 }, void 0, false, {
                                                     fileName: "src/components/modal/index.tsx",
                                                     lineNumber: 90,
-                                                    columnNumber: 37
+                                                    columnNumber: 19
                                                 }, undefined)
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/components/modal/index.tsx",
                                             lineNumber: 88,
-                                            columnNumber: 33
+                                            columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/modal/index.tsx",
                                     lineNumber: 86,
-                                    columnNumber: 29
+                                    columnNumber: 15
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/modal/index.tsx",
                                 lineNumber: 85,
-                                columnNumber: 25
+                                columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 style: {
@@ -42346,7 +42361,7 @@ const Modal = (props)=>{
                                         }, void 0, false, {
                                             fileName: "src/components/modal/index.tsx",
                                             lineNumber: 96,
-                                            columnNumber: 33
+                                            columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                             className: "inputContent",
@@ -42356,31 +42371,31 @@ const Modal = (props)=>{
                                                 }, void 0, false, {
                                                     fileName: "src/components/modal/index.tsx",
                                                     lineNumber: 98,
-                                                    columnNumber: 37
+                                                    columnNumber: 19
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                                     className: "textAreaCover"
                                                 }, void 0, false, {
                                                     fileName: "src/components/modal/index.tsx",
                                                     lineNumber: 99,
-                                                    columnNumber: 37
+                                                    columnNumber: 19
                                                 }, undefined)
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/components/modal/index.tsx",
                                             lineNumber: 97,
-                                            columnNumber: 33
+                                            columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/modal/index.tsx",
                                     lineNumber: 95,
-                                    columnNumber: 29
+                                    columnNumber: 15
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/modal/index.tsx",
                                 lineNumber: 94,
-                                columnNumber: 25
+                                columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 className: "buttonContainer",
@@ -42390,34 +42405,34 @@ const Modal = (props)=>{
                                 }, void 0, false, {
                                     fileName: "src/components/modal/index.tsx",
                                     lineNumber: 104,
-                                    columnNumber: 29
+                                    columnNumber: 15
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/modal/index.tsx",
                                 lineNumber: 103,
-                                columnNumber: 25
+                                columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/modal/index.tsx",
                         lineNumber: 65,
-                        columnNumber: 21
+                        columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/modal/index.tsx",
                     lineNumber: 64,
-                    columnNumber: 17
+                    columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/modal/index.tsx",
             lineNumber: 22,
-            columnNumber: 13
+            columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/modal/index.tsx",
         lineNumber: 18,
-        columnNumber: 9
+        columnNumber: 5
     }, undefined);
 };
 _c = Modal;
@@ -42430,284 +42445,6 @@ $RefreshReg$(_c, "Modal");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./styles.css":"fw91Z","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../button":"2DdQn","../../assets":"lDowU"}],"fw91Z":[function() {},{}],"6LS3K":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$b03a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$b03a.prelude(module);
-
-try {
-// modules
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-// styles
-var _stylesModuleCss = require("./styles.module.css");
-var _stylesModuleCssDefault = parcelHelpers.interopDefault(_stylesModuleCss);
-var _button = require("../button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
-const WorkCards = (props)=>{
-    const { item, index } = props;
-    const odd = index % 2 === 0;
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: (0, _stylesModuleCssDefault.default).workCard,
-        style: {
-            left: odd ? -30 : 30
-        },
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                className: (0, _stylesModuleCssDefault.default).cardNumber,
-                style: odd ? {
-                    right: 0
-                } : {
-                    left: 0
-                },
-                children: [
-                    "0",
-                    index + 1
-                ]
-            }, void 0, true, {
-                fileName: "src/components/workCards/index.tsx",
-                lineNumber: 20,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                src: item.image,
-                alt: "case",
-                className: (0, _stylesModuleCssDefault.default).image
-            }, void 0, false, {
-                fileName: "src/components/workCards/index.tsx",
-                lineNumber: 21,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: odd ? (0, _stylesModuleCssDefault.default).textLeft : (0, _stylesModuleCssDefault.default).textRight,
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: (0, _stylesModuleCssDefault.default).cardTitle,
-                        children: item.title
-                    }, void 0, false, {
-                        fileName: "src/components/workCards/index.tsx",
-                        lineNumber: 23,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: (0, _stylesModuleCssDefault.default).cardText,
-                        children: item.text
-                    }, void 0, false, {
-                        fileName: "src/components/workCards/index.tsx",
-                        lineNumber: 24,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: (0, _stylesModuleCssDefault.default).btnContainer,
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                            text: "Case Study"
-                        }, void 0, false, {
-                            fileName: "src/components/workCards/index.tsx",
-                            lineNumber: 26,
-                            columnNumber: 21
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/components/workCards/index.tsx",
-                        lineNumber: 25,
-                        columnNumber: 17
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/workCards/index.tsx",
-                lineNumber: 22,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/workCards/index.tsx",
-        lineNumber: 19,
-        columnNumber: 9
-    }, undefined);
-};
-_c = WorkCards;
-exports.default = WorkCards;
-var _c;
-$RefreshReg$(_c, "WorkCards");
-
-  $parcel$ReactRefreshHelpers$b03a.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./styles.module.css":"2tfnh","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../button":"2DdQn"}],"2tfnh":[function(require,module,exports) {
-module.exports["btnContainer"] = `RPbNkG_btnContainer`;
-module.exports["cardNumber"] = `RPbNkG_cardNumber`;
-module.exports["cardText"] = `RPbNkG_cardText`;
-module.exports["cardTitle"] = `RPbNkG_cardTitle`;
-module.exports["image"] = `RPbNkG_image`;
-module.exports["textLeft"] = `RPbNkG_textLeft`;
-module.exports["textRight"] = `RPbNkG_textRight`;
-module.exports["workCard"] = `RPbNkG_workCard`;
-
-},{}],"afggb":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$c4a0 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$c4a0.prelude(module);
-
-try {
-// modules
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-// styles
-var _stylesModuleCss = require("./styles.module.css");
-var _stylesModuleCssDefault = parcelHelpers.interopDefault(_stylesModuleCss);
-// components
-var _components = require("../../components");
-const Works = ()=>{
-    const worksArr = [
-        {
-            id: 12,
-            title: "ForDream",
-            text: "Landing Site for company",
-            image: require("8b2de22195b4a6eb")
-        },
-        {
-            id: 13,
-            title: "My status",
-            text: "Social Network on React-Native",
-            image: require("8b2de22195b4a6eb")
-        },
-        {
-            id: 14,
-            title: "Catchy-Web",
-            text: "Admin panel for music studio",
-            image: require("8b2de22195b4a6eb")
-        }
-    ];
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                className: (0, _stylesModuleCssDefault.default).workTitle,
-                children: "CASE STUDIES"
-            }, void 0, false, {
-                fileName: "src/screens/works/index.tsx",
-                lineNumber: 34,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                className: (0, _stylesModuleCssDefault.default).workText,
-                children: "Latest Works"
-            }, void 0, false, {
-                fileName: "src/screens/works/index.tsx",
-                lineNumber: 35,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: (0, _stylesModuleCssDefault.default).cardContainer,
-                children: worksArr.map((item, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.WorkCards), {
-                        item: item,
-                        index: index
-                    }, item.id, false, {
-                        fileName: "src/screens/works/index.tsx",
-                        lineNumber: 38,
-                        columnNumber: 21
-                    }, undefined))
-            }, void 0, false, {
-                fileName: "src/screens/works/index.tsx",
-                lineNumber: 36,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true);
-};
-_c = Works;
-exports.default = Works;
-var _c;
-$RefreshReg$(_c, "Works");
-
-  $parcel$ReactRefreshHelpers$c4a0.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./styles.module.css":"kDvzN","../../components":"dHnah","8b2de22195b4a6eb":"e0w3d","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kDvzN":[function(require,module,exports) {
-module.exports["cardContainer"] = `nF2IMG_cardContainer`;
-module.exports["workText"] = `nF2IMG_workText`;
-module.exports["workTitle"] = `nF2IMG_workTitle`;
-
-},{}],"e0w3d":[function(require,module,exports) {
-module.exports = require("bd8aac2835d1866f").getBundleURL("6EXJA") + "ForDreamCase.276f7fc2.png" + "?" + Date.now();
-
-},{"bd8aac2835d1866f":"lgJ39"}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-}
-// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"58uqm":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$6655 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$6655.prelude(module);
-
-try {
-// modules
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-const PetProjects = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "Pet projects"
-    }, void 0, false, {
-        fileName: "src/screens/petProject/index.tsx",
-        lineNumber: 6,
-        columnNumber: 9
-    }, undefined);
-};
-_c = PetProjects;
-exports.default = PetProjects;
-var _c;
-$RefreshReg$(_c, "PetProjects");
-
-  $parcel$ReactRefreshHelpers$6655.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["9p54t","1xC6H","4aBH6"], "4aBH6", "parcelRequire2bed")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./styles.css":"fw91Z","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../button":"2DdQn","../../assets":"lDowU"}],"fw91Z":[function() {},{}]},["9p54t","1xC6H","4aBH6"], "4aBH6", "parcelRequire2bed")
 
 //# sourceMappingURL=index.2d3ace14.js.map
