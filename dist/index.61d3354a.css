@@ -138,7 +138,7 @@ code {
   display: flex;
 }
 
-.Qh3Vja_headerBtn {
+.QTriiG_headerBtn {
   color: #b0b2c3;
   cursor: pointer;
   background-color: #0000;
@@ -146,11 +146,12 @@ code {
   margin: 0 30px;
   font-family: Roboto, sans-serif;
   font-size: 16px;
+  text-decoration: none;
   transition: color .3s;
   position: relative;
 }
 
-.Qh3Vja_headerBtn:before {
+.QTriiG_headerBtn:before {
   content: "";
   border-radius: 2px;
   width: 0;
@@ -161,11 +162,11 @@ code {
   left: -100%;
 }
 
-.Qh3Vja_headerBtn:hover {
+.QTriiG_headerBtn:hover {
   color: #fff;
 }
 
-@keyframes Qh3Vja_slideRight {
+@keyframes QTriiG_slideRight {
   0% {
     background: linear-gradient(to left, #2a5788, #357abd);
     width: 0;
@@ -179,17 +180,17 @@ code {
   }
 }
 
-.Qh3Vja_headerBtn:hover:before {
+.QTriiG_headerBtn:hover:before {
   width: 100%;
-  animation: .2s linear forwards Qh3Vja_slideRight;
+  animation: .2s linear forwards QTriiG_slideRight;
   left: 0;
 }
 
-.Qh3Vja_headerBtn:not(:hover):before {
-  animation: .2s linear forwards Qh3Vja_slideRightReverse;
+.QTriiG_headerBtn:not(:hover):before {
+  animation: .2s linear forwards QTriiG_slideRightReverse;
 }
 
-@keyframes Qh3Vja_slideRightReverse {
+@keyframes QTriiG_slideRightReverse {
   0% {
     background: linear-gradient(to left, #2a5788, #357abd);
     width: 100%;
@@ -694,6 +695,167 @@ code {
   flex-direction: column;
   align-items: center;
   display: flex;
+}
+
+.mxE6Gq_container {
+  min-height: 100px;
+}
+
+.mxE6Gq_title {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #b19386;
+  margin-bottom: 20px;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.mxE6Gq_text {
+  text-align: center;
+  color: #4a4a4a;
+  margin-bottom: 70px;
+}
+
+.mxE6Gq_projectContainer {
+  justify-content: space-around;
+  display: flex;
+}
+
+.mxE6Gq_projectImage {
+  object-fit: cover;
+  z-index: 2;
+  border-radius: 230px;
+  width: 230px;
+  height: 230px;
+  margin-top: 30px;
+  transition: all .4s ease-in-out;
+  transform: scale(1);
+}
+
+.mxE6Gq_projectCard {
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  padding: 0 75px 30px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.mxE6Gq_projectCard:before {
+  content: "";
+  background-color: #61dafb80;
+  width: 100%;
+  height: 100%;
+  transition: all .5s;
+  position: absolute;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.mxE6Gq_projectCard:hover:before {
+  transform: translateX(0);
+}
+
+.mxE6Gq_projectCard:hover .mxE6Gq_projectImage {
+  transform: scale(1.1);
+  box-shadow: -6px -1px 67px 18px #61dafb66;
+}
+
+.mxE6Gq_cardTitle {
+  z-index: 2;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.mxE6Gq_cardText {
+  z-index: 2;
+  max-width: 300px;
+  margin: 10px 0 0;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.mxE6Gq_cardTextBox {
+  z-index: 2;
+  width: 80%;
+  margin-top: 35px;
+}
+
+.mxE6Gq_numberCardContainer {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+}
+
+.mxE6Gq_numberCard {
+  margin-bottom: 5px;
+  font-size: .7em;
+}
+
+.mxE6Gq_projectCard:hover .mxE6Gq_verticalLine {
+  height: 40px;
+  transition-delay: .3s;
+}
+
+.mxE6Gq_verticalLine {
+  background-color: #1c1d25;
+  width: 2px;
+  height: 30px;
+  transition: all .4s;
+}
+
+.VsZlZG_container {
+  background-color: #1c1d25;
+  height: 600px;
+}
+
+.VsZlZG_contentContainer {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  display: flex;
+}
+
+.VsZlZG_toTop {
+  opacity: 0;
+  color: #fff;
+  margin-top: 15px;
+  transition: all .4s;
+  transform: translateX(-25px);
+}
+
+.VsZlZG_iconLink {
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.VsZlZG_iconLink:hover .VsZlZG_toTop {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.VsZlZG_linkContainer {
+  margin-top: 30px;
+  margin-right: 35px;
+}
+
+.VsZlZG_license {
+  color: gray;
+  margin-right: 35px;
+}
+
+.VsZlZG_licenceContainer {
+  margin-top: 40px;
 }
 
 /*# sourceMappingURL=index.61d3354a.css.map */

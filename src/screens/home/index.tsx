@@ -1,5 +1,5 @@
 // modules
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 // styles
 import styles from "./styles.module.css";
 // components
@@ -7,39 +7,40 @@ import {AnimatedIcons, Button, Header, Modal} from "../../components";
 // assets
 import {AnimatedLogo, GitHub, GitLab, Gmail, LinkedIn, Telegram,} from "../../assets";
 // types
-import {CursorPositionType} from "../../types/AnimatedIconType";
 
 const Home = () => {
     const [cursorPosition, setCursorPosition] = useState<CursorPositionType>({
         x: 0,
         y: 0,
     });
-    const [modalActive, setModalActive] = useState<boolean>(false);
+    const [modalActive, setModalActive] = useState(false);
+    const cursorPositionRef = useRef(cursorPosition);
 
     useEffect(() => {
-        window.addEventListener("mousemove", (event: MouseEvent) => {
+        const handleMouseMove = (event: MouseEvent) => {
             const {clientX, clientY} = event;
+            cursorPositionRef.current = {x: clientX, y: clientY};
             setCursorPosition({x: clientX, y: clientY});
-        });
-        return () => {
-            window.removeEventListener("mousemove", (event: MouseEvent) => {
-                const {clientX, clientY} = event;
-                setCursorPosition({x: clientX, y: clientY});
-            });
         };
-    }, [cursorPosition]);
+
+        window.addEventListener('mousemove', handleMouseMove);
+
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+        };
+    }, []);
 
     return (
         <>
-            <div className={styles.container}>
-                <Header/>
+            <div className={styles.container} id={'home'}>
+                <Header setModal={setModalActive}/>
                 <div className={styles.contentContainer}>
                     <div className={styles.nameContainer}>
                         <div style={{zIndex: 2}}>
                             <h4 className={styles.name}>Vlad Khrushchev</h4>
                             <span className={styles.description}>
-                Interactive Frontend-Developer
-              </span>
+                                Interactive Frontend-Developer
+                            </span>
                             <div className={styles.buttonContainer}>
                                 <Button
                                     text={"About Me"}
@@ -60,7 +61,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div>
-                    <AnimatedIcons cursorPosition={cursorPosition}/>
+                    <AnimatedIcons cursorPosition={cursorPositionRef.current}/>
                 </div>
                 <Modal active={modalActive} setActive={setModalActive}/>
                 <div className={styles.worksContainer}>

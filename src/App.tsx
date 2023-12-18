@@ -3,7 +3,7 @@ import React from "react";
 // styles
 import "./App.css";
 // screens
-import {Home, PetProjects, Works} from "./screens";
+import {Footer, Home, PetProjects, Works} from "./screens";
 
 function App() {
     return (
@@ -11,6 +11,7 @@ function App() {
             <Home/>
             <Works/>
             <PetProjects/>
+            <Footer/>
         </>
     );
 }

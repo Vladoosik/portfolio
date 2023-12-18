@@ -1,14 +1,26 @@
 // modules
-import React from "react";
-import {Link} from "react-scroll";
+import React, {FC} from "react";
 // assets
 import {Logo} from "../../assets";
 // constants
 import {headerLinks, HeaderLinksProps} from "../../constants/headerLink/headerLinks";
 // styles
 import styles from "./styles.module.css";
+// components
+import AnimatedLinks from "../animatedLinks";
 
-const Header = () => {
+interface HeaderProp {
+    setModal: (b: boolean) => void
+}
+
+const Header: FC<HeaderProp> = (props) => {
+    const {setModal} = props;
+
+    const onLinkPress = (path: string) => {
+        if (!path) {
+            setModal(true)
+        }
+    }
     return (
         <div className={styles.container}>
             <div>
@@ -16,9 +28,7 @@ const Header = () => {
             </div>
             <div className={styles.linkContainer}>
                 {headerLinks.map((item: HeaderLinksProps) => (
-                    <Link to={item.path} className={styles.headerBtn} key={item.id}>
-                        <span>{item.name}</span>
-                    </Link>
+                    <AnimatedLinks onClick={() => onLinkPress(item.path)} smooth key={item.id} item={item}/>
                 ))}
             </div>
         </div>
