@@ -7,6 +7,7 @@ import {AnimatedIcons, Button, Header, Modal} from "../../components";
 // assets
 import {AnimatedLogo, GitHub, GitLab, Gmail, LinkedIn, Telegram,} from "../../assets";
 // types
+import {CursorPositionType} from "../../types/AnimatedIconType";
 
 const Home = () => {
     const [cursorPosition, setCursorPosition] = useState<CursorPositionType>({
