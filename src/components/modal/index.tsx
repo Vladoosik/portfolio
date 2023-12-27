@@ -1,5 +1,5 @@
 // modules
-import React, {FC} from "react";
+import React, {FC, memo} from "react";
 // components
 import Button from "../button";
 // styles
@@ -101,7 +101,7 @@ const Modal: FC<ModalProps> = (props) => {
                             </div>
                         </div>
                         <div className={"buttonContainer"}>
-                            <Button text={"Send Message"} widthArrow={false}/>
+                            <Button text={"Send Message"} widthArrow={false} disabled/>
                         </div>
                     </div>
                 </div>
@@ -110,4 +110,4 @@ const Modal: FC<ModalProps> = (props) => {
     );
 };
 
-export default Modal;
+export default memo(Modal);

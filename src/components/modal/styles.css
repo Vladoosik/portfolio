@@ -198,7 +198,7 @@
 }
 
 .textAreaCover {
-    bottom: 3px;
+    bottom: 4px;
 }
 
 .input:active, .input:focus, .textArea:focus {
@@ -240,7 +240,7 @@
         width: 50px
     }
     60% {
-        width: 150px;
+        width: 100px;
     }
     100% {
         width: 0;

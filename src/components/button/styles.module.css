@@ -3,7 +3,6 @@
     padding: 11px 28px;
     background: linear-gradient(270deg, #f06449, #ef3636);
     overflow: hidden;
-    cursor: pointer;
     border-radius: 3px;
 }
 
@@ -48,11 +47,15 @@
     cursor: pointer;
 }
 
-.btnText {
+.btnText, .disabledText {
     position: relative;
     margin: 0;
     color: white;
     font-size: 1.05em;
     font-weight: 500;
     z-index: 10;
+}
+
+.disabledText {
+    opacity: 0.6;
 }

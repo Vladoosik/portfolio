@@ -104,9 +104,31 @@ code {
   z-index: 2;
   flex-direction: column;
   gap: 35px;
+  transition: all .4s;
   display: flex;
   position: absolute;
   right: 15px;
+}
+
+.P30aKa_hiddenElement {
+  z-index: 2;
+  opacity: 0;
+  flex-direction: column;
+  gap: 35px;
+  transition: all .4s;
+  display: flex;
+  position: absolute;
+  right: 15px;
+}
+
+.P30aKa_hiddenHeader {
+  opacity: 0;
+  transition: opacity .4s;
+}
+
+.P30aKa_headerContainer {
+  opacity: 1;
+  transition: opacity .4s;
 }
 
 .P30aKa_icon {
@@ -126,6 +148,10 @@ code {
   display: flex;
   position: absolute;
   bottom: 0;
+}
+
+.P30aKa_works {
+  cursor: pointer;
 }
 
 .Qh3Vja_container {
@@ -211,7 +237,6 @@ code {
 }
 
 .Pyg6BW_button {
-  cursor: pointer;
   background: linear-gradient(270deg, #f06449, #ef3636);
   border-radius: 3px;
   padding: 11px 28px;
@@ -256,13 +281,17 @@ code {
   transform: translateX(120px);
 }
 
-.Pyg6BW_btnText {
+.Pyg6BW_btnText, .Pyg6BW_disabledText {
   color: #fff;
   z-index: 10;
   margin: 0;
   font-size: 1.05em;
   font-weight: 500;
   position: relative;
+}
+
+.Pyg6BW_disabledText {
+  opacity: .6;
 }
 
 .dY6-Ra_iconAnimation {
@@ -462,7 +491,7 @@ code {
 }
 
 .textAreaCover {
-  bottom: 3px;
+  bottom: 4px;
 }
 
 .input:active, .input:focus, .textArea:focus {
@@ -497,7 +526,7 @@ code {
   }
 
   60% {
-    width: 150px;
+    width: 100px;
   }
 
   100% {

@@ -26,7 +26,7 @@ const Footer = () => {
                 </Link>
                 <div className={styles.linkContainer}>
                     {FooterLinks.map((item: HeaderLinksProps) => (
-                        <AnimatedLinks onClick={() => openLink(item.path)} item={item}/>
+                        <AnimatedLinks key={item.id} onClick={() => openLink(item.path)} item={item}/>
                     ))}
                 </div>
                 <div className={styles.licenceContainer}>
