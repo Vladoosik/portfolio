@@ -10,19 +10,17 @@
       <change beforePath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.61d3354a.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.61d3354a.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.61d3354a.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.61d3354a.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/doubleWave.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/doubleWave.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/line.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/line.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/semiCircle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/semiCircle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/tringle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/tringle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/wave.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/wave.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/animatedIcons/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/animatedIcons/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/button/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/button/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/styles.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modal/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modal/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/footerLinks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/footerLinks/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/footer/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/footer/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/commerceProject/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/commerceProject/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/homelinks/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/iconsArray/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/home/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/home/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/home/styles.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/works/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/works/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/works/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/works/styles.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,11 +88,11 @@
       <recent name="E:\project\portfolio\my-app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\project\portfolio\my-app\src\assets\png" />
       <recent name="E:\project\portfolio\my-app\src\constants\headerLink" />
       <recent name="E:\project\portfolio\my-app\src\constants" />
       <recent name="$PROJECT_DIR$/src/assets/cv" />
       <recent name="$PROJECT_DIR$/src/components/header" />
-      <recent name="$PROJECT_DIR$/src/components" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -115,7 +113,7 @@
       <workItem from="1702898324723" duration="3292000" />
       <workItem from="1703333154900" duration="3986000" />
       <workItem from="1703589335663" duration="5148000" />
-      <workItem from="1703679604769" duration="2441000" />
+      <workItem from="1703679604769" duration="7083000" />
     </task>
     <task id="LOCAL-00001" summary="add animation in home and make animated button">
       <created>1701612959306</created>

@@ -1,3 +1,4 @@
+// types\
 import {WorksType} from "../../types/WorksType";
 
 export const worksArr: WorksType[] = [
@@ -11,12 +12,12 @@ export const worksArr: WorksType[] = [
         id: 13,
         title: "My status",
         text: "Social Network on React-Native",
-        image: require("../../assets/png/ForDreamCase.png"),
+        image: require("../../assets/png/MyStatus.jpg"),
     },
     {
         id: 14,
         title: "Catchy-Web",
         text: "Admin panel for music studio",
-        image: require("../../assets/png/ForDreamCase.png"),
+        image: require("../../assets/png/CathcyWeb.jpg"),
     },
 ];

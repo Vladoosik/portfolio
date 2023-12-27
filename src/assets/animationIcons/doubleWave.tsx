@@ -4,12 +4,12 @@ import React, {FC} from "react";
 import {SvgTypes} from "../../types/SvgType";
 
 const DoubleWave: FC<SvgTypes> = (props) => {
-    const {className, color} = props;
+    const {className, color, width, height} = props;
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="36"
-            height="37"
+            width={width}
+            height={height}
             fill="none"
             className={className}
             viewBox="0 0 36 37"
@@ -48,4 +48,6 @@ export default DoubleWave;
 
 DoubleWave.defaultProps = {
     color: "#CF4981",
+    width: 36,
+    height: 37,
 };

@@ -1,5 +1,6 @@
 // modules
 import React from "react";
+import {useMediaQuery} from "react-responsive";
 // styles
 import styles from "./styles.module.css";
 // components
@@ -8,11 +9,13 @@ import {WorkCards} from "../../components";
 import {WorksType} from "../../types/WorksType";
 // constants
 import {worksArr} from "../../constants/commerceProject";
+import {staticIcons} from "../../constants/iconsArray";
 
 const Works = () => {
+    const isBigScreen = useMediaQuery({query: '(min-width: 2193px)'});
 
     return (
-        <div id={'work'}>
+        <div id={'work'} style={{position: "relative"}}>
             <p className={styles.workTitle}>CASE STUDIES</p>
             <h2 className={styles.workText}>Latest Works</h2>
             <div className={styles.cardContainer}>
@@ -20,6 +23,15 @@ const Works = () => {
                     <WorkCards item={item} index={index} key={item.id}/>
                 ))}
             </div>
+            {isBigScreen &&
+                <div className={styles.iconsContainer}>
+                    {staticIcons.map((item) => (
+                        <div key={item.id} style={{...item.style}}>
+                            {item.icon}
+                        </div>
+                    ))}
+                </div>
+            }
         </div>
     );
 };

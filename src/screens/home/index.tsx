@@ -9,7 +9,7 @@ import {AnimatedLogo} from "../../assets";
 // types
 import {CursorPositionType} from "../../types/AnimatedIconType";
 // constants
-import {SocialIcons} from "../../constants/homelinks";
+import {SocialIcons} from "../../constants/iconsArray";
 import {Link} from "react-scroll";
 
 

@@ -4,12 +4,12 @@ import React, {FC} from "react";
 import {SvgTypes} from "../../types/SvgType";
 
 const Line: FC<SvgTypes> = (props) => {
-    const {className, color} = props;
+    const {className, color, width, height} = props;
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="25"
+            width={width}
+            height={height}
             fill="none"
             className={className}
             viewBox="0 0 24 25"
@@ -48,4 +48,6 @@ export default Line;
 
 Line.defaultProps = {
     color: "#CF4981",
+    width: 24,
+    height: 25,
 };
