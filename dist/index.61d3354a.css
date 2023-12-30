@@ -681,7 +681,7 @@ code {
 .RPbNkG_cardNumber {
   margin: 0;
   color: #fff;
-  z-index: 3;
+  z-index: 10;
   opacity: 0;
   transition: opacity .3s .5s, transform .45s cubic-bezier(.694, .048, .335, 1) .5s, -webkit-transform .45s cubic-bezier(.694, .048, .335, 1) .5s;
   -webkit-transition: opacity .3s, transform .45s cubic-bezier(.694, .048, .335, 1), -webkit-transform .45s cubic-bezier(.694, .048, .335, 1);
@@ -692,7 +692,7 @@ code {
   -webkit-transition-delay: .5s;
   -moz-transition-delay: .5s;
   position: absolute;
-  top: -40px;
+  top: -60px;
   transform: translateY(15px);
 }
 

@@ -4,23 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6aa7ab1-ac0e-4a6b-8250-4b34b331f08e" name="Changes" comment="hot fix import">
+    <list default="true" id="f6aa7ab1-ac0e-4a6b-8250-4b34b331f08e" name="Changes" comment="fix and add components">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.2d3ace14.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.2d3ace14.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.61d3354a.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.61d3354a.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.61d3354a.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.61d3354a.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/doubleWave.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/doubleWave.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/line.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/line.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/semiCircle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/semiCircle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/tringle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/tringle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/animationIcons/wave.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/animationIcons/wave.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/animatedIcons/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/animatedIcons/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/commerceProject/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/commerceProject/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/homelinks/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/iconsArray/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/workCards/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/workCards/styles.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/home/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/works/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/works/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/works/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/works/styles.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +71,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;E:\\project\\portfolio\\my-app\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
     &quot;ts.external.directory.path&quot;: &quot;E:\\project\\portfolio\\my-app\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -113,7 +106,8 @@
       <workItem from="1702898324723" duration="3292000" />
       <workItem from="1703333154900" duration="3986000" />
       <workItem from="1703589335663" duration="5148000" />
-      <workItem from="1703679604769" duration="7083000" />
+      <workItem from="1703679604769" duration="10441000" />
+      <workItem from="1703939642554" duration="5803000" />
     </task>
     <task id="LOCAL-00001" summary="add animation in home and make animated button">
       <created>1701612959306</created>
@@ -136,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702898490664</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix and add components">
+      <created>1703701347660</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703701347660</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,7 +159,8 @@
     <MESSAGE value="add animation in home and make animated button" />
     <MESSAGE value="fix petProject. make footer. connect link" />
     <MESSAGE value="hot fix import" />
-    <option name="LAST_COMMIT_MESSAGE" value="hot fix import" />
+    <MESSAGE value="fix and add components" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix and add components" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
