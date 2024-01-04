@@ -48,15 +48,46 @@
     transform: translateY(130px);
 }
 
-.halfAbout.active, .halfContact.active {
+.halfAbout.active, .halfContact.active, .halfAbout.success {
     transform: translateY(0);
     opacity: 1;
+}
+
+.halfContact.success {
+    opacity: 0;
+    transform: translateY(0);
+}
+
+.halfAbout.active:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    transition: 0.5s ease;
+    background-color: white;
+    transform: translateX(100%);
+}
+
+.halfAbouts.success:before{
+    width: 100%;
+    opacity: 1;
+    transform: translateX(100%);
 }
 
 .aboutContent, .contactContainer {
     margin-top: 120px;
     margin-left: 70px;
     margin-right: 70px;
+}
+
+.hideContent, .hideContact {
+    margin-top: 120px;
+    margin-left: 70px;
+    margin-right: 70px;
+    opacity: 0;
+    display: none;
+    position: relative;
 }
 
 .aboutMe {

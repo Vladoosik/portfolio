@@ -102,3 +102,9 @@
 .works {
     cursor: pointer;
 }
+
+@media (max-height: 900px) {
+    .logoContainer {
+        top: 20%;
+    }
+}

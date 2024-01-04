@@ -14,6 +14,7 @@
     "@types/react-dom": "^18.2.17",
     "@use-gesture/react": "^10.3.0",
     "autoprefixer": "^10.4.16",
+    "axios": "^1.6.3",
     "framer-motion": "^10.16.11",
     "postcss-modules": "^6.0.0",
     "react": "^18.2.0",
@@ -50,6 +51,7 @@
   },
   "devDependencies": {
     "@types/react-scroll": "^1.8.10",
+    "buffer": "^6.0.3",
     "parcel": "^2.10.3",
     "prettier": "3.1.0",
     "process": "^0.11.10"
