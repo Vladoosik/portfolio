@@ -1,6 +1,8 @@
 // modules
 import React from "react";
 import {useMediaQuery} from "react-responsive";
+import {useNavigate} from "react-router-dom";
+import {NavigateFunction} from "react-router/dist/lib/hooks";
 // styles
 import styles from "./styles.module.css";
 // components
@@ -12,7 +14,8 @@ import {worksArr} from "../../constants/commerceProject";
 import {staticIcons} from "../../constants/iconsArray";
 
 const Works = () => {
-    const isBigScreen = useMediaQuery({query: '(min-width: 2193px)'});
+    const isBigScreen: boolean = useMediaQuery({query: '(min-width: 2193px)'});
+    const navigate: NavigateFunction = useNavigate();
 
     return (
         <div id={'work'} style={{position: "relative"}}>
@@ -20,7 +23,7 @@ const Works = () => {
             <h2 className={styles.workText}>Latest Works</h2>
             <div className={styles.cardContainer}>
                 {worksArr.map((item: WorksType, index: number) => (
-                    <WorkCards item={item} index={index} key={item.id}/>
+                    <WorkCards navigate={navigate} item={item} index={index} key={item.id}/>
                 ))}
             </div>
             {isBigScreen &&

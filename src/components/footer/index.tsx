@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 import {FooterLinks} from "../../constants/footerLinks";
 import {HeaderLinksProps} from "../../constants/headerLink/headerLinks";
 // components
-import {AnimatedLinks} from '../../components';
+import {AnimatedLinks} from '../index';
 
 const Footer = () => {
     const year = new Date().getFullYear();

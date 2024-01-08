@@ -7,17 +7,20 @@ export const worksArr: WorksType[] = [
         title: "ForDream",
         text: "Landing Site for company",
         image: require("../../assets/png/ForDreamCase.png"),
+        path: 'forDream',
     },
     {
         id: 13,
         title: "My status",
         text: "Social Network on React-Native",
         image: require("../../assets/png/MyStatus.jpg"),
+        path: 'myStatus',
     },
     {
         id: 14,
         title: "Catchy-Web",
         text: "Admin panel for music studio",
         image: require("../../assets/png/CathcyWeb.jpg"),
+        path: 'catchyWeb',
     },
 ];

@@ -4,4 +4,5 @@ export type WorksType = {
     title: string
     text: string
     url?: string
+    path: string
 }

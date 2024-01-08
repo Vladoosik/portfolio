@@ -5,3 +5,4 @@ export {default as Modal} from './modal/index';
 export {default as WorkCards} from './workCards/index';
 export {default as AnimatedLinks} from './animatedLinks/index';
 export {default as AnimatedText} from './animatedText/index';
+export {default as Footer} from './footer/index';

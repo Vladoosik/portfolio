@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6aa7ab1-ac0e-4a6b-8250-4b34b331f08e" name="Changes" comment="fix and add components">
+    <list default="true" id="f6aa7ab1-ac0e-4a6b-8250-4b34b331f08e" name="Changes" comment="optimization animation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.2d3ace14.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.2d3ace14.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" afterDir="false" />
@@ -12,12 +12,17 @@
       <change beforePath="$PROJECT_DIR$/dist/index.61d3354a.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.61d3354a.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modal/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modal/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/home/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/home/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/home/styles.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/petProject/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/petProject/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/petProject/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/petProject/styles.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/workCards/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/workCards/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/commerceProject/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/commerceProject/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/footer/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/footer/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/styles.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/works/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/works/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/WorksType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/WorksType.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +70,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/project/portfolio/my-app/node_modules/prettier&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/project/ReactJS/cryptomania&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
@@ -76,7 +81,7 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/apple/Desktop/portfolio/node_modules/prettier&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/apple/Desktop/portfolio/node_modules/typescript/lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;E:\\project\\portfolio\\my-app\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -85,11 +90,11 @@
       <recent name="E:\project\portfolio\my-app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\project\portfolio\my-app\src\components" />
       <recent name="E:\project\portfolio\my-app\src\assets\png" />
       <recent name="E:\project\portfolio\my-app\src\constants\headerLink" />
       <recent name="E:\project\portfolio\my-app\src\constants" />
       <recent name="$PROJECT_DIR$/src/assets/cv" />
-      <recent name="$PROJECT_DIR$/src/components/header" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -116,6 +121,9 @@
       <workItem from="1703679604769" duration="10441000" />
       <workItem from="1703939642554" duration="5803000" />
       <workItem from="1704369923055" duration="4102000" />
+      <workItem from="1704538924748" duration="1785000" />
+      <workItem from="1704631257460" duration="3839000" />
+      <workItem from="1704649462231" duration="4000" />
     </task>
     <task id="LOCAL-00001" summary="add animation in home and make animated button">
       <created>1701612959306</created>
