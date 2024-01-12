@@ -1,0 +1,178 @@
+.mainContainer {
+    min-height: 100vh;
+    background-image: url("../../assets/png/myStatusCase.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.titleContainer {
+    color: white;
+    margin-left: 150px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    margin: 0 0 14px;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: left;
+}
+
+
+.text {
+    font-size: 1.2em;
+    text-align: justify;
+    font-style: italic;
+}
+
+.aboutContainer {
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 35px;
+    font-size: 1.2em;
+}
+
+.aboutContainer strong {
+    color: #f06449;
+    margin-right: 10px;
+}
+
+.theProjectContainer {
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(70.7deg, #11171B 44.29%, #1A2C38 99.53%);
+    padding-top: 75px;
+    padding-bottom: 75px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projectTitle {
+    margin: 0;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.projectText {
+    z-index: 2;
+    font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+    text-align: justify;
+    font-size: 1.1em;
+    line-height: 25px;
+    max-width: 500px;
+    margin-bottom: 25px;
+}
+
+.button {
+    z-index: 2;
+    cursor: pointer;
+    padding: 12px 20px;
+    background-color: transparent;
+    border: 1px solid silver;
+    color: white;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 1em;
+    transition: all 0.3s;
+}
+
+.button:hover {
+    color: black;
+    background-color: white;
+}
+
+.coverText {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 12em;
+    font-family: "Times New Roman", serif;
+    font-style: italic;
+    bottom: -63px;
+    left: 20%;
+}
+
+.workTitle {
+    text-align: center;
+    font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    color: #937b70;
+    font-weight: 600;
+    margin-bottom: 25px;
+    margin-top: 0;
+    padding-top: 25px;
+}
+
+.workText {
+    text-align: center;
+    margin-bottom: 70px;
+    color: #4a4a4a;
+}
+
+.workCard {
+    justify-content: center;
+    display: flex;
+}
+
+.cardContainer {
+    background-color: #E6F2FA;
+}
+
+.line {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    height: 4px;
+    width: 25%;
+    background-color: #1C1D25;
+}
+
+.cardTitle {
+    max-width: 350px;
+    font-size: 2em;
+    margin: 0;
+    font-weight: 600;
+}
+
+.phoneCard {
+    width: 250px;
+    height: 500px;
+}
+
+.phoneContainer {
+    margin-left: 150px;
+}
+
+.workDescription {
+    margin: 0;
+    max-width: 500px;
+    font-size: 1.3em;
+    word-spacing: 4px;
+    text-align: justify-all;
+    line-height: 27px;
+    font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
+}
+
+.workDescription strong {
+    color: #00c8e7;
+}
+
+.circleContainer {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding-bottom: 30px;
+}

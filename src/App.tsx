@@ -1,11 +1,11 @@
 // modules
 import React from "react";
 import {Route, Routes, useLocation} from "react-router-dom";
+import {AnimatePresence} from "framer-motion";
 // styles
 import "./App.css";
 // screens
 import {CatchyWebCase, ForDreamCase, MainScreen, MyStatusCase} from "./screens";
-import {AnimatePresence} from "framer-motion";
 
 function App() {
     const location = useLocation();

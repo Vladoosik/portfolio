@@ -1,8 +1,10 @@
-export {default as Header} from "./header/index";
-export {default as Button} from './button/index';
-export {default as AnimatedIcons} from './animatedIcons/index';
-export {default as Modal} from './modal/index';
-export {default as WorkCards} from './workCards/index';
-export {default as AnimatedLinks} from './animatedLinks/index';
-export {default as AnimatedText} from './animatedText/index';
-export {default as Footer} from './footer/index';
+export { default as Header } from "./header/index";
+export { default as Button } from "./button/index";
+export { default as AnimatedIcons } from "./animatedIcons/index";
+export { default as Modal } from "./modal/index";
+export { default as WorkCards } from "./workCards/index";
+export { default as AnimatedLinks } from "./animatedLinks/index";
+export { default as AnimatedText } from "./animatedText/index";
+export { default as Footer } from "./footer/index";
+export { default as ColorCircle } from "./colorCircle/index";
+export { default as WorkNavigator } from "./workNavigator/index";

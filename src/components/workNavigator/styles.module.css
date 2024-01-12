@@ -1,0 +1,87 @@
+
+.container {
+    position: relative;
+    cursor: pointer;
+    padding: 45px 15%;
+    overflow: hidden;
+}
+
+.contentContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nextWorkText {
+    z-index: 2;
+    font-weight: bold;
+    font-size: 2.8em;
+    margin: 0;
+    transition: color 0.4s;
+    transition-delay: 0.1s;
+}
+
+.description {
+    z-index: 2;
+    color: #b19386;
+    font-size: 1em;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
+}
+
+.container:before {
+    content: '';
+    position: absolute;
+    height: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f06449;
+    transition: all 0.4s;
+}
+
+.container:after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    transform: translateY(-100%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    transition: all 0.4s;
+}
+
+/*@keyframes sliderAnimation {*/
+/*    0% {*/
+/*        transform: translateY(-100%);*/
+/*    }*/
+/*    35% {*/
+/*        transform: translateY(-30%);*/
+/*    }*/
+/*    100% {*/
+/*        transform: translateY(0%);*/
+/*    }*/
+/*}*/
+
+.container:hover:before {
+    height: 100%;
+}
+
+/*.container:hover:after {*/
+/*    animation: sliderAnimation 0.4s ease;*/
+/*}*/
+
+.container:hover .nextWorkText {
+    color: white;
+    transition-delay: 0s;
+}
+
+.container:hover .arrow path {
+    fill: white;
+}
+
+.arrow {
+    z-index: 2;
+    transition: all 0.4s;
+}
