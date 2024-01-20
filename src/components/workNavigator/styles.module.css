@@ -2,7 +2,7 @@
 .container {
     position: relative;
     cursor: pointer;
-    padding: 45px 15%;
+    padding: 45px 15vw;
     overflow: hidden;
 }
 

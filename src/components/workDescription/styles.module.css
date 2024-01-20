@@ -1,0 +1,13 @@
+.aboutContainer {
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 35px;
+    font-size: 1.2em;
+}
+
+.aboutContainer strong {
+    margin-right: 10px;
+}

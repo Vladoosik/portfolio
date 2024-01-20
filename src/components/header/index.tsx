@@ -18,17 +18,27 @@ interface HeaderProp {
   alternative?: boolean;
   data?: HeaderLinksProps[];
   navigation?: NavigateFunction;
+  setWorkModal?: (b: boolean) => void;
 }
 
 const Header: FC<HeaderProp> = (props) => {
-  const { setModal, alternative, data = headerLinks, navigation } = props;
+  const {
+    setModal,
+    alternative,
+    data = headerLinks,
+    navigation,
+    setWorkModal,
+  } = props;
 
-  const onLinkPress = (path: string) => {
-    if (!path) {
+  const onLinkPress = (path: string, name?: string) => {
+    if (!path && name !== "All Works") {
       setModal(true);
     }
     if (alternative && navigation) {
       navigation(path);
+    }
+    if (!path && name === "All Works" && setWorkModal) {
+      setWorkModal(true);
     }
   };
   return (
@@ -39,7 +49,7 @@ const Header: FC<HeaderProp> = (props) => {
       <div className={styles.linkContainer}>
         {data.map((item: HeaderLinksProps) => (
           <AnimatedLinks
-            onClick={() => onLinkPress(item.path)}
+            onClick={() => onLinkPress(item.path, item.name)}
             smooth
             key={item.id}
             item={item}

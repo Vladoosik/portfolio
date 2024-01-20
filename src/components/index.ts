@@ -8,3 +8,5 @@ export { default as AnimatedText } from "./animatedText/index";
 export { default as Footer } from "./footer/index";
 export { default as ColorCircle } from "./colorCircle/index";
 export { default as WorkNavigator } from "./workNavigator/index";
+export { default as WorkDescription } from "./workDescription/index";
+export { default as AllWorkModal } from "./allWorkModal/index";

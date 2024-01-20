@@ -30,20 +30,6 @@
     font-style: italic;
 }
 
-.aboutContainer {
-    display: flex;
-    color: white;
-    justify-content: space-between;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 35px;
-    font-size: 1.2em;
-}
-
-.aboutContainer strong {
-    color: #f06449;
-    margin-right: 10px;
-}
 
 .theProjectContainer {
     overflow: hidden;
@@ -173,6 +159,6 @@
     margin-top: 60px;
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 50px;
     padding-bottom: 30px;
 }

@@ -12,4 +12,5 @@
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    cursor: grab;
 }

@@ -1,33 +1,37 @@
 // modules
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // components
+import { useNavigate } from "react-router-dom";
+import { NavigateFunction } from "react-router/dist/lib/hooks"; // components
 import {
+  AllWorkModal,
   AnimatedText,
   ColorCircle,
   Header,
   Modal,
+  WorkDescription,
   WorkNavigator,
 } from "../../components"; // utils
 import transitionPages from "../../utils/transitionPages"; // styles
 import styles from "./styles.module.css"; // constants
 import { caseHeaderLinks } from "../../constants/headerLink/headerLinks";
 
+const projectColor = [
+  { id: 12, color: "#0179CF", name: "blue1" },
+  { id: 32, color: "#200CBE", name: "blue2" },
+  { id: 52, color: "#90D1FF", name: "blue_light" },
+  { id: 52, color: "#ACAAA9", name: "gray1_40" },
+  { id: 52, color: "#94C3E4", name: "blue1_40" },
+];
 const MyStatusCase = () => {
   const [active, setActive] = useState<boolean>(false);
-  const navigation = useNavigate();
-
-  const projectColor = [
-    { id: 12, color: "#0179CF", name: "blue1" },
-    { id: 32, color: "#200CBE", name: "blue2" },
-    { id: 52, color: "#90D1FF", name: "blue_light" },
-    { id: 52, color: "#ACAAA9", name: "gray1_40" },
-    { id: 52, color: "#94C3E4", name: "blue1_40" },
-  ];
+  const [workModal, setWorkModal] = useState<boolean>(false);
+  const navigation: NavigateFunction = useNavigate();
 
   return (
     <>
       <div className={styles.mainContainer}>
         <Header
+          setWorkModal={setWorkModal}
           alternative
           data={caseHeaderLinks}
           setModal={setActive}
@@ -42,24 +46,17 @@ const MyStatusCase = () => {
             />
           </div>
         </div>
-        <div className={styles.aboutContainer}>
-          <div>
-            <span>
-              <strong>Role</strong>React-Native Developer
-            </span>
-          </div>
-          <div>
-            <span>
-              <strong>Context</strong>Social Network
-            </span>
-          </div>
-          <div>
-            <span>
-              <strong>Period</strong>Since 2022 - Present
-            </span>
-          </div>
-        </div>
+        <WorkDescription
+          role={"React-Native Developer"}
+          context={"Social Network"}
+          period={"Since 2022 - Present"}
+        />
         <Modal active={active} setActive={setActive} />
+        <AllWorkModal
+          data={projectColor}
+          active={workModal}
+          setActive={setWorkModal}
+        />
       </div>
       <div className={styles.theProjectContainer}>
         <p className={styles.projectTitle}>The Project</p>
@@ -90,7 +87,7 @@ const MyStatusCase = () => {
               <br />
               <br />
               Overall, the project is quite large and I learned a lot during its
-              development. In this case <strong>MobX and Typescript</strong> t
+              development. In this case <strong>MobX and Typescript</strong>
               were actively used, which helped me understand them in{" "}
               <strong>more detail</strong>. Of course, there were other
               libraries that can often be found in react-native, for example{" "}
@@ -106,8 +103,8 @@ const MyStatusCase = () => {
           </div>
         </div>
         <div className={styles.circleContainer}>
-          {projectColor.map((item) => (
-            <ColorCircle item={item} />
+          {projectColor.map((item, index) => (
+            <ColorCircle key={index} item={item} />
           ))}
         </div>
       </div>

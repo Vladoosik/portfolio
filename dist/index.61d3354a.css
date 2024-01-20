@@ -1,3 +1,8 @@
+::selection {
+  color: #fff;
+  background-color: #1c1d25;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -812,6 +817,7 @@ code {
 }
 
 .kwOFOq_circleContainer {
+  cursor: grab;
   flex-direction: column;
   align-items: center;
   gap: 15px;
@@ -820,7 +826,7 @@ code {
 
 ._7F8zEq_container {
   cursor: pointer;
-  padding: 45px 15%;
+  padding: 45px 15vw;
   position: relative;
   overflow: hidden;
 }
@@ -886,6 +892,43 @@ code {
 ._7F8zEq_arrow {
   z-index: 2;
   transition: all .4s;
+}
+
+.G7fsrW_aboutContainer {
+  color: #fff;
+  justify-content: space-between;
+  padding-bottom: 35px;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-size: 1.2em;
+  display: flex;
+}
+
+.G7fsrW_aboutContainer strong {
+  margin-right: 10px;
+}
+
+.modalWork {
+  opacity: 0;
+  z-index: -1;
+  color: #fff;
+  background-color: #00000080;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1000px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+}
+
+.modalWork.active {
+  opacity: 1;
+  z-index: 10;
 }
 
 .nF2IMG_workTitle {
@@ -1067,21 +1110,6 @@ code {
   font-style: italic;
 }
 
-.oFyUBq_aboutContainer {
-  color: #fff;
-  justify-content: space-between;
-  padding-bottom: 35px;
-  padding-left: 50px;
-  padding-right: 50px;
-  font-size: 1.2em;
-  display: flex;
-}
-
-.oFyUBq_aboutContainer strong {
-  color: #f06449;
-  margin-right: 10px;
-}
-
 .oFyUBq_theProjectContainer {
   color: #fff;
   background: linear-gradient(70.7deg, #11171b 44.29%, #1a2c38 99.53%);
@@ -1208,7 +1236,7 @@ code {
 
 .oFyUBq_circleContainer {
   justify-content: center;
-  gap: 40px;
+  gap: 50px;
   margin-top: 60px;
   padding-bottom: 30px;
   display: flex;
