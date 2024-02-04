@@ -866,7 +866,6 @@ code {
 
 ._7F8zEq_container:after {
   content: "";
-  background-color: #000;
   width: 100%;
   height: 100%;
   transition: all .4s;
@@ -929,6 +928,138 @@ code {
 .modalWork.active {
   opacity: 1;
   z-index: 10;
+}
+
+._1ORX_q_theProjectContainer {
+  color: #fff;
+  background: linear-gradient(70.7deg, #11171b 44.29%, #1a2c38 99.53%);
+  flex-direction: column;
+  align-items: center;
+  padding-top: 75px;
+  padding-bottom: 75px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+._1ORX_q_projectTitle {
+  margin: 0;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+._1ORX_q_projectText {
+  z-index: 2;
+  letter-spacing: 1px;
+  word-spacing: 4px;
+  text-align: justify;
+  max-width: 500px;
+  margin-bottom: 25px;
+  font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
+  font-size: 1.1em;
+  line-height: 25px;
+}
+
+._1ORX_q_button {
+  z-index: 2;
+  cursor: pointer;
+  color: #fff;
+  background-color: #0000;
+  border: 1px solid silver;
+  border-radius: 3px;
+  padding: 12px 20px;
+  font-size: 1em;
+  font-weight: 600;
+  transition: all .3s;
+}
+
+._1ORX_q_button:hover {
+  color: #000;
+  background-color: #fff;
+}
+
+._1ORX_q_coverText {
+  color: #fff3;
+  font-family: Times New Roman, serif;
+  font-size: 12em;
+  font-style: italic;
+  position: absolute;
+  bottom: -63px;
+  left: 20%;
+}
+
+.o6drmq_cardContainer {
+  background-color: #e6f2fa;
+}
+
+.o6drmq_workTitle {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #937b70;
+  margin-top: 0;
+  margin-bottom: 25px;
+  padding-top: 25px;
+  font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.o6drmq_workText {
+  text-align: center;
+  color: #4a4a4a;
+  margin-bottom: 70px;
+}
+
+.o6drmq_workCard {
+  justify-content: center;
+  display: flex;
+}
+
+.o6drmq_cardTitle {
+  max-width: 370px;
+  margin: 0;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.o6drmq_line {
+  background-color: #1c1d25;
+  width: 25%;
+  height: 4px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.o6drmq_workDescription {
+  word-spacing: 4px;
+  text-align: justify-all;
+  max-width: 500px;
+  margin: 0;
+  font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
+  font-size: 1.3em;
+  line-height: 27px;
+}
+
+.o6drmq_workDescription strong {
+  color: #00c8e7;
+}
+
+.o6drmq_phoneContainer {
+  margin-left: 150px;
+}
+
+.o6drmq_phoneCard {
+  width: 250px;
+  height: 500px;
+}
+
+.o6drmq_circleContainer {
+  justify-content: center;
+  gap: 50px;
+  margin-top: 60px;
+  padding-bottom: 30px;
+  display: flex;
 }
 
 .nF2IMG_workTitle {
@@ -1079,6 +1210,66 @@ code {
   transition: all .4s;
 }
 
+.S3HM8G_container {
+  background-color: #1b1f2d;
+  min-height: 60vh;
+}
+
+.S3HM8G_macImg {
+  object-fit: cover;
+  width: 550px;
+  height: 350px;
+}
+
+.S3HM8G_titleContainer {
+  justify-content: center;
+  align-items: center;
+  height: 900px;
+  display: flex;
+}
+
+.S3HM8G_title {
+  color: #fff;
+  text-align: justify;
+  margin: 0;
+  font-family: League Spartan, Helvetica, Arial, sans-serif;
+  font-size: 5.3em;
+  font-weight: 1000;
+}
+
+.S3HM8G_titleContent {
+  margin-right: 90px;
+}
+
+.S3HM8G_description {
+  color: #fff;
+  margin-top: 13px;
+  font-family: Times New Roman, serif;
+  font-size: 2em;
+  font-style: italic;
+  font-weight: 500;
+  display: block;
+}
+
+.S3HM8G_workDescriptionBox {
+  justify-content: center;
+  display: flex;
+}
+
+.S3HM8G_workDescription {
+  word-spacing: 5px;
+  text-align: justify-all;
+  max-width: 500px;
+  margin: 0;
+  font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
+  font-size: 1em;
+  line-height: 28px;
+}
+
+.S3HM8G_workDescription strong {
+  color: #f06449;
+}
+
 .oFyUBq_mainContainer {
   background-image: url("myStatusCase.3a2ef8f7.png");
   background-size: cover;
@@ -1110,54 +1301,6 @@ code {
   font-style: italic;
 }
 
-.oFyUBq_theProjectContainer {
-  color: #fff;
-  background: linear-gradient(70.7deg, #11171b 44.29%, #1a2c38 99.53%);
-  flex-direction: column;
-  align-items: center;
-  padding-top: 75px;
-  padding-bottom: 75px;
-  display: flex;
-  position: relative;
-  overflow: hidden;
-}
-
-.oFyUBq_projectTitle {
-  margin: 0;
-  font-size: 50px;
-  font-weight: 700;
-}
-
-.oFyUBq_projectText {
-  z-index: 2;
-  letter-spacing: 1px;
-  word-spacing: 4px;
-  text-align: justify;
-  max-width: 500px;
-  margin-bottom: 25px;
-  font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
-  font-size: 1.1em;
-  line-height: 25px;
-}
-
-.oFyUBq_button {
-  z-index: 2;
-  cursor: pointer;
-  color: #fff;
-  background-color: #0000;
-  border: 1px solid silver;
-  border-radius: 3px;
-  padding: 12px 20px;
-  font-size: 1em;
-  font-weight: 600;
-  transition: all .3s;
-}
-
-.oFyUBq_button:hover {
-  color: #000;
-  background-color: #fff;
-}
-
 .oFyUBq_coverText {
   color: #fff3;
   font-family: Times New Roman, serif;
@@ -1168,78 +1311,18 @@ code {
   left: 20%;
 }
 
-.oFyUBq_workTitle {
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: #937b70;
-  margin-top: 0;
-  margin-bottom: 25px;
-  padding-top: 25px;
-  font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.oFyUBq_workText {
-  text-align: center;
-  color: #4a4a4a;
-  margin-bottom: 70px;
-}
-
-.oFyUBq_workCard {
-  justify-content: center;
-  display: flex;
-}
-
-.oFyUBq_cardContainer {
-  background-color: #e6f2fa;
-}
-
-.oFyUBq_line {
-  background-color: #1c1d25;
-  width: 25%;
-  height: 4px;
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-
-.oFyUBq_cardTitle {
-  max-width: 350px;
-  margin: 0;
-  font-size: 2em;
-  font-weight: 600;
-}
-
-.oFyUBq_phoneCard {
-  width: 250px;
-  height: 500px;
-}
-
-.oFyUBq_phoneContainer {
-  margin-left: 150px;
-}
-
 .oFyUBq_workDescription {
-  word-spacing: 4px;
+  word-spacing: 5px;
   text-align: justify-all;
   max-width: 500px;
   margin: 0;
   font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
-  font-size: 1.3em;
-  line-height: 27px;
+  font-size: 1em;
+  line-height: 28px;
 }
 
 .oFyUBq_workDescription strong {
   color: #00c8e7;
-}
-
-.oFyUBq_circleContainer {
-  justify-content: center;
-  gap: 50px;
-  margin-top: 60px;
-  padding-bottom: 30px;
-  display: flex;
 }
 
 /*# sourceMappingURL=index.61d3354a.css.map */

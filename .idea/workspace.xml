@@ -4,21 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6aa7ab1-ac0e-4a6b-8250-4b34b331f08e" name="Changes" comment="link telegram notification">
+    <list default="true" id="f6aa7ab1-ac0e-4a6b-8250-4b34b331f08e" name="Changes" comment="make some components">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.2d3ace14.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.2d3ace14.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.61d3354a.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.61d3354a.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.61d3354a.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.61d3354a.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/colorCircle/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/colorCircle/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/colorCircle/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/colorCircle/styles.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/workNavigator/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/workNavigator/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/workCards/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/workCards/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/workDescription/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/workDescription/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/workNavigator/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/workNavigator/styles.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/forDreamCase/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/forDreamCase/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/home/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/myStatusCase/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/myStatusCase/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/myStatusCase/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/myStatusCase/styles.module.css" afterDir="false" />
@@ -132,6 +128,10 @@
       <workItem from="1704721061259" duration="26014000" />
       <workItem from="1705242294211" duration="5413000" />
       <workItem from="1705313052199" duration="7088000" />
+      <workItem from="1705756420230" duration="1184000" />
+      <workItem from="1706390183001" duration="919000" />
+      <workItem from="1706961377018" duration="8125000" />
+      <workItem from="1707050804554" duration="5904000" />
     </task>
     <task id="LOCAL-00001" summary="add animation in home and make animated button">
       <created>1701612959306</created>
@@ -161,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703701347660</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="make some components">
+      <option name="closed" value="true" />
+      <created>1705756954322</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1705756954322</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,7 +192,8 @@
     <MESSAGE value="fix petProject. make footer. connect link" />
     <MESSAGE value="hot fix import" />
     <MESSAGE value="fix and add components" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix and add components" />
+    <MESSAGE value="make some components" />
+    <option name="LAST_COMMIT_MESSAGE" value="make some components" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

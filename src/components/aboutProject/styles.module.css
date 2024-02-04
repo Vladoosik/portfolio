@@ -1,0 +1,73 @@
+.cardContainer {
+    background-color: #E6F2FA;
+}
+
+.workTitle {
+    text-align: center;
+    font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    color: #937b70;
+    font-weight: 600;
+    margin-bottom: 25px;
+    margin-top: 0;
+    padding-top: 25px;
+}
+
+.workText {
+    text-align: center;
+    margin-bottom: 70px;
+    color: #4a4a4a;
+}
+
+.workCard {
+    justify-content: center;
+    display: flex;
+}
+
+.cardTitle {
+    max-width: 370px;
+    font-size: 2em;
+    margin: 0;
+    font-weight: 700;
+}
+
+.line {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    height: 4px;
+    width: 25%;
+    background-color: #1C1D25;
+}
+
+.workDescription {
+    margin: 0;
+    max-width: 500px;
+    font-size: 1.3em;
+    word-spacing: 4px;
+    text-align: justify-all;
+    line-height: 27px;
+    font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
+}
+
+.workDescription strong {
+    color: #00c8e7;
+}
+
+.phoneContainer {
+    margin-left: 150px;
+}
+
+.phoneCard {
+    width: 250px;
+    height: 500px;
+}
+
+.circleContainer {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding-bottom: 30px;
+}

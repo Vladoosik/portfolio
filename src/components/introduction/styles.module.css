@@ -1,0 +1,57 @@
+.theProjectContainer {
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(70.7deg, #11171B 44.29%, #1A2C38 99.53%);
+    padding-top: 75px;
+    padding-bottom: 75px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projectTitle {
+    margin: 0;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.projectText {
+    z-index: 2;
+    font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+    text-align: justify;
+    font-size: 1.1em;
+    line-height: 25px;
+    max-width: 500px;
+    margin-bottom: 25px;
+}
+
+.button {
+    z-index: 2;
+    cursor: pointer;
+    padding: 12px 20px;
+    background-color: transparent;
+    border: 1px solid silver;
+    color: white;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 1em;
+    transition: all 0.3s;
+}
+
+.button:hover {
+    color: black;
+    background-color: white;
+}
+
+.coverText {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 12em;
+    font-family: "Times New Roman", serif;
+    font-style: italic;
+    bottom: -63px;
+    left: 20%;
+}

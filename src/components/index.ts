@@ -10,3 +10,5 @@ export { default as ColorCircle } from "./colorCircle/index";
 export { default as WorkNavigator } from "./workNavigator/index";
 export { default as WorkDescription } from "./workDescription/index";
 export { default as AllWorkModal } from "./allWorkModal/index";
+export { default as Introduction } from "./introduction/index";
+export { default as AboutProject } from "./aboutProject/index";

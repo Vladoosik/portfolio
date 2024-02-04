@@ -1,5 +1,5 @@
 // modules
-import React, { useEffect, useRef, useState } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import { useHover } from "@use-gesture/react";
 import { Link } from "react-scroll";
 // styles
@@ -113,4 +113,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default memo(Home);

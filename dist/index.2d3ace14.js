@@ -28113,9 +28113,10 @@ _s(Home, "1abCpe73Kr2NLPys2mmoAxAO7Qs=", false, function() {
     ];
 });
 _c = Home;
-exports.default = Home;
-var _c;
+exports.default = /*#__PURE__*/ _c1 = (0, _react.memo)(Home);
+var _c, _c1;
 $RefreshReg$(_c, "Home");
+$RefreshReg$(_c1, "%default%");
 
   $parcel$ReactRefreshHelpers$747e.postlude(module);
 } finally {
@@ -28153,6 +28154,8 @@ parcelHelpers.export(exports, "ColorCircle", ()=>(0, _indexDefault8.default));
 parcelHelpers.export(exports, "WorkNavigator", ()=>(0, _indexDefault9.default));
 parcelHelpers.export(exports, "WorkDescription", ()=>(0, _indexDefault10.default));
 parcelHelpers.export(exports, "AllWorkModal", ()=>(0, _indexDefault11.default));
+parcelHelpers.export(exports, "Introduction", ()=>(0, _indexDefault12.default));
+parcelHelpers.export(exports, "AboutProject", ()=>(0, _indexDefault13.default));
 var _index = require("./header/index");
 var _indexDefault = parcelHelpers.interopDefault(_index);
 var _index1 = require("./button/index");
@@ -28177,8 +28180,12 @@ var _index10 = require("./workDescription/index");
 var _indexDefault10 = parcelHelpers.interopDefault(_index10);
 var _index11 = require("./allWorkModal/index");
 var _indexDefault11 = parcelHelpers.interopDefault(_index11);
+var _index12 = require("./introduction/index");
+var _indexDefault12 = parcelHelpers.interopDefault(_index12);
+var _index13 = require("./aboutProject/index");
+var _indexDefault13 = parcelHelpers.interopDefault(_index13);
 
-},{"./header/index":"kCs45","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./button/index":"2DdQn","./animatedIcons/index":"kxTfh","./modal/index":"lHFhD","./workCards/index":"6LS3K","./animatedLinks/index":"j84Nb","./animatedText/index":"QTV9f","./footer/index":"8IE61","./colorCircle/index":"bHsYa","./workNavigator/index":"7MqBn","./workDescription/index":"kXSG1","./allWorkModal/index":"m850C"}],"kCs45":[function(require,module,exports) {
+},{"./header/index":"kCs45","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./button/index":"2DdQn","./animatedIcons/index":"kxTfh","./modal/index":"lHFhD","./workCards/index":"6LS3K","./animatedLinks/index":"j84Nb","./animatedText/index":"QTV9f","./footer/index":"8IE61","./colorCircle/index":"bHsYa","./workNavigator/index":"7MqBn","./workDescription/index":"kXSG1","./allWorkModal/index":"m850C","./introduction/index":"b2drb","./aboutProject/index":"8VmX4"}],"kCs45":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0e26 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -47639,26 +47646,19 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactScroll = require("react-scroll");
 // styles
 var _stylesModuleCss = require("./styles.module.css");
 var _stylesModuleCssDefault = parcelHelpers.interopDefault(_stylesModuleCss);
 // components
 var _button = require("../button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
+// utils
+var _navigation = require("../../utils/navigation");
 const WorkCards = (props)=>{
     const { item, index, navigate } = props;
     const odd = index % 2 === 0;
-    const handleNavigation = ()=>{
-        const options = {
-            duration: 200,
-            smooth: true
-        };
-        (0, _reactScroll.animateScroll).scrollToTop(options);
-        setTimeout(()=>navigate(item.path), 300);
-    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        onClick: handleNavigation,
+        onClick: ()=>(0, _navigation.handleNavigation)(navigate, item.path),
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: (0, _stylesModuleCssDefault.default).workCard,
             style: {
@@ -47678,8 +47678,8 @@ const WorkCards = (props)=>{
                     ]
                 }, void 0, true, {
                     fileName: "src/components/workCards/index.tsx",
-                    lineNumber: 35,
-                    columnNumber: 17
+                    lineNumber: 26,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                     src: item.image,
@@ -47687,8 +47687,8 @@ const WorkCards = (props)=>{
                     className: (0, _stylesModuleCssDefault.default).image
                 }, void 0, false, {
                     fileName: "src/components/workCards/index.tsx",
-                    lineNumber: 36,
-                    columnNumber: 17
+                    lineNumber: 32,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: odd ? (0, _stylesModuleCssDefault.default).textLeft : (0, _stylesModuleCssDefault.default).textRight,
@@ -47698,16 +47698,16 @@ const WorkCards = (props)=>{
                             children: item.title
                         }, void 0, false, {
                             fileName: "src/components/workCards/index.tsx",
-                            lineNumber: 38,
-                            columnNumber: 21
+                            lineNumber: 34,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                             className: (0, _stylesModuleCssDefault.default).cardText,
                             children: item.text
                         }, void 0, false, {
                             fileName: "src/components/workCards/index.tsx",
-                            lineNumber: 39,
-                            columnNumber: 21
+                            lineNumber: 35,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             className: (0, _stylesModuleCssDefault.default).btnContainer,
@@ -47715,30 +47715,30 @@ const WorkCards = (props)=>{
                                 text: "Case Study"
                             }, void 0, false, {
                                 fileName: "src/components/workCards/index.tsx",
-                                lineNumber: 41,
-                                columnNumber: 25
+                                lineNumber: 37,
+                                columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/workCards/index.tsx",
-                            lineNumber: 40,
-                            columnNumber: 21
+                            lineNumber: 36,
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/workCards/index.tsx",
-                    lineNumber: 37,
-                    columnNumber: 17
+                    lineNumber: 33,
+                    columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/workCards/index.tsx",
-            lineNumber: 34,
-            columnNumber: 13
+            lineNumber: 25,
+            columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/workCards/index.tsx",
-        lineNumber: 33,
-        columnNumber: 9
+        lineNumber: 24,
+        columnNumber: 5
     }, undefined);
 };
 _c = WorkCards;
@@ -47751,7 +47751,7 @@ $RefreshReg$(_c, "WorkCards");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./styles.module.css":"2tfnh","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../button":"2DdQn","react-scroll":"2D4g1"}],"2tfnh":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./styles.module.css":"2tfnh","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../button":"2DdQn","../../utils/navigation":"1FL7V"}],"2tfnh":[function(require,module,exports) {
 module.exports["btnContainer"] = `RPbNkG_btnContainer`;
 module.exports["cardNumber"] = `RPbNkG_cardNumber`;
 module.exports["cardText"] = `RPbNkG_cardText`;
@@ -47761,7 +47761,22 @@ module.exports["textLeft"] = `RPbNkG_textLeft`;
 module.exports["textRight"] = `RPbNkG_textRight`;
 module.exports["workCard"] = `RPbNkG_workCard`;
 
-},{}],"QTV9f":[function(require,module,exports) {
+},{}],"1FL7V":[function(require,module,exports) {
+// modules
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "handleNavigation", ()=>handleNavigation);
+var _modules = require("react-scroll/modules");
+const handleNavigation = (navigate, path)=>{
+    const options = {
+        duration: 200,
+        smooth: true
+    };
+    (0, _modules.animateScroll).scrollToTop(options);
+    setTimeout(()=>navigate(path), 300);
+};
+
+},{"react-scroll/modules":"2D4g1","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"QTV9f":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$7a03 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -53830,9 +53845,10 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _stylesModuleCss = require("./styles.module.css");
 var _stylesModuleCssDefault = parcelHelpers.interopDefault(_stylesModuleCss);
 const WorkDescription = (props)=>{
-    const { role, period, context, titleColor = "#f06449" } = props;
+    const { role, period, context, titleColor = "#f06449", style } = props;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: (0, _stylesModuleCssDefault.default).aboutContainer,
+        style: style,
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -53844,19 +53860,19 @@ const WorkDescription = (props)=>{
                             children: "Role"
                         }, void 0, false, {
                             fileName: "src/components/workDescription/index.tsx",
-                            lineNumber: 20,
+                            lineNumber: 21,
                             columnNumber: 11
                         }, undefined),
                         role
                     ]
                 }, void 0, true, {
                     fileName: "src/components/workDescription/index.tsx",
-                    lineNumber: 19,
+                    lineNumber: 20,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/workDescription/index.tsx",
-                lineNumber: 18,
+                lineNumber: 19,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -53869,19 +53885,19 @@ const WorkDescription = (props)=>{
                             children: "Context"
                         }, void 0, false, {
                             fileName: "src/components/workDescription/index.tsx",
-                            lineNumber: 26,
+                            lineNumber: 27,
                             columnNumber: 11
                         }, undefined),
                         context
                     ]
                 }, void 0, true, {
                     fileName: "src/components/workDescription/index.tsx",
-                    lineNumber: 25,
+                    lineNumber: 26,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/workDescription/index.tsx",
-                lineNumber: 24,
+                lineNumber: 25,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -53894,25 +53910,25 @@ const WorkDescription = (props)=>{
                             children: "Period"
                         }, void 0, false, {
                             fileName: "src/components/workDescription/index.tsx",
-                            lineNumber: 32,
+                            lineNumber: 33,
                             columnNumber: 11
                         }, undefined),
                         period
                     ]
                 }, void 0, true, {
                     fileName: "src/components/workDescription/index.tsx",
-                    lineNumber: 31,
+                    lineNumber: 32,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/workDescription/index.tsx",
-                lineNumber: 30,
+                lineNumber: 31,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/workDescription/index.tsx",
-        lineNumber: 17,
+        lineNumber: 18,
         columnNumber: 5
     }, undefined);
 };
@@ -53971,7 +53987,254 @@ $RefreshReg$(_c, "AllWorkModal");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./style.css":"30Oi6"}],"30Oi6":[function() {},{}],"afggb":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./style.css":"30Oi6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"30Oi6":[function() {},{}],"b2drb":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$a32e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$a32e.prelude(module);
+
+try {
+// modules
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+// styles
+var _stylesModuleCss = require("./styles.module.css");
+var _stylesModuleCssDefault = parcelHelpers.interopDefault(_stylesModuleCss);
+const Introduction = (props)=>{
+    const { title, description, onButtonPress, workLogo } = props;
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: (0, _stylesModuleCssDefault.default).theProjectContainer,
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                className: (0, _stylesModuleCssDefault.default).projectTitle,
+                children: title
+            }, void 0, false, {
+                fileName: "src/components/introduction/index.tsx",
+                lineNumber: 18,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                className: (0, _stylesModuleCssDefault.default).projectText,
+                children: description
+            }, void 0, false, {
+                fileName: "src/components/introduction/index.tsx",
+                lineNumber: 19,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                className: (0, _stylesModuleCssDefault.default).button,
+                onClick: onButtonPress,
+                children: "Visit Website"
+            }, void 0, false, {
+                fileName: "src/components/introduction/index.tsx",
+                lineNumber: 20,
+                columnNumber: 7
+            }, undefined),
+            workLogo && workLogo
+        ]
+    }, void 0, true, {
+        fileName: "src/components/introduction/index.tsx",
+        lineNumber: 17,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Introduction;
+exports.default = Introduction;
+var _c;
+$RefreshReg$(_c, "Introduction");
+
+  $parcel$ReactRefreshHelpers$a32e.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./styles.module.css":"equff","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"equff":[function(require,module,exports) {
+module.exports["button"] = `_1ORX_q_button`;
+module.exports["coverText"] = `_1ORX_q_coverText`;
+module.exports["projectText"] = `_1ORX_q_projectText`;
+module.exports["projectTitle"] = `_1ORX_q_projectTitle`;
+module.exports["theProjectContainer"] = `_1ORX_q_theProjectContainer`;
+
+},{}],"8VmX4":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0640 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0640.prelude(module);
+
+try {
+// modules
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+// styles
+var _stylesModuleCss = require("./styles.module.css");
+var _stylesModuleCssDefault = parcelHelpers.interopDefault(_stylesModuleCss);
+// components
+var _index = require("../index");
+const AboutProject = (props)=>{
+    const { data, description } = props;
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: (0, _stylesModuleCssDefault.default).cardContainer,
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                className: (0, _stylesModuleCssDefault.default).workTitle,
+                children: "ANALYSIS & PREPARATION"
+            }, void 0, false, {
+                fileName: "src/components/aboutProject/index.tsx",
+                lineNumber: 19,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                className: (0, _stylesModuleCssDefault.default).workText,
+                children: "Responsibilities"
+            }, void 0, false, {
+                fileName: "src/components/aboutProject/index.tsx",
+                lineNumber: 20,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: (0, _stylesModuleCssDefault.default).workCard,
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: (0, _stylesModuleCssDefault.default).cardTitle,
+                                children: "Designed with customer care and love."
+                            }, void 0, false, {
+                                fileName: "src/components/aboutProject/index.tsx",
+                                lineNumber: 23,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: (0, _stylesModuleCssDefault.default).line
+                            }, void 0, false, {
+                                fileName: "src/components/aboutProject/index.tsx",
+                                lineNumber: 26,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: (0, _stylesModuleCssDefault.default).workDescription,
+                                children: description
+                            }, void 0, false, {
+                                fileName: "src/components/aboutProject/index.tsx",
+                                lineNumber: 27,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/aboutProject/index.tsx",
+                        lineNumber: 22,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: (0, _stylesModuleCssDefault.default).phoneContainer,
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            className: (0, _stylesModuleCssDefault.default).phoneCard,
+                            src: require("e952144293b2762c"),
+                            alt: "phone"
+                        }, void 0, false, {
+                            fileName: "src/components/aboutProject/index.tsx",
+                            lineNumber: 30,
+                            columnNumber: 11
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/aboutProject/index.tsx",
+                        lineNumber: 29,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/aboutProject/index.tsx",
+                lineNumber: 21,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: (0, _stylesModuleCssDefault.default).circleContainer,
+                children: data.map((item, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _index.ColorCircle), {
+                        item: item
+                    }, index, false, {
+                        fileName: "src/components/aboutProject/index.tsx",
+                        lineNumber: 39,
+                        columnNumber: 11
+                    }, undefined))
+            }, void 0, false, {
+                fileName: "src/components/aboutProject/index.tsx",
+                lineNumber: 37,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/aboutProject/index.tsx",
+        lineNumber: 18,
+        columnNumber: 5
+    }, undefined);
+};
+_c = AboutProject;
+exports.default = AboutProject;
+var _c;
+$RefreshReg$(_c, "AboutProject");
+
+  $parcel$ReactRefreshHelpers$0640.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./styles.module.css":"i4t7V","../index":"dHnah","e952144293b2762c":"7FFEI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"i4t7V":[function(require,module,exports) {
+module.exports["cardContainer"] = `o6drmq_cardContainer`;
+module.exports["cardTitle"] = `o6drmq_cardTitle`;
+module.exports["circleContainer"] = `o6drmq_circleContainer`;
+module.exports["line"] = `o6drmq_line`;
+module.exports["phoneCard"] = `o6drmq_phoneCard`;
+module.exports["phoneContainer"] = `o6drmq_phoneContainer`;
+module.exports["workCard"] = `o6drmq_workCard`;
+module.exports["workDescription"] = `o6drmq_workDescription`;
+module.exports["workText"] = `o6drmq_workText`;
+module.exports["workTitle"] = `o6drmq_workTitle`;
+
+},{}],"7FFEI":[function(require,module,exports) {
+module.exports = require("6d0a17404e3f8b28").getBundleURL("6EXJA") + "phone.8fdd3e8e.png" + "?" + Date.now();
+
+},{"6d0a17404e3f8b28":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"afggb":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c4a0 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -61953,42 +62216,7 @@ const worksArr = [
 },{"45bd21412b8f1d93":"e0w3d","2f87208f6c0c7539":"6OHhH","4e39f8218c3e8419":"F9Eqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"e0w3d":[function(require,module,exports) {
 module.exports = require("bd8aac2835d1866f").getBundleURL("6EXJA") + "ForDreamCase.276f7fc2.png" + "?" + Date.now();
 
-},{"bd8aac2835d1866f":"lgJ39"}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-}
-// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"6OHhH":[function(require,module,exports) {
+},{"bd8aac2835d1866f":"lgJ39"}],"6OHhH":[function(require,module,exports) {
 module.exports = require("57e5f7517369bea0").getBundleURL("6EXJA") + "MyStatus.f7fb1d09.jpg" + "?" + Date.now();
 
 },{"57e5f7517369bea0":"lgJ39"}],"F9Eqq":[function(require,module,exports) {
@@ -62345,47 +62573,184 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
 // components
 var _components = require("../../components");
 // utils
 var _transitionPages = require("../../utils/transitionPages");
 var _transitionPagesDefault = parcelHelpers.interopDefault(_transitionPages);
+// styles
+var _stylesModuleCss = require("./styles.module.css");
+var _stylesModuleCssDefault = parcelHelpers.interopDefault(_stylesModuleCss);
+// constants
+var _headerLinks = require("../../constants/headerLink/headerLinks");
+var _projectColors = require("../../constants/projectColors");
+// utils
+var _navigation = require("../../utils/navigation");
 var _s = $RefreshSig$();
 const ForDreamCase = ()=>{
     _s();
     const [active, setActive] = (0, _react.useState)(false);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+    const image = require("dc1a76f49700074f");
+    const navigation = (0, _reactRouterDom.useNavigate)();
+    const handleProjectNavigate = ()=>{
+        window.open("https://fordream.dev/", "_blank");
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Header), {
-                setModal: setActive
-            }, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: (0, _stylesModuleCssDefault.default).container,
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Header), {
+                        setModal: setActive,
+                        alternative: true,
+                        data: (0, _headerLinks.caseHeaderLinks),
+                        navigation: navigation
+                    }, void 0, false, {
+                        fileName: "src/screens/forDreamCase/index.tsx",
+                        lineNumber: 37,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: (0, _stylesModuleCssDefault.default).titleContainer,
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: (0, _stylesModuleCssDefault.default).titleContent,
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        className: (0, _stylesModuleCssDefault.default).title,
+                                        children: "For Dream"
+                                    }, void 0, false, {
+                                        fileName: "src/screens/forDreamCase/index.tsx",
+                                        lineNumber: 45,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.AnimatedText), {
+                                        text: "Landing page for company",
+                                        className: (0, _stylesModuleCssDefault.default).description
+                                    }, void 0, false, {
+                                        fileName: "src/screens/forDreamCase/index.tsx",
+                                        lineNumber: 46,
+                                        columnNumber: 13
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/screens/forDreamCase/index.tsx",
+                                lineNumber: 44,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                className: (0, _stylesModuleCssDefault.default).macImg,
+                                src: image,
+                                alt: "image"
+                            }, void 0, false, {
+                                fileName: "src/screens/forDreamCase/index.tsx",
+                                lineNumber: 51,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/screens/forDreamCase/index.tsx",
+                        lineNumber: 43,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: (0, _stylesModuleCssDefault.default).workDescriptionBox,
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.WorkDescription), {
+                            context: "Landing Page",
+                            role: "Front-End Developer",
+                            period: "May 2022 - December 2022",
+                            titleColor: "#00c8e7",
+                            style: {
+                                width: "1100px"
+                            }
+                        }, void 0, false, {
+                            fileName: "src/screens/forDreamCase/index.tsx",
+                            lineNumber: 54,
+                            columnNumber: 11
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/screens/forDreamCase/index.tsx",
+                        lineNumber: 53,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Introduction), {
+                        title: "Introduction",
+                        description: "A beautiful company website, which was developed by me independently. There are a large number of animations, interactive elements and also a description of the company\u2019s work. There is a large number of technologies under the hood related mainly to animations",
+                        onButtonPress: handleProjectNavigate
+                    }, void 0, false, {
+                        fileName: "src/screens/forDreamCase/index.tsx",
+                        lineNumber: 64,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.AboutProject), {
+                        data: (0, _projectColors.ForDreamColor),
+                        description: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            className: (0, _stylesModuleCssDefault.default).workDescription,
+                            children: [
+                                "Project where I was a ",
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                    children: "React Developer"
+                                }, void 0, false, void 0, void 0),
+                                ". Independently managed the project from",
+                                " ",
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                    children: "start to hosting"
+                                }, void 0, false, void 0, void 0),
+                                " I chose which libraries to use in the project, ",
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                    children: "created flexible component models"
+                                }, void 0, false, void 0, void 0),
+                                ", and enabled firebase for temporary hosting during development. I also did ",
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                    children: "form validation"
+                                }, void 0, false, void 0, void 0),
+                                ", connecting the bot to Telegram and sending the form to the group",
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, void 0, void 0),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, void 0, void 0),
+                                "Also took an active part in the redesign,",
+                                " ",
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                    children: "offering my methods"
+                                }, void 0, false, void 0, void 0),
+                                " for optimizing various sections of the project"
+                            ]
+                        }, void 0, true, void 0, void 0)
+                    }, void 0, false, {
+                        fileName: "src/screens/forDreamCase/index.tsx",
+                        lineNumber: 74,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Modal), {
+                        active: active,
+                        setActive: setActive
+                    }, void 0, false, {
+                        fileName: "src/screens/forDreamCase/index.tsx",
+                        lineNumber: 93,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
                 fileName: "src/screens/forDreamCase/index.tsx",
-                lineNumber: 12,
-                columnNumber: 13
+                lineNumber: 36,
+                columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                children: "For Dream Case"
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.WorkNavigator), {
+                nextProjectName: "MyStatus",
+                onClick: ()=>(0, _navigation.handleNavigation)(navigation, "/myStatus")
             }, void 0, false, {
                 fileName: "src/screens/forDreamCase/index.tsx",
-                lineNumber: 13,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Modal), {
-                active: active,
-                setActive: setActive
-            }, void 0, false, {
-                fileName: "src/screens/forDreamCase/index.tsx",
-                lineNumber: 14,
-                columnNumber: 13
+                lineNumber: 95,
+                columnNumber: 7
             }, undefined)
         ]
-    }, void 0, true, {
-        fileName: "src/screens/forDreamCase/index.tsx",
-        lineNumber: 11,
-        columnNumber: 9
-    }, undefined);
+    }, void 0, true);
 };
-_s(ForDreamCase, "1cfVChV6gA1Fk8+xDnwTj3gmgZo=");
+_s(ForDreamCase, "rNkrN235ch98cgROgAsUQJrOUCE=", false, function() {
+    return [
+        (0, _reactRouterDom.useNavigate)
+    ];
+});
 _c = ForDreamCase;
 exports.default = _c1 = (0, _transitionPagesDefault.default)(ForDreamCase);
 var _c, _c1;
@@ -62397,7 +62762,81 @@ $RefreshReg$(_c1, "%default%");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../components":"dHnah","../../utils/transitionPages":"cCiHD","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2ZdlX":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../components":"dHnah","../../utils/transitionPages":"cCiHD","./styles.module.css":"kutFU","../../constants/headerLink/headerLinks":"chhsn","dc1a76f49700074f":"fH2MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../constants/projectColors":"c6Qz6","../../utils/navigation":"1FL7V"}],"kutFU":[function(require,module,exports) {
+module.exports["container"] = `S3HM8G_container`;
+module.exports["description"] = `S3HM8G_description`;
+module.exports["macImg"] = `S3HM8G_macImg`;
+module.exports["title"] = `S3HM8G_title`;
+module.exports["titleContainer"] = `S3HM8G_titleContainer`;
+module.exports["titleContent"] = `S3HM8G_titleContent`;
+module.exports["workDescription"] = `S3HM8G_workDescription`;
+module.exports["workDescriptionBox"] = `S3HM8G_workDescriptionBox`;
+
+},{}],"fH2MR":[function(require,module,exports) {
+module.exports = require("8a533c4e0b61dcfc").getBundleURL("6EXJA") + "macboockMock.55afa862.png" + "?" + Date.now();
+
+},{"8a533c4e0b61dcfc":"lgJ39"}],"c6Qz6":[function(require,module,exports) {
+// types
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MyStatusColor", ()=>MyStatusColor);
+parcelHelpers.export(exports, "ForDreamColor", ()=>ForDreamColor);
+const MyStatusColor = [
+    {
+        id: 12,
+        color: "#0179CF",
+        name: "blue1"
+    },
+    {
+        id: 32,
+        color: "#200CBE",
+        name: "blue2"
+    },
+    {
+        id: 2,
+        color: "#90D1FF",
+        name: "blue_light"
+    },
+    {
+        id: 92,
+        color: "#ACAAA9",
+        name: "gray1_40"
+    },
+    {
+        id: 82,
+        color: "#94C3E4",
+        name: "blue1_40"
+    }
+];
+const ForDreamColor = [
+    {
+        id: 12,
+        color: "#030D22",
+        name: "dark"
+    },
+    {
+        id: 32,
+        color: "#1F2AD1",
+        name: "blue1"
+    },
+    {
+        id: 2,
+        color: "#560DAA",
+        name: "purple"
+    },
+    {
+        id: 92,
+        color: "#1E34E1",
+        name: "blue2"
+    },
+    {
+        id: 82,
+        color: "#E545B2",
+        name: "pink"
+    }
+];
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2ZdlX":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c251 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -62411,40 +62850,18 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
-var _components = require("../../components"); // utils
-var _transitionPages = require("../../utils/transitionPages"); // styles
+// components
+var _components = require("../../components");
+// utils
+var _transitionPages = require("../../utils/transitionPages");
 var _transitionPagesDefault = parcelHelpers.interopDefault(_transitionPages);
-var _stylesModuleCss = require("./styles.module.css"); // constants
+// styles
+var _stylesModuleCss = require("./styles.module.css");
 var _stylesModuleCssDefault = parcelHelpers.interopDefault(_stylesModuleCss);
+// constants
 var _headerLinks = require("../../constants/headerLink/headerLinks");
+var _projectColors = require("../../constants/projectColors");
 var _s = $RefreshSig$();
-const projectColor = [
-    {
-        id: 12,
-        color: "#0179CF",
-        name: "blue1"
-    },
-    {
-        id: 32,
-        color: "#200CBE",
-        name: "blue2"
-    },
-    {
-        id: 52,
-        color: "#90D1FF",
-        name: "blue_light"
-    },
-    {
-        id: 52,
-        color: "#ACAAA9",
-        name: "gray1_40"
-    },
-    {
-        id: 52,
-        color: "#94C3E4",
-        name: "blue1_40"
-    }
-];
 const MyStatusCase = ()=>{
     _s();
     const [active, setActive] = (0, _react.useState)(false);
@@ -62463,7 +62880,7 @@ const MyStatusCase = ()=>{
                         navigation: navigation
                     }, void 0, false, {
                         fileName: "src/screens/myStatusCase/index.tsx",
-                        lineNumber: 33,
+                        lineNumber: 32,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -62475,7 +62892,7 @@ const MyStatusCase = ()=>{
                                     children: "MyStatus project"
                                 }, void 0, false, {
                                     fileName: "src/screens/myStatusCase/index.tsx",
-                                    lineNumber: 42,
+                                    lineNumber: 41,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.AnimatedText), {
@@ -62483,18 +62900,18 @@ const MyStatusCase = ()=>{
                                     text: "Social Network on React-Native"
                                 }, void 0, false, {
                                     fileName: "src/screens/myStatusCase/index.tsx",
-                                    lineNumber: 43,
+                                    lineNumber: 42,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/screens/myStatusCase/index.tsx",
-                            lineNumber: 41,
+                            lineNumber: 40,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/screens/myStatusCase/index.tsx",
-                        lineNumber: 40,
+                        lineNumber: 39,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.WorkDescription), {
@@ -62503,7 +62920,7 @@ const MyStatusCase = ()=>{
                         period: "Since 2022 - Present"
                     }, void 0, false, {
                         fileName: "src/screens/myStatusCase/index.tsx",
-                        lineNumber: 49,
+                        lineNumber: 48,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Modal), {
@@ -62511,220 +62928,79 @@ const MyStatusCase = ()=>{
                         setActive: setActive
                     }, void 0, false, {
                         fileName: "src/screens/myStatusCase/index.tsx",
-                        lineNumber: 54,
+                        lineNumber: 53,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.AllWorkModal), {
-                        data: projectColor,
+                        data: (0, _projectColors.MyStatusColor),
                         active: workModal,
                         setActive: setWorkModal
                     }, void 0, false, {
                         fileName: "src/screens/myStatusCase/index.tsx",
-                        lineNumber: 55,
+                        lineNumber: 54,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/screens/myStatusCase/index.tsx",
-                lineNumber: 32,
+                lineNumber: 31,
                 columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: (0, _stylesModuleCssDefault.default).theProjectContainer,
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: (0, _stylesModuleCssDefault.default).projectTitle,
-                        children: "The Project"
-                    }, void 0, false, {
-                        fileName: "src/screens/myStatusCase/index.tsx",
-                        lineNumber: 62,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: (0, _stylesModuleCssDefault.default).projectText,
-                        children: "A social network that focuses on the user\u2019s geolocations. You can create various events related to a specific location, share your geolocation and track your friends and contacts.Also similar to Instagram, you can post your photos/videos. The application also provides chats with your friends and contacts"
-                    }, void 0, false, {
-                        fileName: "src/screens/myStatusCase/index.tsx",
-                        lineNumber: 63,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: (0, _stylesModuleCssDefault.default).button,
-                        children: "Visit Website"
-                    }, void 0, false, {
-                        fileName: "src/screens/myStatusCase/index.tsx",
-                        lineNumber: 70,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        className: (0, _stylesModuleCssDefault.default).coverText,
-                        children: "My Status"
-                    }, void 0, false, {
-                        fileName: "src/screens/myStatusCase/index.tsx",
-                        lineNumber: 71,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Introduction), {
+                title: "The Project",
+                description: "A social network that focuses on the user\u2019s geolocations. You can\ncreate various events related to a specific location, share your\ngeolocation and track your friends and contacts.Also similar to\nInstagram, you can post your photos/videos. The application also\nprovides chats with your friends and contacts  ",
+                workLogo: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    className: (0, _stylesModuleCssDefault.default).coverText,
+                    children: "My Status"
+                }, void 0, false, void 0, void 0)
+            }, void 0, false, {
                 fileName: "src/screens/myStatusCase/index.tsx",
-                lineNumber: 61,
+                lineNumber: 60,
                 columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: (0, _stylesModuleCssDefault.default).cardContainer,
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: (0, _stylesModuleCssDefault.default).workTitle,
-                        children: "ANALYSIS & PREPARATION"
-                    }, void 0, false, {
-                        fileName: "src/screens/myStatusCase/index.tsx",
-                        lineNumber: 74,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                        className: (0, _stylesModuleCssDefault.default).workText,
-                        children: "Responsibilities"
-                    }, void 0, false, {
-                        fileName: "src/screens/myStatusCase/index.tsx",
-                        lineNumber: 75,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: (0, _stylesModuleCssDefault.default).workCard,
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                        className: (0, _stylesModuleCssDefault.default).cardTitle,
-                                        children: "Designed with customer care and love."
-                                    }, void 0, false, {
-                                        fileName: "src/screens/myStatusCase/index.tsx",
-                                        lineNumber: 78,
-                                        columnNumber: 13
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: (0, _stylesModuleCssDefault.default).line
-                                    }, void 0, false, {
-                                        fileName: "src/screens/myStatusCase/index.tsx",
-                                        lineNumber: 81,
-                                        columnNumber: 13
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                        className: (0, _stylesModuleCssDefault.default).workDescription,
-                                        children: [
-                                            "My job was to ",
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
-                                                children: "develop the application"
-                                            }, void 0, false, {
-                                                fileName: "src/screens/myStatusCase/index.tsx",
-                                                lineNumber: 83,
-                                                columnNumber: 29
-                                            }, undefined),
-                                            ", create new functionality, support and optimize old solutions in the application, as well as ",
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
-                                                children: "connect the server"
-                                            }, void 0, false, {
-                                                fileName: "src/screens/myStatusCase/index.tsx",
-                                                lineNumber: 85,
-                                                columnNumber: 39
-                                            }, undefined),
-                                            " ",
-                                            "component of the application.",
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                                fileName: "src/screens/myStatusCase/index.tsx",
-                                                lineNumber: 87,
-                                                columnNumber: 15
-                                            }, undefined),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                                fileName: "src/screens/myStatusCase/index.tsx",
-                                                lineNumber: 88,
-                                                columnNumber: 15
-                                            }, undefined),
-                                            "Overall, the project is quite large and I learned a lot during its development. In this case ",
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
-                                                children: "MobX and Typescript"
-                                            }, void 0, false, {
-                                                fileName: "src/screens/myStatusCase/index.tsx",
-                                                lineNumber: 90,
-                                                columnNumber: 41
-                                            }, undefined),
-                                            "were actively used, which helped me understand them in",
-                                            " ",
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
-                                                children: "more detail"
-                                            }, void 0, false, {
-                                                fileName: "src/screens/myStatusCase/index.tsx",
-                                                lineNumber: 92,
-                                                columnNumber: 15
-                                            }, undefined),
-                                            ". Of course, there were other libraries that can often be found in react-native, for example",
-                                            " ",
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
-                                                children: "React-Navigation"
-                                            }, void 0, false, {
-                                                fileName: "src/screens/myStatusCase/index.tsx",
-                                                lineNumber: 94,
-                                                columnNumber: 15
-                                            }, undefined)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "src/screens/myStatusCase/index.tsx",
-                                        lineNumber: 82,
-                                        columnNumber: 13
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/screens/myStatusCase/index.tsx",
-                                lineNumber: 77,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: (0, _stylesModuleCssDefault.default).phoneContainer,
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                    className: (0, _stylesModuleCssDefault.default).phoneCard,
-                                    src: require("e3d64df1e385bd27"),
-                                    alt: "phone"
-                                }, void 0, false, {
-                                    fileName: "src/screens/myStatusCase/index.tsx",
-                                    lineNumber: 98,
-                                    columnNumber: 13
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/screens/myStatusCase/index.tsx",
-                                lineNumber: 97,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/screens/myStatusCase/index.tsx",
-                        lineNumber: 76,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: (0, _stylesModuleCssDefault.default).circleContainer,
-                        children: projectColor.map((item, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.ColorCircle), {
-                                item: item
-                            }, index, false, {
-                                fileName: "src/screens/myStatusCase/index.tsx",
-                                lineNumber: 107,
-                                columnNumber: 13
-                            }, undefined))
-                    }, void 0, false, {
-                        fileName: "src/screens/myStatusCase/index.tsx",
-                        lineNumber: 105,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.AboutProject), {
+                data: (0, _projectColors.MyStatusColor),
+                description: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: (0, _stylesModuleCssDefault.default).workDescription,
+                    children: [
+                        "My job was to ",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                            children: "develop the application"
+                        }, void 0, false, void 0, void 0),
+                        ", create new functionality, support and optimize old solutions in the application, as well as ",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                            children: "connect the server"
+                        }, void 0, false, void 0, void 0),
+                        " ",
+                        "component of the application.",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, void 0, void 0),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, void 0, void 0),
+                        "Overall, the project is quite large and I learned a lot during its development. In this case ",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                            children: "MobX and Typescript"
+                        }, void 0, false, void 0, void 0),
+                        " were actively used, which helped me understand them in",
+                        " ",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                            children: "more detail"
+                        }, void 0, false, void 0, void 0),
+                        ". Of course, there were other libraries that can often be found in react-native, for example",
+                        " ",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                            children: "React-Navigation"
+                        }, void 0, false, void 0, void 0)
+                    ]
+                }, void 0, true, void 0, void 0)
+            }, void 0, false, {
                 fileName: "src/screens/myStatusCase/index.tsx",
-                lineNumber: 73,
+                lineNumber: 71,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.WorkNavigator), {
                 nextProjectName: "Catchy Web"
             }, void 0, false, {
                 fileName: "src/screens/myStatusCase/index.tsx",
-                lineNumber: 111,
+                lineNumber: 90,
                 columnNumber: 7
             }, undefined)
         ]
@@ -62746,31 +63022,15 @@ $RefreshReg$(_c1, "%default%");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../components":"dHnah","../../utils/transitionPages":"cCiHD","./styles.module.css":"bNoSU","../../constants/headerLink/headerLinks":"chhsn","e3d64df1e385bd27":"7FFEI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bNoSU":[function(require,module,exports) {
-module.exports["button"] = `oFyUBq_button`;
-module.exports["cardContainer"] = `oFyUBq_cardContainer`;
-module.exports["cardTitle"] = `oFyUBq_cardTitle`;
-module.exports["circleContainer"] = `oFyUBq_circleContainer`;
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../components":"dHnah","../../utils/transitionPages":"cCiHD","./styles.module.css":"bNoSU","../../constants/headerLink/headerLinks":"chhsn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../constants/projectColors":"c6Qz6"}],"bNoSU":[function(require,module,exports) {
 module.exports["coverText"] = `oFyUBq_coverText`;
-module.exports["line"] = `oFyUBq_line`;
 module.exports["mainContainer"] = `oFyUBq_mainContainer`;
-module.exports["phoneCard"] = `oFyUBq_phoneCard`;
-module.exports["phoneContainer"] = `oFyUBq_phoneContainer`;
-module.exports["projectText"] = `oFyUBq_projectText`;
-module.exports["projectTitle"] = `oFyUBq_projectTitle`;
 module.exports["text"] = `oFyUBq_text`;
-module.exports["theProjectContainer"] = `oFyUBq_theProjectContainer`;
 module.exports["title"] = `oFyUBq_title`;
 module.exports["titleContainer"] = `oFyUBq_titleContainer`;
-module.exports["workCard"] = `oFyUBq_workCard`;
 module.exports["workDescription"] = `oFyUBq_workDescription`;
-module.exports["workText"] = `oFyUBq_workText`;
-module.exports["workTitle"] = `oFyUBq_workTitle`;
 
-},{}],"7FFEI":[function(require,module,exports) {
-module.exports = require("6d0a17404e3f8b28").getBundleURL("6EXJA") + "phone.8fdd3e8e.png" + "?" + Date.now();
-
-},{"6d0a17404e3f8b28":"lgJ39"}],"221pJ":[function(require,module,exports) {
+},{}],"221pJ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$52fe = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
