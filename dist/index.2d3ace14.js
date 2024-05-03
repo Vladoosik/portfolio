@@ -27782,10 +27782,8 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
-var _framerMotion = require("framer-motion");
-// styles
-var _appCss = require("./App.css");
-// screens
+var _framerMotion = require("framer-motion"); // styles
+var _appCss = require("./App.css"); // screens
 var _screens = require("./screens");
 var _s = $RefreshSig$();
 function App() {
@@ -27803,43 +27801,43 @@ function App() {
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _screens.MainScreen), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/App.tsx",
-                        lineNumber: 16,
-                        columnNumber: 21
+                        lineNumber: 14,
+                        columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                         path: "/forDream",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _screens.ForDreamCase), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/App.tsx",
-                        lineNumber: 17,
-                        columnNumber: 21
+                        lineNumber: 15,
+                        columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                         path: "/myStatus",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _screens.MyStatusCase), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/App.tsx",
-                        lineNumber: 18,
-                        columnNumber: 21
+                        lineNumber: 16,
+                        columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "/catchyWeb",
-                        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _screens.CatchyWebCase), {}, void 0, false, void 0, void 0)
+                        path: "/kloki",
+                        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _screens.PlannerCase), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/App.tsx",
-                        lineNumber: 19,
-                        columnNumber: 21
+                        lineNumber: 17,
+                        columnNumber: 11
                     }, this)
                 ]
             }, location.pathname, true, {
                 fileName: "src/App.tsx",
-                lineNumber: 15,
-                columnNumber: 17
+                lineNumber: 13,
+                columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "src/App.tsx",
-            lineNumber: 14,
-            columnNumber: 13
+            lineNumber: 12,
+            columnNumber: 7
         }, this)
     }, void 0, false);
 }
@@ -27867,7 +27865,7 @@ parcelHelpers.export(exports, "PetProjects", ()=>(0, _indexDefault2.default));
 parcelHelpers.export(exports, "MainScreen", ()=>(0, _indexDefault3.default));
 parcelHelpers.export(exports, "ForDreamCase", ()=>(0, _indexDefault4.default));
 parcelHelpers.export(exports, "MyStatusCase", ()=>(0, _indexDefault5.default));
-parcelHelpers.export(exports, "CatchyWebCase", ()=>(0, _indexDefault6.default));
+parcelHelpers.export(exports, "PlannerCase", ()=>(0, _indexDefault6.default));
 var _index = require("./home/index");
 var _indexDefault = parcelHelpers.interopDefault(_index);
 var _index1 = require("./works/index");
@@ -27880,10 +27878,10 @@ var _index4 = require("./forDreamCase/index");
 var _indexDefault4 = parcelHelpers.interopDefault(_index4);
 var _index5 = require("./myStatusCase/index");
 var _indexDefault5 = parcelHelpers.interopDefault(_index5);
-var _index6 = require("./catchyWebCase/index");
+var _index6 = require("./klokiCase/index");
 var _indexDefault6 = parcelHelpers.interopDefault(_index6);
 
-},{"./home/index":"lzefa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./works/index":"afggb","./petProject/index":"58uqm","./mainScreen/index":"a5oCy","./forDreamCase/index":"2nyyb","./myStatusCase/index":"2ZdlX","./catchyWebCase/index":"221pJ"}],"lzefa":[function(require,module,exports) {
+},{"./home/index":"lzefa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./works/index":"afggb","./petProject/index":"58uqm","./mainScreen/index":"a5oCy","./forDreamCase/index":"2nyyb","./myStatusCase/index":"2ZdlX","./klokiCase/index":"kmjp7"}],"lzefa":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$747e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27919,6 +27917,7 @@ const Home = ()=>{
     const bind = (0, _react1.useHover)((state)=>{
         setIsHovered(state.hovering);
     });
+    console.log("rerender");
     const cursorPositionRef = (0, _react.useRef)(cursorPosition);
     const handleIconPress = (path, params)=>{
         if (params && path) window.open(path, params);
@@ -27960,12 +27959,12 @@ const Home = ()=>{
                         setModal: setModalActive
                     }, void 0, false, {
                         fileName: "src/screens/home/index.tsx",
-                        lineNumber: 66,
+                        lineNumber: 68,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/screens/home/index.tsx",
-                    lineNumber: 63,
+                    lineNumber: 65,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27984,7 +27983,7 @@ const Home = ()=>{
                                             children: "Vlad Khrushchev"
                                         }, void 0, false, {
                                             fileName: "src/screens/home/index.tsx",
-                                            lineNumber: 71,
+                                            lineNumber: 73,
                                             columnNumber: 15
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.AnimatedText), {
@@ -27992,7 +27991,7 @@ const Home = ()=>{
                                             className: (0, _stylesModuleCssDefault.default).description
                                         }, void 0, false, {
                                             fileName: "src/screens/home/index.tsx",
-                                            lineNumber: 72,
+                                            lineNumber: 74,
                                             columnNumber: 15
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -28002,36 +28001,36 @@ const Home = ()=>{
                                                 onClick: ()=>setModalActive(true)
                                             }, void 0, false, {
                                                 fileName: "src/screens/home/index.tsx",
-                                                lineNumber: 77,
+                                                lineNumber: 79,
                                                 columnNumber: 17
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/screens/home/index.tsx",
-                                            lineNumber: 76,
+                                            lineNumber: 78,
                                             columnNumber: 15
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/screens/home/index.tsx",
-                                    lineNumber: 70,
+                                    lineNumber: 72,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                     className: (0, _stylesModuleCssDefault.default).logoContainer,
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.AnimatedLogo), {}, void 0, false, {
                                         fileName: "src/screens/home/index.tsx",
-                                        lineNumber: 84,
+                                        lineNumber: 86,
                                         columnNumber: 15
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/screens/home/index.tsx",
-                                    lineNumber: 83,
+                                    lineNumber: 85,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/screens/home/index.tsx",
-                            lineNumber: 69,
+                            lineNumber: 71,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -28041,18 +28040,18 @@ const Home = ()=>{
                                     children: item.icon
                                 }, item.id, false, {
                                     fileName: "src/screens/home/index.tsx",
-                                    lineNumber: 93,
+                                    lineNumber: 95,
                                     columnNumber: 15
                                 }, undefined))
                         }, void 0, false, {
                             fileName: "src/screens/home/index.tsx",
-                            lineNumber: 87,
+                            lineNumber: 89,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/screens/home/index.tsx",
-                    lineNumber: 68,
+                    lineNumber: 70,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -28060,12 +28059,12 @@ const Home = ()=>{
                         cursorPosition: cursorPositionRef.current
                     }, void 0, false, {
                         fileName: "src/screens/home/index.tsx",
-                        lineNumber: 103,
+                        lineNumber: 105,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/screens/home/index.tsx",
-                    lineNumber: 102,
+                    lineNumber: 104,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Modal), {
@@ -28073,7 +28072,7 @@ const Home = ()=>{
                     setActive: setModalActive
                 }, void 0, false, {
                     fileName: "src/screens/home/index.tsx",
-                    lineNumber: 105,
+                    lineNumber: 107,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -28086,23 +28085,23 @@ const Home = ()=>{
                             children: "Works"
                         }, void 0, false, {
                             fileName: "src/screens/home/index.tsx",
-                            lineNumber: 108,
+                            lineNumber: 110,
                             columnNumber: 13
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/screens/home/index.tsx",
-                        lineNumber: 107,
+                        lineNumber: 109,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/screens/home/index.tsx",
-                    lineNumber: 106,
+                    lineNumber: 108,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/screens/home/index.tsx",
-            lineNumber: 62,
+            lineNumber: 64,
             columnNumber: 7
         }, undefined)
     }, void 0, false);
@@ -53764,9 +53763,12 @@ var _stylesModuleCssDefault = parcelHelpers.interopDefault(_stylesModuleCss);
 // assets
 var _assets = require("../../assets");
 const WorkNavigator = (props)=>{
-    const { nextProjectName, onClick } = props;
+    const { nextProjectName, onClick, overlayColor = "#f06449", backgroundColor } = props;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: (0, _stylesModuleCssDefault.default).container,
+        style: {
+            backgroundColor
+        },
         onClick: onClick,
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -53774,8 +53776,8 @@ const WorkNavigator = (props)=>{
                 children: "Next work"
             }, void 0, false, {
                 fileName: "src/components/workNavigator/index.tsx",
-                lineNumber: 17,
-                columnNumber: 13
+                lineNumber: 28,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: (0, _stylesModuleCssDefault.default).contentContainer,
@@ -53785,8 +53787,8 @@ const WorkNavigator = (props)=>{
                         children: nextProjectName
                     }, void 0, false, {
                         fileName: "src/components/workNavigator/index.tsx",
-                        lineNumber: 19,
-                        columnNumber: 17
+                        lineNumber: 30,
+                        columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.ArrowIcon), {
                         color: "black",
@@ -53795,20 +53797,30 @@ const WorkNavigator = (props)=>{
                         className: (0, _stylesModuleCssDefault.default).arrow
                     }, void 0, false, {
                         fileName: "src/components/workNavigator/index.tsx",
-                        lineNumber: 20,
-                        columnNumber: 17
+                        lineNumber: 31,
+                        columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/workNavigator/index.tsx",
-                lineNumber: 18,
-                columnNumber: 13
+                lineNumber: 29,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: (0, _stylesModuleCssDefault.default).overlay,
+                style: {
+                    backgroundColor: overlayColor
+                }
+            }, void 0, false, {
+                fileName: "src/components/workNavigator/index.tsx",
+                lineNumber: 38,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/workNavigator/index.tsx",
-        lineNumber: 16,
-        columnNumber: 9
+        lineNumber: 23,
+        columnNumber: 5
     }, undefined);
 };
 _c = WorkNavigator;
@@ -53827,6 +53839,7 @@ module.exports["container"] = `_7F8zEq_container`;
 module.exports["contentContainer"] = `_7F8zEq_contentContainer`;
 module.exports["description"] = `_7F8zEq_description`;
 module.exports["nextWorkText"] = `_7F8zEq_nextWorkText`;
+module.exports["overlay"] = `_7F8zEq_overlay`;
 
 },{}],"kXSG1":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$fe59 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
@@ -54077,7 +54090,7 @@ var _stylesModuleCssDefault = parcelHelpers.interopDefault(_stylesModuleCss);
 // components
 var _index = require("../index");
 const AboutProject = (props)=>{
-    const { data, description } = props;
+    const { data, description, photoSource = require("e952144293b2762c") } = props;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: (0, _stylesModuleCssDefault.default).cardContainer,
         children: [
@@ -54086,7 +54099,7 @@ const AboutProject = (props)=>{
                 children: "ANALYSIS & PREPARATION"
             }, void 0, false, {
                 fileName: "src/components/aboutProject/index.tsx",
-                lineNumber: 19,
+                lineNumber: 24,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
@@ -54094,7 +54107,7 @@ const AboutProject = (props)=>{
                 children: "Responsibilities"
             }, void 0, false, {
                 fileName: "src/components/aboutProject/index.tsx",
-                lineNumber: 20,
+                lineNumber: 25,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -54107,14 +54120,14 @@ const AboutProject = (props)=>{
                                 children: "Designed with customer care and love."
                             }, void 0, false, {
                                 fileName: "src/components/aboutProject/index.tsx",
-                                lineNumber: 23,
+                                lineNumber: 28,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 className: (0, _stylesModuleCssDefault.default).line
                             }, void 0, false, {
                                 fileName: "src/components/aboutProject/index.tsx",
-                                lineNumber: 26,
+                                lineNumber: 31,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -54122,35 +54135,35 @@ const AboutProject = (props)=>{
                                 children: description
                             }, void 0, false, {
                                 fileName: "src/components/aboutProject/index.tsx",
-                                lineNumber: 27,
+                                lineNumber: 32,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/aboutProject/index.tsx",
-                        lineNumber: 22,
+                        lineNumber: 27,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: (0, _stylesModuleCssDefault.default).phoneContainer,
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                             className: (0, _stylesModuleCssDefault.default).phoneCard,
-                            src: require("e952144293b2762c"),
+                            src: photoSource,
                             alt: "phone"
                         }, void 0, false, {
                             fileName: "src/components/aboutProject/index.tsx",
-                            lineNumber: 30,
+                            lineNumber: 35,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/aboutProject/index.tsx",
-                        lineNumber: 29,
+                        lineNumber: 34,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/aboutProject/index.tsx",
-                lineNumber: 21,
+                lineNumber: 26,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -54159,18 +54172,18 @@ const AboutProject = (props)=>{
                         item: item
                     }, index, false, {
                         fileName: "src/components/aboutProject/index.tsx",
-                        lineNumber: 39,
+                        lineNumber: 40,
                         columnNumber: 11
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/aboutProject/index.tsx",
-                lineNumber: 37,
+                lineNumber: 38,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/aboutProject/index.tsx",
-        lineNumber: 18,
+        lineNumber: 23,
         columnNumber: 5
     }, undefined);
 };
@@ -62206,23 +62219,23 @@ const worksArr = [
     },
     {
         id: 14,
-        title: "Catchy-Web",
-        text: "Admin panel for music studio",
-        image: require("4e39f8218c3e8419"),
-        path: "catchyWeb"
+        title: "Kloki Planer",
+        text: "planer on React-Native",
+        image: require("ad957eb1b8b12eb1"),
+        path: "kloki"
     }
 ];
 
-},{"45bd21412b8f1d93":"e0w3d","2f87208f6c0c7539":"6OHhH","4e39f8218c3e8419":"F9Eqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"e0w3d":[function(require,module,exports) {
+},{"45bd21412b8f1d93":"e0w3d","2f87208f6c0c7539":"6OHhH","ad957eb1b8b12eb1":"eoE0r","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"e0w3d":[function(require,module,exports) {
 module.exports = require("bd8aac2835d1866f").getBundleURL("6EXJA") + "ForDreamCase.276f7fc2.png" + "?" + Date.now();
 
 },{"bd8aac2835d1866f":"lgJ39"}],"6OHhH":[function(require,module,exports) {
 module.exports = require("57e5f7517369bea0").getBundleURL("6EXJA") + "MyStatus.f7fb1d09.jpg" + "?" + Date.now();
 
-},{"57e5f7517369bea0":"lgJ39"}],"F9Eqq":[function(require,module,exports) {
-module.exports = require("cba87834ab7e8477").getBundleURL("6EXJA") + "CathcyWeb.bd187337.jpg" + "?" + Date.now();
+},{"57e5f7517369bea0":"lgJ39"}],"eoE0r":[function(require,module,exports) {
+module.exports = require("ee9484e4ec23f321").getBundleURL("6EXJA") + "planer.ae97a7d3.jpg" + "?" + Date.now();
 
-},{"cba87834ab7e8477":"lgJ39"}],"58uqm":[function(require,module,exports) {
+},{"ee9484e4ec23f321":"lgJ39"}],"58uqm":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$6655 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -62737,7 +62750,8 @@ const ForDreamCase = ()=>{
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.WorkNavigator), {
                 nextProjectName: "MyStatus",
-                onClick: ()=>(0, _navigation.handleNavigation)(navigation, "/myStatus")
+                onClick: ()=>(0, _navigation.handleNavigation)(navigation, "/myStatus"),
+                overlayColor: "#00c8e7"
             }, void 0, false, {
                 fileName: "src/screens/forDreamCase/index.tsx",
                 lineNumber: 95,
@@ -62762,7 +62776,7 @@ $RefreshReg$(_c1, "%default%");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../components":"dHnah","../../utils/transitionPages":"cCiHD","./styles.module.css":"kutFU","../../constants/headerLink/headerLinks":"chhsn","dc1a76f49700074f":"fH2MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../constants/projectColors":"c6Qz6","../../utils/navigation":"1FL7V"}],"kutFU":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../components":"dHnah","../../utils/transitionPages":"cCiHD","./styles.module.css":"kutFU","../../constants/headerLink/headerLinks":"chhsn","../../constants/projectColors":"c6Qz6","../../utils/navigation":"1FL7V","dc1a76f49700074f":"fH2MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kutFU":[function(require,module,exports) {
 module.exports["container"] = `S3HM8G_container`;
 module.exports["description"] = `S3HM8G_description`;
 module.exports["macImg"] = `S3HM8G_macImg`;
@@ -62772,15 +62786,13 @@ module.exports["titleContent"] = `S3HM8G_titleContent`;
 module.exports["workDescription"] = `S3HM8G_workDescription`;
 module.exports["workDescriptionBox"] = `S3HM8G_workDescriptionBox`;
 
-},{}],"fH2MR":[function(require,module,exports) {
-module.exports = require("8a533c4e0b61dcfc").getBundleURL("6EXJA") + "macboockMock.55afa862.png" + "?" + Date.now();
-
-},{"8a533c4e0b61dcfc":"lgJ39"}],"c6Qz6":[function(require,module,exports) {
+},{}],"c6Qz6":[function(require,module,exports) {
 // types
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MyStatusColor", ()=>MyStatusColor);
 parcelHelpers.export(exports, "ForDreamColor", ()=>ForDreamColor);
+parcelHelpers.export(exports, "PlanerColor", ()=>PlanerColor);
 const MyStatusColor = [
     {
         id: 12,
@@ -62835,8 +62847,38 @@ const ForDreamColor = [
         name: "pink"
     }
 ];
+const PlanerColor = [
+    {
+        id: 12,
+        color: "#B88AFE",
+        name: "Purple"
+    },
+    {
+        id: 32,
+        color: "#7D40DB",
+        name: "Purple 2"
+    },
+    {
+        id: 2,
+        color: "#FE8A96",
+        name: "Red"
+    },
+    {
+        id: 92,
+        color: "#94DF21",
+        name: "Green"
+    },
+    {
+        id: 82,
+        color: "#322F35",
+        name: "Gray"
+    }
+];
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2ZdlX":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fH2MR":[function(require,module,exports) {
+module.exports = require("8a533c4e0b61dcfc").getBundleURL("6EXJA") + "macboockMock.55afa862.png" + "?" + Date.now();
+
+},{"8a533c4e0b61dcfc":"lgJ39"}],"2ZdlX":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c251 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -62855,6 +62897,7 @@ var _components = require("../../components");
 // utils
 var _transitionPages = require("../../utils/transitionPages");
 var _transitionPagesDefault = parcelHelpers.interopDefault(_transitionPages);
+var _navigation = require("../../utils/navigation");
 // styles
 var _stylesModuleCss = require("./styles.module.css");
 var _stylesModuleCssDefault = parcelHelpers.interopDefault(_stylesModuleCss);
@@ -62880,7 +62923,7 @@ const MyStatusCase = ()=>{
                         navigation: navigation
                     }, void 0, false, {
                         fileName: "src/screens/myStatusCase/index.tsx",
-                        lineNumber: 32,
+                        lineNumber: 33,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -62892,7 +62935,7 @@ const MyStatusCase = ()=>{
                                     children: "MyStatus project"
                                 }, void 0, false, {
                                     fileName: "src/screens/myStatusCase/index.tsx",
-                                    lineNumber: 41,
+                                    lineNumber: 42,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.AnimatedText), {
@@ -62900,18 +62943,18 @@ const MyStatusCase = ()=>{
                                     text: "Social Network on React-Native"
                                 }, void 0, false, {
                                     fileName: "src/screens/myStatusCase/index.tsx",
-                                    lineNumber: 42,
+                                    lineNumber: 43,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/screens/myStatusCase/index.tsx",
-                            lineNumber: 40,
+                            lineNumber: 41,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/screens/myStatusCase/index.tsx",
-                        lineNumber: 39,
+                        lineNumber: 40,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.WorkDescription), {
@@ -62920,7 +62963,7 @@ const MyStatusCase = ()=>{
                         period: "Since 2022 - Present"
                     }, void 0, false, {
                         fileName: "src/screens/myStatusCase/index.tsx",
-                        lineNumber: 48,
+                        lineNumber: 49,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Modal), {
@@ -62928,7 +62971,7 @@ const MyStatusCase = ()=>{
                         setActive: setActive
                     }, void 0, false, {
                         fileName: "src/screens/myStatusCase/index.tsx",
-                        lineNumber: 53,
+                        lineNumber: 54,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.AllWorkModal), {
@@ -62937,13 +62980,13 @@ const MyStatusCase = ()=>{
                         setActive: setWorkModal
                     }, void 0, false, {
                         fileName: "src/screens/myStatusCase/index.tsx",
-                        lineNumber: 54,
+                        lineNumber: 55,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/screens/myStatusCase/index.tsx",
-                lineNumber: 31,
+                lineNumber: 32,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Introduction), {
@@ -62955,7 +62998,7 @@ const MyStatusCase = ()=>{
                 }, void 0, false, void 0, void 0)
             }, void 0, false, {
                 fileName: "src/screens/myStatusCase/index.tsx",
-                lineNumber: 60,
+                lineNumber: 61,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.AboutProject), {
@@ -62993,14 +63036,15 @@ const MyStatusCase = ()=>{
                 }, void 0, true, void 0, void 0)
             }, void 0, false, {
                 fileName: "src/screens/myStatusCase/index.tsx",
-                lineNumber: 71,
+                lineNumber: 72,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.WorkNavigator), {
-                nextProjectName: "Catchy Web"
+                nextProjectName: "Planer Mobile",
+                onClick: ()=>(0, _navigation.handleNavigation)(navigation, "/kloki")
             }, void 0, false, {
                 fileName: "src/screens/myStatusCase/index.tsx",
-                lineNumber: 90,
+                lineNumber: 91,
                 columnNumber: 7
             }, undefined)
         ]
@@ -63022,7 +63066,7 @@ $RefreshReg$(_c1, "%default%");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../components":"dHnah","../../utils/transitionPages":"cCiHD","./styles.module.css":"bNoSU","../../constants/headerLink/headerLinks":"chhsn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../constants/projectColors":"c6Qz6"}],"bNoSU":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../components":"dHnah","../../utils/transitionPages":"cCiHD","../../utils/navigation":"1FL7V","./styles.module.css":"bNoSU","../../constants/headerLink/headerLinks":"chhsn","../../constants/projectColors":"c6Qz6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bNoSU":[function(require,module,exports) {
 module.exports["coverText"] = `oFyUBq_coverText`;
 module.exports["mainContainer"] = `oFyUBq_mainContainer`;
 module.exports["text"] = `oFyUBq_text`;
@@ -63030,11 +63074,11 @@ module.exports["title"] = `oFyUBq_title`;
 module.exports["titleContainer"] = `oFyUBq_titleContainer`;
 module.exports["workDescription"] = `oFyUBq_workDescription`;
 
-},{}],"221pJ":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$52fe = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{}],"kmjp7":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8288 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$52fe.prelude(module);
+$parcel$ReactRefreshHelpers$8288.prelude(module);
 
 try {
 // modules
@@ -63043,58 +63087,170 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
 // components
 var _components = require("../../components");
 // utils
 var _transitionPages = require("../../utils/transitionPages");
 var _transitionPagesDefault = parcelHelpers.interopDefault(_transitionPages);
+var _navigation = require("../../utils/navigation");
+// constants
+var _headerLinks = require("../../constants/headerLink/headerLinks");
+var _projectColors = require("../../constants/projectColors");
+// styles
+var _stylesModuleCss = require("./styles.module.css");
+var _stylesModuleCssDefault = parcelHelpers.interopDefault(_stylesModuleCss);
 var _s = $RefreshSig$();
-const CatchyWebCase = ()=>{
+const PlannerCase = ()=>{
     _s();
     const [active, setActive] = (0, _react.useState)(false);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Header), {
-                setModal: setActive
-            }, void 0, false, {
-                fileName: "src/screens/catchyWebCase/index.tsx",
-                lineNumber: 12,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                children: "For Dream Case"
-            }, void 0, false, {
-                fileName: "src/screens/catchyWebCase/index.tsx",
-                lineNumber: 13,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Modal), {
-                active: active,
-                setActive: setActive
-            }, void 0, false, {
-                fileName: "src/screens/catchyWebCase/index.tsx",
-                lineNumber: 14,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/screens/catchyWebCase/index.tsx",
-        lineNumber: 11,
-        columnNumber: 9
-    }, undefined);
+    const [workModal, setWorkModal] = (0, _react.useState)(false);
+    const navigation = (0, _reactRouterDom.useNavigate)();
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: (0, _stylesModuleCssDefault.default).container,
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Header), {
+                    setWorkModal: setWorkModal,
+                    alternative: true,
+                    data: (0, _headerLinks.caseHeaderLinks),
+                    setModal: setActive,
+                    navigation: navigation
+                }, void 0, false, {
+                    fileName: "src/screens/klokiCase/index.tsx",
+                    lineNumber: 31,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: (0, _stylesModuleCssDefault.default).contentBox,
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            children: "For Dream Case"
+                        }, void 0, false, {
+                            fileName: "src/screens/klokiCase/index.tsx",
+                            lineNumber: 39,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.WorkDescription), {
+                            role: "React-Native Developer",
+                            context: "Mobile Planer",
+                            period: "January 2024 - Present",
+                            titleColor: "#7AAC2D"
+                        }, void 0, false, {
+                            fileName: "src/screens/klokiCase/index.tsx",
+                            lineNumber: 40,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/screens/klokiCase/index.tsx",
+                    lineNumber: 38,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Introduction), {
+                        title: "About Project",
+                        description: "The project created in React-Native is a planner that allows you to add, delete plans, daily habits, monitor your progress, and also receive notifications from the application about upcoming plans"
+                    }, void 0, false, {
+                        fileName: "src/screens/klokiCase/index.tsx",
+                        lineNumber: 48,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/screens/klokiCase/index.tsx",
+                    lineNumber: 47,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.AboutProject), {
+                    data: (0, _projectColors.PlanerColor),
+                    description: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: (0, _stylesModuleCssDefault.default).workDescription,
+                        children: [
+                            "My job was to ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                children: "develop the application"
+                            }, void 0, false, void 0, void 0),
+                            ", create new functionality, support and optimize old solutions in the application, as well as ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                children: "connect the server"
+                            }, void 0, false, void 0, void 0),
+                            " ",
+                            "component of the application.",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, void 0, void 0),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, void 0, void 0),
+                            "Overall, the project is quite large and I learned a lot during its development. In this case ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                children: "MobX and Typescript"
+                            }, void 0, false, void 0, void 0),
+                            " ",
+                            "were actively used, which helped me understand them in",
+                            " ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                children: "more detail"
+                            }, void 0, false, void 0, void 0),
+                            ". Of course, there were other libraries that can often be found in react-native, for example",
+                            " ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                children: "React-Navigation"
+                            }, void 0, false, void 0, void 0)
+                        ]
+                    }, void 0, true, void 0, void 0),
+                    photoSource: require("e74e34595dbb1e8d")
+                }, void 0, false, {
+                    fileName: "src/screens/klokiCase/index.tsx",
+                    lineNumber: 58,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.WorkNavigator), {
+                    nextProjectName: "ForDream Web",
+                    onClick: ()=>(0, _navigation.handleNavigation)(navigation, "/forDream"),
+                    overlayColor: "#030D22",
+                    backgroundColor: "white"
+                }, void 0, false, {
+                    fileName: "src/screens/klokiCase/index.tsx",
+                    lineNumber: 80,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Modal), {
+                    active: active,
+                    setActive: setActive
+                }, void 0, false, {
+                    fileName: "src/screens/klokiCase/index.tsx",
+                    lineNumber: 86,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/screens/klokiCase/index.tsx",
+            lineNumber: 30,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false);
 };
-_s(CatchyWebCase, "1cfVChV6gA1Fk8+xDnwTj3gmgZo=");
-_c = CatchyWebCase;
-exports.default = _c1 = (0, _transitionPagesDefault.default)(CatchyWebCase);
+_s(PlannerCase, "k9JgYYb0GXZcaENqb8XIZ6WILGI=", false, function() {
+    return [
+        (0, _reactRouterDom.useNavigate)
+    ];
+});
+_c = PlannerCase;
+exports.default = _c1 = (0, _transitionPagesDefault.default)(PlannerCase);
 var _c, _c1;
-$RefreshReg$(_c, "CatchyWebCase");
+$RefreshReg$(_c, "PlannerCase");
 $RefreshReg$(_c1, "%default%");
 
-  $parcel$ReactRefreshHelpers$52fe.postlude(module);
+  $parcel$ReactRefreshHelpers$8288.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../components":"dHnah","../../utils/transitionPages":"cCiHD","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["9p54t","1xC6H","4aBH6"], "4aBH6", "parcelRequire2bed")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../components":"dHnah","../../constants/headerLink/headerLinks":"chhsn","./styles.module.css":"383DS","../../constants/projectColors":"c6Qz6","../../utils/navigation":"1FL7V","e74e34595dbb1e8d":"2yWAl","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../utils/transitionPages":"cCiHD"}],"383DS":[function(require,module,exports) {
+module.exports["container"] = `DydckW_container`;
+module.exports["contentBox"] = `DydckW_contentBox`;
+module.exports["workDescription"] = `DydckW_workDescription`;
+
+},{}],"2yWAl":[function(require,module,exports) {
+module.exports = require("6edd7fe333a41069").getBundleURL("6EXJA") + "planer_mobile.cd39f547.png" + "?" + Date.now();
+
+},{"6edd7fe333a41069":"lgJ39"}]},["9p54t","1xC6H","4aBH6"], "4aBH6", "parcelRequire2bed")
 
 //# sourceMappingURL=index.2d3ace14.js.map

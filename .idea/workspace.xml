@@ -4,20 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6aa7ab1-ac0e-4a6b-8250-4b34b331f08e" name="Changes" comment="make some components">
+    <list default="true" id="f6aa7ab1-ac0e-4a6b-8250-4b34b331f08e" name="Changes" comment="add ForDreamCase">
+      <change afterPath="$PROJECT_DIR$/src/screens/klokiCase/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.2d3ace14.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.2d3ace14.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.61d3354a.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.61d3354a.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.61d3354a.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.61d3354a.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/workCards/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/workCards/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/workDescription/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/workDescription/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/aboutProject/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/aboutProject/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/animatedIcons/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/animatedIcons/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/workNavigator/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/workNavigator/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/workNavigator/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/workNavigator/styles.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/commerceProject/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/commerceProject/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/projectColors/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/projectColors/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/catchyWebCase/index.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/forDreamCase/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/forDreamCase/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/home/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/myStatusCase/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/myStatusCase/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/myStatusCase/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/myStatusCase/styles.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/AnimatedIconType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/AnimatedIconType.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/navigation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/navigation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/transitionPages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/transitionPages.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,32 +69,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/apple/Desktop/portfolio/src/assets/png&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;E:\\project\\portfolio\\my-app\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;E:\\project\\portfolio\\my-app\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "newScreen",
+    "last_opened_file_path": "E:/project/portfolio/my-app/src/assets/png",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "E:\\project\\portfolio\\my-app\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "E:\\project\\portfolio\\my-app\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\project\portfolio\my-app\src\assets\png" />
       <recent name="$PROJECT_DIR$/src/assets/png" />
       <recent name="E:\project\portfolio\my-app" />
     </key>
@@ -131,7 +140,14 @@
       <workItem from="1705756420230" duration="1184000" />
       <workItem from="1706390183001" duration="919000" />
       <workItem from="1706961377018" duration="8125000" />
-      <workItem from="1707050804554" duration="5904000" />
+      <workItem from="1707050804554" duration="7856000" />
+      <workItem from="1707567670587" duration="1069000" />
+      <workItem from="1710594605432" duration="3111000" />
+      <workItem from="1711991633452" duration="603000" />
+      <workItem from="1713977610102" duration="2651000" />
+      <workItem from="1714135690796" duration="3379000" />
+      <workItem from="1714222509402" duration="5078000" />
+      <workItem from="1714739860379" duration="5630000" />
     </task>
     <task id="LOCAL-00001" summary="add animation in home and make animated button">
       <created>1701612959306</created>
@@ -169,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705756954322</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add ForDreamCase">
+      <option name="closed" value="true" />
+      <created>1707064007477</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1707064007477</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,7 +217,8 @@
     <MESSAGE value="hot fix import" />
     <MESSAGE value="fix and add components" />
     <MESSAGE value="make some components" />
-    <option name="LAST_COMMIT_MESSAGE" value="make some components" />
+    <MESSAGE value="add ForDreamCase" />
+    <option name="LAST_COMMIT_MESSAGE" value="add ForDreamCase" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

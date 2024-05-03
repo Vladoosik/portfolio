@@ -36,7 +36,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #f06449;
+    background-color: transparent;
     transition: all 0.4s;
 }
 
@@ -49,6 +49,20 @@
     left: 0;
     width: 100%;
     transition: all 0.4s;
+}
+
+.overlay {
+    position: absolute;
+    height: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent; /* Используем прозрачный фон по умолчанию */
+    transition: all 0.4s;
+}
+
+.container:hover .overlay {
+    height: 100%; /* Растягиваем при наведении */
 }
 
 /*@keyframes sliderAnimation {*/

@@ -2,7 +2,10 @@
 import { animateScroll as scroll } from "react-scroll/modules";
 import { NavigateFunction } from "react-router/dist/lib/hooks";
 
-export const handleNavigation = (navigate: NavigateFunction, path: string) => {
+export const handleNavigation = (
+  navigate: NavigateFunction,
+  path: string,
+): void => {
   const options = {
     duration: 200,
     smooth: true,
