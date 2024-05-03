@@ -30,6 +30,8 @@ const Home = () => {
     setIsHovered(state.hovering);
   });
 
+  console.log("rerender");
+
   const cursorPositionRef = useRef<CursorPositionType>(cursorPosition);
 
   const handleIconPress = (path: string, params: string) => {

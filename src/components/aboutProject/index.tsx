@@ -10,10 +10,15 @@ import { ProjectColorType } from "../../types/ProjectColorType";
 interface AboutProjectProps {
   data: ProjectColorType[];
   description: JSX.Element;
+  photoSource?: string;
 }
 
 const AboutProject: FC<AboutProjectProps> = (props) => {
-  const { data, description } = props;
+  const {
+    data,
+    description,
+    photoSource = require("../../assets/png/phone.png"),
+  } = props;
   return (
     <div className={styles.cardContainer}>
       <p className={styles.workTitle}>ANALYSIS & PREPARATION</p>
@@ -27,11 +32,7 @@ const AboutProject: FC<AboutProjectProps> = (props) => {
           <p className={styles.workDescription}>{description}</p>
         </div>
         <div className={styles.phoneContainer}>
-          <img
-            className={styles.phoneCard}
-            src={require("../../assets/png/phone.png")}
-            alt="phone"
-          />
+          <img className={styles.phoneCard} src={photoSource} alt="phone" />
         </div>
       </div>
       <div className={styles.circleContainer}>

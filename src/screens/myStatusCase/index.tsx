@@ -15,6 +15,7 @@ import {
 } from "../../components";
 // utils
 import transitionPages from "../../utils/transitionPages";
+import { handleNavigation } from "../../utils/navigation";
 // styles
 import styles from "./styles.module.css";
 // constants
@@ -87,7 +88,10 @@ const MyStatusCase = () => {
           </p>
         }
       />
-      <WorkNavigator nextProjectName={"Catchy Web"} />
+      <WorkNavigator
+        nextProjectName={"Planer Mobile"}
+        onClick={() => handleNavigation(navigation, "/kloki")}
+      />
     </>
   );
 };

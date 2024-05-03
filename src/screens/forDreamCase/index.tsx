@@ -95,6 +95,7 @@ const ForDreamCase = () => {
       <WorkNavigator
         nextProjectName={"MyStatus"}
         onClick={() => handleNavigation(navigation, "/myStatus")}
+        overlayColor={"#00c8e7"}
       />
     </>
   );
