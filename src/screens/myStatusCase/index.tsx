@@ -7,6 +7,7 @@ import {
   AboutProject,
   AllWorkModal,
   AnimatedText,
+  Footer,
   Header,
   Introduction,
   Modal,
@@ -21,6 +22,7 @@ import styles from "./styles.module.css";
 // constants
 import { caseHeaderLinks } from "../../constants/headerLink/headerLinks";
 import { MyStatusColor } from "../../constants/projectColors";
+import { modalWorkArr } from "../../constants/commerceProject";
 
 const MyStatusCase = () => {
   const [active, setActive] = useState<boolean>(false);
@@ -53,7 +55,7 @@ const MyStatusCase = () => {
         />
         <Modal active={active} setActive={setActive} />
         <AllWorkModal
-          data={MyStatusColor}
+          data={modalWorkArr}
           active={workModal}
           setActive={setWorkModal}
         />
@@ -92,6 +94,7 @@ const MyStatusCase = () => {
         nextProjectName={"Planer Mobile"}
         onClick={() => handleNavigation(navigation, "/kloki")}
       />
+      <Footer />
     </>
   );
 };

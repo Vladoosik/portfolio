@@ -5,6 +5,8 @@ import { NavigateFunction } from "react-router/dist/lib/hooks";
 // components
 import {
   AboutProject,
+  AllWorkModal,
+  Footer,
   Header,
   Introduction,
   Modal,
@@ -19,6 +21,7 @@ import { caseHeaderLinks } from "../../constants/headerLink/headerLinks";
 import { PlanerColor } from "../../constants/projectColors";
 // styles
 import styles from "./styles.module.css";
+import { modalWorkArr } from "../../constants/commerceProject";
 
 const PlannerCase = () => {
   const [active, setActive] = useState<boolean>(false);
@@ -83,7 +86,13 @@ const PlannerCase = () => {
           overlayColor={"#030D22"}
           backgroundColor={"white"}
         />
+        <Footer />
         <Modal active={active} setActive={setActive} />
+        <AllWorkModal
+          data={modalWorkArr}
+          active={workModal}
+          setActive={setWorkModal}
+        />
       </div>
     </>
   );

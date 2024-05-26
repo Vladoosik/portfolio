@@ -5,7 +5,9 @@ import { NavigateFunction } from "react-router/dist/lib/hooks";
 // components
 import {
   AboutProject,
+  AllWorkModal,
   AnimatedText,
+  Footer,
   Header,
   Introduction,
   Modal,
@@ -19,11 +21,13 @@ import styles from "./styles.module.css";
 // constants
 import { caseHeaderLinks } from "../../constants/headerLink/headerLinks";
 import { ForDreamColor } from "../../constants/projectColors";
+import { modalWorkArr } from "../../constants/commerceProject";
 // utils
 import { handleNavigation } from "../../utils/navigation";
 
 const ForDreamCase = () => {
   const [active, setActive] = useState<boolean>(false);
+  const [workModal, setWorkModal] = useState<boolean>(false);
   const image = require("../../assets/png/macboockMock.png");
   const navigation: NavigateFunction = useNavigate();
 
@@ -97,6 +101,12 @@ const ForDreamCase = () => {
         onClick={() => handleNavigation(navigation, "/myStatus")}
         overlayColor={"#00c8e7"}
       />
+      <AllWorkModal
+        data={modalWorkArr}
+        active={workModal}
+        setActive={setWorkModal}
+      />
+      <Footer />
     </>
   );
 };

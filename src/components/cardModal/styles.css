@@ -1,0 +1,63 @@
+.img {
+    height: 520px;
+    width: 10vw;
+    object-fit: cover;
+    filter: brightness(50%);
+
+}
+
+.img:nth-child(odd) {
+    -webkit-box-shadow: 18px 1px 46px 6px rgba(0, 0, 0, 0.32);
+    box-shadow: 18px 1px 46px 6px rgba(0, 0, 0, 0.32);
+}
+
+.img:nth-child(even) {
+    -webkit-box-shadow: -16px 1px 46px 6px rgba(0, 0, 0, 0.32);
+    box-shadow: -16px 1px 46px 6px rgba(0, 0, 0, 0.32);
+}
+
+.title {
+    color: #1c1d25;
+    font-family: "Microsoft New Tai Lue", sans-serif;
+    font-weight: 600;
+    margin: 0;
+    font-size: 3.75em;
+    text-align: center;
+}
+
+.modalSubtitle {
+    text-align: center;
+    color: #76869d;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: .8125em;
+}
+
+.modalDescription {
+    font-size: .9375em;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #1c1d25;
+    max-width: 400px;
+    font-weight: 500;
+}
+
+.modalButtonBox {
+    align-self: center;
+}
+
+.textContainer {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.modalCard {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+
+    /*max-width: 1500px;*/
+    margin-top: 50px;
+}

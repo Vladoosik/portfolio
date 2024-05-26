@@ -12,3 +12,4 @@ export { default as WorkDescription } from "./workDescription/index";
 export { default as AllWorkModal } from "./allWorkModal/index";
 export { default as Introduction } from "./introduction/index";
 export { default as AboutProject } from "./aboutProject/index";
+export { default as CardModal } from "./cardModal/index";
