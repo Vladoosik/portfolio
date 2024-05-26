@@ -1,0 +1,25 @@
+.container {
+    background: linear-gradient(to left, #4f298c, #1b1f2d);
+    min-height: 60vh;
+}
+
+.contentBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60vh;
+}
+
+.workDescription {
+    margin: 0;
+    max-width: 500px;
+    font-size: 1em;
+    word-spacing: 5px;
+    text-align: justify-all;
+    line-height: 28px;
+    font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
+}
+
+.workDescription strong {
+    color: #7AAC2D;
+}
