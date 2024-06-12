@@ -76,7 +76,12 @@ const ForDreamCase = () => {
           onButtonPress={handleProjectNavigate}
         />
         <AboutProject
+          photoSource={require("../../assets/png/macForDream.png")}
           data={ForDreamColor}
+          imageStyle={{
+            width: 550,
+            height: 350,
+          }}
           description={
             <p className={styles.workDescription}>
               Project where I was a <strong>React Developer</strong>.

@@ -1,6 +1,7 @@
 .img {
     height: 520px;
-    width: 10vw;
+    width: 13vw;
+    max-width: 450px;
     object-fit: cover;
     filter: brightness(50%);
 
@@ -50,11 +51,11 @@
     padding: 60px;
     display: flex;
     flex-direction: column;
+    background-color: white;
 
 }
 
 .modalCard {
-    background-color: white;
     display: flex;
     justify-content: space-between;
 
