@@ -10,14 +10,12 @@
       <change beforePath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.61d3354a.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.61d3354a.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.61d3354a.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.61d3354a.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/aboutProject/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/aboutProject/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/aboutProject/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/aboutProject/styles.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/allWorkModal/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/allWorkModal/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/allWorkModal/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/allWorkModal/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/commerceProject/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/commerceProject/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cardModal/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cardModal/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cardModal/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cardModal/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/forDreamCase/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/forDreamCase/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/klokiCase/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/klokiCase/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/myStatusCase/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/myStatusCase/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/WorksType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/WorksType.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,6 +141,9 @@
       <workItem from="1714813877715" duration="7321000" />
       <workItem from="1715006114890" duration="6425000" />
       <workItem from="1715102057097" duration="418000" />
+      <workItem from="1716736051396" duration="1819000" />
+      <workItem from="1717067963098" duration="3021000" />
+      <workItem from="1717855743158" duration="4038000" />
     </task>
     <task id="LOCAL-00001" summary="add animation in home and make animated button">
       <created>1701612959306</created>

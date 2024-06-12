@@ -4,6 +4,7 @@ import React, { FC, useEffect } from "react";
 import { Button, CardModal } from "../index";
 // styles
 import "./style.css";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface AllWorkModalProps {
   data: any;
@@ -26,24 +27,50 @@ const AllWorkModal: FC<AllWorkModalProps> = (props) => {
   const handleModalClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };
+
+  const modalVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+    exit: { opacity: 0 },
+  };
+
+  const transition = { duration: 0.3, ease: "easeInOut" };
+
   return (
-    <div
-      className={active ? "modalWork active" : "modalWork"}
-      onClick={() => setActive(false)}
-    >
-      <div className={"buttonBox"}>
-        <Button
-          text={"X Close"}
+    <AnimatePresence>
+      {active && (
+        <motion.div
+          className="modalWork active"
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          variants={modalVariants}
+          transition={transition}
           onClick={() => setActive(false)}
-          widthArrow={false}
-        />
-      </div>
-      <div className={"cardModalContainer"} onClick={handleModalClick}>
-        {data.map((item: any, index: number) => (
-          <CardModal item={item} index={index} />
-        ))}
-      </div>
-    </div>
+        >
+          <div className="buttonBox">
+            <Button
+              text="X Close"
+              onClick={() => setActive(false)}
+              widthArrow={false}
+            />
+          </div>
+          <motion.div
+            className="cardModalContainer"
+            onClick={handleModalClick}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={modalVariants}
+            transition={transition}
+          >
+            {data.map((item: any, index: number) => (
+              <CardModal item={item} index={index} key={item.id} />
+            ))}
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 

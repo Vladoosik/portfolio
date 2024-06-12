@@ -1078,7 +1078,9 @@ code {
 }
 
 .o6drmq_phoneContainer {
+  align-items: center;
   margin-left: 150px;
+  display: flex;
 }
 
 .o6drmq_phoneCard {
@@ -1097,7 +1099,8 @@ code {
 .img {
   object-fit: cover;
   filter: brightness(50%);
-  width: 10vw;
+  width: 13vw;
+  max-width: 450px;
   height: 520px;
 }
 
@@ -1140,13 +1143,13 @@ code {
 }
 
 .textContainer {
+  background-color: #fff;
   flex-direction: column;
   padding: 60px;
   display: flex;
 }
 
 .modalCard {
-  background-color: #fff;
   justify-content: space-between;
   margin-top: 50px;
   display: flex;

@@ -11,6 +11,7 @@ interface AboutProjectProps {
   data: ProjectColorType[];
   description: JSX.Element;
   photoSource?: string;
+  imageStyle?: object;
 }
 
 const AboutProject: FC<AboutProjectProps> = (props) => {
@@ -18,6 +19,7 @@ const AboutProject: FC<AboutProjectProps> = (props) => {
     data,
     description,
     photoSource = require("../../assets/png/phone.png"),
+    imageStyle,
   } = props;
   return (
     <div className={styles.cardContainer}>
@@ -32,7 +34,12 @@ const AboutProject: FC<AboutProjectProps> = (props) => {
           <p className={styles.workDescription}>{description}</p>
         </div>
         <div className={styles.phoneContainer}>
-          <img className={styles.phoneCard} src={photoSource} alt="phone" />
+          <img
+            className={styles.phoneCard}
+            style={imageStyle}
+            src={photoSource}
+            alt="phone"
+          />
         </div>
       </div>
       <div className={styles.circleContainer}>
