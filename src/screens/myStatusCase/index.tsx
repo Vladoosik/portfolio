@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { NavigateFunction } from "react-router/dist/lib/hooks";
+import { animateScroll } from "react-scroll";
 // components
 import {
   AboutProject,
@@ -28,6 +29,10 @@ const MyStatusCase = () => {
   const [active, setActive] = useState<boolean>(false);
   const [workModal, setWorkModal] = useState<boolean>(false);
   const navigation: NavigateFunction = useNavigate();
+
+  const scrollToTop = () => {
+    animateScroll.scrollToTop();
+  };
 
   return (
     <>
@@ -94,7 +99,7 @@ const MyStatusCase = () => {
         nextProjectName={"Planer Mobile"}
         onClick={() => handleNavigation(navigation, "/kloki")}
       />
-      <Footer />
+      <Footer onLinkPress={scrollToTop} />
     </>
   );
 };

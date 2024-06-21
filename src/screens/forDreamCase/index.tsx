@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { NavigateFunction } from "react-router/dist/lib/hooks";
+import { animateScroll } from "react-scroll";
 // components
 import {
   AboutProject,
@@ -31,15 +32,20 @@ const ForDreamCase = () => {
   const image = require("../../assets/png/macboockMock.png");
   const navigation: NavigateFunction = useNavigate();
 
+  const scrollToTop = () => {
+    animateScroll.scrollToTop();
+  };
+
   const handleProjectNavigate = () => {
     window.open("https://fordream.dev/", "_blank");
   };
 
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.container} id={"#forDream"}>
         <Header
           setModal={setActive}
+          setWorkModal={setWorkModal}
           alternative
           data={caseHeaderLinks}
           navigation={navigation}
@@ -52,7 +58,7 @@ const ForDreamCase = () => {
               className={styles.description}
             />
           </div>
-          <img className={styles.macImg} src={image} alt="image" />
+          <img className={styles.macImg} src={image} alt="macImage" />
         </div>
         <div className={styles.workDescriptionBox}>
           <WorkDescription
@@ -111,7 +117,7 @@ const ForDreamCase = () => {
         active={workModal}
         setActive={setWorkModal}
       />
-      <Footer />
+      <Footer onLinkPress={scrollToTop} />
     </>
   );
 };

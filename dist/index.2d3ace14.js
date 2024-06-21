@@ -27782,8 +27782,10 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
-var _framerMotion = require("framer-motion"); // styles
-var _appCss = require("./App.css"); // screens
+var _framerMotion = require("framer-motion");
+// styles
+var _appCss = require("./App.css");
+// screens
 var _screens = require("./screens");
 var _s = $RefreshSig$();
 function App() {
@@ -27801,7 +27803,7 @@ function App() {
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _screens.MainScreen), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/App.tsx",
-                        lineNumber: 14,
+                        lineNumber: 16,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27809,7 +27811,7 @@ function App() {
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _screens.ForDreamCase), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/App.tsx",
-                        lineNumber: 15,
+                        lineNumber: 17,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27817,7 +27819,7 @@ function App() {
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _screens.MyStatusCase), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/App.tsx",
-                        lineNumber: 16,
+                        lineNumber: 18,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27825,18 +27827,18 @@ function App() {
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _screens.PlannerCase), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/App.tsx",
-                        lineNumber: 17,
+                        lineNumber: 19,
                         columnNumber: 11
                     }, this)
                 ]
             }, location.pathname, true, {
                 fileName: "src/App.tsx",
-                lineNumber: 13,
+                lineNumber: 15,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "src/App.tsx",
-            lineNumber: 12,
+            lineNumber: 14,
             columnNumber: 7
         }, this)
     }, void 0, false);
@@ -27894,8 +27896,8 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _react1 = require("@use-gesture/react");
 var _reactScroll = require("react-scroll");
+var _react1 = require("@use-gesture/react");
 // styles
 var _stylesModuleCss = require("./styles.module.css");
 var _stylesModuleCssDefault = parcelHelpers.interopDefault(_stylesModuleCss);
@@ -27917,7 +27919,6 @@ const Home = ()=>{
     const bind = (0, _react1.useHover)((state)=>{
         setIsHovered(state.hovering);
     });
-    console.log("rerender");
     const cursorPositionRef = (0, _react.useRef)(cursorPosition);
     const handleIconPress = (path, params)=>{
         if (params && path) window.open(path, params);
@@ -27926,26 +27927,27 @@ const Home = ()=>{
             window.open(mailtoLink, "_blank");
         }
     };
+    const handleMouseMove = (0, _react.useCallback)((event)=>{
+        const { clientX, clientY } = event;
+        cursorPositionRef.current = {
+            x: clientX,
+            y: clientY
+        };
+        setCursorPosition({
+            x: clientX,
+            y: clientY
+        });
+    }, []);
     (0, _react.useEffect)(()=>{
         if (isHovered) {
-            const handleMouseMove = (event)=>{
-                const { clientX, clientY } = event;
-                cursorPositionRef.current = {
-                    x: clientX,
-                    y: clientY
-                };
-                setCursorPosition({
-                    x: clientX,
-                    y: clientY
-                });
-            };
             window.addEventListener("mousemove", handleMouseMove);
             return ()=>{
                 window.removeEventListener("mousemove", handleMouseMove);
             };
         }
     }, [
-        isHovered
+        isHovered,
+        handleMouseMove
     ]);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27959,12 +27961,12 @@ const Home = ()=>{
                         setModal: setModalActive
                     }, void 0, false, {
                         fileName: "src/screens/home/index.tsx",
-                        lineNumber: 68,
+                        lineNumber: 66,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/screens/home/index.tsx",
-                    lineNumber: 65,
+                    lineNumber: 63,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27983,7 +27985,7 @@ const Home = ()=>{
                                             children: "Vlad Khrushchev"
                                         }, void 0, false, {
                                             fileName: "src/screens/home/index.tsx",
-                                            lineNumber: 73,
+                                            lineNumber: 71,
                                             columnNumber: 15
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.AnimatedText), {
@@ -27991,7 +27993,7 @@ const Home = ()=>{
                                             className: (0, _stylesModuleCssDefault.default).description
                                         }, void 0, false, {
                                             fileName: "src/screens/home/index.tsx",
-                                            lineNumber: 74,
+                                            lineNumber: 72,
                                             columnNumber: 15
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -28001,36 +28003,36 @@ const Home = ()=>{
                                                 onClick: ()=>setModalActive(true)
                                             }, void 0, false, {
                                                 fileName: "src/screens/home/index.tsx",
-                                                lineNumber: 79,
+                                                lineNumber: 77,
                                                 columnNumber: 17
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/screens/home/index.tsx",
-                                            lineNumber: 78,
+                                            lineNumber: 76,
                                             columnNumber: 15
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/screens/home/index.tsx",
-                                    lineNumber: 72,
+                                    lineNumber: 70,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                     className: (0, _stylesModuleCssDefault.default).logoContainer,
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.AnimatedLogo), {}, void 0, false, {
                                         fileName: "src/screens/home/index.tsx",
-                                        lineNumber: 86,
+                                        lineNumber: 84,
                                         columnNumber: 15
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/screens/home/index.tsx",
-                                    lineNumber: 85,
+                                    lineNumber: 83,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/screens/home/index.tsx",
-                            lineNumber: 71,
+                            lineNumber: 69,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -28040,18 +28042,18 @@ const Home = ()=>{
                                     children: item.icon
                                 }, item.id, false, {
                                     fileName: "src/screens/home/index.tsx",
-                                    lineNumber: 95,
+                                    lineNumber: 93,
                                     columnNumber: 15
                                 }, undefined))
                         }, void 0, false, {
                             fileName: "src/screens/home/index.tsx",
-                            lineNumber: 89,
+                            lineNumber: 87,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/screens/home/index.tsx",
-                    lineNumber: 70,
+                    lineNumber: 68,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -28059,12 +28061,12 @@ const Home = ()=>{
                         cursorPosition: cursorPositionRef.current
                     }, void 0, false, {
                         fileName: "src/screens/home/index.tsx",
-                        lineNumber: 105,
+                        lineNumber: 103,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/screens/home/index.tsx",
-                    lineNumber: 104,
+                    lineNumber: 102,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Modal), {
@@ -28072,7 +28074,7 @@ const Home = ()=>{
                     setActive: setModalActive
                 }, void 0, false, {
                     fileName: "src/screens/home/index.tsx",
-                    lineNumber: 107,
+                    lineNumber: 105,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -28085,28 +28087,28 @@ const Home = ()=>{
                             children: "Works"
                         }, void 0, false, {
                             fileName: "src/screens/home/index.tsx",
-                            lineNumber: 110,
+                            lineNumber: 108,
                             columnNumber: 13
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/screens/home/index.tsx",
-                        lineNumber: 109,
+                        lineNumber: 107,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/screens/home/index.tsx",
-                    lineNumber: 108,
+                    lineNumber: 106,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/screens/home/index.tsx",
-            lineNumber: 64,
+            lineNumber: 62,
             columnNumber: 7
         }, undefined)
     }, void 0, false);
 };
-_s(Home, "1abCpe73Kr2NLPys2mmoAxAO7Qs=", false, function() {
+_s(Home, "QyrQm3I93p5FeC6VRwnQNbcMp0c=", false, function() {
     return [
         (0, _react1.useHover)
     ];
@@ -28122,7 +28124,7 @@ $RefreshReg$(_c1, "%default%");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./styles.module.css":"BRJ4G","../../components":"dHnah","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../assets":"lDowU","@use-gesture/react":"gVqEQ","react-scroll":"2D4g1","../../constants/iconsArray":"cSIAS"}],"BRJ4G":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./styles.module.css":"BRJ4G","../../components":"dHnah","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../assets":"lDowU","react-scroll":"2D4g1","../../constants/iconsArray":"cSIAS","@use-gesture/react":"gVqEQ"}],"BRJ4G":[function(require,module,exports) {
 module.exports["buttonContainer"] = `P30aKa_buttonContainer`;
 module.exports["container"] = `P30aKa_container`;
 module.exports["contentContainer"] = `P30aKa_contentContainer`;
@@ -42308,7 +42310,7 @@ var _stylesModuleCssDefault = parcelHelpers.interopDefault(_stylesModuleCss);
 // assets
 var _assets = require("../../assets");
 const Button = (props)=>{
-    const { text, widthArrow = true, onClick, disabled = false } = props;
+    const { text, widthArrow = true, onClick, disabled = false, className } = props;
     const handleButtonPress = ()=>{
         if (onClick && !disabled) onClick();
     };
@@ -42318,6 +42320,7 @@ const Button = (props)=>{
             cursor: disabled ? "not-allowed" : "pointer"
         },
         onClick: handleButtonPress,
+        className: className,
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: (0, _stylesModuleCssDefault.default).button,
@@ -42327,34 +42330,34 @@ const Button = (props)=>{
                         children: text
                     }, void 0, false, {
                         fileName: "src/components/button/index.tsx",
-                        lineNumber: 27,
-                        columnNumber: 17
+                        lineNumber: 41,
+                        columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: (0, _stylesModuleCssDefault.default).buttonMask
                     }, void 0, false, {
                         fileName: "src/components/button/index.tsx",
-                        lineNumber: 28,
-                        columnNumber: 17
+                        lineNumber: 44,
+                        columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/button/index.tsx",
-                lineNumber: 26,
-                columnNumber: 13
+                lineNumber: 40,
+                columnNumber: 7
             }, undefined),
             widthArrow && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.ArrowIcon), {
                 className: (0, _stylesModuleCssDefault.default).buttonArrow
             }, void 0, false, {
                 fileName: "src/components/button/index.tsx",
-                lineNumber: 30,
-                columnNumber: 28
+                lineNumber: 46,
+                columnNumber: 22
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/button/index.tsx",
-        lineNumber: 25,
-        columnNumber: 9
+        lineNumber: 32,
+        columnNumber: 5
     }, undefined);
 };
 _c = Button;
@@ -42427,8 +42430,8 @@ const AnimatedIcons = (props)=>{
                 children: item.icon
             }, item.id, false, {
                 fileName: "src/components/animatedIcons/index.tsx",
-                lineNumber: 44,
-                columnNumber: 17
+                lineNumber: 43,
+                columnNumber: 9
             }, undefined))
     }, void 0, false);
 };
@@ -47859,7 +47862,8 @@ var _stylesModuleCssDefault = parcelHelpers.interopDefault(_stylesModuleCss);
 var _footerLinks = require("../../constants/footerLinks");
 // components
 var _index = require("../index");
-const Footer = ()=>{
+const Footer = (props)=>{
+    const { linkToTop = "home", onLinkPress } = props;
     const year = new Date().getFullYear();
     const openLink = (link)=>{
         window.open(link, "_blank");
@@ -47870,28 +47874,29 @@ const Footer = ()=>{
             className: (0, _stylesModuleCssDefault.default).contentContainer,
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactScroll.Link), {
-                    to: "home",
+                    to: linkToTop,
                     smooth: "100",
                     className: (0, _stylesModuleCssDefault.default).iconLink,
+                    onClick: onLinkPress,
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _assets.Logo), {}, void 0, false, {
                             fileName: "src/components/footer/index.tsx",
-                            lineNumber: 24,
-                            columnNumber: 21
+                            lineNumber: 34,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                             className: (0, _stylesModuleCssDefault.default).toTop,
                             children: "To Top"
                         }, void 0, false, {
                             fileName: "src/components/footer/index.tsx",
-                            lineNumber: 25,
-                            columnNumber: 21
+                            lineNumber: 35,
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/footer/index.tsx",
-                    lineNumber: 23,
-                    columnNumber: 17
+                    lineNumber: 28,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: (0, _stylesModuleCssDefault.default).linkContainer,
@@ -47900,13 +47905,13 @@ const Footer = ()=>{
                             item: item
                         }, item.id, false, {
                             fileName: "src/components/footer/index.tsx",
-                            lineNumber: 29,
-                            columnNumber: 25
+                            lineNumber: 39,
+                            columnNumber: 13
                         }, undefined))
                 }, void 0, false, {
                     fileName: "src/components/footer/index.tsx",
-                    lineNumber: 27,
-                    columnNumber: 17
+                    lineNumber: 37,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: (0, _stylesModuleCssDefault.default).licenceContainer,
@@ -47922,30 +47927,30 @@ const Footer = ()=>{
                                 children: "Contact"
                             }, void 0, false, {
                                 fileName: "src/components/footer/index.tsx",
-                                lineNumber: 33,
-                                columnNumber: 85
+                                lineNumber: 49,
+                                columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/footer/index.tsx",
-                        lineNumber: 33,
-                        columnNumber: 21
+                        lineNumber: 47,
+                        columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/footer/index.tsx",
-                    lineNumber: 32,
-                    columnNumber: 17
+                    lineNumber: 46,
+                    columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/footer/index.tsx",
-            lineNumber: 22,
-            columnNumber: 13
+            lineNumber: 27,
+            columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/footer/index.tsx",
-        lineNumber: 21,
-        columnNumber: 9
+        lineNumber: 26,
+        columnNumber: 5
     }, undefined);
 };
 _c = Footer;
@@ -53974,11 +53979,11 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _framerMotion = require("framer-motion");
 // components
 var _index = require("../index");
 // styles
 var _styleCss = require("./style.css");
-var _framerMotion = require("framer-motion");
 var _s = $RefreshSig$();
 const AllWorkModal = (props)=>{
     _s();
@@ -54023,7 +54028,8 @@ const AllWorkModal = (props)=>{
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _index.Button), {
                         text: "X Close",
                         onClick: ()=>setActive(false),
-                        widthArrow: false
+                        widthArrow: false,
+                        className: "buttonModal"
                     }, void 0, false, {
                         fileName: "src/components/allWorkModal/index.tsx",
                         lineNumber: 52,
@@ -54047,12 +54053,12 @@ const AllWorkModal = (props)=>{
                             index: index
                         }, item.id, false, {
                             fileName: "src/components/allWorkModal/index.tsx",
-                            lineNumber: 68,
+                            lineNumber: 69,
                             columnNumber: 15
                         }, undefined))
                 }, void 0, false, {
                     fileName: "src/components/allWorkModal/index.tsx",
-                    lineNumber: 58,
+                    lineNumber: 59,
                     columnNumber: 11
                 }, undefined)
             ]
@@ -54338,10 +54344,12 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _framerMotion = require("framer-motion");
-var _react = require("react"); // components
+var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _button = require("../button"); // styles
+// components
+var _button = require("../button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
+// styles
 var _stylesCss = require("./styles.css");
 const CardModal = (props)=>{
     const { item, index } = props;
@@ -54392,7 +54400,7 @@ const CardModal = (props)=>{
             transition: transition
         }, void 0, false, {
             fileName: "src/components/cardModal/index.tsx",
-            lineNumber: 30,
+            lineNumber: 32,
             columnNumber: 5
         }, undefined);
     const DescriptionText = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _framerMotion.motion).div, {
@@ -54412,7 +54420,7 @@ const CardModal = (props)=>{
                             children: item.title
                         }, void 0, false, {
                             fileName: "src/components/cardModal/index.tsx",
-                            lineNumber: 54,
+                            lineNumber: 56,
                             columnNumber: 9
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -54424,7 +54432,7 @@ const CardModal = (props)=>{
                             ]
                         }, void 0, true, {
                             fileName: "src/components/cardModal/index.tsx",
-                            lineNumber: 55,
+                            lineNumber: 57,
                             columnNumber: 9
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -54432,13 +54440,13 @@ const CardModal = (props)=>{
                             children: item.description
                         }, void 0, false, {
                             fileName: "src/components/cardModal/index.tsx",
-                            lineNumber: 58,
+                            lineNumber: 60,
                             columnNumber: 9
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/cardModal/index.tsx",
-                    lineNumber: 53,
+                    lineNumber: 55,
                     columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -54448,18 +54456,18 @@ const CardModal = (props)=>{
                         widthArrow: false
                     }, void 0, false, {
                         fileName: "src/components/cardModal/index.tsx",
-                        lineNumber: 61,
+                        lineNumber: 63,
                         columnNumber: 9
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/cardModal/index.tsx",
-                    lineNumber: 60,
+                    lineNumber: 62,
                     columnNumber: 7
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/cardModal/index.tsx",
-            lineNumber: 45,
+            lineNumber: 47,
             columnNumber: 5
         }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -54467,18 +54475,18 @@ const CardModal = (props)=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Image, {}, void 0, false, {
                 fileName: "src/components/cardModal/index.tsx",
-                lineNumber: 68,
+                lineNumber: 70,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(DescriptionText, {}, void 0, false, {
                 fileName: "src/components/cardModal/index.tsx",
-                lineNumber: 69,
+                lineNumber: 71,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/cardModal/index.tsx",
-        lineNumber: 67,
+        lineNumber: 69,
         columnNumber: 5
     }, undefined);
 };
@@ -62859,6 +62867,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
+var _reactScroll = require("react-scroll");
 // components
 var _components = require("../../components");
 // utils
@@ -62880,6 +62889,9 @@ const ForDreamCase = ()=>{
     const [workModal, setWorkModal] = (0, _react.useState)(false);
     const image = require("dc1a76f49700074f");
     const navigation = (0, _reactRouterDom.useNavigate)();
+    const scrollToTop = ()=>{
+        (0, _reactScroll.animateScroll).scrollToTop();
+    };
     const handleProjectNavigate = ()=>{
         window.open("https://fordream.dev/", "_blank");
     };
@@ -62887,15 +62899,17 @@ const ForDreamCase = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: (0, _stylesModuleCssDefault.default).container,
+                id: "#forDream",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Header), {
                         setModal: setActive,
+                        setWorkModal: setWorkModal,
                         alternative: true,
                         data: (0, _headerLinks.caseHeaderLinks),
                         navigation: navigation
                     }, void 0, false, {
                         fileName: "src/screens/forDreamCase/index.tsx",
-                        lineNumber: 41,
+                        lineNumber: 46,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -62909,7 +62923,7 @@ const ForDreamCase = ()=>{
                                         children: "For Dream"
                                     }, void 0, false, {
                                         fileName: "src/screens/forDreamCase/index.tsx",
-                                        lineNumber: 49,
+                                        lineNumber: 55,
                                         columnNumber: 13
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.AnimatedText), {
@@ -62917,28 +62931,28 @@ const ForDreamCase = ()=>{
                                         className: (0, _stylesModuleCssDefault.default).description
                                     }, void 0, false, {
                                         fileName: "src/screens/forDreamCase/index.tsx",
-                                        lineNumber: 50,
+                                        lineNumber: 56,
                                         columnNumber: 13
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/screens/forDreamCase/index.tsx",
-                                lineNumber: 48,
+                                lineNumber: 54,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                                 className: (0, _stylesModuleCssDefault.default).macImg,
                                 src: image,
-                                alt: "image"
+                                alt: "macImage"
                             }, void 0, false, {
                                 fileName: "src/screens/forDreamCase/index.tsx",
-                                lineNumber: 55,
+                                lineNumber: 61,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/screens/forDreamCase/index.tsx",
-                        lineNumber: 47,
+                        lineNumber: 53,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -62953,12 +62967,12 @@ const ForDreamCase = ()=>{
                             }
                         }, void 0, false, {
                             fileName: "src/screens/forDreamCase/index.tsx",
-                            lineNumber: 58,
+                            lineNumber: 64,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/screens/forDreamCase/index.tsx",
-                        lineNumber: 57,
+                        lineNumber: 63,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Introduction), {
@@ -62967,7 +62981,7 @@ const ForDreamCase = ()=>{
                         onButtonPress: handleProjectNavigate
                     }, void 0, false, {
                         fileName: "src/screens/forDreamCase/index.tsx",
-                        lineNumber: 68,
+                        lineNumber: 74,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.AboutProject), {
@@ -63010,7 +63024,7 @@ const ForDreamCase = ()=>{
                         }, void 0, true, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/screens/forDreamCase/index.tsx",
-                        lineNumber: 78,
+                        lineNumber: 84,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Modal), {
@@ -63018,13 +63032,13 @@ const ForDreamCase = ()=>{
                         setActive: setActive
                     }, void 0, false, {
                         fileName: "src/screens/forDreamCase/index.tsx",
-                        lineNumber: 102,
+                        lineNumber: 108,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/screens/forDreamCase/index.tsx",
-                lineNumber: 40,
+                lineNumber: 45,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.WorkNavigator), {
@@ -63033,7 +63047,7 @@ const ForDreamCase = ()=>{
                 overlayColor: "#00c8e7"
             }, void 0, false, {
                 fileName: "src/screens/forDreamCase/index.tsx",
-                lineNumber: 104,
+                lineNumber: 110,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.AllWorkModal), {
@@ -63042,12 +63056,14 @@ const ForDreamCase = ()=>{
                 setActive: setWorkModal
             }, void 0, false, {
                 fileName: "src/screens/forDreamCase/index.tsx",
-                lineNumber: 109,
+                lineNumber: 115,
                 columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Footer), {}, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Footer), {
+                onLinkPress: scrollToTop
+            }, void 0, false, {
                 fileName: "src/screens/forDreamCase/index.tsx",
-                lineNumber: 114,
+                lineNumber: 120,
                 columnNumber: 7
             }, undefined)
         ]
@@ -63069,7 +63085,7 @@ $RefreshReg$(_c1, "%default%");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../components":"dHnah","../../utils/transitionPages":"cCiHD","./styles.module.css":"kutFU","../../constants/headerLink/headerLinks":"chhsn","../../constants/projectColors":"c6Qz6","../../utils/navigation":"1FL7V","dc1a76f49700074f":"fH2MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../constants/commerceProject":"2unRn","73b87afc363ee4ef":"02Utu"}],"kutFU":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../components":"dHnah","../../utils/transitionPages":"cCiHD","./styles.module.css":"kutFU","../../constants/headerLink/headerLinks":"chhsn","../../constants/projectColors":"c6Qz6","../../utils/navigation":"1FL7V","dc1a76f49700074f":"fH2MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../constants/commerceProject":"2unRn","73b87afc363ee4ef":"02Utu","react-scroll":"2D4g1"}],"kutFU":[function(require,module,exports) {
 module.exports["container"] = `S3HM8G_container`;
 module.exports["description"] = `S3HM8G_description`;
 module.exports["macImg"] = `S3HM8G_macImg`;
@@ -63188,6 +63204,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
+var _reactScroll = require("react-scroll");
 // components
 var _components = require("../../components");
 // utils
@@ -63207,6 +63224,9 @@ const MyStatusCase = ()=>{
     const [active, setActive] = (0, _react.useState)(false);
     const [workModal, setWorkModal] = (0, _react.useState)(false);
     const navigation = (0, _reactRouterDom.useNavigate)();
+    const scrollToTop = ()=>{
+        (0, _reactScroll.animateScroll).scrollToTop();
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -63220,7 +63240,7 @@ const MyStatusCase = ()=>{
                         navigation: navigation
                     }, void 0, false, {
                         fileName: "src/screens/myStatusCase/index.tsx",
-                        lineNumber: 35,
+                        lineNumber: 40,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -63232,7 +63252,7 @@ const MyStatusCase = ()=>{
                                     children: "MyStatus project"
                                 }, void 0, false, {
                                     fileName: "src/screens/myStatusCase/index.tsx",
-                                    lineNumber: 44,
+                                    lineNumber: 49,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.AnimatedText), {
@@ -63240,18 +63260,18 @@ const MyStatusCase = ()=>{
                                     text: "Social Network on React-Native"
                                 }, void 0, false, {
                                     fileName: "src/screens/myStatusCase/index.tsx",
-                                    lineNumber: 45,
+                                    lineNumber: 50,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/screens/myStatusCase/index.tsx",
-                            lineNumber: 43,
+                            lineNumber: 48,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/screens/myStatusCase/index.tsx",
-                        lineNumber: 42,
+                        lineNumber: 47,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.WorkDescription), {
@@ -63260,7 +63280,7 @@ const MyStatusCase = ()=>{
                         period: "Since 2022 - Present"
                     }, void 0, false, {
                         fileName: "src/screens/myStatusCase/index.tsx",
-                        lineNumber: 51,
+                        lineNumber: 56,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Modal), {
@@ -63268,7 +63288,7 @@ const MyStatusCase = ()=>{
                         setActive: setActive
                     }, void 0, false, {
                         fileName: "src/screens/myStatusCase/index.tsx",
-                        lineNumber: 56,
+                        lineNumber: 61,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.AllWorkModal), {
@@ -63277,13 +63297,13 @@ const MyStatusCase = ()=>{
                         setActive: setWorkModal
                     }, void 0, false, {
                         fileName: "src/screens/myStatusCase/index.tsx",
-                        lineNumber: 57,
+                        lineNumber: 62,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/screens/myStatusCase/index.tsx",
-                lineNumber: 34,
+                lineNumber: 39,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Introduction), {
@@ -63295,7 +63315,7 @@ const MyStatusCase = ()=>{
                 }, void 0, false, void 0, void 0)
             }, void 0, false, {
                 fileName: "src/screens/myStatusCase/index.tsx",
-                lineNumber: 63,
+                lineNumber: 68,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.AboutProject), {
@@ -63333,7 +63353,7 @@ const MyStatusCase = ()=>{
                 }, void 0, true, void 0, void 0)
             }, void 0, false, {
                 fileName: "src/screens/myStatusCase/index.tsx",
-                lineNumber: 74,
+                lineNumber: 79,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.WorkNavigator), {
@@ -63341,12 +63361,14 @@ const MyStatusCase = ()=>{
                 onClick: ()=>(0, _navigation.handleNavigation)(navigation, "/kloki")
             }, void 0, false, {
                 fileName: "src/screens/myStatusCase/index.tsx",
-                lineNumber: 93,
+                lineNumber: 98,
                 columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Footer), {}, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Footer), {
+                onLinkPress: scrollToTop
+            }, void 0, false, {
                 fileName: "src/screens/myStatusCase/index.tsx",
-                lineNumber: 97,
+                lineNumber: 102,
                 columnNumber: 7
             }, undefined)
         ]
@@ -63368,7 +63390,7 @@ $RefreshReg$(_c1, "%default%");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../components":"dHnah","../../utils/transitionPages":"cCiHD","../../utils/navigation":"1FL7V","./styles.module.css":"bNoSU","../../constants/headerLink/headerLinks":"chhsn","../../constants/projectColors":"c6Qz6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../constants/commerceProject":"2unRn"}],"bNoSU":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../components":"dHnah","../../utils/transitionPages":"cCiHD","../../utils/navigation":"1FL7V","./styles.module.css":"bNoSU","../../constants/headerLink/headerLinks":"chhsn","../../constants/projectColors":"c6Qz6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../constants/commerceProject":"2unRn","react-scroll":"2D4g1"}],"bNoSU":[function(require,module,exports) {
 module.exports["coverText"] = `oFyUBq_coverText`;
 module.exports["mainContainer"] = `oFyUBq_mainContainer`;
 module.exports["text"] = `oFyUBq_text`;
@@ -63390,6 +63412,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
+var _reactScroll = require("react-scroll");
 // components
 var _components = require("../../components");
 // utils
@@ -63409,6 +63432,9 @@ const PlannerCase = ()=>{
     const [active, setActive] = (0, _react.useState)(false);
     const [workModal, setWorkModal] = (0, _react.useState)(false);
     const navigation = (0, _reactRouterDom.useNavigate)();
+    const scrollToTop = ()=>{
+        (0, _reactScroll.animateScroll).scrollToTop();
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: (0, _stylesModuleCssDefault.default).container,
@@ -63421,7 +63447,7 @@ const PlannerCase = ()=>{
                     navigation: navigation
                 }, void 0, false, {
                     fileName: "src/screens/klokiCase/index.tsx",
-                    lineNumber: 34,
+                    lineNumber: 39,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -63431,7 +63457,7 @@ const PlannerCase = ()=>{
                             children: "For Dream Case"
                         }, void 0, false, {
                             fileName: "src/screens/klokiCase/index.tsx",
-                            lineNumber: 42,
+                            lineNumber: 47,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.WorkDescription), {
@@ -63441,13 +63467,13 @@ const PlannerCase = ()=>{
                             titleColor: "#7AAC2D"
                         }, void 0, false, {
                             fileName: "src/screens/klokiCase/index.tsx",
-                            lineNumber: 43,
+                            lineNumber: 48,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/screens/klokiCase/index.tsx",
-                    lineNumber: 41,
+                    lineNumber: 46,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -63456,12 +63482,12 @@ const PlannerCase = ()=>{
                         description: "The project created in React-Native is a planner that allows you to add, delete plans, daily habits, monitor your progress, and also receive notifications from the application about upcoming plans"
                     }, void 0, false, {
                         fileName: "src/screens/klokiCase/index.tsx",
-                        lineNumber: 51,
+                        lineNumber: 56,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/screens/klokiCase/index.tsx",
-                    lineNumber: 50,
+                    lineNumber: 55,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.AboutProject), {
@@ -63501,7 +63527,7 @@ const PlannerCase = ()=>{
                     photoSource: require("e74e34595dbb1e8d")
                 }, void 0, false, {
                     fileName: "src/screens/klokiCase/index.tsx",
-                    lineNumber: 61,
+                    lineNumber: 66,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.WorkNavigator), {
@@ -63511,12 +63537,14 @@ const PlannerCase = ()=>{
                     backgroundColor: "white"
                 }, void 0, false, {
                     fileName: "src/screens/klokiCase/index.tsx",
-                    lineNumber: 83,
+                    lineNumber: 88,
                     columnNumber: 9
                 }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Footer), {}, void 0, false, {
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Footer), {
+                    onLinkPress: scrollToTop
+                }, void 0, false, {
                     fileName: "src/screens/klokiCase/index.tsx",
-                    lineNumber: 89,
+                    lineNumber: 94,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.Modal), {
@@ -63524,7 +63552,7 @@ const PlannerCase = ()=>{
                     setActive: setActive
                 }, void 0, false, {
                     fileName: "src/screens/klokiCase/index.tsx",
-                    lineNumber: 90,
+                    lineNumber: 95,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _components.AllWorkModal), {
@@ -63533,13 +63561,13 @@ const PlannerCase = ()=>{
                     setActive: setWorkModal
                 }, void 0, false, {
                     fileName: "src/screens/klokiCase/index.tsx",
-                    lineNumber: 91,
+                    lineNumber: 96,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/screens/klokiCase/index.tsx",
-            lineNumber: 33,
+            lineNumber: 38,
             columnNumber: 7
         }, undefined)
     }, void 0, false);
@@ -63560,7 +63588,7 @@ $RefreshReg$(_c1, "%default%");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../components":"dHnah","../../constants/headerLink/headerLinks":"chhsn","./styles.module.css":"383DS","../../constants/projectColors":"c6Qz6","../../utils/navigation":"1FL7V","e74e34595dbb1e8d":"2yWAl","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../utils/transitionPages":"cCiHD","../../constants/commerceProject":"2unRn"}],"383DS":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../components":"dHnah","../../constants/headerLink/headerLinks":"chhsn","./styles.module.css":"383DS","../../constants/projectColors":"c6Qz6","../../utils/navigation":"1FL7V","e74e34595dbb1e8d":"2yWAl","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../utils/transitionPages":"cCiHD","../../constants/commerceProject":"2unRn","react-scroll":"2D4g1"}],"383DS":[function(require,module,exports) {
 module.exports["container"] = `DydckW_container`;
 module.exports["contentBox"] = `DydckW_contentBox`;
 module.exports["workDescription"] = `DydckW_workDescription`;

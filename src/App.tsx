@@ -1,8 +1,10 @@
 // modules
 import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion"; // styles
-import "./App.css"; // screens
+import { AnimatePresence } from "framer-motion";
+// styles
+import "./App.css";
+// screens
 import { ForDreamCase, MainScreen, MyStatusCase, PlannerCase } from "./screens";
 
 function App() {

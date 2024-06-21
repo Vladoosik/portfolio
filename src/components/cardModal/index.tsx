@@ -1,7 +1,9 @@
 // modules
 import { motion } from "framer-motion";
-import React, { FC } from "react"; // components
-import Button from "../button"; // styles
+import React, { FC } from "react";
+// components
+import Button from "../button";
+// styles
 import "./styles.css";
 
 type CardModalProps = {
