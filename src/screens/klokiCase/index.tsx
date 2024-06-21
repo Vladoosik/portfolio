@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { NavigateFunction } from "react-router/dist/lib/hooks";
+import { animateScroll } from "react-scroll";
 // components
 import {
   AboutProject,
@@ -27,6 +28,10 @@ const PlannerCase = () => {
   const [active, setActive] = useState<boolean>(false);
   const [workModal, setWorkModal] = useState<boolean>(false);
   const navigation: NavigateFunction = useNavigate();
+
+  const scrollToTop = () => {
+    animateScroll.scrollToTop();
+  };
 
   return (
     <>
@@ -86,7 +91,7 @@ const PlannerCase = () => {
           overlayColor={"#030D22"}
           backgroundColor={"white"}
         />
-        <Footer />
+        <Footer onLinkPress={scrollToTop} />
         <Modal active={active} setActive={setActive} />
         <AllWorkModal
           data={modalWorkArr}

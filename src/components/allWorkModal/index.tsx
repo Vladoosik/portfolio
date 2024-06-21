@@ -1,10 +1,10 @@
 // modules
 import React, { FC, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 // components
 import { Button, CardModal } from "../index";
 // styles
 import "./style.css";
-import { AnimatePresence, motion } from "framer-motion";
 
 interface AllWorkModalProps {
   data: any;
@@ -53,6 +53,7 @@ const AllWorkModal: FC<AllWorkModalProps> = (props) => {
               text="X Close"
               onClick={() => setActive(false)}
               widthArrow={false}
+              className={"buttonModal"}
             />
           </div>
           <motion.div

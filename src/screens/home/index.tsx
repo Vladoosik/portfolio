@@ -1,7 +1,7 @@
 // modules
-import React, { memo, useEffect, useRef, useState } from "react";
-import { useHover } from "@use-gesture/react";
+import React, { memo, useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-scroll";
+import { useHover } from "@use-gesture/react";
 // styles
 import styles from "./styles.module.css";
 // components
@@ -30,8 +30,6 @@ const Home = () => {
     setIsHovered(state.hovering);
   });
 
-  console.log("rerender");
-
   const cursorPositionRef = useRef<CursorPositionType>(cursorPosition);
 
   const handleIconPress = (path: string, params: string) => {
@@ -43,21 +41,21 @@ const Home = () => {
     }
   };
 
+  const handleMouseMove = useCallback((event: MouseEvent) => {
+    const { clientX, clientY } = event;
+    cursorPositionRef.current = { x: clientX, y: clientY };
+    setCursorPosition({ x: clientX, y: clientY });
+  }, []);
+
   useEffect(() => {
     if (isHovered) {
-      const handleMouseMove = (event: MouseEvent) => {
-        const { clientX, clientY } = event;
-        cursorPositionRef.current = { x: clientX, y: clientY };
-        setCursorPosition({ x: clientX, y: clientY });
-      };
-
       window.addEventListener("mousemove", handleMouseMove);
 
       return () => {
         window.removeEventListener("mousemove", handleMouseMove);
       };
     }
-  }, [isHovered]);
+  }, [isHovered, handleMouseMove]);
 
   return (
     <>
