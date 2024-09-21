@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6aa7ab1-ac0e-4a6b-8250-4b34b331f08e" name="Changes" comment="add Kloki but not finished">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.2d3ace14.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.2d3ace14.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.61d3354a.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.61d3354a.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.61d3354a.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.61d3354a.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/allWorkModal/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/allWorkModal/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/allWorkModal/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/allWorkModal/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/animatedIcons/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/animatedIcons/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/button/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cardModal/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cardModal/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/forDreamCase/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/forDreamCase/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/home/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/klokiCase/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/klokiCase/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/myStatusCase/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/myStatusCase/index.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="f6aa7ab1-ac0e-4a6b-8250-4b34b331f08e" name="Changes" comment="add Kloki but not finished" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -151,6 +134,7 @@
       <workItem from="1717855743158" duration="4038000" />
       <workItem from="1718212135744" duration="163000" />
       <workItem from="1718535249937" duration="14348000" />
+      <workItem from="1719655124537" duration="1029000" />
     </task>
     <task id="LOCAL-00001" summary="add animation in home and make animated button">
       <created>1701612959306</created>

@@ -28124,7 +28124,7 @@ $RefreshReg$(_c1, "%default%");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./styles.module.css":"BRJ4G","../../components":"dHnah","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../assets":"lDowU","react-scroll":"2D4g1","../../constants/iconsArray":"cSIAS","@use-gesture/react":"gVqEQ"}],"BRJ4G":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./styles.module.css":"BRJ4G","../../components":"dHnah","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../assets":"lDowU","@use-gesture/react":"gVqEQ","react-scroll":"2D4g1","../../constants/iconsArray":"cSIAS"}],"BRJ4G":[function(require,module,exports) {
 module.exports["buttonContainer"] = `P30aKa_buttonContainer`;
 module.exports["container"] = `P30aKa_container`;
 module.exports["contentContainer"] = `P30aKa_contentContainer`;
@@ -63085,7 +63085,7 @@ $RefreshReg$(_c1, "%default%");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../components":"dHnah","../../utils/transitionPages":"cCiHD","./styles.module.css":"kutFU","../../constants/headerLink/headerLinks":"chhsn","../../constants/projectColors":"c6Qz6","../../utils/navigation":"1FL7V","dc1a76f49700074f":"fH2MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../constants/commerceProject":"2unRn","73b87afc363ee4ef":"02Utu","react-scroll":"2D4g1"}],"kutFU":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../components":"dHnah","../../utils/transitionPages":"cCiHD","./styles.module.css":"kutFU","../../constants/headerLink/headerLinks":"chhsn","../../constants/projectColors":"c6Qz6","../../utils/navigation":"1FL7V","dc1a76f49700074f":"fH2MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../constants/commerceProject":"2unRn","react-scroll":"2D4g1","73b87afc363ee4ef":"02Utu"}],"kutFU":[function(require,module,exports) {
 module.exports["container"] = `S3HM8G_container`;
 module.exports["description"] = `S3HM8G_description`;
 module.exports["macImg"] = `S3HM8G_macImg`;
