@@ -1,8 +1,7 @@
 .img {
     height: 520px;
-    width: 13vw;
-    max-width: 450px;
-    object-fit: cover;
+    width: 450px;
+    object-fit: fill;
     filter: brightness(50%);
 
 }

@@ -1097,10 +1097,9 @@ code {
 }
 
 .img {
-  object-fit: cover;
+  object-fit: fill;
   filter: brightness(50%);
-  width: 13vw;
-  max-width: 450px;
+  width: 450px;
   height: 520px;
 }
 
@@ -1421,6 +1420,45 @@ code {
 .DydckW_container {
   background: linear-gradient(to left, #4f298c, #1b1f2d);
   min-height: 60vh;
+}
+
+.DydckW_titleContainer {
+  justify-content: center;
+  align-items: center;
+  height: 900px;
+  display: flex;
+}
+
+.DydckW_macImg {
+  object-fit: fill;
+  width: 302px;
+  height: 300px;
+}
+
+.DydckW_titleContent {
+  flex-direction: column;
+  align-items: center;
+  margin-right: 90px;
+  display: flex;
+}
+
+.DydckW_title {
+  color: #fff;
+  text-align: justify;
+  margin: 0;
+  font-family: League Spartan, Helvetica, Arial, sans-serif;
+  font-size: 5.3em;
+  font-weight: 1000;
+}
+
+.DydckW_description {
+  color: #fff;
+  margin-top: 13px;
+  font-family: Times New Roman, serif;
+  font-size: 2em;
+  font-style: italic;
+  font-weight: 500;
+  display: block;
 }
 
 .DydckW_contentBox {
