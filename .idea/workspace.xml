@@ -10,10 +10,10 @@
       <change beforePath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.2d3ace14.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.61d3354a.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.61d3354a.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.61d3354a.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.61d3354a.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/allWorkModal/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/allWorkModal/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cardModal/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cardModal/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/workCards/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/workCards/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/klokiCase/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/klokiCase/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/klokiCase/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/klokiCase/styles.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/petProject/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/petProject/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +77,7 @@
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "/Users/apple/Desktop/portfolio/node_modules/prettier",
     "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "/Users/apple/Desktop/portfolio/node_modules/typescript/lib",
+    "ts.external.directory.path": "E:\\project\\portfolio\\my-app\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>

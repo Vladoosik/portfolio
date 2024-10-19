@@ -78,20 +78,17 @@ const PlannerCase = () => {
                     data={PlanerColor}
                     description={
                         <p className={styles.workDescription}>
-                            My job was to <strong>develop the application</strong>, create new
-                            functionality, support and optimize old solutions in the
-                            application, as well as <strong>connect the server</strong>{" "}
-                            component of the application.
+                            My work on this project was to
+                            <strong>interact with the designer</strong>, add new features together, and
+                            also create the main functionality of the application using various tools, for
+                            example <strong>Redux Toolkit</strong>
                             <br/>
                             <br/>
-                            Overall, the project is quite large and I learned a lot during its
-                            development. In this case <strong>
-                            MobX and Typescript
-                        </strong>{" "}
-                            were actively used, which helped me understand them in{" "}
-                            <strong>more detail</strong>. Of course, there were other
-                            libraries that can often be found in react-native, for example{" "}
-                            <strong>React-Navigation</strong>
+                            as the main state manager. <strong>MMKV</strong> for storage, React
+                            Navigation for navigation,
+                            <strong>Typescript</strong> for typing components and more convenient work with properties,
+                            and <strong>Firebase</strong> as
+                            authorization, server storage and database
                         </p>
                     }
                     photoSource={require("../../assets/png/planer_mobile.png")}
