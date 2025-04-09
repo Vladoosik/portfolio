@@ -5,13 +5,16 @@ import React, { FC } from "react";
 import Button from "../button";
 // styles
 import "./styles.css";
+import { NavigateFunction } from "react-router/dist/lib/hooks";
 
 type CardModalProps = {
   item: any;
   index: number;
+  navigate: NavigateFunction;
+  currentPath: string;
 };
 const CardModal: FC<CardModalProps> = (props) => {
-  const { item, index } = props;
+  const { item, index, navigate, currentPath } = props;
   const odd: boolean = index % 2 === 0;
 
   const imageVariants = {
@@ -60,7 +63,12 @@ const CardModal: FC<CardModalProps> = (props) => {
         <p className={"modalDescription"}>{item.description}</p>
       </div>
       <div className={"modalButtonBox"}>
-        <Button text={"Case study"} widthArrow={false} />
+        <Button
+          text={"Case study"}
+          widthArrow={false}
+          disabled={currentPath === `/${item.path}`}
+          onClick={() => navigate(`/${item.path}`)}
+        />
       </div>
     </motion.div>
   );

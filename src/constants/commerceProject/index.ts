@@ -5,6 +5,7 @@ export const modalWorkArr: ModalWorkType[] = [
   {
     id: 12,
     title: "ForDream",
+    path: "forDream",
     role: "Front-End Developer",
     period: "May 2022 - December 2022",
     image: require("../../assets/png/ForDreamCase.png"),
@@ -16,6 +17,7 @@ export const modalWorkArr: ModalWorkType[] = [
   },
   {
     id: 13,
+    path: "myStatus",
     title: "My status",
     role: "React-Native Developer",
     period: "Since 2022 - Present",
@@ -29,6 +31,7 @@ export const modalWorkArr: ModalWorkType[] = [
   },
   {
     id: 14,
+    path: "kloki",
     title: "Mobile planer",
     role: "React-Native Developer",
     period: "January 2024 - Present",

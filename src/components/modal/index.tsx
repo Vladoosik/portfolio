@@ -7,10 +7,14 @@ import React, {
   useCallback,
   useMemo,
   useState,
-} from "react"; // components
-import Button from "../button"; // styles
-import "./styles.css"; // assets
-import { CssIcon, JsIcon, ReactIcon, TsIcon } from "../../assets"; // constants
+} from "react";
+// components
+import Button from "../button";
+// styles
+import "./styles.css";
+// assets
+import { CssIcon, JsIcon, ReactIcon, TsIcon } from "../../assets";
+// constants
 import { CHAT_ID, URI_API } from "../../constants/postValue";
 
 interface ModalProps {
@@ -89,6 +93,17 @@ const Modal: FC<ModalProps> = (props) => {
                 : "halfAbout"
           }
         >
+          {messageIsSend && (
+            <div className={"successContainer"}>
+              <h2>Your message has been send!</h2>
+              <p>You can close this modal</p>
+              <Button
+                text={"Close"}
+                widthArrow={false}
+                onClick={() => setActive(false)}
+              />
+            </div>
+          )}
           <div className={messageIsSend ? "hideContent" : "aboutContent"}>
             <h3 className={"aboutMe"}>About Me.</h3>
             <p className={"aboutDescription"}>
@@ -126,7 +141,15 @@ const Modal: FC<ModalProps> = (props) => {
             {/*</div>*/}
           </div>
         </div>
-        <div className={active && !messageIsSend ? "halfContact active" : messageIsSend ? "halfContact success" : "halfContact"}>
+        <div
+          className={
+            active && !messageIsSend
+              ? "halfContact active"
+              : messageIsSend
+                ? "halfContact success"
+                : "halfContact"
+          }
+        >
           <div className={messageIsSend ? "hideContact" : "contactContainer"}>
             <div className={"closeBtnContainer"}>
               <div className="close-container" onClick={() => setActive(false)}>

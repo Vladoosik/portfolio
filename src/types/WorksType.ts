@@ -5,6 +5,7 @@ export type ModalWorkType = {
   period: string;
   image: string;
   description: string;
+  path: string;
 };
 
 export type WorksType = {
