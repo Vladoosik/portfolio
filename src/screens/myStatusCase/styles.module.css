@@ -2,6 +2,7 @@
     min-height: 100vh;
     background-image: url("../../assets/png/myStatusCase.png");
     background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

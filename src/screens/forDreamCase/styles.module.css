@@ -11,6 +11,15 @@
 
 .titleContainer {
     display: flex;
+    /*flex-direction: column;*/
+    height: 900px;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleContainerMob {
+    display: flex;
+    flex-direction: column;
     height: 900px;
     justify-content: center;
     align-items: center;
@@ -27,7 +36,14 @@
 }
 
 .titleContent {
-    margin-right: 90px;
+    padding-right: 90px;
+}
+
+.titleContentMob {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
 }
 
 .description {
@@ -48,7 +64,9 @@
 .workDescription {
     margin: 0;
     max-width: 500px;
+    min-width: 300px;
     font-size: 1em;
+    /*background-color: red;*/
     word-spacing: 5px;
     text-align: justify-all;
     line-height: 28px;

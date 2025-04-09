@@ -61,6 +61,10 @@
     align-items: center;
 }
 
+.phoneContainerMob {
+    display: none;
+}
+
 .phoneCard {
     width: 250px;
     height: 500px;
@@ -68,6 +72,7 @@
 
 .circleContainer {
     margin-top: 60px;
+    flex-wrap: wrap;
     display: flex;
     justify-content: center;
     gap: 50px;
