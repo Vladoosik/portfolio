@@ -1,41 +1,59 @@
 // modules
-import React, { FC, memo, useCallback, useEffect, useRef } from "react";
+import React, { FC, memo, useEffect, useRef } from "react";
 // styles
 import styles from "./styles.module.css";
 // types
-import { AnimatedIconType } from "../../types/AnimatedIconType";
+import {
+  AnimatedIconType,
+  CursorPositionType,
+} from "../../types/AnimatedIconType";
 // utils
 import { animatedIcons } from "../../constants/iconsArray";
 
-const AnimatedIcons: FC<AnimatedIconType> = (props) => {
-  const { cursorPosition } = props;
-
+const AnimatedIcons: FC<AnimatedIconType> = ({ cursorPosition }) => {
   const iconRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const animationFrameRef = useRef<number>();
+
+  const lastPosition = useRef<CursorPositionType>({ x: 0, y: 0 });
+
+  const updateIconsPosition = () => {
+    const current = cursorPosition.current;
+    if (!current) return;
+
+    const deltaX = current.x - lastPosition.current.x;
+    const deltaY = current.y - lastPosition.current.y;
+
+    // если движение минимально, пропускаем кадр
+    if (Math.abs(deltaX) < 1 && Math.abs(deltaY) < 1) {
+      animationFrameRef.current = requestAnimationFrame(updateIconsPosition);
+      return;
+    }
+
+    iconRefs.current.forEach((iconRef, index) => {
+      if (iconRef) {
+        const { invertedMove } = animatedIcons[index];
+        const x = invertedMove ? -current.x : current.x;
+        const y = invertedMove ? -current.y : current.y;
+
+        iconRef.style.transform = `translate(-50%, -50%) translate(${
+          x * 0.08
+        }px, ${y * 0.08}px)`;
+      }
+    });
+
+    lastPosition.current = current;
+    animationFrameRef.current = requestAnimationFrame(updateIconsPosition);
+  };
 
   useEffect(() => {
     iconRefs.current = iconRefs.current.slice(0, animatedIcons.length);
-  }, []);
-
-  const updateIconsPosition = useCallback(() => {
-    iconRefs.current.forEach((iconRef, index) => {
-      if (iconRef) {
-        const horizontalDuration = animatedIcons[index].invertedMove
-          ? -cursorPosition.x
-          : cursorPosition.x;
-        const verticalDuration = animatedIcons[index].invertedMove
-          ? -cursorPosition.y
-          : cursorPosition.y;
-        iconRef.style.transform = `translate(-50%, -50%) translate(${
-          horizontalDuration * 0.08
-        }px, ${verticalDuration * 0.08}px)`;
+    animationFrameRef.current = requestAnimationFrame(updateIconsPosition);
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
       }
-    });
-    requestAnimationFrame(updateIconsPosition);
-  }, [cursorPosition]);
-
-  useEffect(() => {
-    requestAnimationFrame(updateIconsPosition);
-  }, [updateIconsPosition]);
+    };
+  }, []);
 
   return (
     <>

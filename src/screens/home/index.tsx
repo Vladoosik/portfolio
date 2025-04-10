@@ -1,5 +1,5 @@
 // modules
-import React, { memo, useCallback, useEffect, useRef, useState } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import { Link } from "react-scroll";
 import { useHover } from "@use-gesture/react";
 // styles
@@ -20,17 +20,13 @@ import { CursorPositionType } from "../../types/AnimatedIconType";
 import { SocialIcons } from "../../constants/iconsArray";
 
 const Home = () => {
-  const [cursorPosition, setCursorPosition] = useState<CursorPositionType>({
-    x: 0,
-    y: 0,
-  });
   const [modalActive, setModalActive] = useState<boolean>(false);
   const [isHovered, setIsHovered] = useState<boolean | undefined>(false);
   const bind = useHover((state) => {
     setIsHovered(state.hovering);
   });
 
-  const cursorPositionRef = useRef<CursorPositionType>(cursorPosition);
+  const cursorPositionRef = useRef<CursorPositionType>({ x: 0, y: 0 });
 
   const handleIconPress = (path: string, params: string) => {
     if (params && path) {
@@ -41,21 +37,17 @@ const Home = () => {
     }
   };
 
-  const handleMouseMove = useCallback((event: MouseEvent) => {
-    const { clientX, clientY } = event;
-    cursorPositionRef.current = { x: clientX, y: clientY };
-    setCursorPosition({ x: clientX, y: clientY });
-  }, []);
-
   useEffect(() => {
-    if (isHovered) {
-      window.addEventListener("mousemove", handleMouseMove);
+    const handleMouseMove = (event: MouseEvent) => {
+      cursorPositionRef.current = { x: event.clientX, y: event.clientY };
+    };
 
-      return () => {
-        window.removeEventListener("mousemove", handleMouseMove);
-      };
-    }
-  }, [isHovered, handleMouseMove]);
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, [isHovered]);
 
   return (
     <>
@@ -100,7 +92,7 @@ const Home = () => {
           </div>
         </div>
         <div>
-          <AnimatedIcons cursorPosition={cursorPositionRef.current} />
+          <AnimatedIcons cursorPosition={cursorPositionRef} />
         </div>
         <Modal active={modalActive} setActive={setModalActive} />
         <div className={styles.worksContainer}>
