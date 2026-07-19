@@ -58,7 +58,7 @@
 
 .heroAsset {
     position: absolute;
-    left: 68%;
+    left: 70%;
     top: 50%;
     transform: translate(-50%, -50%);
     height: 96%;
@@ -227,7 +227,7 @@
 }
 
 .titleContent {
-    padding-left: 27%;
+    padding-left: 8%;
 }
 
 .titleContentMob {
