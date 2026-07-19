@@ -6,9 +6,10 @@ import { Button, CardModal } from "../index";
 // styles
 import "./style.css";
 import { useLocation, useNavigate } from "react-router-dom";
+import { ModalWorkType } from "../../types/WorksType";
 
 interface AllWorkModalProps {
-  data: any;
+  data: ModalWorkType[];
   active: boolean;
   setActive: (b: boolean) => void;
 }
@@ -68,7 +69,7 @@ const AllWorkModal: FC<AllWorkModalProps> = (props) => {
             variants={modalVariants}
             transition={transition}
           >
-            {data?.map((item: any, index: number) => (
+            {data?.map((item: ModalWorkType, index: number) => (
               <CardModal
                 currentPath={location.pathname}
                 navigate={navigate}

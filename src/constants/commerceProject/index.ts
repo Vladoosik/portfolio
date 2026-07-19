@@ -3,31 +3,29 @@ import { ModalWorkType, WorksType } from "../../types/WorksType";
 
 export const modalWorkArr: ModalWorkType[] = [
   {
-    id: 12,
-    title: "ForDream",
-    path: "forDream",
-    role: "Front-End Developer",
-    period: "May 2022 - December 2022",
-    image: require("../../assets/png/ForDreamCase.png"),
+    id: 15,
+    path: "idriver",
+    title: "IDriver",
+    role: "Full-Stack Developer",
+    period: "April 2026 - Present",
+    image: require("../../assets/png/idrvier_logo.png"),
     description:
-      "A beautiful company website, which was developed by me independently. " +
-      "There are a large number of animations, interactive elements and also a" +
-      " description of the company’s work. There is a large number of technologies" +
-      " under the hood related mainly to animations",
+      "A mobile app for learning Ukrainian traffic rules (ПДР). As the lead" +
+      " full-stack developer I built both the React Native app and the NestJS /" +
+      " TypeORM backend — including payments, real-time features and application" +
+      " security. The app is live on the App Store and Google Play.",
   },
   {
-    id: 13,
-    path: "myStatus",
-    title: "My status",
+    id: 12,
+    path: "voiceNotes",
+    title: "Voice Notes",
     role: "React-Native Developer",
-    period: "Since 2022 - Present",
-    image: require("../../assets/png/MyStatus.jpg"),
+    period: "July 2025 - Present",
+    image: require("../../assets/png/VoiceNotesCase.png"),
     description:
-      "A social network that focuses on the user’s geolocations. You can\n" +
-      "create various events related to a specific location, share your\n" +
-      "geolocation and track your friends and contacts.Also similar to\n" +
-      "Instagram, you can post your photos/videos. The application also\n" +
-      "provides chats with your friends and contacts  ",
+      "An internal CRM system for managing client records and session notes." +
+      " Built from scratch with React Native CLI, Firebase, TypeScript and" +
+      " Zustand, and released on the App Store as a co-founder and sole developer.",
   },
   {
     id: 14,
@@ -46,18 +44,18 @@ export const modalWorkArr: ModalWorkType[] = [
 
 export const worksArr: WorksType[] = [
   {
-    id: 12,
-    title: "ForDream",
-    text: "Landing Site for company",
-    image: require("../../assets/png/ForDreamCase.png"),
-    path: "forDream",
+    id: 15,
+    title: "IDriver",
+    text: "Ukrainian driving app · Full-Stack",
+    image: require("../../assets/png/idrvier_logo.png"),
+    path: "idriver",
   },
   {
-    id: 13,
-    title: "My status",
-    text: "Social Network on React-Native",
-    image: require("../../assets/png/MyStatus.jpg"),
-    path: "myStatus",
+    id: 12,
+    title: "VoiceNotes",
+    text: "CRM for small business",
+    image: require("../../assets/png/VoiceNotesCase.png"),
+    path: "voiceNotes",
   },
   {
     id: 14,

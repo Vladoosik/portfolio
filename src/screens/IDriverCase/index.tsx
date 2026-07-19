@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { NavigateFunction } from "react-router/dist/lib/hooks";
 import { animateScroll } from "react-scroll";
-import { useMediaQuery } from "react-responsive";
 // components
 import {
   AboutProject,
@@ -19,16 +18,17 @@ import {
 // utils
 import transitionPages from "../../utils/transitionPages";
 import { handleNavigation } from "../../utils/navigation";
-// constants
-import { caseHeaderLinks } from "../../constants/headerLink/headerLinks";
-import { PlanerColor } from "../../constants/projectColors";
-import { modalWorkArr } from "../../constants/commerceProject";
+import { useMediaQuery } from "react-responsive";
 // styles
 import styles from "./styles.module.css";
 import HeroBackground from "./HeroBackground";
 import AboutVisual from "./AboutVisual";
+// constants
+import { caseHeaderLinks } from "../../constants/headerLink/headerLinks";
+import { IDriverColor } from "../../constants/projectColors";
+import { modalWorkArr } from "../../constants/commerceProject";
 
-const PlannerCase = () => {
+const IDriverCase = () => {
   const [active, setActive] = useState<boolean>(false);
   const [workModal, setWorkModal] = useState<boolean>(false);
   const navigation: NavigateFunction = useNavigate();
@@ -38,21 +38,18 @@ const PlannerCase = () => {
     animateScroll.scrollToTop();
   };
 
-  const handleKlokiAppStoreNavigate = () => {
-    window.open(
-      "https://apps.apple.com/us/app/kloki-planner/id6746350225",
-      "_blank",
-    );
+  const handleProjectNavigate = () => {
+    window.open("https://idriver.ai", "_blank");
   };
 
   return (
     <>
-      <div className={styles.container} id={"#kloki"}>
+      <div className={styles.container} id={"#idriver"}>
         <Header
+          setModal={setActive}
           setWorkModal={setWorkModal}
           alternative
           data={caseHeaderLinks}
-          setModal={setActive}
           navigation={navigation}
         />
         <div
@@ -65,71 +62,69 @@ const PlannerCase = () => {
           <div
             className={isMobile ? styles.titleContentMob : styles.titleContent}
           >
-            <p className={styles.title}>Kloki</p>
+            <p className={styles.title}>IDriver</p>
             <AnimatedText
-              text={"all your plans in one app"}
+              text={"ЯВодій · learn Ukrainian traffic rules"}
               className={styles.description}
             />
             <span className={styles.heroChip}>
-              React Native · Redux · Firebase
+              React Native · NestJS · Full-Stack
             </span>
           </div>
           <div className={isMobile ? styles.heroPhoneMob : styles.heroPhone}>
             <img
               className={styles.heroScreen}
-              src={require("../../assets/png/kloki_todo_list.png")}
-              alt="Kloki habits screen"
+              src={require("../../assets/png/idriver_welcome_screen.png")}
+              alt="IDriver welcome screen"
             />
           </div>
         </div>
         <div className={styles.workDescriptionBox}>
           <WorkDescription
-            role={"React-Native Developer"}
-            context={"Mobile Planer"}
-            period={"January 2024 - Present"}
-            titleColor={"#a855f7"}
+            context={"Driving-theory app"}
+            role={"Full-Stack Developer"}
+            period={"April 2026 - Present"}
+            titleColor={"#cdeb00"}
             style={{
               width: "1100px",
             }}
           />
         </div>
         <Introduction
-          title={"About Project"}
+          title={"Introduction"}
           description={
-            "The project created in React-Native is a planner" +
-            " that allows you to add, delete plans, daily habits," +
-            " monitor your progress, and also receive notifications " +
-            "from the application about upcoming plans"
+            "Lead Full-Stack developer of IDriver (ЯВодій), a mobile app for learning Ukrainian traffic rules (ПДР).\n" +
+            "Built both the React Native app and the NestJS / TypeORM backend — including payments (RevenueCat), real-time features (WebSocket) and application security.\n" +
+            "The app is already live on the App Store and Google Play."
           }
-          onButtonPress={handleKlokiAppStoreNavigate}
+          onButtonPress={handleProjectNavigate}
         />
         <AboutProject
           visual={<AboutVisual />}
-          data={PlanerColor}
-          background={"#f3f0f7"}
+          data={IDriverColor}
+          background={"#f4f5f3"}
           description={
             <p className={styles.workDescription}>
-              My work on this project was to{" "}
-              <strong>interact with the designer</strong>, add new features
-              together, and also create the main functionality of the
-              application using various tools, for example{" "}
-              <strong>Redux Toolkit</strong>
+              Served as the <strong>lead Full-Stack developer</strong>. For about
+              a month I worked as part of a two-person team, after which I became
+              the <strong>sole developer</strong>. I developed both the{" "}
+              <strong>frontend</strong> (admin panel and React Native app) and the{" "}
+              <strong>backend</strong> (NestJS and TypeORM).
               <br />
               <br />
-              as the main state manager. <strong>MMKV</strong> for storage,
-              React Navigation for navigation, <strong>Typescript</strong> for
-              typing components and more convenient work with properties, and{" "}
-              <strong>Firebase</strong> as authorization, server storage and
-              database
+              Developed a <strong>card game from scratch</strong>, integrated{" "}
+              <strong>Cloudflare</strong>, secured the payment process, implemented{" "}
+              <strong>rate limiting</strong>, and enhanced the application's overall{" "}
+              <strong>security</strong>.
             </p>
           }
         />
         <Modal active={active} setActive={setActive} />
       </div>
       <WorkNavigator
-        nextProjectName={"IDriver"}
-        onClick={() => handleNavigation(navigation, "/idriver")}
-        overlayColor={"#a855f7"}
+        nextProjectName={"Voice Notes"}
+        onClick={() => handleNavigation(navigation, "/voiceNotes")}
+        overlayColor={"#cdeb00"}
       />
       <AllWorkModal
         data={modalWorkArr}
@@ -141,4 +136,4 @@ const PlannerCase = () => {
   );
 };
 
-export default transitionPages(PlannerCase);
+export default transitionPages(IDriverCase);

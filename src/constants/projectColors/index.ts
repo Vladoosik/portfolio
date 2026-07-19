@@ -17,6 +17,22 @@ export const ForDreamColor: ProjectColorType[] = [
   { id: 82, color: "#E545B2", name: "pink" },
 ];
 
+export const IDriverColor: ProjectColorType[] = [
+  { id: 12, color: "#CDEB00", name: "lime" },
+  { id: 32, color: "#0E0F12", name: "black" },
+  { id: 2, color: "#20222A", name: "graphite" },
+  { id: 92, color: "#94AF00", name: "lime_deep" },
+  { id: 82, color: "#EDEDED", name: "white" },
+];
+
+export const VoiceNotesColor: ProjectColorType[] = [
+  { id: 12, color: "#4C6EF5", name: "blue" },
+  { id: 32, color: "#2B3F9E", name: "blue_deep" },
+  { id: 2, color: "#8AA4FF", name: "blue_light" },
+  { id: 92, color: "#0E111A", name: "dark" },
+  { id: 82, color: "#C7D2F5", name: "blue_pale" },
+];
+
 export const PlanerColor: ProjectColorType[] = [
   { id: 12, color: "#B88AFE", name: "Purple" },
   { id: 32, color: "#7D40DB", name: "Purple 2" },

@@ -77,4 +77,5 @@
     justify-content: center;
     gap: 50px;
     padding-bottom: 30px;
+    overflow-x: auto;
 }
