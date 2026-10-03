@@ -5,7 +5,7 @@ import {useHover} from "@use-gesture/react";
 // styles
 import styles from "./styles.module.css";
 // components
-import {AnimatedIcons, AnimatedText, Button, Header, Modal,} from "../../components";
+import {AnimatedIcons, AnimatedText, Button, CvLink, Header, Modal,} from "../../components";
 // assets
 import {AnimatedLogo} from "../../assets";
 // types
@@ -55,6 +55,7 @@ const Home = () => {
                                     text={"About Me"}
                                     onClick={() => setModalActive(true)}
                                 />
+                                <CvLink className={styles.cvLink}/>
                             </div>
                         </div>
                         <div className={styles.logoContainer}>

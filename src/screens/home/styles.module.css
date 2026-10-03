@@ -40,7 +40,18 @@
 .buttonContainer {
     margin-top: 20px;
     display: flex;
+    align-items: center;
     align-self: flex-start;
+}
+
+/* the button arrow sticks out to the right of the button, leave room for it */
+.buttonContainer .cvLink {
+    margin-left: 72px;
+    color: #B0B2C3;
+}
+
+.buttonContainer .cvLink:hover {
+    color: white;
 }
 
 .logoContainer {
@@ -136,6 +147,16 @@
         display: block;
         max-width: 240px;
         font-size: 1.05em;
+    }
+
+    .buttonContainer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+    }
+
+    .buttonContainer .cvLink {
+        margin-left: 0;
     }
 
     .logoContainer {

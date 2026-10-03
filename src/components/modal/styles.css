@@ -144,19 +144,12 @@
 .linkContainer {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
-}
-
-.downloadLink {
-    display: flex;
-    align-items: center;
-    font-size: 0.8em;
+    margin-top: 36px;
     color: #1C1D25;
-    text-decoration: none;
 }
 
-.downloadIcon {
-    margin-left: 15px;
+.linkContainer a:hover {
+    color: #f06449;
 }
 
 .reactIcon path {

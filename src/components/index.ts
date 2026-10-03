@@ -14,3 +14,4 @@ export {default as Introduction} from "./introduction/index";
 export {default as AboutProject} from "./aboutProject/index";
 export {default as CardModal} from "./cardModal/index";
 export {default as AnimateWrapper} from './animateWrapper/index';
+export {default as CvLink} from "./cvLink/index";

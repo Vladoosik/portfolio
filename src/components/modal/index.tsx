@@ -3,6 +3,7 @@ import axios from "axios";
 import React, {ChangeEvent, FC, memo, useCallback, useMemo, useState,} from "react";
 // components
 import Button from "../button";
+import CvLink from "../cvLink";
 // styles
 import "./styles.css";
 // assets
@@ -136,16 +137,9 @@ const Modal: FC<ModalProps> = (props) => {
                             <CssIcon className={"cssIcon"}/>
                             <TsIcon className={"tsIcon"}/>
                         </div>
-                        {/*<div className={"linkContainer"}>*/}
-                        {/*  <a*/}
-                        {/*    href="../../assets/cv/CV.pdf"*/}
-                        {/*    download={"CV Vlad Khrushchov"}*/}
-                        {/*    className={"downloadLink"}*/}
-                        {/*  >*/}
-                        {/*    Download My Cv*/}
-                        {/*    <Download className={"downloadIcon"} />*/}
-                        {/*  </a>*/}
-                        {/*</div>*/}
+                        <div className={"linkContainer"}>
+                            <CvLink/>
+                        </div>
                     </div>
                 </div>
                 <div
