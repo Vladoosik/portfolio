@@ -8,5 +8,15 @@
     align-items: center;
 }
 
+@media (max-width: 768px) {
+    .container {
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 12px 0;
+    }
 
-
+    .logo svg {
+        width: 44px;
+        height: 40px;
+    }
+}

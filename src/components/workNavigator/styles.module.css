@@ -1,5 +1,8 @@
 
 .container {
+    display: block;
+    color: inherit;
+    text-decoration: none;
     position: relative;
     cursor: pointer;
     padding: 45px 15vw;
@@ -97,4 +100,14 @@
 .arrow {
     z-index: 2;
     transition: all 0.4s;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 35px 24px;
+    }
+
+    .nextWorkText {
+        font-size: 2em;
+    }
 }

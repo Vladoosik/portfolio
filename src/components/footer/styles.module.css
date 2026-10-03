@@ -20,6 +20,7 @@
 }
 
 .iconLink {
+    text-decoration: none;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -44,4 +45,22 @@
 
 .licenceContainer {
     margin-top: 40px;
+}
+
+.contact {
+    color: inherit;
+}
+
+@media (max-width: 768px) {
+    .linkContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 18px;
+        margin-right: 0;
+    }
+
+    .license {
+        margin-right: 0;
+    }
 }

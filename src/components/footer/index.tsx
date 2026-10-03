@@ -18,15 +18,12 @@ type FooterProps = {
 const Footer: FC<FooterProps> = (props) => {
   const { linkToTop = "home", onLinkPress } = props;
   const year = new Date().getFullYear();
-
-  const openLink = (link: string) => {
-    window.open(link, "_blank");
-  };
   return (
     <div className={styles.container}>
       <div className={styles.contentContainer}>
         <Link
           to={linkToTop}
+          href={`#${linkToTop}`}
           smooth={"100"}
           className={styles.iconLink}
           onClick={onLinkPress}
@@ -36,17 +33,15 @@ const Footer: FC<FooterProps> = (props) => {
         </Link>
         <div className={styles.linkContainer}>
           {FooterLinks.map((item: HeaderLinksProps) => (
-            <AnimatedLinks
-              key={item.id}
-              onClick={() => openLink(item.path)}
-              item={item}
-            />
+            <AnimatedLinks key={item.id} item={item} />
           ))}
         </div>
         <div className={styles.licenceContainer}>
           <span className={styles.license}>
-            © {year} Vlad Khrushchev{" - "}
-            <Link to={""}>Contact</Link>
+            © {year} Vlad Khrushchov{" - "}
+            <a href={"mailto:x.vlad2101@gmail.com"} className={styles.contact}>
+              Contact
+            </a>
           </span>
         </div>
       </div>

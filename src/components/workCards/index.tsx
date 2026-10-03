@@ -9,7 +9,7 @@ import {WorksType} from "../../types/WorksType";
 import Button from "../button";
 import AnimateWrapper from "../animateWrapper";
 // utils
-import {handleNavigation} from "../../utils/navigation";
+import {handleLinkClick} from "../../utils/navigation";
 
 interface WorkProps {
     item: WorksType;
@@ -23,15 +23,24 @@ const WorkCards: FC<WorkProps> = (props) => {
 
     return (
         <AnimateWrapper>
-            <div onClick={() => handleNavigation(navigate, item.path)}>
-                <div className={styles.workCard} style={{left: odd ? -30 : 30}}>
+            <a
+                href={`/${item.path}`}
+                className={styles.cardLink}
+                onClick={(e) => handleLinkClick(e, navigate, `/${item.path}`)}
+            >
+                <div className={`${styles.workCard} ${odd ? styles.cardLeft : styles.cardRight}`}>
                     <p
                         className={styles.cardNumber}
                         style={odd ? {right: 0} : {left: 0}}
                     >
                         0{index + 1}
                     </p>
-                    <img src={item.image} alt="case" className={styles.image}/>
+                    <img
+                        src={item.image}
+                        alt={`${item.title} case study cover`}
+                        loading="lazy"
+                        className={styles.image}
+                    />
                     <div className={odd ? styles.textLeft : styles.textRight}>
                         <p className={styles.cardTitle}>{item.title}</p>
                         <p className={styles.cardText}>{item.text}</p>
@@ -40,7 +49,7 @@ const WorkCards: FC<WorkProps> = (props) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </AnimateWrapper>
     );
 };

@@ -36,7 +36,7 @@
   },
   "scripts": {
     "start": "parcel ./src/index.html",
-    "build": "parcel build ./src/index.html",
+    "build": "parcel build ./src/index.html && cp public/robots.txt public/sitemap.xml public/og.png dist/",
     "test": "jest"
   },
   "eslintConfig": {

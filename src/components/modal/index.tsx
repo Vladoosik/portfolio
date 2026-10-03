@@ -7,8 +7,6 @@ import Button from "../button";
 import "./styles.css";
 // assets
 import {CssIcon, JsIcon, ReactIcon, TsIcon} from "../../assets";
-// constants
-import {CHAT_ID, URI_API} from "../../constants/postValue";
 
 interface ModalProps {
     active: boolean;
@@ -21,9 +19,16 @@ type MessageType = {
     description: string;
 };
 
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// serverless function (api/contact.js), it holds the Telegram credentials
+const CONTACT_API = "/api/contact";
+
 const Modal: FC<ModalProps> = (props) => {
     const {active, setActive} = props;
     const [messageIsSend, setMessageIsSend] = useState<boolean>(false);
+    const [sendError, setSendError] = useState<boolean>(false);
+    // honeypot: hidden from people, bots fill it in
+    const [website, setWebsite] = useState<string>("");
     const [message, setMessage] = useState<MessageType>({
         name: "",
         email: "",
@@ -42,38 +47,34 @@ const Modal: FC<ModalProps> = (props) => {
     );
 
     const checkMessage = (): boolean => {
-        return Object.values(memoizedMessage).some((value) => value === "");
+        return (
+            Object.values(memoizedMessage).some((value) => value.trim() === "") ||
+            !EMAIL_PATTERN.test(memoizedMessage.email.trim())
+        );
+    };
+
+    const resetMessage = () => {
+        setMessage({
+            name: "",
+            email: "",
+            description: "",
+        });
     };
 
     const handleSendMessage = async (): Promise<void> => {
-        let message = `<b>Письмо с сайта</b>\n`;
-        message += `<b>Отправиитель: </b> ${memoizedMessage.name} \n`;
-        message += `<b>Почта: </b> ${memoizedMessage.email} \n`;
-        message += `<b>Описание: </b> ${memoizedMessage.description}`;
+        setSendError(false);
 
         await axios
-            .post(URI_API, {
-                chat_id: CHAT_ID,
-                parse_mode: "html",
-                text: message,
+            .post(CONTACT_API, {...memoizedMessage, website})
+            .then(() => {
+                setMessageIsSend(true);
+                resetMessage();
             })
-            .then(() => setMessageIsSend(true))
-            .catch((error) => console.log(error.message))
-            .finally(() => {
-                setMessage({
-                    name: "",
-                    email: "",
-                    description: "",
-                });
+            .catch((error) => {
+                console.log(error.message);
+                setSendError(true);
             });
     };
-
-    const getYear = () => {
-        const nowYear = new Date().getFullYear();
-        const dateOfBirth = 2000;
-
-        return nowYear - dateOfBirth
-    }
 
     return (
         <div
@@ -95,7 +96,7 @@ const Modal: FC<ModalProps> = (props) => {
                 >
                     {messageIsSend && (
                         <div className={"successContainer"}>
-                            <h2>Your message has been send!</h2>
+                            <h2>Your message has been sent!</h2>
                             <p>You can close this modal</p>
                             <Button
                                 text={"Close"}
@@ -107,22 +108,24 @@ const Modal: FC<ModalProps> = (props) => {
                     <div className={messageIsSend ? "hideContent" : "aboutContent"}>
                         <h3 className={"aboutMe"}>About Me.</h3>
                         <p className={"aboutDescription"}>
-                            Interactive Front-End Developer
+                            Full-Stack Developer · React Native / NestJS
                         </p>
                         <p className={"mainAboutText"}>
-                            Hi, I'm Vlad Khrushchev, a {getYear()}-years-old Ukrainian{" "}
-                            <strong>Full-Stack Developer.</strong> I love coding and
-                            learning new technologies. I am also always open to{" "}
-                            <strong>some new proposals and interesting projects</strong>.
+                            Hi, I'm Vlad Khrushchov, a{" "}
+                            <strong>Full-Stack Developer</strong> from Ukraine. I build
+                            mobile apps with <strong>React Native</strong> and backends
+                            with <strong>NestJS</strong>, from the first screen to the
+                            store release.
                             <br/>
-                            Since I have been developing applications in{" "}
-                            <strong>react-native</strong> for a long time, I give priority to
-                            the development of <strong>mobile </strong> or <strong>full-stack applications</strong>,
-                            but if
-                            you have great suggestions for react, then why not :) <br/>
-                            In my free time from coding, I work out at the{" "}
-                            <strong>gym</strong>, learn to play the <strong>guitar</strong>{" "}
-                            and sometimes play <strong>games</strong>
+                            Recently I built <strong>IDriver</strong>, a driving-theory app
+                            live on the App Store and Google Play: the mobile app, the admin
+                            panel and the backend with payments, real-time features and
+                            security hardening. Before that I shipped{" "}
+                            <strong>Voice Notes</strong>, a CRM app, to the App Store as
+                            the sole developer.
+                            <br/>
+                            I'm open to <strong>new proposals and interesting projects</strong>.
+                            Outside of work: gym, guitar and games.
                         </p>
                         <div className={"aboutIconContainer"}>
                             <ReactIcon className={"reactIcon"}/>
@@ -133,7 +136,7 @@ const Modal: FC<ModalProps> = (props) => {
                         {/*<div className={"linkContainer"}>*/}
                         {/*  <a*/}
                         {/*    href="../../assets/cv/CV.pdf"*/}
-                        {/*    download={"CV Vlad Khrushchev"}*/}
+                        {/*    download={"CV Vlad Khrushchov"}*/}
                         {/*    className={"downloadLink"}*/}
                         {/*  >*/}
                         {/*    Download My Cv*/}
@@ -153,10 +156,15 @@ const Modal: FC<ModalProps> = (props) => {
                 >
                     <div className={messageIsSend ? "hideContact" : "contactContainer"}>
                         <div className={"closeBtnContainer"}>
-                            <div className="close-container" onClick={() => setActive(false)}>
-                                <div className="leftright"/>
-                                <div className="rightleft"/>
-                            </div>
+                            <button
+                                type="button"
+                                aria-label="Close"
+                                className="close-container"
+                                onClick={() => setActive(false)}
+                            >
+                                <span className="leftright"/>
+                                <span className="rightleft"/>
+                            </button>
                         </div>
                         <div>
                             <h3 className={"contactTitle"}>Let’s talk.</h3>
@@ -165,10 +173,11 @@ const Modal: FC<ModalProps> = (props) => {
                             </p>
                         </div>
                         <div className={"inputContainer"}>
-                            <label className={"inputLabel"}>Name</label>
+                            <label className={"inputLabel"} htmlFor={"contact-name"}>Name</label>
                             <div className={"inputContent"}>
                                 <input
                                     type="text"
+                                    id={"contact-name"}
                                     className={"input"}
                                     name={"name"}
                                     value={memoizedMessage.name}
@@ -181,10 +190,11 @@ const Modal: FC<ModalProps> = (props) => {
                         </div>
                         <div style={{marginTop: 25}}>
                             <div className={"inputContainer"}>
-                                <label className={"inputLabel"}>Email</label>
+                                <label className={"inputLabel"} htmlFor={"contact-email"}>Email</label>
                                 <div className={"inputContent"}>
                                     <input
-                                        type="text"
+                                        type="email"
+                                        id={"contact-email"}
                                         className={"input"}
                                         name={"email"}
                                         value={memoizedMessage.email}
@@ -198,9 +208,10 @@ const Modal: FC<ModalProps> = (props) => {
                         </div>
                         <div style={{marginTop: 25}}>
                             <div className={"inputContainer"}>
-                                <label className={"inputLabel"}>Message</label>
+                                <label className={"inputLabel"} htmlFor={"contact-message"}>Message</label>
                                 <div className={"inputContent"}>
                   <textarea
+                      id={"contact-message"}
                       className={"textArea"}
                       name={"description"}
                       value={memoizedMessage.description}
@@ -212,6 +223,24 @@ const Modal: FC<ModalProps> = (props) => {
                                 </div>
                             </div>
                         </div>
+                        <input
+                            type="text"
+                            name={"website"}
+                            className={"honeypot"}
+                            tabIndex={-1}
+                            autoComplete="off"
+                            aria-hidden
+                            value={website}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                                setWebsite(e.target.value)
+                            }
+                        />
+                        {sendError && (
+                            <p className={"formError"} role="alert">
+                                The message was not sent. Please try again or email me at
+                                x.vlad2101@gmail.com
+                            </p>
+                        )}
                         <div className={"buttonContainer"}>
                             <Button
                                 text={"Send Message"}

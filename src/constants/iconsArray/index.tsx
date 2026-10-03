@@ -21,33 +21,33 @@ import { iconPosition } from "../../utils/iconPosition";
 export const SocialIcons = [
   {
     id: 11,
+    name: "LinkedIn",
     icon: <LinkedIn className={styles.icon} />,
     link: "https://www.linkedin.com/in/vlad-khrushchov-59a83b380/",
-    params: "_clamp",
   },
   {
     id: 12,
+    name: "GitHub",
     icon: <GitHub className={styles.icon} />,
     link: "https://github.com/Vladoosik",
-    params: "_clamp",
   },
   {
     id: 23,
+    name: "GitLab",
     icon: <GitLab className={styles.icon} />,
     link: "https://gitlab.com/Vladoosik",
-    params: "_clamp",
   },
   {
     id: 32,
+    name: "Telegram",
     icon: <Telegram className={styles.icon} />,
     link: "https://t.me/vladoosik1",
-    params: "_clamp",
   },
   {
     id: 44,
+    name: "Email",
     icon: <Gmail className={styles.icon} />,
-    link: "x.vlad2101@gmail.com",
-    params: "",
+    link: "mailto:x.vlad2101@gmail.com",
   },
 ];
 

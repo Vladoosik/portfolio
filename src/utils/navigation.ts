@@ -1,4 +1,5 @@
 // modules
+import { MouseEvent } from "react";
 import { animateScroll as scroll } from "react-scroll/modules";
 import { NavigateFunction } from "react-router/dist/lib/hooks";
 
@@ -12,4 +13,15 @@ export const handleNavigation = (
   };
   scroll.scrollToTop(options);
   setTimeout(() => navigate(path), 300);
+};
+
+export const handleLinkClick = (
+  event: MouseEvent<HTMLAnchorElement>,
+  navigate: NavigateFunction,
+  path: string,
+): void => {
+  // keep "open in a new tab" working
+  if (event.metaKey || event.ctrlKey || event.shiftKey) return;
+  event.preventDefault();
+  handleNavigation(navigate, path);
 };

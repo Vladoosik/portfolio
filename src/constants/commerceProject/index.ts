@@ -8,7 +8,7 @@ export const modalWorkArr: ModalWorkType[] = [
     title: "IDriver",
     role: "Full-Stack Developer",
     period: "April 2026 - Present",
-    image: require("../../assets/png/idrvier_logo.png"),
+    image: require("../../assets/png/idrvier_logo.webp"),
     description:
       "A mobile app for learning Ukrainian traffic rules (ПДР). As the lead" +
       " full-stack developer I built both the React Native app and the NestJS /" +
@@ -21,7 +21,7 @@ export const modalWorkArr: ModalWorkType[] = [
     title: "Voice Notes",
     role: "React-Native Developer",
     period: "July 2025 - Present",
-    image: require("../../assets/png/VoiceNotesCase.png"),
+    image: require("../../assets/png/VoiceNotesCase.webp"),
     description:
       "An internal CRM system for managing client records and session notes." +
       " Built from scratch with React Native CLI, Firebase, TypeScript and" +
@@ -30,12 +30,12 @@ export const modalWorkArr: ModalWorkType[] = [
   {
     id: 14,
     path: "kloki",
-    title: "Mobile planer",
+    title: "Kloki Planner",
     role: "React-Native Developer",
     period: "January 2024 - Present",
-    image: require("../../assets/png/planer.jpg"),
+    image: require("../../assets/png/planer.webp"),
     description:
-      "The project created in React-Native is a planner" +
+      "The project created in React Native is a planner" +
       " that allows you to add, delete plans, daily habits," +
       " monitor your progress, and also receive notifications " +
       "from the application about upcoming plans",
@@ -47,21 +47,21 @@ export const worksArr: WorksType[] = [
     id: 15,
     title: "IDriver",
     text: "Ukrainian driving app · Full-Stack",
-    image: require("../../assets/png/idrvier_logo.png"),
+    image: require("../../assets/png/idrvier_logo.webp"),
     path: "idriver",
   },
   {
     id: 12,
     title: "VoiceNotes",
     text: "CRM for small business",
-    image: require("../../assets/png/VoiceNotesCase.png"),
+    image: require("../../assets/png/VoiceNotesCase.webp"),
     path: "voiceNotes",
   },
   {
     id: 14,
-    title: "Kloki Planer",
-    text: "planer on React-Native",
-    image: require("../../assets/png/planer.jpg"),
+    title: "Kloki Planner",
+    text: "Planner app on React Native",
+    image: require("../../assets/png/planer.webp"),
     path: "kloki",
   },
 ];

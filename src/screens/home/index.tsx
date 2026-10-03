@@ -22,15 +22,6 @@ const Home = () => {
 
     const cursorPositionRef = useRef<CursorPositionType>({x: 0, y: 0});
 
-    const handleIconPress = (path: string, params: string) => {
-        if (params && path) {
-            window.open(path, params);
-        } else {
-            const mailtoLink = `mailto:${path}?`;
-            window.open(mailtoLink, "_blank");
-        }
-    };
-
     useEffect(() => {
         const handleMouseMove = (event: MouseEvent) => {
             cursorPositionRef.current = {x: event.clientX, y: event.clientY};
@@ -54,9 +45,9 @@ const Home = () => {
                 <div className={styles.contentContainer}>
                     <div className={styles.nameContainer}>
                         <div style={{zIndex: 2}}>
-                            <h4 className={styles.name}>Vlad Khrushchev</h4>
+                            <h1 className={styles.name}>Vlad Khrushchov</h1>
                             <AnimatedText
-                                text={"Interactive Full-Stack developer"}
+                                text={"Full-Stack Developer · React Native / NestJS"}
                                 className={styles.description}
                             />
                             <div className={styles.buttonContainer}>
@@ -76,12 +67,15 @@ const Home = () => {
                         }
                     >
                         {SocialIcons.map((item) => (
-                            <div
+                            <a
                                 key={item.id}
-                                onClick={() => handleIconPress(item.link, item.params)}
+                                href={item.link}
+                                aria-label={item.name}
+                                target={"_blank"}
+                                rel={"noopener noreferrer"}
                             >
                                 {item.icon}
-                            </div>
+                            </a>
                         ))}
                     </div>
                 </div>
@@ -90,7 +84,7 @@ const Home = () => {
                 </div>
                 <Modal active={modalActive} setActive={setModalActive}/>
                 <div className={styles.worksContainer}>
-                    <Link to={"work"} smooth>
+                    <Link to={"work"} href={"#work"} smooth>
                         <p className={styles.works}>Works</p>
                     </Link>
                 </div>

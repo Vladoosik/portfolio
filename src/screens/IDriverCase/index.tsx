@@ -17,7 +17,8 @@ import {
 } from "../../components";
 // utils
 import transitionPages from "../../utils/transitionPages";
-import { handleNavigation } from "../../utils/navigation";
+import { handleLinkClick } from "../../utils/navigation";
+import { usePageMeta } from "../../utils/usePageMeta";
 import { useMediaQuery } from "react-responsive";
 // styles
 import styles from "./styles.module.css";
@@ -38,9 +39,10 @@ const IDriverCase = () => {
     animateScroll.scrollToTop();
   };
 
-  const handleProjectNavigate = () => {
-    window.open("https://idriver.ai", "_blank");
-  };
+  usePageMeta(
+    "IDriver case study — Vlad Khrushchov",
+    "IDriver (ЯВодій): a React Native app and NestJS backend for learning Ukrainian traffic rules. Payments, real-time features and security.",
+  );
 
   return (
     <>
@@ -62,7 +64,7 @@ const IDriverCase = () => {
           <div
             className={isMobile ? styles.titleContentMob : styles.titleContent}
           >
-            <p className={styles.title}>IDriver</p>
+            <h1 className={styles.title}>IDriver</h1>
             <AnimatedText
               text={"ЯВодій · learn Ukrainian traffic rules"}
               className={styles.description}
@@ -74,7 +76,7 @@ const IDriverCase = () => {
           <div className={isMobile ? styles.heroPhoneMob : styles.heroPhone}>
             <img
               className={styles.heroScreen}
-              src={require("../../assets/png/idriver_welcome_screen.png")}
+              src={require("../../assets/png/idriver_welcome_screen.webp")}
               alt="IDriver welcome screen"
             />
           </div>
@@ -85,9 +87,6 @@ const IDriverCase = () => {
             role={"Full-Stack Developer"}
             period={"April 2026 - Present"}
             titleColor={"#cdeb00"}
-            style={{
-              width: "1100px",
-            }}
           />
         </div>
         <Introduction
@@ -97,9 +96,10 @@ const IDriverCase = () => {
             "Built both the React Native app and the NestJS / TypeORM backend — including payments (RevenueCat), real-time features (WebSocket) and application security.\n" +
             "The app is already live on the App Store and Google Play."
           }
-          onButtonPress={handleProjectNavigate}
+          link={"https://idriver.ai"}
         />
         <AboutProject
+          title={"Mobile app, admin panel and backend."}
           visual={<AboutVisual />}
           data={IDriverColor}
           background={"#f4f5f3"}
@@ -123,7 +123,8 @@ const IDriverCase = () => {
       </div>
       <WorkNavigator
         nextProjectName={"Voice Notes"}
-        onClick={() => handleNavigation(navigation, "/voiceNotes")}
+        href={"/voiceNotes"}
+        onClick={(e) => handleLinkClick(e, navigation, "/voiceNotes")}
         overlayColor={"#cdeb00"}
       />
       <AllWorkModal

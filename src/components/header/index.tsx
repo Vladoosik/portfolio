@@ -24,9 +24,7 @@ interface HeaderProp {
 const Header: FC<HeaderProp> = (props) => {
   const {
     setModal,
-    alternative,
     data = headerLinks,
-    navigation,
     setWorkModal,
   } = props;
 
@@ -34,16 +32,13 @@ const Header: FC<HeaderProp> = (props) => {
     if (!path && name !== "All Works") {
       setModal(true);
     }
-    if (alternative && navigation) {
-      navigation(path);
-    }
     if (!path && name === "All Works" && setWorkModal) {
       setWorkModal(true);
     }
   };
   return (
     <div className={styles.container}>
-      <div>
+      <div className={styles.logo}>
         <Logo />
       </div>
       <div className={styles.linkContainer}>

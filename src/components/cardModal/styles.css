@@ -61,3 +61,34 @@
     /*max-width: 1500px;*/
     margin-top: 50px;
 }
+
+
+@media (max-width: 1000px) {
+    .modalCard {
+        flex-direction: column;
+        width: calc(100vw - 32px);
+        max-width: 520px;
+        margin-top: 70px;
+    }
+
+    /* the image/text sides alternate through inline "order", stack them the same way */
+    .modalCard .img {
+        order: 0 !important;
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .modalCard .textContainer {
+        order: 1 !important;
+        padding: 24px;
+    }
+
+    .modalCard .title {
+        font-size: 2.4em;
+    }
+
+    .modalDescription {
+        max-width: none;
+    }
+}

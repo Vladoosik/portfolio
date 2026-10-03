@@ -26,7 +26,8 @@ import { caseHeaderLinks } from "../../constants/headerLink/headerLinks";
 import { VoiceNotesColor } from "../../constants/projectColors";
 import { modalWorkArr } from "../../constants/commerceProject";
 // utils
-import { handleNavigation } from "../../utils/navigation";
+import { handleLinkClick } from "../../utils/navigation";
+import { usePageMeta } from "../../utils/usePageMeta";
 import { useMediaQuery } from "react-responsive";
 
 const VoiceNotesCase = () => {
@@ -39,12 +40,10 @@ const VoiceNotesCase = () => {
     animateScroll.scrollToTop();
   };
 
-  const handleProjectNavigate = () => {
-    window.open(
-      "https://apps.apple.com/ua/app/voice-notes-crm-%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3%D0%B0/id6749210527?l=ru",
-      "_blank",
-    );
-  };
+  usePageMeta(
+    "Voice Notes case study — Vlad Khrushchov",
+    "Voice Notes: a CRM app for client records and session notes, built from scratch with React Native CLI and Firebase and released on the App Store.",
+  );
 
   return (
     <>
@@ -65,7 +64,7 @@ const VoiceNotesCase = () => {
           <div
             className={isMobile ? styles.titleContentMob : styles.titleContent}
           >
-            <p className={styles.title}>Voice Notes</p>
+            <h1 className={styles.title}>Voice Notes</h1>
             <AnimatedText
               text={"CRM System for small business"}
               className={styles.description}
@@ -73,7 +72,7 @@ const VoiceNotesCase = () => {
           </div>
           <img
             className={isMobile ? styles.heroAssetMob : styles.heroAsset}
-            src={require("../../assets/png/hero_voice_notes.png")}
+            src={require("../../assets/png/hero_voice_notes.webp")}
             alt="Voice Notes app"
           />
         </div>
@@ -83,9 +82,6 @@ const VoiceNotesCase = () => {
             role={"React-Native Developer"}
             period={"July 2025 - Present"}
             titleColor={"#00c8e7"}
-            style={{
-              width: "1100px",
-            }}
           />
         </div>
         <Introduction
@@ -95,9 +91,13 @@ const VoiceNotesCase = () => {
             "Built the entire application from scratch using React Native CLI, Firebase, TypeScript, and Zustand.\n" +
             "Successfully launched the first version on the App Store within a short timeframe."
           }
-          onButtonPress={handleProjectNavigate}
+          link={
+            "https://apps.apple.com/ua/app/voice-notes-crm-%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3%D0%B0/id6749210527?l=ru"
+          }
+          linkText={"View on the App Store"}
         />
         <AboutProject
+          title={"From first commit to App Store release."}
           visual={<AboutVisual />}
           data={VoiceNotesColor}
           description={
@@ -115,7 +115,7 @@ const VoiceNotesCase = () => {
               <strong>
                 React Native CLI, Firebase Firestore, OneSignal, TypeScript, and
                 Zustand.
-              </strong>
+              </strong>{" "}
               Our small team consisted of two co-founders and a designer. The
               initial version was released quickly and is already available on
               the <strong>App Store</strong>, with plans to evolve into a
@@ -126,8 +126,9 @@ const VoiceNotesCase = () => {
         <Modal active={active} setActive={setActive} />
       </div>
       <WorkNavigator
-        nextProjectName={"Kloki Planer"}
-        onClick={() => handleNavigation(navigation, "/kloki")}
+        nextProjectName={"Kloki Planner"}
+        href={"/kloki"}
+        onClick={(e) => handleLinkClick(e, navigation, "/kloki")}
         overlayColor={"#00c8e7"}
       />
       <AllWorkModal

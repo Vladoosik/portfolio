@@ -18,7 +18,8 @@ import {
 } from "../../components";
 // utils
 import transitionPages from "../../utils/transitionPages";
-import { handleNavigation } from "../../utils/navigation";
+import { handleLinkClick } from "../../utils/navigation";
+import { usePageMeta } from "../../utils/usePageMeta";
 // constants
 import { caseHeaderLinks } from "../../constants/headerLink/headerLinks";
 import { PlanerColor } from "../../constants/projectColors";
@@ -38,12 +39,10 @@ const PlannerCase = () => {
     animateScroll.scrollToTop();
   };
 
-  const handleKlokiAppStoreNavigate = () => {
-    window.open(
-      "https://apps.apple.com/us/app/kloki-planner/id6746350225",
-      "_blank",
-    );
-  };
+  usePageMeta(
+    "Kloki Planner case study — Vlad Khrushchov",
+    "Kloki: a React Native planner with plans, daily habits, progress tracking and notifications, available on the App Store.",
+  );
 
   return (
     <>
@@ -65,7 +64,7 @@ const PlannerCase = () => {
           <div
             className={isMobile ? styles.titleContentMob : styles.titleContent}
           >
-            <p className={styles.title}>Kloki</p>
+            <h1 className={styles.title}>Kloki</h1>
             <AnimatedText
               text={"all your plans in one app"}
               className={styles.description}
@@ -77,7 +76,7 @@ const PlannerCase = () => {
           <div className={isMobile ? styles.heroPhoneMob : styles.heroPhone}>
             <img
               className={styles.heroScreen}
-              src={require("../../assets/png/kloki_todo_list.png")}
+              src={require("../../assets/png/kloki_todo_list.webp")}
               alt="Kloki habits screen"
             />
           </div>
@@ -85,25 +84,24 @@ const PlannerCase = () => {
         <div className={styles.workDescriptionBox}>
           <WorkDescription
             role={"React-Native Developer"}
-            context={"Mobile Planer"}
+            context={"Mobile Planner"}
             period={"January 2024 - Present"}
             titleColor={"#a855f7"}
-            style={{
-              width: "1100px",
-            }}
           />
         </div>
         <Introduction
           title={"About Project"}
           description={
-            "The project created in React-Native is a planner" +
+            "The project created in React Native is a planner" +
             " that allows you to add, delete plans, daily habits," +
             " monitor your progress, and also receive notifications " +
             "from the application about upcoming plans"
           }
-          onButtonPress={handleKlokiAppStoreNavigate}
+          link={"https://apps.apple.com/us/app/kloki-planner/id6746350225"}
+          linkText={"View on the App Store"}
         />
         <AboutProject
+          title={"Core features, built together with the designer."}
           visual={<AboutVisual />}
           data={PlanerColor}
           background={"#f3f0f7"}
@@ -128,7 +126,8 @@ const PlannerCase = () => {
       </div>
       <WorkNavigator
         nextProjectName={"IDriver"}
-        onClick={() => handleNavigation(navigation, "/idriver")}
+        href={"/idriver"}
+        onClick={(e) => handleLinkClick(e, navigation, "/idriver")}
         overlayColor={"#a855f7"}
       />
       <AllWorkModal

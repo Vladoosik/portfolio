@@ -29,7 +29,7 @@ const AboutVisual = () => (
       <div className={styles.aboutNotch} />
       <img
         className={styles.aboutScreen}
-        src={require("../../assets/png/voice_notes_clients.png")}
+        src={require("../../assets/png/voice_notes_clients.webp")}
         alt="Voice Notes clients screen"
       />
     </div>

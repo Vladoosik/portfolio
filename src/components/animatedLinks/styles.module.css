@@ -9,6 +9,7 @@
     border: none;
     background-color: transparent;
     text-decoration: none;
+    padding: 0;
 }
 
 .headerBtn::before {
@@ -65,5 +66,13 @@
         width: 0;
         background-color: #f25757;
         left: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .headerBtn {
+        margin: 0 9px;
+        font-size: 14px;
+        white-space: nowrap;
     }
 }

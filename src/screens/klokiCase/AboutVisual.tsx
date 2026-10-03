@@ -31,7 +31,7 @@ const AboutVisual = () => (
     <div className={styles.aboutPhone}>
       <img
         className={styles.aboutScreen}
-        src={require("../../assets/png/kloki_charts.png")}
+        src={require("../../assets/png/kloki_charts.webp")}
         alt="Kloki charts screen"
       />
     </div>

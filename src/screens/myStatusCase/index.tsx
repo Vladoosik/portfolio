@@ -17,7 +17,7 @@ import {
 } from "../../components";
 // utils
 import transitionPages from "../../utils/transitionPages";
-import { handleNavigation } from "../../utils/navigation";
+import { handleLinkClick } from "../../utils/navigation";
 // styles
 import styles from "./styles.module.css";
 // constants
@@ -77,6 +77,7 @@ const MyStatusCase = () => {
         workLogo={<span className={styles.coverText}>My Status</span>}
       />
       <AboutProject
+        title={"A social network built around geolocation."}
         data={MyStatusColor}
         description={
           <p className={styles.workDescription}>
@@ -96,8 +97,9 @@ const MyStatusCase = () => {
         }
       />
       <WorkNavigator
-        nextProjectName={"Planer Mobile"}
-        onClick={() => handleNavigation(navigation, "/kloki")}
+        nextProjectName={"Kloki Planner"}
+        href={"/kloki"}
+        onClick={(e) => handleLinkClick(e, navigation, "/kloki")}
       />
       <Footer onLinkPress={scrollToTop} />
     </>

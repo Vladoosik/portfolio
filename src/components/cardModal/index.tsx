@@ -34,7 +34,7 @@ const CardModal: FC<CardModalProps> = (props) => {
   const Image = () => (
     <motion.img
       src={item.image}
-      alt={"WorkImage"}
+      alt={`${item.title} cover`}
       className={"img"}
       style={{
         order: !odd ? 1 : 0,

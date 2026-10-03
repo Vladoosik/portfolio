@@ -1,5 +1,5 @@
 // modules
-import React, { FC } from "react";
+import React, { FC, MouseEvent } from "react";
 // styles
 import styles from "./styles.module.css";
 // assets
@@ -7,7 +7,8 @@ import { ArrowIcon } from "../../assets";
 
 interface WorkNavProp {
   nextProjectName: string;
-  onClick?: () => void;
+  href: string;
+  onClick?: (event: MouseEvent<HTMLAnchorElement>) => void;
   overlayColor?: string;
   backgroundColor?: string;
 }
@@ -15,14 +16,16 @@ interface WorkNavProp {
 const WorkNavigator: FC<WorkNavProp> = (props) => {
   const {
     nextProjectName,
+    href,
     onClick,
     overlayColor = "#f06449",
     backgroundColor,
   } = props;
   return (
-    <div
+    <a
       className={styles.container}
       style={{ backgroundColor }}
+      href={href}
       onClick={onClick}
     >
       <p className={styles.description}>Next work</p>
@@ -39,7 +42,7 @@ const WorkNavigator: FC<WorkNavProp> = (props) => {
         className={styles.overlay}
         style={{ backgroundColor: overlayColor }} // Используем цвет из пропса
       />
-    </div>
+    </a>
   );
 };
 

@@ -19,6 +19,7 @@
     text-align: left;
     font-family: League Spartan, Helvetica, Arial, serif;
     font-weight: bolder;
+    margin-top: 1.33em;
     margin-bottom: 10px;
 }
 
@@ -99,6 +100,11 @@
     color: white;
 }
 
+.worksContainer a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .works {
     cursor: pointer;
 }
@@ -106,5 +112,47 @@
 @media (max-height: 900px) {
     .logoContainer {
         top: 20%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    /* decorative icons and the logo are positioned in % and may stick out */
+    .container {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .contentContainer {
+        margin-left: 24px;
+    }
+
+    .name {
+        font-size: 2.4em;
+        margin-top: 0;
+    }
+
+    .description {
+        display: block;
+        max-width: 240px;
+        font-size: 1.05em;
+    }
+
+    .logoContainer {
+        left: 32%;
+    }
+
+    .logoContainer svg {
+        width: 64vw;
+        height: 64vw;
+    }
+
+    .iconContainer, .hiddenElement {
+        gap: 26px;
+    }
+
+    .icon {
+        width: 32px;
+        height: 32px;
     }
 }

@@ -268,3 +268,26 @@
     color: #f06449;
 }
 
+
+@media (max-width: 1200px) {
+    .titleContainerMob {
+        box-sizing: border-box;
+        height: auto;
+        min-height: 760px;
+        padding: 40px 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 3.4em;
+    }
+
+    .description {
+        font-size: 1.4em;
+    }
+
+    .workDescription {
+        min-width: 0;
+    }
+}

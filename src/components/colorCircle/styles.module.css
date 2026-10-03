@@ -16,18 +16,24 @@
 }
 
 /* --- draggable / reorderable list --- */
+/* --item is the pitch of one item (210px on desktop), set from ColorCircleList */
 .reorderRow {
     position: relative;
-    height: 210px;
+    height: calc(var(--item) * 0.76 + 50px);
     margin: 0 auto;
     touch-action: none;
+}
+
+.reorderRow .circle {
+    width: calc(var(--item) * 0.76);
+    height: calc(var(--item) * 0.76);
 }
 
 .reorderItem {
     position: absolute;
     top: 0;
     left: 0;
-    height: 210px;
+    height: calc(var(--item) * 0.76 + 50px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,4 +51,6 @@
 
 .reorderItem p {
     margin: 0;
+    font-size: clamp(11px, calc(var(--item) * 0.08), 16px);
+    text-align: center;
 }

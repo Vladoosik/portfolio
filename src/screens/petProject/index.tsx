@@ -1,6 +1,5 @@
 // modules
 import React from "react";
-import {useMediaQuery} from "react-responsive";
 // styles
 import styles from "./styles.module.css";
 // components
@@ -9,27 +8,25 @@ import {AnimateWrapper} from "../../components";
 import {petProjectArray, ProjectType} from "../../constants/petProjects";
 
 const PetProjects = () => {
-    const isMobile: boolean = useMediaQuery({query: '(max-width: 1200px)'});
-    const openLink = (link: string) => {
-        window.open(link, "_blank");
-    };
-
     return (
         <div className={styles.container} id={"petProject"}>
             <p className={styles.title}>EXPERIMENTS & OPEN SOURCE</p>
             <h2 className={styles.text}>Web is fun.</h2>
             <AnimateWrapper width={'100%'} background={'rgba(97, 218, 251, 0.5)'}>
-                <div className={isMobile ? styles.containerMob : styles.projectContainer}>
+                <div className={styles.projectContainer}>
                     {petProjectArray.map((item: ProjectType, index: number) => (
-                        <div
+                        <a
                             key={item.id}
                             className={styles.projectCard}
-                            onClick={() => openLink(item.link)}
+                            href={item.link}
+                            target={"_blank"}
+                            rel={"noopener noreferrer"}
                         >
                             <img
                                 className={styles.projectImage}
                                 src={item.image}
-                                alt="project image"
+                                alt={`${item.title} project preview`}
+                                loading="lazy"
                             />
                             <div className={styles.cardTextBox}>
                                 <p className={styles.cardTitle}>{item.title}</p>
@@ -39,7 +36,7 @@ const PetProjects = () => {
                                 <span className={styles.numberCard}>0{index + 1}</span>
                                 <div className={styles.verticalLine}/>
                             </div>
-                        </div>
+                        </a>
                     ))}
                 </div>
             </AnimateWrapper>

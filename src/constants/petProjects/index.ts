@@ -12,14 +12,14 @@ export const petProjectArray: ProjectType[] = [
         id: 21,
         title: 'Cryptomania',
         description: 'project with firebase (auth, storage, deploy), mobX, typescript',
-        image: require('../../assets/gif/cryptomaniaGif.gif'),
+        image: require('../../assets/gif/cryptomania.webp'),
         link: 'https://cryptomania-d5f1c.web.app/',
     },
     {
         id: 22,
         title: 'StarWars Project',
         description: 'One of the first project on React. React-router-dom, Api Star-wars',
-        image: require('../../assets/png/starWarsProject.png'),
+        image: require('../../assets/png/starWarsProject.webp'),
         link: 'https://github.com/Vladoosik/React-Cource/tree/master/starwars',
     },
     {
@@ -32,7 +32,7 @@ export const petProjectArray: ProjectType[] = [
         id: 24,
         title: 'Swapi Mobile',
         description: 'Project with MobX, Typescript, React-Native, React Navigation',
-        image: require('../../assets/png/swapi_rn.jpg'),
+        image: require('../../assets/png/swapi_rn.webp'),
         link: 'https://github.com/Vladoosik/swapiMobile',
     },
 ]

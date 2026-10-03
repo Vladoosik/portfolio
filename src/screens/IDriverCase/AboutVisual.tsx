@@ -28,7 +28,7 @@ const AboutVisual = () => (
     <div className={styles.aboutPhone}>
       <img
         className={styles.aboutScreen}
-        src={require("../../assets/png/idriver_home_screen.png")}
+        src={require("../../assets/png/idriver_home_screen.webp")}
         alt="IDriver home screen"
       />
     </div>

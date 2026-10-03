@@ -1,5 +1,8 @@
 .modal {
     position: fixed;
+    top: 0;
+    left: 0;
+    visibility: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,6 +15,7 @@
 }
 
 .modal.active {
+    visibility: visible;
     opacity: 1;
     z-index: 100;
 }
@@ -20,6 +24,7 @@
     opacity: 0;
     transition: 0.5s;
     width: 1170px;
+    max-width: 94vw;
     min-height: 600px;
     height: 80vh;
     max-height: 750px;
@@ -302,9 +307,13 @@
 
 .close-container {
     position: relative;
+    display: block;
     width: 50px;
     height: 50px;
     margin: 100px auto auto;
+    padding: 0;
+    border: none;
+    background: transparent;
     cursor: pointer;
 }
 
@@ -353,4 +362,94 @@
 
 .close-container:hover label {
     opacity: 1;
+}
+
+
+.honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.formError {
+    margin: 20px 0 0;
+    font-size: 0.85em;
+    color: #F25C66;
+}
+
+@media (max-width: 1250px) {
+    .aboutContent, .contactContainer, .hideContent, .hideContact {
+        margin-top: 90px;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .modalContent {
+        position: relative;
+        flex-direction: column;
+        width: 100vw;
+        max-width: none;
+        height: 100%;
+        min-height: 0;
+        max-height: none;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .halfAbout, .halfContact {
+        width: 100%;
+        height: auto;
+    }
+
+    /* a transformed parent would capture the absolutely positioned close button */
+    .halfAbout.active, .halfContact.active, .halfAbout.success {
+        transform: none;
+    }
+
+    .halfAbout.active:before {
+        display: none;
+    }
+
+    .halfAbout.success {
+        min-height: 100%;
+    }
+
+    .aboutContent, .contactContainer, .hideContent, .hideContact {
+        margin: 56px 24px 40px;
+    }
+
+    .mainAboutText {
+        text-align: left;
+    }
+
+    .input, .textArea {
+        box-sizing: border-box;
+    }
+
+    .input:hover ~ .inputCover, .input:focus ~ .inputCover,
+    .textArea:hover ~ .textAreaCover, .textArea:focus ~ .textAreaCover {
+        width: 100%;
+    }
+
+    .closeBtnContainer {
+        right: 12px;
+    }
+
+    .close-container {
+        margin-top: 8px;
+    }
+
+    .leftright, .rightleft {
+        background-color: #1C1D25;
+    }
+
+    .successContainer {
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
 }

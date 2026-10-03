@@ -9,6 +9,7 @@ import {ProjectColorType} from "../../types/ProjectColorType";
 import {useMediaQuery} from "react-responsive";
 
 interface AboutProjectProps {
+    title: string;
     data: ProjectColorType[];
     description: JSX.Element;
     photoSource?: string;
@@ -19,6 +20,7 @@ interface AboutProjectProps {
 
 const AboutProject: FC<AboutProjectProps> = (props) => {
     const {
+        title,
         data,
         description,
         photoSource = require("../../assets/png/phone.png"),
@@ -33,11 +35,9 @@ const AboutProject: FC<AboutProjectProps> = (props) => {
             <h2 className={styles.workText}>Responsibilities</h2>
             <div className={styles.workCard}>
                 <div>
-                    <p className={styles.cardTitle}>
-                        Designed with customer care and love.
-                    </p>
+                    <p className={styles.cardTitle}>{title}</p>
                     <div className={styles.line}/>
-                    <p className={styles.workDescription}>{description}</p>
+                    <div className={styles.workDescription}>{description}</div>
                 </div>
                 <div className={isMobile ? styles.phoneContainerMob : styles.phoneContainer}>
                     {visual ? (
@@ -47,11 +47,12 @@ const AboutProject: FC<AboutProjectProps> = (props) => {
                             className={styles.phoneCard}
                             style={imageStyle}
                             src={photoSource}
-                            alt="phone"
+                            alt="App screen mockup"
                         />
                     )}
                 </div>
             </div>
+            <p className={styles.paletteTitle}>Design system · project palette</p>
             <div className={styles.circleContainer}>
                 <ColorCircleList data={data}/>
             </div>

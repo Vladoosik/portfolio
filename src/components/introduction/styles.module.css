@@ -8,6 +8,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-left: 24px;
+    padding-right: 24px;
 }
 
 .projectTitle {
@@ -38,6 +40,7 @@
     border-radius: 3px;
     font-weight: 600;
     font-size: 1em;
+    text-decoration: none;
     transition: all 0.3s;
 }
 
@@ -54,4 +57,15 @@
     font-style: italic;
     bottom: -63px;
     left: 20%;
+}
+
+@media (max-width: 600px) {
+    .projectTitle {
+        font-size: 36px;
+    }
+
+    .projectText {
+        text-align: left;
+        word-spacing: normal;
+    }
 }
