@@ -20,14 +20,14 @@ type MessageType = {
 };
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-// serverless function (api/contact.js), it holds the Telegram credentials
 const CONTACT_API = "/api/contact";
 
 const Modal: FC<ModalProps> = (props) => {
     const {active, setActive} = props;
     const [messageIsSend, setMessageIsSend] = useState<boolean>(false);
     const [sendError, setSendError] = useState<boolean>(false);
-    // honeypot: hidden from people, bots fill it in
+    const [isSending, setIsSending] = useState<boolean>(false);
+
     const [website, setWebsite] = useState<string>("");
     const [message, setMessage] = useState<MessageType>({
         name: "",
@@ -62,7 +62,9 @@ const Modal: FC<ModalProps> = (props) => {
     };
 
     const handleSendMessage = async (): Promise<void> => {
+        if (isSending) return;
         setSendError(false);
+        setIsSending(true);
 
         await axios
             .post(CONTACT_API, {...memoizedMessage, website})
@@ -73,7 +75,8 @@ const Modal: FC<ModalProps> = (props) => {
             .catch((error) => {
                 console.log(error.message);
                 setSendError(true);
-            });
+            })
+            .finally(() => setIsSending(false));
     };
 
     return (
@@ -243,9 +246,9 @@ const Modal: FC<ModalProps> = (props) => {
                         )}
                         <div className={"buttonContainer"}>
                             <Button
-                                text={"Send Message"}
+                                text={isSending ? "Sending..." : "Send Message"}
                                 widthArrow={false}
-                                disabled={checkMessage()}
+                                disabled={isSending || checkMessage()}
                                 onClick={handleSendMessage}
                             />
                         </div>
