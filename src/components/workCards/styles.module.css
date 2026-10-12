@@ -128,9 +128,11 @@
     transform: scale(1.1);
 }
 
+/* a fixed line-height: with "normal" the digits sit at a different height in every system font (cut off in Safari) */
 .cardNumber {
     position: absolute;
-    top: -60px;
+    top: -22px;
+    line-height: 1;
     font-size: 11em;
     margin: 0;
     margin-block-start: 0;
