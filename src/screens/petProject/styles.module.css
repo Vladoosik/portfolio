@@ -95,7 +95,7 @@
 
 .numberCardContainer {
     position: absolute;
-    right: 0;
+    right: 16px;
     bottom: 30px;
     display: flex;
     flex-direction: column;

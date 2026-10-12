@@ -44,7 +44,7 @@ const Home = () => {
                 </div>
                 <div className={styles.contentContainer}>
                     <div className={styles.nameContainer}>
-                        <div style={{zIndex: 2}}>
+                        <div className={styles.textBlock}>
                             <h1 className={styles.name}>Vlad Khrushchov</h1>
                             <AnimatedText
                                 text={"Full-Stack Developer · React Native / NestJS"}
@@ -53,6 +53,7 @@ const Home = () => {
                             <div className={styles.buttonContainer}>
                                 <Button
                                     text={"About Me"}
+                                    className={styles.aboutButton}
                                     onClick={() => setModalActive(true)}
                                 />
                                 <CvLink className={styles.cvLink}/>
@@ -72,6 +73,7 @@ const Home = () => {
                                 key={item.id}
                                 href={item.link}
                                 aria-label={item.name}
+                                className={styles.socialLink}
                                 target={"_blank"}
                                 rel={"noopener noreferrer"}
                             >
@@ -80,7 +82,7 @@ const Home = () => {
                         ))}
                     </div>
                 </div>
-                <div>
+                <div className={styles.decorIcons}>
                     <AnimatedIcons cursorPosition={cursorPositionRef}/>
                 </div>
                 <Modal active={modalActive} setActive={setModalActive}/>

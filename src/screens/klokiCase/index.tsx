@@ -26,7 +26,7 @@ import { PlanerColor } from "../../constants/projectColors";
 import { modalWorkArr } from "../../constants/commerceProject";
 // styles
 import styles from "./styles.module.css";
-import HeroBackground from "./HeroBackground";
+import HeroBackground, { TodoCards } from "./HeroBackground";
 import AboutVisual from "./AboutVisual";
 
 const PlannerCase = () => {
@@ -44,6 +44,16 @@ const PlannerCase = () => {
     "Kloki: a React Native planner with plans, daily habits, progress tracking and notifications, available on the App Store.",
   );
 
+  const heroPhone = (
+    <div className={isMobile ? styles.heroPhoneMob : styles.heroPhone}>
+      <img
+        className={styles.heroScreen}
+        src={require("../../assets/png/kloki_todo_list.webp")}
+        alt="Kloki habits screen"
+      />
+    </div>
+  );
+
   return (
     <>
       <div className={styles.container} id={"#kloki"}>
@@ -59,7 +69,7 @@ const PlannerCase = () => {
             isMobile ? styles.titleContainerMob : styles.titleContainer
           }
         >
-          <HeroBackground />
+          <HeroBackground floating={!isMobile} />
           {!isMobile && <div className={styles.heroPhoneGlow} />}
           <div
             className={isMobile ? styles.titleContentMob : styles.titleContent}
@@ -73,13 +83,14 @@ const PlannerCase = () => {
               React Native · Redux · Firebase
             </span>
           </div>
-          <div className={isMobile ? styles.heroPhoneMob : styles.heroPhone}>
-            <img
-              className={styles.heroScreen}
-              src={require("../../assets/png/kloki_todo_list.webp")}
-              alt="Kloki habits screen"
-            />
-          </div>
+          {isMobile ? (
+            <div className={styles.heroPhoneBoxMob}>
+              <TodoCards />
+              {heroPhone}
+            </div>
+          ) : (
+            heroPhone
+          )}
         </div>
         <div className={styles.workDescriptionBox}>
           <WorkDescription

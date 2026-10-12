@@ -1,6 +1,6 @@
 // modules
 import axios from "axios";
-import React, {ChangeEvent, FC, memo, useCallback, useMemo, useState,} from "react";
+import React, {ChangeEvent, FC, memo, useCallback, useMemo, useRef, useState,} from "react";
 // components
 import Button from "../button";
 import CvLink from "../cvLink";
@@ -8,6 +8,8 @@ import CvLink from "../cvLink";
 import "./styles.css";
 // assets
 import {CssIcon, JsIcon, ReactIcon, TsIcon} from "../../assets";
+// utils
+import {useModalBehavior} from "../../utils/useModalBehavior";
 
 interface ModalProps {
     active: boolean;
@@ -36,6 +38,9 @@ const Modal: FC<ModalProps> = (props) => {
         description: "",
     });
     const memoizedMessage = useMemo(() => message, [message]);
+    const contentRef = useRef<HTMLDivElement>(null);
+
+    useModalBehavior(active, () => setActive(false), contentRef);
 
     const handleInputChange = useCallback(
         <T extends keyof MessageType>(field: T, value: MessageType[T]) => {
@@ -86,6 +91,11 @@ const Modal: FC<ModalProps> = (props) => {
             onClick={() => setActive(false)}
         >
             <div
+                ref={contentRef}
+                role="dialog"
+                aria-modal="true"
+                aria-label="About me and contact form"
+                tabIndex={-1}
                 className={active ? "modalContent active" : "modalContent"}
                 onClick={(e) => e.stopPropagation()}
             >

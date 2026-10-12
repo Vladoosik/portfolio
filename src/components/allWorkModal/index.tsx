@@ -1,5 +1,5 @@
 // modules
-import React, { FC, useEffect } from "react";
+import React, { FC, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 // components
 import { Button, CardModal } from "../index";
@@ -7,6 +7,8 @@ import { Button, CardModal } from "../index";
 import "./style.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ModalWorkType } from "../../types/WorksType";
+// utils
+import { useModalBehavior } from "../../utils/useModalBehavior";
 
 interface AllWorkModalProps {
   data: ModalWorkType[];
@@ -19,14 +21,9 @@ const AllWorkModal: FC<AllWorkModalProps> = (props) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  useEffect(() => {
-    const body = document.querySelector("body");
-    if (active) {
-      body?.classList.add("modal-open");
-    } else {
-      body?.classList.remove("modal-open");
-    }
-  }, [active]);
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useModalBehavior(active, () => setActive(false), modalRef);
 
   const handleModalClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
@@ -44,6 +41,11 @@ const AllWorkModal: FC<AllWorkModalProps> = (props) => {
     <AnimatePresence>
       {active && (
         <motion.div
+          ref={modalRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label="All works"
+          tabIndex={-1}
           className="modalWork active"
           initial="hidden"
           animate="visible"

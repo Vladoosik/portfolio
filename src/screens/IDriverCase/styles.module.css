@@ -51,7 +51,7 @@
 /* --- hero text --- */
 .title {
     font-size: 5.3em;
-    font-family: League Spartan, Helvetica, Arial, sans-serif;
+    font-family: var(--font-display);
     margin: 0;
     color: #ffffff;
     text-align: justify;
@@ -63,7 +63,7 @@
 .description {
     display: block;
     width: fit-content;
-    font-family: "Times New Roman", serif;
+    font-family: var(--font-serif);
     font-size: 2em;
     margin-top: 13px;
     font-style: italic;
@@ -85,18 +85,25 @@
     color: #0b0c0e;
     font-size: 14px;
     font-weight: 700;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: var(--font-body);
 }
 
 .titleContent {
     padding-left: 8%;
 }
 
+/* the mobile layout is one column, the title block is centered in it */
 .titleContentMob {
     margin-bottom: 40px;
     display: flex;
     flex-direction: column;
     align-self: center;
+    align-items: center;
+    text-align: center;
+}
+
+.titleContentMob .title {
+    text-align: center;
 }
 
 .titleContent, .titleContentMob {
@@ -182,7 +189,7 @@
     word-spacing: 5px;
     text-align: justify-all;
     line-height: 28px;
-    font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
+    font-family: var(--font-serif);
 }
 
 .workDescription strong {
@@ -255,7 +262,7 @@
     color: #3f5200;
     font-size: 13px;
     font-weight: 600;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: var(--font-body);
     white-space: nowrap;
     z-index: 3;
 }

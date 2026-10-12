@@ -37,8 +37,8 @@
     overflow-y: auto;
 }
 
-.modal-open {
-    overflow: hidden;
+.modalWork:focus {
+    outline: none;
 }
 
 .cardModalContainer::-webkit-scrollbar {

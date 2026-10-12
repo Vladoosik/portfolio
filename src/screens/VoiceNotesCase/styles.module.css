@@ -68,14 +68,48 @@
     pointer-events: none;
 }
 
-.heroAssetMob {
+/* the box of the phone image, the glass icons are placed inside of it */
+.heroAssetBoxMob {
     position: relative;
     z-index: 1;
     width: 94%;
     max-width: 460px;
     margin-top: 24px;
+}
+
+.heroAssetMob {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
     object-fit: contain;
     pointer-events: none;
+}
+
+/* the phone takes the middle third of the image, the icons stay on its sides */
+.heroAssetBoxMob .glassChat {
+    left: 16%;
+    top: 4%;
+}
+
+.heroAssetBoxMob .glassUser {
+    left: 3%;
+    top: 44%;
+}
+
+.heroAssetBoxMob .glassChart {
+    left: 18%;
+    bottom: 2%;
+}
+
+.heroAssetBoxMob .glassMic {
+    right: 14%;
+    top: 14%;
+}
+
+.heroAssetBoxMob .glassLock {
+    right: 4%;
+    bottom: 22%;
 }
 
 /* --- AboutProject composite visual --- */
@@ -144,7 +178,7 @@
     color: #2b3f9e;
     font-size: 13px;
     font-weight: 600;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: var(--font-body);
     white-space: nowrap;
     z-index: 3;
 }
@@ -219,7 +253,7 @@
 
 .title {
     font-size: 5.3em;
-    font-family: League Spartan, Helvetica, Arial, sans-serif;
+    font-family: var(--font-display);
     margin: 0;
     color: white;
     text-align: justify;
@@ -230,16 +264,23 @@
     padding-left: 8%;
 }
 
+/* the mobile layout is one column, the title block is centered in it */
 .titleContentMob {
     margin-bottom: 40px;
     display: flex;
     flex-direction: column;
     align-self: center;
+    align-items: center;
+    text-align: center;
+}
+
+.titleContentMob .title {
+    text-align: center;
 }
 
 .description {
     display: block;
-    font-family: "Times New Roman", serif;
+    font-family: var(--font-serif);
     font-size: 2em;
     margin-top: 13px;
     font-style: italic;
@@ -261,7 +302,7 @@
     word-spacing: 5px;
     text-align: justify-all;
     line-height: 28px;
-    font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
+    font-family: var(--font-serif);
 }
 
 .workDescription strong {
@@ -289,5 +330,16 @@
 
     .workDescription {
         min-width: 0;
+    }
+
+    .heroAssetBoxMob .glassIcon {
+        width: 46px;
+        height: 46px;
+        border-radius: 14px;
+    }
+
+    .heroAssetBoxMob .glassIcon svg {
+        width: 22px;
+        height: 22px;
     }
 }

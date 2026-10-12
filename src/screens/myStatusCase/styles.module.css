@@ -35,7 +35,7 @@
     position: absolute;
     color: rgba(255, 255, 255, 0.2);
     font-size: 12em;
-    font-family: "Times New Roman", serif;
+    font-family: var(--font-serif);
     font-style: italic;
     bottom: -63px;
     left: 20%;
@@ -48,7 +48,7 @@
     word-spacing: 5px;
     text-align: justify-all;
     line-height: 28px;
-    font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
+    font-family: var(--font-serif);
 }
 
 .workDescription strong {

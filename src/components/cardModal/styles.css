@@ -18,7 +18,7 @@
 
 .title {
     color: #1c1d25;
-    font-family: "Microsoft New Tai Lue", sans-serif;
+    font-family: var(--font-body);
     font-weight: 600;
     margin: 0;
     font-size: 3.75em;

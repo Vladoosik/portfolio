@@ -18,11 +18,14 @@
     visibility: visible;
     opacity: 1;
     z-index: 100;
+    /* visible at once, so the modal can take focus while it fades in */
+    transition: opacity 0.5s, visibility 0s;
 }
 
 .modalContent {
     opacity: 0;
-    transition: 0.5s;
+    /* opacity only: a transition of the inherited visibility would delay the focus */
+    transition: opacity 0.5s;
     width: 1170px;
     max-width: 94vw;
     min-height: 600px;
@@ -35,12 +38,17 @@
     opacity: 1;
 }
 
+/* focused from code when the modal opens */
+.modalContent:focus {
+    outline: none;
+}
+
 .halfAbout {
     height: 100%;
     width: 50%;
     background-color: white;
     opacity: 0;
-    transition: 0.5s;
+    transition: transform 0.5s, opacity 0.5s, width 0.5s, background-color 0.5s;
     transform: translateY(-130px);
 }
 
@@ -49,7 +57,7 @@
     width: 50%;
     background-color: #1C1D25;
     opacity: 0;
-    transition: 0.5s;
+    transition: transform 0.5s, opacity 0.5s, width 0.5s, background-color 0.5s;
     transform: translateY(130px);
 }
 
@@ -114,7 +122,7 @@
 .aboutMe {
     margin: 0;
     font-size: 1.5em;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-body);
 }
 
 .aboutDescription {
@@ -122,7 +130,7 @@
     font-size: 1em;
     font-weight: 600;
     font-style: italic;
-    font-family: League Spartan, Helvetica, Arial, serif;
+    font-family: var(--font-display);
 }
 
 .mainAboutText {
@@ -193,7 +201,7 @@
     color: white;
     font-style: italic;
     font-size: 1em;
-    font-family: League Spartan, Helvetica, Arial, serif;
+    font-family: var(--font-display);
 }
 
 .inputContainer {
@@ -222,6 +230,7 @@
     border: none;
     border-bottom: 2px silver solid;
     padding: 8px 5px;
+    font-family: inherit;
     font-size: 0.9em;
     color: silver;
     width: 100%;

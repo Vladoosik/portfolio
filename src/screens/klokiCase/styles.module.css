@@ -91,7 +91,7 @@
     font-size: 14px;
     font-weight: 600;
     color: #f1e9ff;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: var(--font-body);
 }
 
 .todoDone {
@@ -103,7 +103,7 @@
     margin-top: 3px;
     font-size: 11px;
     color: rgba(230, 213, 255, 0.45);
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: var(--font-body);
 }
 
 .todo1 {
@@ -129,7 +129,7 @@
 /* --- hero text --- */
 .title {
     font-size: 5.3em;
-    font-family: League Spartan, Helvetica, Arial, sans-serif;
+    font-family: var(--font-display);
     margin: 0;
     color: #ffffff;
     text-align: justify;
@@ -140,7 +140,7 @@
 
 .description {
     display: block;
-    font-family: "Times New Roman", serif;
+    font-family: var(--font-serif);
     font-size: 2em;
     margin-top: 13px;
     font-style: italic;
@@ -157,18 +157,25 @@
     color: #160f1f;
     font-size: 14px;
     font-weight: 700;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: var(--font-body);
 }
 
 .titleContent {
     padding-left: 8%;
 }
 
+/* the mobile layout is one column, the title block is centered in it */
 .titleContentMob {
     margin-bottom: 40px;
     display: flex;
     flex-direction: column;
     align-self: center;
+    align-items: center;
+    text-align: center;
+}
+
+.titleContentMob .title {
+    text-align: center;
 }
 
 .titleContent, .titleContentMob {
@@ -224,8 +231,48 @@
     background: #0b0d10;
     border: 3px solid #2a2136;
     box-shadow: 0 24px 50px rgba(0, 0, 0, 0.6);
-    margin-top: 24px;
     overflow: hidden;
+}
+
+/* the box of the phone, the todo cards are placed on its sides */
+.heroPhoneBoxMob {
+    position: relative;
+    z-index: 1;
+    margin-top: 24px;
+}
+
+.heroPhoneBoxMob .todoCard {
+    width: max-content;
+}
+
+.heroPhoneBoxMob .todo1 {
+    left: auto;
+    right: calc(100% + 28px);
+    top: 10%;
+}
+
+.heroPhoneBoxMob .todo2 {
+    left: calc(100% + 28px);
+    top: 28%;
+}
+
+.heroPhoneBoxMob .todo3 {
+    left: auto;
+    right: calc(100% + 14px);
+    bottom: 20%;
+}
+
+.heroPhoneBoxMob .todo4 {
+    right: auto;
+    left: calc(100% + 16px);
+    top: 62%;
+}
+
+/* no room for the cards next to the phone */
+@media (max-width: 720px) {
+    .heroPhoneBoxMob .todoCard {
+        display: none;
+    }
 }
 
 /* --- work description / about --- */
@@ -242,7 +289,7 @@
     word-spacing: 5px;
     text-align: justify-all;
     line-height: 28px;
-    font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
+    font-family: var(--font-serif);
 }
 
 .workDescription strong {
@@ -303,7 +350,7 @@
     color: #6b21a8;
     font-size: 13px;
     font-weight: 600;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: var(--font-body);
     white-space: nowrap;
     z-index: 3;
 }

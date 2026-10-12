@@ -20,7 +20,7 @@
 
 .projectText {
     z-index: 2;
-    font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
+    font-family: var(--font-serif);
     letter-spacing: 1px;
     word-spacing: 4px;
     text-align: justify;
@@ -53,7 +53,7 @@
     position: absolute;
     color: rgba(255, 255, 255, 0.2);
     font-size: 12em;
-    font-family: "Times New Roman", serif;
+    font-family: var(--font-serif);
     font-style: italic;
     bottom: -63px;
     left: 20%;
@@ -64,8 +64,16 @@
         font-size: 36px;
     }
 
+    /* the text takes the whole width and gets more air around the lines */
     .projectText {
-        text-align: left;
+        width: 100%;
+        max-width: none;
+        margin-top: 28px;
+        margin-bottom: 36px;
+        text-align: justify;
+        hyphens: auto;
         word-spacing: normal;
+        letter-spacing: 0.3px;
+        line-height: 30px;
     }
 }

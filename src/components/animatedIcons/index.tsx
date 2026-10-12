@@ -47,6 +47,8 @@ const AnimatedIcons: FC<AnimatedIconType> = ({ cursorPosition }) => {
 
   useEffect(() => {
     iconRefs.current = iconRefs.current.slice(0, animatedIcons.length);
+    // the icons stay still for users who asked for less motion
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
     animationFrameRef.current = requestAnimationFrame(updateIconsPosition);
     return () => {
       if (animationFrameRef.current) {

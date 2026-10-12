@@ -19,7 +19,7 @@ import {
 import transitionPages from "../../utils/transitionPages";
 // styles
 import styles from "./styles.module.css";
-import HeroBackground from "./HeroBackground";
+import HeroBackground, { GlassIcons } from "./HeroBackground";
 import AboutVisual from "./AboutVisual";
 // constants
 import { caseHeaderLinks } from "../../constants/headerLink/headerLinks";
@@ -45,6 +45,14 @@ const VoiceNotesCase = () => {
     "Voice Notes: a CRM app for client records and session notes, built from scratch with React Native CLI and Firebase and released on the App Store.",
   );
 
+  const heroAsset = (
+    <img
+      className={isMobile ? styles.heroAssetMob : styles.heroAsset}
+      src={require("../../assets/png/hero_voice_notes.webp")}
+      alt="Voice Notes app"
+    />
+  );
+
   return (
     <>
       <div className={styles.container} id={"#voiceNotes"}>
@@ -60,7 +68,7 @@ const VoiceNotesCase = () => {
             isMobile ? styles.titleContainerMob : styles.titleContainer
           }
         >
-          <HeroBackground />
+          <HeroBackground floating={!isMobile} />
           <div
             className={isMobile ? styles.titleContentMob : styles.titleContent}
           >
@@ -70,11 +78,14 @@ const VoiceNotesCase = () => {
               className={styles.description}
             />
           </div>
-          <img
-            className={isMobile ? styles.heroAssetMob : styles.heroAsset}
-            src={require("../../assets/png/hero_voice_notes.webp")}
-            alt="Voice Notes app"
-          />
+          {isMobile ? (
+            <div className={styles.heroAssetBoxMob}>
+              <GlassIcons />
+              {heroAsset}
+            </div>
+          ) : (
+            heroAsset
+          )}
         </div>
         <div className={styles.workDescriptionBox}>
           <WorkDescription

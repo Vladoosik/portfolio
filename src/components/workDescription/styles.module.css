@@ -16,11 +16,33 @@
 }
 
 @media (max-width: 800px) {
+    /* a list of rows: the label on the left, the value on the right */
     .aboutContainer {
         flex-direction: column;
-        gap: 12px;
         padding-left: 24px;
         padding-right: 24px;
         font-size: 1.05em;
+    }
+
+    .aboutContainer > div {
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(176, 178, 195, 0.25);
+    }
+
+    .aboutContainer > div:last-child {
+        border-bottom: none;
+    }
+
+    .aboutContainer span {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 16px;
+        text-align: right;
+    }
+
+    .aboutContainer strong {
+        flex-shrink: 0;
+        margin-right: 0;
     }
 }

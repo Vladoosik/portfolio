@@ -1,7 +1,7 @@
 // modules
 import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, MotionConfig } from "framer-motion";
 // styles
 import "./App.css";
 // screens
@@ -15,7 +15,7 @@ import {
 function App() {
   const location = useLocation();
   return (
-    <>
+    <MotionConfig reducedMotion={"user"}>
       <AnimatePresence mode={"wait"}>
         <Routes location={location} key={location.pathname}>
           <Route index path={"/"} element={<MainScreen />} />
@@ -24,7 +24,7 @@ function App() {
           <Route path={"/kloki"} element={<PlannerCase />} />
         </Routes>
       </AnimatePresence>
-    </>
+    </MotionConfig>
   );
 }
 

@@ -21,23 +21,8 @@ const habits: Habit[] = [
   { text: "Meditate", sub: "", state: "green", cls: "todo4" },
 ];
 
-const HeroBackground = () => (
-  <div className={styles.heroBg} aria-hidden={true}>
-    <svg
-      className={styles.heroSvg}
-      viewBox="0 0 1280 720"
-      preserveAspectRatio="xMidYMid slice"
-    >
-      <defs>
-        <radialGradient id="klGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0" stopColor="#a855f7" stopOpacity="0.42" />
-          <stop offset="1" stopColor="#a855f7" stopOpacity="0" />
-        </radialGradient>
-      </defs>
-      <circle cx="940" cy="230" r="330" fill="url(#klGlow)" />
-      <circle cx="230" cy="560" r="250" fill="url(#klGlow)" />
-    </svg>
-
+export const TodoCards = () => (
+  <>
     {habits.map((h) => (
       <div key={h.cls} className={`${styles.todoCard} ${styles[h.cls]}`}>
         <div
@@ -61,6 +46,32 @@ const HeroBackground = () => (
         </div>
       </div>
     ))}
+  </>
+);
+
+interface HeroBackgroundProps {
+  // the todo cards are placed for the desktop layout, on mobile they go next to the phone
+  floating?: boolean;
+}
+
+const HeroBackground = ({ floating = true }: HeroBackgroundProps) => (
+  <div className={styles.heroBg} aria-hidden={true}>
+    <svg
+      className={styles.heroSvg}
+      viewBox="0 0 1280 720"
+      preserveAspectRatio="xMidYMid slice"
+    >
+      <defs>
+        <radialGradient id="klGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0" stopColor="#a855f7" stopOpacity="0.42" />
+          <stop offset="1" stopColor="#a855f7" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      <circle cx="940" cy="230" r="330" fill="url(#klGlow)" />
+      <circle cx="230" cy="560" r="250" fill="url(#klGlow)" />
+    </svg>
+
+    {floating && <TodoCards />}
 
     <div className={styles.heroFade} />
   </div>
